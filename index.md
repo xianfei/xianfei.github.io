@@ -1,5 +1,4 @@
 ---
-layout: post
 title: 软件工程专业导论实践课
 ---
 
