@@ -1,0 +1,220 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>神奇的翻译器</title>
+</head>
+<body>
+<script language="javascript">
+function stringToByte(str) {  
+    var bytes = new Array();  
+    var len, c;  
+    len = str.length;  
+    for(var i = 0; i < len; i++) {  
+        c = str.charCodeAt(i);  
+        if(c >= 0x010000 && c <= 0x10FFFF) {  
+            bytes.push(((c >> 18) & 0x07) | 0xF0);  
+            bytes.push(((c >> 12) & 0x3F) | 0x80);  
+            bytes.push(((c >> 6) & 0x3F) | 0x80);  
+            bytes.push((c & 0x3F) | 0x80);  
+        } else if(c >= 0x000800 && c <= 0x00FFFF) {  
+            bytes.push(((c >> 12) & 0x0F) | 0xE0);  
+            bytes.push(((c >> 6) & 0x3F) | 0x80);  
+            bytes.push((c & 0x3F) | 0x80);  
+        } else if(c >= 0x000080 && c <= 0x0007FF) {  
+            bytes.push(((c >> 6) & 0x1F) | 0xC0);  
+            bytes.push((c & 0x3F) | 0x80);  
+        } else {  
+            bytes.push(c & 0xFF);  
+        }  
+    }  
+    return bytes;  
+
+
+}  
+
+
+ function byteToString(arr) {  
+    if(typeof arr === 'string') {  
+        return arr;  
+    }  
+    var str = '',  
+        _arr = arr;  
+    for(var i = 0; i < _arr.length; i++) {  
+        var one = _arr[i].toString(2),  
+            v = one.match(/^1+?(?=0)/);  
+        if(v && one.length == 8) {  
+            var bytesLength = v[0].length;  
+            var store = _arr[i].toString(2).slice(7 - bytesLength);  
+            for(var st = 1; st < bytesLength; st++) {  
+                store += _arr[st + i].toString(2).slice(2);  
+            }  
+            str += String.fromCharCode(parseInt(store, 2));  
+            i += bytesLength - 1;  
+        } else {  
+            str += String.fromCharCode(_arr[i]);  
+        }  
+    }  
+    return str;  
+}  
+    /* Generated from Java with JSweet 2.2.0-SNAPSHOT - http://www.jsweet.org */
+var Main = (function () {
+    function Main() {
+    }
+    Main.main = function (args) {
+        var str = "\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd \ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd \ufffd\ufffd\ufffd\ufffd\ufffd\ufffd";
+        str = Main.encrypt(str, "AssDFSoG2DxG");
+        console.info(str);
+        str = Main.decrypt(str, "AssDFSoG2DxG");
+        console.info(str);
+    };
+    Main.encrypt = function (str, pw) {
+        str = Main.rc4("[]" + str, pw);
+        var sb = { str: "", toString: function () { return this.str; } };
+        var bytes = stringToByte(str);
+        for (var index12282 = 0; index12282 < bytes.length; index12282++) {
+            var b = bytes[index12282];
+            {
+                for (var i = 0; i < 4; i++) {
+                    {
+                        switch (((b >> i >> i) & 3)) {
+                            case 0:
+                                /* append */ (function (sb) { sb.str = sb.str.concat(Main.KEYWORD + " "); return sb; })(sb);
+                                break;
+                            case 1:
+                                /* append */ (function (sb) { sb.str = sb.str.concat(Main.KEYWORD + Main.KEYWORD + Main.KEYWORD + Main.KEYWORD + " "); return sb; })(sb);
+                                break;
+                            case 2:
+                                /* append */ (function (sb) { sb.str = sb.str.concat(Main.KEYWORD + Main.KEYWORD + " "); return sb; })(sb);
+                                break;
+                            case 3:
+                                /* append */ (function (sb) { sb.str = sb.str.concat(Main.KEYWORD + Main.KEYWORD + Main.KEYWORD + " "); return sb; })(sb);
+                                break;
+                        }
+                    }
+                    ;
+                }
+            }
+        }
+        return sb.str;
+    };
+    Main.decrypt = function (str, pw) {
+        var strings = str.split(" ");
+        var bytes = (function (s) { var a = []; while (s-- > 0)
+            a.push(0); return a; })((strings.length / 4 | 0));
+        for (var i = 0; i < strings.length; i += 4) {
+            {
+                var c = 0;
+                for (var j = 0; j < 4; j++) {
+                    {
+                        switch ((strings[i + j])) {
+                            case Main.KEYWORD /* KEYWORD */:
+                                c |= 0;
+                                break;
+                            case Main.KEYWORD + Main.KEYWORD + Main.KEYWORD + Main.KEYWORD:
+                                c |= (1 << j << j);
+                                break;
+                            case Main.KEYWORD + Main.KEYWORD:
+                                c |= (2 << j << j);
+                                break;
+                            case Main.KEYWORD + Main.KEYWORD + Main.KEYWORD:
+                                c |= (3 << j << j);
+                                break;
+                        }
+                    }
+                    ;
+                }
+                bytes[(i / 4 | 0)] = c;
+            }
+            ;
+        }
+        var result = byteToString(bytes);
+        result = Main.rc4(result, pw);
+        if(!(document.getElementById("pwd").value===0))result = result.substr(0, result.length - 1);
+        if ((function (c) { return c.charCodeAt == null ? c : c.charCodeAt(0); })(result.charAt(0)) != '['.charCodeAt(0))
+            return "password incorrect or invalid source!!!";
+        return result.substring(result.indexOf(']') + 1);
+    };
+    Main.rc4 = function (inputStr, keyStr) {
+        if (keyStr == null)
+            return inputStr;
+        if ((keyStr.length === 0))
+            return inputStr;
+        var iS = (function (s) { var a = []; while (s-- > 0)
+            a.push(0); return a; })(256);
+        var iK = (function (s) { var a = []; while (s-- > 0)
+            a.push(0); return a; })(256);
+        for (var i_1 = 0; i_1 < 256; i_1++) {
+            iS[i_1] = i_1;
+        }
+        var j = 1;
+        for (var i_2 = 0; i_2 < 256; i_2++) {
+            {
+                iK[i_2] = (keyStr.charAt((i_2 % keyStr.length))).charCodeAt(0);
+            }
+            ;
+        }
+        j = 0;
+        for (var i_3 = 0; i_3 < 255; i_3++) {
+            {
+                j = (j + iS[i_3] + iK[i_3]) % 256;
+                var temp = iS[i_3];
+                iS[i_3] = iS[j];
+                iS[j] = temp;
+            }
+            ;
+        }
+        var i = 0;
+        j = 0;
+        var inputChar = (inputStr).split('');
+        var outputChar = (function (s) { var a = []; while (s-- > 0)
+            a.push(null); return a; })(inputChar.length);
+        for (var x = 0; x < inputChar.length; x++) {
+            {
+                i = (i + 1) % 256;
+                j = (j + iS[i]) % 256;
+                var temp = iS[i];
+                iS[i] = iS[j];
+                iS[j] = temp;
+                var t = (iS[i] + (iS[j] % 256)) % 256;
+                var iY = iS[t];
+                var iCY = String.fromCharCode(iY);
+                outputChar[x] = String.fromCharCode(((function (c) { return c.charCodeAt == null ? c : c.charCodeAt(0); })(inputChar[x]) ^ (function (c) { return c.charCodeAt == null ? c : c.charCodeAt(0); })(iCY)));
+            }
+            ;
+        }
+        return outputChar.join('');
+    };
+    return Main;
+}());
+Main.KEYWORD = "咕";
+Main["__class"] = "Main";
+ function c1()
+ {
+ var t=document.getElementById("txt");
+ t.value=Main.encrypt(t.value,document.getElementById("pwd").value);
+ Main.KEYWORD = document.getElementById("kwd").value;
+ }
+
+ function c2()
+ {
+ var t=document.getElementById("txt");
+ t.value=Main.decrypt(t.value,document.getElementById("pwd").value);
+ Main.KEYWORD = document.getElementById("kwd").value;
+ }
+</script>
+<center>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <h3>这是一个神奇的翻译器！</h3>
+    <hr width="90%"/>
+    <a>输入内容：</a><br>
+<textarea id="txt" rows="10" cols="50">
+    这是一段文字。by xianfei
+</textarea><br><br>
+    <a>密码：（可留空）</a><input type="password" id="pwd" value="" size="30"/><br><br>
+    <a>关键字：</a><input type="text" id="kwd" value="咕" size="30"/><br>关键字要短(全文会仅使用关键字和空格进行加密)<br>
+<input type="button" value="加密！" name="btn" onclick="c1();" /> 
+<input type="button" value="解密！" name="btn" onclick="c2();" />
+</center>
+</body>
+</html>
