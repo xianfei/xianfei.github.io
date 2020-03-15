@@ -1,0 +1,53 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>去你妈的关键字检测</title>
+</head>
+
+<body>
+    <script language="javascript">
+        /* Generated from Java with JSweet 2.2.0-SNAPSHOT - http://www.jsweet.org */
+var Main = (function () {
+    function Main() {
+    }
+    Main.fuckKeywordDetection = function (str) {
+        var zeroWidthUnicode = ['\u200b', '\u200c', '\u200d', '\u200e', '\u2060', '\ufeff'];
+        var stringBuilder = { str: "", toString: function () { return this.str; } };
+        var _loop_1 = function (i) {
+            {
+                /* append */ (function (sb) { sb.str = sb.str.concat(str.charAt(i)); return sb; })(stringBuilder);
+                if ("1234567890. .-。，！？《》的一是了我她他它们在有到刚".indexOf(str.charAt(i)) !== -1)
+                    return "continue";
+                /* append */ (function (sb) { sb.str = sb.str.concat(zeroWidthUnicode[Math.floor(Math.random() * zeroWidthUnicode.length)]); return sb; })(stringBuilder);
+            }
+            ;
+        };
+        for (var i = 0; i < str.length; i++) {
+            _loop_1(i);
+        }
+        return stringBuilder.str;
+    };
+    return Main;
+}());
+Main["__class"] = "Main";
+        function c1() {
+            document.getElementById("out").value = Main.fuckKeywordDetection(document.getElementById("in").value);
+        }
+
+    </script>
+
+        <meta name="viewport"
+            content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+        <h3>去你妈的关键字检测</h3>
+        <a>输入内容：</a><br>
+        <textarea id="in" rows="10" cols="50">一个健康的社会不该只有一种声音</textarea><br>
+            
+        <input type="button" value="处理一下" name="btn" onclick="c1();" /><br>
+        <a>这里是输出：</a><br>
+        <textarea id="out" rows="10" cols="50"></textarea><br>
+        
+</body>
+
+</html>
