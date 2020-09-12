@@ -1,0 +1,165 @@
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign in</title>
+    <style type="text/css">
+        body {
+            background-color: #F3EBF6;
+            font-family: 'Ubuntu', sans-serif;
+        }
+
+        .main {
+            background-color: #FFFFFF;
+            width: 300px;
+            height: 500px;
+            margin: 7em auto;
+            border-radius: 1.5em;
+            box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
+        }
+
+        .sign {
+            padding-top: 40px;
+            color: #8C55AA;
+            font-family: 'Ubuntu', sans-serif;
+            font-weight: bold;
+            font-size: 23px;
+        }
+
+        .sign2 {
+            padding-top: 0px;
+            color: #CCCCCC;
+            font-family: 'Ubuntu', sans-serif;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        .un {
+            width: 76%;
+            color: rgb(38, 50, 56);
+            font-weight: 700;
+            font-size: 14px;
+            letter-spacing: 1px;
+            background: rgba(136, 126, 126, 0.04);
+            padding: 10px 20px;
+            border: none;
+            border-radius: 20px;
+            outline: none;
+            box-sizing: border-box;
+            border: 2px solid rgba(0, 0, 0, 0.02);
+            margin-bottom: 50px;
+            margin-left: 36px;
+            text-align: center;
+            margin-bottom: 27px;
+            font-family: 'Ubuntu', sans-serif;
+        }
+
+        form.form1 {
+            padding-top: 20px;
+        }
+
+        .pass {
+            width: 76%;
+            color: rgb(38, 50, 56);
+            font-weight: 700;
+            font-size: 14px;
+            letter-spacing: 1px;
+            background: rgba(136, 126, 126, 0.04);
+            padding: 10px 20px;
+            border: none;
+            border-radius: 20px;
+            outline: none;
+            box-sizing: border-box;
+            border: 2px solid rgba(0, 0, 0, 0.02);
+            margin-bottom: 50px;
+            margin-left: 36px;
+            text-align: center;
+            margin-bottom: 27px;
+            font-family: 'Ubuntu', sans-serif;
+        }
+
+        .pass:focus {
+            border: 2px solid rgba(0, 0, 0, 0.18) !important;
+
+        }
+
+        .submit {
+            cursor: pointer;
+            border-radius: 5em;
+            color: #fff;
+            background: linear-gradient(to right, #2c3e50, #4ca1af);
+            border: 0;
+            padding-left: 40px;
+            padding-right: 40px;
+            padding-bottom: 10px;
+            padding-top: 10px;
+            font-family: 'Ubuntu', sans-serif;
+            margin-left: 30%;
+            font-size: 13px;
+            box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
+        }
+
+        .submit2 {
+            cursor: pointer;
+            border-radius: 5em;
+            color: #fff;
+            background: linear-gradient(to right, #e96443, #904e95);
+            border: 0;
+            padding-left: 40px;
+            padding-right: 40px;
+            padding-bottom: 10px;
+            padding-top: 10px;
+            font-family: 'Ubuntu', sans-serif;
+            margin-left: 30%;
+            font-size: 13px;
+            box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
+        }
+
+        .forgot {
+            text-shadow: 0px 0px 3px rgba(117, 117, 117, 0.12);
+            color: #E1BEE7;
+            padding-top: 15px;
+        }
+
+        a {
+            text-shadow: 0px 0px 3px rgba(117, 117, 117, 0.12);
+            color: #E1BEE7;
+            text-decoration: none
+        }
+
+        @media (max-width: 600px) {
+            .main {
+                border-radius: 0px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <p class="sign" align="center">反复横跳</p>
+        <p class="sign2" align="center">生成绿码后分享给文件传输助手<br>出校更方便</p>
+        <form class="form1">
+            <input class="pass" id="input-name" type="text" align="center" placeholder="姓名">
+            <input class="pass" id="input-aca" type="text" align="center" placeholder="学院">
+            <input class="pass" id="input-number" type="text" align="center" placeholder="学号"">
+            <a class="submit" align="center" onclick="Enter(1)">出校</a><br><br><br>
+            <a class="submit2" align="center" onclick="Enter(0)">入校</a>
+
+    </div>
+
+</body>
+
+<script>
+    function Enter(e) {
+    
+    var name = document.getElementById("input-name").value;
+    var aca = document.getElementById("input-aca").value;
+    var number = document.getElementById("input-number").value;
+    var url = "buptqrcode/?e="+e+"&name="+encodeURI(name)+"&aca="+encodeURI(aca)+"&no="+number;
+    window.open(url);
+  
+  }
+</script>
+
+</html>
