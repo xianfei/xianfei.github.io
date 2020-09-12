@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- saved from url=(0133)file:///Users/xianfei/Downloads/test.html?e=1&name=%E7%8E%8B%E8%A1%94%E9%A3%9E&aca=%E8%BD%AF%E4%BB%B6%E5%AD%A6%E9%99%A2&no=2018211504 -->
+<!-- saved from url=(0038)http://charleylee.gitee.io/out-school/ -->
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -123,14 +123,14 @@
 	</style>
 </head>
 <body>
-  <div class="input-box" id="input-box" style="text-align: center; display: none;">
+  <div class="input-box" id="input-box" style="text-align: center;">
     <p style="font-size: 3rem;">反复横跳！</p>
     <div>你的名字：<input type="text" name="" id="input-name" placeholder="李霸天"></div>
     <div>你的学院：<input type="text" name="" id="input-aca" placeholder="信息与通信工程学院"></div>
     <div>你的学号：<input type="text" name="" id="input-number" placeholder="2020210777"></div>
     <div><button onclick="Enter(0)">“我想进去可以吗”</button><button onclick="Enter(1)">“放我出去吧”</button></div>
   </div>
-	<div class="content" id="content" style="">
+	<div class="content" id="content" style="display: none;">
 		<div class="up">
 			<div class="up-text">申请表单</div>
 		</div>
@@ -140,7 +140,7 @@
     <div class="infos">
       <div class="info">
         <div class="info-title">姓名</div>
-        <div class="info-text" id="info-name">王衔飞</div>
+        <div class="info-text" id="info-name">李霸天</div>
       </div>
       <div class="info">
         <div class="info-title">学院</div>
@@ -156,11 +156,11 @@
       </div>
       <div class="info">
         <div class="info-title">学工号</div>
-        <div class="info-text" id="info-number">2018211504</div>
+        <div class="info-text" id="info-number">2020210777</div>
       </div>
       <div class="info info-last">
         <div class="info-title">出入校时间</div>
-        <div class="info-text" id="time">2020-09-12 15:13:09</div>
+        <div class="info-text" id="time">2020-09-06 09:16:04</div>
       </div>
     </div>
     <!-- footer使用固定布局 -->
@@ -205,65 +205,52 @@
     curTime = curDateTime();
     
     function Enter(e) {
-      console.log(e)
-      var name = document.getElementById("input-name").value;
-      var aca = document.getElementById("input-aca").value;
-      var number = document.getElementById("input-number").value;
+    
+    var name = document.getElementById("input-name").value;
+    var aca = document.getElementById("input-aca").value;
+    var number = document.getElementById("input-number").value;
+    var url = "?e="+e+"&name="+encodeURI(name)+"&aca="+encodeURI(aca)+"&no="+number;
+    window.open(url);
+  
+  }
 
-      document.getElementById("content").style.display = "";
-      document.getElementById("input-box").style.display = "none";
+  function getQueryVariable(variable)
+  {
+     var query = window.location.search.substring(1);
+     var vars = query.split("&");
+     for (var i=0;i<vars.length;i++) {
+             var pair = vars[i].split("=");
+             if(pair[0] == variable){return pair[1];}
+     }
+     return(false);
+  }
 
-      if (name != '') {
-        document.getElementById("info-name").innerHTML = name;
-      }
-      if (aca != '') {
-        document.getElementById("info-aca").innerHTML = aca;
-      }
-      if (number != '') {
-        document.getElementById("info-number").innerHTML = number;
-      }
-      var status = ['允许入校', '允许出校'];
-      document.getElementById("status").innerHTML = status[parseInt(e)];
-      document.getElementById("time").innerHTML = curTime;
+  function main(){
+    console.log(window.location.search.substring(1));
+    if(window.location.search.substring(1)!=''){
+    var name = decodeURI(getQueryVariable('name'));
+    var aca = decodeURI(getQueryVariable('aca'));
+    var number = getQueryVariable('no');
+    var e = getQueryVariable('e');
+
+    document.getElementById("content").style.display = "";
+    document.getElementById("input-box").style.display = "none";
+
+    if (name != '') {
+      document.getElementById("info-name").innerHTML = name;
     }
-
-    function getQueryVariable(variable)
-    {
-       var query = window.location.search.substring(1);
-       var vars = query.split("&");
-       for (var i=0;i<vars.length;i++) {
-               var pair = vars[i].split("=");
-               if(pair[0] == variable){return pair[1];}
-       }
-       return(false);
+    if (aca != '') {
+      document.getElementById("info-aca").innerHTML = aca;
     }
-
-    function main(){
-      console.log(window.location.search.substring(1));
-      if(window.location.search.substring(1)!=''){
-      var name = decodeURI(getQueryVariable('name'));
-      var aca = decodeURI(getQueryVariable('aca'));
-      var number = getQueryVariable('no');
-      var e = getQueryVariable('e');
-
-      document.getElementById("content").style.display = "";
-      document.getElementById("input-box").style.display = "none";
-
-      if (name != '') {
-        document.getElementById("info-name").innerHTML = name;
-      }
-      if (aca != '') {
-        document.getElementById("info-aca").innerHTML = aca;
-      }
-      if (number != '') {
-        document.getElementById("info-number").innerHTML = number;
-      }
-      var status = ['允许入校', '允许出校'];
-      document.getElementById("status").innerHTML = status[parseInt(e)];
-      document.getElementById("time").innerHTML = curTime;
-      }
+    if (number != '') {
+      document.getElementById("info-number").innerHTML = number;
     }
-    main();
+    var status = ['允许入校', '允许出校'];
+    document.getElementById("status").innerHTML = status[parseInt(e)];
+    document.getElementById("time").innerHTML = curTime;
+    }
+  }
+  main();
   </script>
 
 </body></html>
