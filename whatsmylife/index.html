@@ -67,7 +67,7 @@
         $('#btn').click(() => {
             // Input name
             var name = $('#name').val()
-            var nameHashCode = name.hashCode()
+            var nameHashCode = Math.abs(name.hashCode())
             // output
             $('#result').text(name + '的意义是' + word1[nameHashCode % word1.length] + '、' + word2[nameHashCode % word2.length] + '和' + (nameHashCode % 23 == 0 ? name : word3[nameHashCode % word3.length]))
         })
