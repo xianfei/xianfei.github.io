@@ -16,7 +16,7 @@
 <body class="mdui-theme-primary-indigo mdui-theme-accent-indigo">
     <div class="mdui-appbar">
         <div class="mdui-toolbar mdui-color-theme">
-            <a href="javascript:;" class="mdui-typo-title">Title</a>
+            <a href="javascript:;" class="mdui-typo-title">趣味测试</a>
             <div class="mdui-toolbar-spacer"></div>
             <a href="javascript:;" class="mdui-btn mdui-btn-icon" onclick="window.location.reload()">
                 <i class="mdui-icon material-icons">refresh</i>
@@ -43,6 +43,11 @@
         <p style="font-size: 16px;color: #aaa;">使用Hashing算法 <a style="color: rgb(114, 140, 196);"
                 href="https://github.com/xianfei/xianfei.github.io/blob/master/whatsmylife/index.html">点击查看源代码</a></p>
         <p style="font-size: 16px;color: #aaa;">by xianfei</p>
+        <label class="mdui-switch">
+            <input type="checkbox" id="hash" />
+            <i class="mdui-switch-icon"></i>
+            使用随机数而非Hash Code
+        </label>
     </div>
     <script>
 
@@ -51,7 +56,7 @@
 
         var word2 = ['自由', '疯子', '艺术品', '针', '破碎', '糖果包装纸', '政治', '波涛汹涌', '二次元美少女', '笑脸', '王冠', '赎罪', '情话', '英语', '摇篮曲', '数学', '白色', '静悄悄', '沉默', '暗恋', '物理', '化学', '生物', '滴答声', '闪闪发亮', '魔鬼', '错过', '犯错', '结束的派对', '磁带机', '地理', '风', '小鸟', '蚌埠住了', '西班牙语', '童话书', '明亮', '幻想', '希望', '历史', 'crush', '束缚', '约会', '苍穹', '虚无', '神话', '泳池派对', '血液', '流汗黄豆', '威士忌', '订书器', '喵喵', '天使', '绝望', '初恋', '波光粼粼', '明信片', '语文', '许愿', '错误', '日历']
 
-        var word3 = ['"数学作业没交"', '每一次像睡眠的死亡', '探寻这个充满着荒诞的宇宙', '"你也是"', '"我是不是在哪见过你?"', '即使放手也无法挣脱', '"好吗?"', '观看人类毁灭', '你自己', '多层困境', '"无论贫穷还是富贵，无论疾病还是健康……"', '圣诞节', '闪闪发光的所有东西', '圣诞老人', '【数据删除】', '坟墓', '"今天是周几?"', '生日快乐', '全世界', '"祝你今天心情愉快"', '尝试被改变的命运', '存在主义', '"借过一下', '西西弗斯的石头', '"我也是"', '"北极熊都死了', '"很高兴认识你"', '系统错误', '做过无数次相同的梦', '不需要意义的人生', '手枪的反义词', '丢失后又找到的人', '被违反的规则', '无法改变的命运', '闭眼时的虚无', '创造新的世界', '情绪的集合', '没有人相信的传说', '及时行乐', '"你能递给我蜂蜜罐吗?"', '"我喜欢你', '虚无主义', '吹蜡烛', '任何关于"永恒"的许诺', '反光墨水', '没有意义', '"我爱你', '荒诞主义', '每一次像死亡的睡眠', '夕阳下摔碎的瓶子', '死在岩石里', '破碎了一次又一次', '"你好"']
+        var word3 = ['"数学作业没交"', '每一次像睡眠的死亡', '探寻这个充满着荒诞的宇宙', '"你也是"', '"我是不是在哪见过你?"', '即使放手也无法挣脱', '"好吗?"', '观看人类毁灭', '你自己', '多层困境', '"无论贫穷还是富贵，无论疾病还是健康……"', '圣诞节', '闪闪发光的所有东西', '圣诞老人', '【数据删除】', '坟墓', '"今天是周几?"', '生日快乐', '全世界', '"祝你今天心情愉快"', '尝试被改变的命运', '存在主义', '"借过一下', '西西弗斯的石头', '"我也是"', '"北极熊都死了', '"很高兴认识你"', '系统错误', '做过无数次相同的梦', '不需要意义的人生', '手枪的反义词', '丢失后又找到的人', '被违反的规则', '无法改变的命运', '闭眼时的虚无', '创造新的世界', '情绪的集合', '没有人相信的传说', '及时行乐', '"你能递给我蜂蜜罐吗?"', '"我喜欢你"', '虚无主义', '吹蜡烛', '任何关于"永恒"的许诺', '反光墨水', '没有意义', '"我爱你"', '荒诞主义', '每一次像死亡的睡眠', '夕阳下摔碎的瓶子', '死在岩石里', '破碎了一次又一次', '"你好"']
 
         // Get hashing code
         String.prototype.hashCode = function () {
@@ -67,7 +72,7 @@
         $('#btn').click(() => {
             // Input name
             var name = $('#name').val()
-            var nameHashCode = Math.abs(name.hashCode())
+            var nameHashCode = $('#hash')[0].checked ? Math.floor(Math.random() * 99999) : Math.abs(name.hashCode())
             // output
             $('#result').text(name + '的意义是' + word1[nameHashCode % word1.length] + '、' + word2[nameHashCode % word2.length] + '和' + (nameHashCode % 23 == 0 ? name : word3[nameHashCode % word3.length]))
         })
