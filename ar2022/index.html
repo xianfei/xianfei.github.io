@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AR Demo by xianfei</title>
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+
+</head>
+<body>
+    <button onclick="fun(1)">冰墩墩！</button>&nbsp;<button onclick="fun(2)">雪容融！</button><br>
+    <model-viewer src="untitled.glb" 
+    ios-src="untitled.usdc" 
+    id="wxfnb"
+    style="height:50vh;"
+              alt="A 3D model of BingDunDun"
+              ar
+              auto-rotate
+              camera-controls></model-viewer>
+              <script>
+                  function fun(e){
+                      var t = document.getElementById('wxfnb')
+                      if(e==1){
+                            t.setAttribute('src',location.href+"untitled.glb" )
+                            t.setAttribute('ios-src',location.href+"untitled.usdc" )
+                      }else if(e==2){
+                        t.setAttribute('src',location.href+"untitled2.glb" )
+                            t.setAttribute('ios-src',location.href+"untitled2.usdc" )
+                      }
+                  }
+                  fun(1)
+              </script>
+</body>
+</html>
