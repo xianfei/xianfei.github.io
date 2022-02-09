@@ -9,7 +9,7 @@
 
 </head>
 <body>
-    <button onclick="fun(1)">冰墩墩！</button>&nbsp;<button onclick="fun(2)">雪容融！</button><br>
+    <button onclick="fun(1)">冰墩墩！</button>&nbsp;<button onclick="fun(2)">雪容融！</button>&nbsp;<button onclick="fun(3)">我都要！</button><br>
     <model-viewer src="untitled.glb" 
     ios-src="untitled.usdc" 
     id="wxfnb"
@@ -27,6 +27,9 @@
                       }else if(e==2){
                         t.setAttribute('src',location.href+"untitled2.glb" )
                             t.setAttribute('ios-src',location.href+"untitled2.usdc" )
+                      }else if(e==3){
+                        t.setAttribute('src',location.href+"untitled3.glb" )
+                            t.setAttribute('ios-src',location.href+"untitled3.usdc" )
                       }
                   }
                   fun(1)
