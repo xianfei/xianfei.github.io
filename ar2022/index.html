@@ -11,7 +11,7 @@
 <body>
     <button onclick="fun(1)">冰墩墩！</button>&nbsp;<button onclick="fun(2)">雪容融！</button>&nbsp;<button onclick="fun(3)">我都要！</button><br>
     <model-viewer src="untitled.glb" 
-    ios-src="untitled.usdc" 
+    ios-src="untitled.usdz" 
     id="wxfnb"
     style="height:50vh;"
               alt="A 3D model of BingDunDun"
@@ -23,13 +23,13 @@
                       var t = document.getElementById('wxfnb')
                       if(e==1){
                             t.setAttribute('src',location.href+"untitled.glb" )
-                            t.setAttribute('ios-src',location.href+"untitled.usdc" )
+                            t.setAttribute('ios-src',location.href+"untitled.usdz" )
                       }else if(e==2){
                         t.setAttribute('src',location.href+"untitled2.glb" )
-                            t.setAttribute('ios-src',location.href+"untitled2.usdc" )
+                            t.setAttribute('ios-src',location.href+"untitled2.usdz" )
                       }else if(e==3){
                         t.setAttribute('src',location.href+"untitled3.glb" )
-                            t.setAttribute('ios-src',location.href+"untitled3.usdc" )
+                            t.setAttribute('ios-src',location.href+"untitled3.usdz" )
                       }
                   }
                   fun(1)
