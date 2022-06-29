@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>privacy on Xianfei's Blog</title><link>/tags/privacy/</link><description>Recent content in privacy on Xianfei's Blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sun, 10 Mar 2019 00:00:00 +0000</lastBuildDate><atom:link href="/tags/privacy/index.xml" rel="self" type="application/rss+xml"/><item><title>Rich Content</title><link>/p/rich-content/</link><pubDate>Sun, 10 Mar 2019 00:00:00 +0000</pubDate><guid>/p/rich-content/</guid><description>&lt;p>Hugo ships with several &lt;a class="link" href="https://gohugo.io/content-management/shortcodes/#use-hugo-s-built-in-shortcodes" target="_blank" rel="noopener"
+>Built-in Shortcodes&lt;/a> for rich content, along with a &lt;a class="link" href="https://gohugo.io/about/hugo-and-gdpr/" target="_blank" rel="noopener"
+>Privacy Config&lt;/a> and a set of Simple Shortcodes that enable static and no-JS versions of various social media embeds.&lt;/p>
+&lt;hr>
+&lt;h2 id="youtube-privacy-enhanced-shortcode">YouTube Privacy Enhanced Shortcode&lt;/h2>
+&lt;div class="video-wrapper">
+&lt;iframe loading="lazy"
+src="https://www.youtube.com/embed/ZJthWmvUzzc"
+allowfullscreen
+title="YouTube Video"
+>
+&lt;/iframe>
+&lt;/div>
+&lt;br>
+&lt;hr>
+&lt;h2 id="twitter-simple-shortcode">Twitter Simple Shortcode&lt;/h2>
+&lt;style type="text/css">
+.twitter-tweet {
+font: 14px/1.45 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+border-left: 4px solid #2b7bb9;
+padding-left: 1.5em;
+color: #555;
+}
+.twitter-tweet a {
+color: #2b7bb9;
+text-decoration: none;
+}
+blockquote.twitter-tweet a:hover,
+blockquote.twitter-tweet a:focus {
+text-decoration: underline;
+}
+&lt;/style>
+&lt;blockquote class="twitter-tweet">&lt;p lang="en" dir="ltr">“In addition to being more logical, asymmetry has the advantage that its complete appearance is far more optically effective than symmetry.”&lt;br>— Jan Tschichold &lt;a href="https://t.co/gcv7SrhvJb">pic.twitter.com/gcv7SrhvJb&lt;/a>&lt;/p>&amp;mdash; Graphic Design History (@DesignReviewed) &lt;a href="https://twitter.com/DesignReviewed/status/1085870671291310081?ref_src=twsrc%5Etfw">January 17, 2019&lt;/a>&lt;/blockquote>
+&lt;br>
+&lt;hr>
+&lt;h2 id="vimeo-simple-shortcode">Vimeo Simple Shortcode&lt;/h2>
+&lt;style>
+.__h_video {
+position: relative;
+padding-bottom: 56.23%;
+height: 0;
+overflow: hidden;
+width: 100%;
+background: #000;
+}
+.__h_video img {
+width: 100%;
+height: auto;
+color: #000;
+}
+.__h_video .play {
+height: 72px;
+width: 72px;
+left: 50%;
+top: 50%;
+margin-left: -36px;
+margin-top: -36px;
+position: absolute;
+cursor: pointer;
+}
+&lt;/style>
+&lt;div class="s_video_simple __h_video">
+&lt;a href="https://vimeo.com/4.8912912e&amp;#43;07" rel="noopener" target="_blank">
+&lt;img src="https://i.vimeocdn.com/video/337401969-979f0cc9f55fdf305fb8984e90d92639ec9d7ecc4c9dfbc6536e28edb43784ce-d_640" srcset="https://i.vimeocdn.com/video/337401969-979f0cc9f55fdf305fb8984e90d92639ec9d7ecc4c9dfbc6536e28edb43784ce-d_640 1x, https://i.vimeocdn.com/video/337401969-979f0cc9f55fdf305fb8984e90d92639ec9d7ecc4c9dfbc6536e28edb43784ce-d_640 2x" alt="Sing Jan Swing - Kinetic Type">
+&lt;div class="play">&lt;svg version="1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 61 61">&lt;circle cx="30.5" cy="30.5" r="30.5" opacity=".8" fill="#000">&lt;/circle>&lt;path d="M25.3 19.2c-2.1-1.2-3.8-.2-3.8 2.2v18.1c0 2.4 1.7 3.4 3.8 2.2l16.6-9.1c2.1-1.2 2.1-3.2 0-4.4l-16.6-9z" fill="#fff">&lt;/path>&lt;/svg>&lt;/div>&lt;/a>&lt;/div>
+&lt;h2 id="bilibilibi-shortcode">bilibilibi Shortcode&lt;/h2>
+&lt;div class="video-wrapper">
+&lt;iframe src="https://player.bilibili.com/player.html?as_wide=1&amp;amp;high_quality=1&amp;amp;page=1&amp;aid=498363026"
+scrolling="no"
+frameborder="no"
+framespacing="0"
+allowfullscreen="true"
+>
+&lt;/iframe>
+&lt;/div>
+&lt;h2 id="gist-shortcode">Gist Shortcode&lt;/h2>
+&lt;script type="application/javascript" src="https://gist.github.com/spf13/7896402.js">&lt;/script>
+&lt;h2 id="gitlab-snippets-shortcode">Gitlab Snippets Shortcode&lt;/h2>
+&lt;script
+type="application/javascript"
+src="https://gitlab.com/-/snippets/2349278.js"
+>&lt;/script>
+&lt;h2 id="quote-shortcode">Quote Shortcode&lt;/h2>
+&lt;p>Stack adds a &lt;code>quote&lt;/code> shortcode. For example:&lt;/p>
+&lt;blockquote>
+&lt;p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&lt;/p>&lt;span class="cite">&lt;span>― &lt;/span>&lt;span>A famous person, &lt;/span>&lt;a href="https://en.wikipedia.org/wiki/Book">&lt;cite>The book they wrote&lt;/cite>&lt;/a>&lt;/span>&lt;/blockquote>
+&lt;blockquote>
+&lt;p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&lt;/p>&lt;span class="cite">&lt;span>― &lt;/span>&lt;a href="https://en.wikipedia.org/wiki/Book">&lt;cite>Anonymous book&lt;/cite>&lt;/a>&lt;/span>&lt;/blockquote>
+&lt;blockquote>
+&lt;p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&lt;/p>&lt;span class="cite">&lt;span>― &lt;/span>&lt;cite>Some book&lt;/cite>&lt;/span>&lt;/blockquote>
+&lt;blockquote>
+&lt;p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&lt;/p>&lt;span class="cite">&lt;span>― &lt;/span>&lt;span>Somebody&lt;/span>&lt;cite>&lt;/cite>&lt;/span>&lt;/blockquote></description></item></channel></rss>

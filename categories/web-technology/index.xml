@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Web Technology on Xianfei's Blog</title><link>/categories/web-technology/</link><description>Recent content in Web Technology on Xianfei's Blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Wed, 29 Jun 2022 00:00:00 +0000</lastBuildDate><atom:link href="/categories/web-technology/index.xml" rel="self" type="application/rss+xml"/><item><title>成语生成器</title><link>/p/%E6%88%90%E8%AF%AD%E7%94%9F%E6%88%90%E5%99%A8/</link><pubDate>Wed, 29 Jun 2022 00:00:00 +0000</pubDate><guid>/p/%E6%88%90%E8%AF%AD%E7%94%9F%E6%88%90%E5%99%A8/</guid><description>&lt;img src="/p/%E6%88%90%E8%AF%AD%E7%94%9F%E6%88%90%E5%99%A8/banner.png" alt="Featured image of post 成语生成器" />&lt;link rel="stylesheet" href="./main.css">
+&lt;style>
+* {
+margin: 0;
+padding: 0;
+}
+/*设置自定义css样式, 整体宽高, 字体大小*/
+.ci-box {
+width: 88px;
+height: 88px;
+margin: 2px;
+}
+.ci-box .wd {
+font-size: 56px !important;
+line-height: 86px;
+}
+&lt;/style>
+&lt;style>
+input {
+width: 200px;
+}
+textarea{
+width: 200px;
+height: 50px;
+}
+&lt;/style>
+&lt;div id='test-groud' style="margin:50px 50px;font-size:0;">
+&lt;/div>
+&lt;div style="margin:40px 40px;font-family: 'KaiTi SC', 'Kai', '楷体';font-size: 20px;">
+&lt;p>【释义】&lt;span id="sy">从目前的形势和状态分析，这次考研要凉。&lt;/span>&lt;/p>
+&lt;p style="margin-top: 10px;">【例句】&lt;span id="lj">如今～，只好准备二战了。&lt;/span>&lt;/p>
+成语：&lt;input type="text" oninput="generate(this.value)" style="margin-top: 100px;" value="势态研凉">&lt;br>
+释义：&lt;textarea oninput="document.querySelector('#sy').innerText = this.value">
+从目前的形势和状态分析，这次考研要凉。
+&lt;/textarea>&lt;br>
+例句：&lt;textarea oninput="document.querySelector('#lj').innerText = this.value">
+如今～，只好准备二战了。
+&lt;/textarea>
+&lt;/div>
+&lt;span style="margin-left: 50px;">by xianfei&lt;/span>
+&lt;script type="text/javascript">
+generate("势态研凉");
+function generate(wenzi) {
+let groud = document.getElementById('test-groud');
+document.title = wenzi
+groud.innerHTML = "";
+for (let item of wenzi) {
+let div = document.createElement("div");
+div.className = 'ci-box';
+div.innerHTML = `&lt;div class="lt-2rb line">&lt;/div>
+&lt;div class="rt-2lb line">&lt;/div>
+&lt;div class="rm-2lm line">&lt;/div>
+&lt;div class="tm-2bm line">&lt;/div>
+&lt;div class="ci">
+&lt;span class="wd">${item}&lt;/span>
+&lt;/div>`;
+groud.appendChild(div);
+}
+}
+function changeFontSize(fontSize) {
+let box = document.querySelectorAll("#test-groud .ci-box");
+let wds = document.querySelectorAll('#test-groud .ci-box .wd');
+for (let b of box) {
+b.style.width = `${fontSize * 1.2}px`;
+b.style.height = `${fontSize * 1.2}px`;
+}
+for (let wd of wds) {
+wd.style.fontSize = `${fontSize}px`;
+wd.style.lineHeight = `${fontSize}px`;
+}
+}
+&lt;/script>&lt;blockquote>
+&lt;/blockquote></description></item></channel></rss>
