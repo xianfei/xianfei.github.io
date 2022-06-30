@@ -1,6 +1,78 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on Xianfei's Blog</title><link>/post/</link><description>Recent content in Posts on Xianfei's Blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Wed, 29 Jun 2022 00:00:00 +0000</lastBuildDate><atom:link href="/post/index.xml" rel="self" type="application/rss+xml"/><item><title>Hello World in Hugo</title><link>/p/hello-world-in-hugo/</link><pubDate>Wed, 29 Jun 2022 00:00:00 +0000</pubDate><guid>/p/hello-world-in-hugo/</guid><description>&lt;img src="/p/hello-world-in-hugo/banner.jpg" alt="Featured image of post Hello World in Hugo" />&lt;h1 id="hello-world-in-hugo">Hello World in Hugo&lt;/h1>
 &lt;p>Hi! I&amp;rsquo;m xianfei. I&amp;rsquo;m a student in the Department of Computer Science and Software Engineering, Beijing Information Science &amp;amp; Technology University (BISTU).&lt;/p>
-&lt;!-- &lt;iframe src="www.baidu.com"> --></description></item><item><title>Shell File Transfer —— 适用于Linux/macOS的局域网文件传输程序</title><link>/p/shell-file-trans/</link><pubDate>Wed, 29 Jun 2022 00:00:00 +0000</pubDate><guid>/p/shell-file-trans/</guid><description>&lt;img src="/p/shell-file-trans/1.webp" alt="Featured image of post Shell File Transfer —— 适用于Linux/macOS的局域网文件传输程序" />&lt;h2 id="功能介绍">功能介绍&lt;/h2>
+&lt;!-- &lt;iframe src="www.baidu.com"> --></description></item><item><title>成语生成器</title><link>/p/%E6%88%90%E8%AF%AD%E7%94%9F%E6%88%90%E5%99%A8/</link><pubDate>Wed, 12 Jan 2022 00:00:00 +0000</pubDate><guid>/p/%E6%88%90%E8%AF%AD%E7%94%9F%E6%88%90%E5%99%A8/</guid><description>&lt;img src="/p/%E6%88%90%E8%AF%AD%E7%94%9F%E6%88%90%E5%99%A8/banner.png" alt="Featured image of post 成语生成器" />&lt;link rel="stylesheet" href="./main.css">
+&lt;style>
+* {
+margin: 0;
+padding: 0;
+}
+/*设置自定义css样式, 整体宽高, 字体大小*/
+.ci-box {
+width: 88px;
+height: 88px;
+margin: 2px;
+}
+.ci-box .wd {
+font-size: 56px !important;
+line-height: 86px;
+}
+&lt;/style>
+&lt;style>
+input {
+width: 200px;
+}
+textarea{
+width: 200px;
+height: 50px;
+}
+&lt;/style>
+&lt;div id='test-groud' style="margin:50px 50px;font-size:0;">
+&lt;/div>
+&lt;div style="margin:40px 40px;font-family: 'KaiTi SC', 'Kai', '楷体';font-size: 20px;">
+&lt;p>【释义】&lt;span id="sy">从目前的形势和状态分析，这次考研要凉。&lt;/span>&lt;/p>
+&lt;p style="margin-top: 10px;">【例句】&lt;span id="lj">如今～，只好准备二战了。&lt;/span>&lt;/p>
+成语：&lt;input type="text" oninput="generate(this.value)" style="margin-top: 100px;" value="势态研凉">&lt;br>
+释义：&lt;textarea oninput="document.querySelector('#sy').innerText = this.value">
+从目前的形势和状态分析，这次考研要凉。
+&lt;/textarea>&lt;br>
+例句：&lt;textarea oninput="document.querySelector('#lj').innerText = this.value">
+如今～，只好准备二战了。
+&lt;/textarea>
+&lt;/div>
+&lt;p>本文是&lt;strong>交互式Blog&lt;/strong>，请尝试改变上方输入框中的文字！&lt;/p>
+&lt;script type="text/javascript">
+generate("势态研凉");
+function generate(wenzi) {
+let groud = document.getElementById('test-groud');
+document.title = wenzi
+groud.innerHTML = "";
+for (let item of wenzi) {
+let div = document.createElement("div");
+div.className = 'ci-box';
+div.innerHTML = `&lt;div class="lt-2rb line">&lt;/div>
+&lt;div class="rt-2lb line">&lt;/div>
+&lt;div class="rm-2lm line">&lt;/div>
+&lt;div class="tm-2bm line">&lt;/div>
+&lt;div class="ci">
+&lt;span class="wd">${item}&lt;/span>
+&lt;/div>`;
+groud.appendChild(div);
+}
+}
+function changeFontSize(fontSize) {
+let box = document.querySelectorAll("#test-groud .ci-box");
+let wds = document.querySelectorAll('#test-groud .ci-box .wd');
+for (let b of box) {
+b.style.width = `${fontSize * 1.2}px`;
+b.style.height = `${fontSize * 1.2}px`;
+}
+for (let wd of wds) {
+wd.style.fontSize = `${fontSize}px`;
+wd.style.lineHeight = `${fontSize}px`;
+}
+}
+&lt;/script>&lt;blockquote>
+&lt;/blockquote></description></item><item><title>Shell File Transfer —— 适用于Linux/macOS的局域网文件传输程序</title><link>/p/shell-file-trans/</link><pubDate>Tue, 05 Mar 2019 00:00:00 +0000</pubDate><guid>/p/shell-file-trans/</guid><description>&lt;img src="/p/shell-file-trans/1.webp" alt="Featured image of post Shell File Transfer —— 适用于Linux/macOS的局域网文件传输程序" />&lt;h2 id="功能介绍">功能介绍&lt;/h2>
 &lt;p>利用TCP/IP协议的局域网文件传输工具，通过ip地址及自定义的端口号进行连接。&lt;/p>
 &lt;h2 id="运行环境">运行环境&lt;/h2>
 &lt;p>通过测试的运行环境：macOS Mojave 10.14 &amp;amp; Fedora Linux Workstation 29&lt;/p>
@@ -240,79 +312,7 @@
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">rm -f filetemp
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div></description></item><item><title>成语生成器</title><link>/p/%E6%88%90%E8%AF%AD%E7%94%9F%E6%88%90%E5%99%A8/</link><pubDate>Wed, 29 Jun 2022 00:00:00 +0000</pubDate><guid>/p/%E6%88%90%E8%AF%AD%E7%94%9F%E6%88%90%E5%99%A8/</guid><description>&lt;img src="/p/%E6%88%90%E8%AF%AD%E7%94%9F%E6%88%90%E5%99%A8/banner.png" alt="Featured image of post 成语生成器" />&lt;link rel="stylesheet" href="./main.css">
-&lt;style>
-* {
-margin: 0;
-padding: 0;
-}
-/*设置自定义css样式, 整体宽高, 字体大小*/
-.ci-box {
-width: 88px;
-height: 88px;
-margin: 2px;
-}
-.ci-box .wd {
-font-size: 56px !important;
-line-height: 86px;
-}
-&lt;/style>
-&lt;style>
-input {
-width: 200px;
-}
-textarea{
-width: 200px;
-height: 50px;
-}
-&lt;/style>
-&lt;div id='test-groud' style="margin:50px 50px;font-size:0;">
-&lt;/div>
-&lt;div style="margin:40px 40px;font-family: 'KaiTi SC', 'Kai', '楷体';font-size: 20px;">
-&lt;p>【释义】&lt;span id="sy">从目前的形势和状态分析，这次考研要凉。&lt;/span>&lt;/p>
-&lt;p style="margin-top: 10px;">【例句】&lt;span id="lj">如今～，只好准备二战了。&lt;/span>&lt;/p>
-成语：&lt;input type="text" oninput="generate(this.value)" style="margin-top: 100px;" value="势态研凉">&lt;br>
-释义：&lt;textarea oninput="document.querySelector('#sy').innerText = this.value">
-从目前的形势和状态分析，这次考研要凉。
-&lt;/textarea>&lt;br>
-例句：&lt;textarea oninput="document.querySelector('#lj').innerText = this.value">
-如今～，只好准备二战了。
-&lt;/textarea>
-&lt;/div>
-&lt;p>本文是&lt;strong>交互式Blog&lt;/strong>，请尝试改变上方输入框中的文字！&lt;/p>
-&lt;script type="text/javascript">
-generate("势态研凉");
-function generate(wenzi) {
-let groud = document.getElementById('test-groud');
-document.title = wenzi
-groud.innerHTML = "";
-for (let item of wenzi) {
-let div = document.createElement("div");
-div.className = 'ci-box';
-div.innerHTML = `&lt;div class="lt-2rb line">&lt;/div>
-&lt;div class="rt-2lb line">&lt;/div>
-&lt;div class="rm-2lm line">&lt;/div>
-&lt;div class="tm-2bm line">&lt;/div>
-&lt;div class="ci">
-&lt;span class="wd">${item}&lt;/span>
-&lt;/div>`;
-groud.appendChild(div);
-}
-}
-function changeFontSize(fontSize) {
-let box = document.querySelectorAll("#test-groud .ci-box");
-let wds = document.querySelectorAll('#test-groud .ci-box .wd');
-for (let b of box) {
-b.style.width = `${fontSize * 1.2}px`;
-b.style.height = `${fontSize * 1.2}px`;
-}
-for (let wd of wds) {
-wd.style.fontSize = `${fontSize}px`;
-wd.style.lineHeight = `${fontSize}px`;
-}
-}
-&lt;/script>&lt;blockquote>
-&lt;/blockquote></description></item><item><title>扫雷 Command Line Version with C</title><link>/p/minesweeper-cli/</link><pubDate>Wed, 29 Jun 2022 00:00:00 +0000</pubDate><guid>/p/minesweeper-cli/</guid><description>&lt;img src="/p/minesweeper-cli/cta.png" alt="Featured image of post 扫雷 Command Line Version with C" />&lt;h1 id="前言">前言&lt;/h1>
+&lt;/div></description></item><item><title>扫雷 Command Line Version with C</title><link>/p/minesweeper-cli/</link><pubDate>Fri, 11 Jan 2019 00:00:00 +0000</pubDate><guid>/p/minesweeper-cli/</guid><description>&lt;img src="/p/minesweeper-cli/cta.png" alt="Featured image of post 扫雷 Command Line Version with C" />&lt;h1 id="前言">前言&lt;/h1>
 &lt;p>一个基于C语言的多平台控制台扫雷软件，可以实现Windows系统自带小游戏扫雷的所有功能。实现了自定义游戏参数、第一次不会踩到雷、挖雷、标记、自动处理无雷区域、一定条件下快速挖开周围区域的功能。控制台版本使用操作命令+行列坐标方式实现。&lt;/p>
 &lt;h1 id="流程图">流程图&lt;/h1>
 &lt;div class="gallery">&lt;img src="pic.webp">&lt;/div>
@@ -833,7 +833,7 @@ wd.style.lineHeight = `${fontSize}px`;
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div></description></item><item><title>Chinese Test</title><link>/p/test-chinese/</link><pubDate>Wed, 09 Sep 2020 00:00:00 +0000</pubDate><guid>/p/test-chinese/</guid><description>&lt;img src="/p/test-chinese/helena-hertz-wWZzXlDpMog-unsplash.jpg" alt="Featured image of post Chinese Test" />&lt;h2 id="正文测试">正文测试&lt;/h2>
+&lt;/div></description></item><item><title>Chinese Test</title><link>/p/test-chinese/</link><pubDate>Sat, 09 Sep 2000 00:00:00 +0000</pubDate><guid>/p/test-chinese/</guid><description>&lt;img src="/p/test-chinese/helena-hertz-wWZzXlDpMog-unsplash.jpg" alt="Featured image of post Chinese Test" />&lt;h2 id="正文测试">正文测试&lt;/h2>
 &lt;p>而这些并不是完全重要，更加重要的问题是， 带着这些问题，我们来审视一下学生会退会。 既然如何， 对我个人而言，学生会退会不仅仅是一个重大的事件，还可能会改变我的人生。 我们不得不面对一个非常尴尬的事实，那就是， 可是，即使是这样，学生会退会的出现仍然代表了一定的意义。 学生会退会，发生了会如何，不发生又会如何。 经过上述讨论， 生活中，若学生会退会出现了，我们就不得不考虑它出现了的事实。 学生会退会，到底应该如何实现。 这样看来， 在这种困难的抉择下，本人思来想去，寝食难安。 对我个人而言，学生会退会不仅仅是一个重大的事件，还可能会改变我的人生。 就我个人来说，学生会退会对我的意义，不能不说非常重大。 莎士比亚曾经提到过，人的一生是短的，但如果卑劣地过这一生，就太长了。这似乎解答了我的疑惑。 莫扎特说过一句富有哲理的话，谁和我一样用功，谁就会和我一样成功。这启发了我， 对我个人而言，学生会退会不仅仅是一个重大的事件，还可能会改变我的人生。 学生会退会，到底应该如何实现。 一般来说， 从这个角度来看， 这种事实对本人来说意义重大，相信对这个世界也是有一定意义的。 在这种困难的抉择下，本人思来想去，寝食难安。 了解清楚学生会退会到底是一种怎么样的存在，是解决一切问题的关键。 一般来说， 生活中，若学生会退会出现了，我们就不得不考虑它出现了的事实。 问题的关键究竟为何？ 而这些并不是完全重要，更加重要的问题是。&lt;/p>
 &lt;p>奥斯特洛夫斯基曾经说过，共同的事业，共同的斗争，可以使人们产生忍受一切的力量。　带着这句话，我们还要更加慎重的审视这个问题： 一般来讲，我们都必须务必慎重的考虑考虑。 既然如此， 这种事实对本人来说意义重大，相信对这个世界也是有一定意义的。 带着这些问题，我们来审视一下学生会退会。 我认为， 我认为， 在这种困难的抉择下，本人思来想去，寝食难安。 问题的关键究竟为何？ 每个人都不得不面对这些问题。 在面对这种问题时， 要想清楚，学生会退会，到底是一种怎么样的存在。 我认为， 既然如此， 每个人都不得不面对这些问题。 在面对这种问题时， 那么， 我认为， 学生会退会因何而发生。&lt;/p>
 &lt;h2 id="引用">引用&lt;/h2>
@@ -897,7 +897,7 @@ data-flex-basis="160px"
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;p>相册语法来自 &lt;a class="link" href="https://typlog.com/" target="_blank" rel="noopener"
->Typlog&lt;/a>&lt;/p></description></item><item><title>Markdown Syntax Guide</title><link>/p/markdown-syntax-guide/</link><pubDate>Mon, 11 Mar 2019 00:00:00 +0000</pubDate><guid>/p/markdown-syntax-guide/</guid><description>&lt;img src="/p/markdown-syntax-guide/pawel-czerwinski-8uZPynIu-rQ-unsplash.jpg" alt="Featured image of post Markdown Syntax Guide" />&lt;p>This article offers a sample of basic Markdown syntax that can be used in Hugo content files, also it shows whether basic HTML elements are decorated with CSS in a Hugo theme.&lt;/p>
+>Typlog&lt;/a>&lt;/p></description></item><item><title>Markdown Syntax Guide</title><link>/p/markdown-syntax-guide/</link><pubDate>Sat, 11 Mar 2000 00:00:00 +0000</pubDate><guid>/p/markdown-syntax-guide/</guid><description>&lt;img src="/p/markdown-syntax-guide/pawel-czerwinski-8uZPynIu-rQ-unsplash.jpg" alt="Featured image of post Markdown Syntax Guide" />&lt;p>This article offers a sample of basic Markdown syntax that can be used in Hugo content files, also it shows whether basic HTML elements are decorated with CSS in a Hugo theme.&lt;/p>
 &lt;h2 id="headings">Headings&lt;/h2>
 &lt;p>The following HTML &lt;code>&amp;lt;h1&amp;gt;&lt;/code>—&lt;code>&amp;lt;h6&amp;gt;&lt;/code> elements represent six levels of section headings. &lt;code>&amp;lt;h1&amp;gt;&lt;/code> is the highest section level while &lt;code>&amp;lt;h6&amp;gt;&lt;/code> is the lowest.&lt;/p>
 &lt;h1 id="h1">H1&lt;/h1>
@@ -1113,7 +1113,7 @@ alt="Google"
 >talk&lt;/a> during Gopherfest, November 18, 2015.&amp;#160;&lt;a href="#fnref:1" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
 &lt;/li>
 &lt;/ol>
-&lt;/div></description></item><item><title>Rich Content</title><link>/p/rich-content/</link><pubDate>Sun, 10 Mar 2019 00:00:00 +0000</pubDate><guid>/p/rich-content/</guid><description>&lt;p>Hugo ships with several &lt;a class="link" href="https://gohugo.io/content-management/shortcodes/#use-hugo-s-built-in-shortcodes" target="_blank" rel="noopener"
+&lt;/div></description></item><item><title>Rich Content</title><link>/p/rich-content/</link><pubDate>Fri, 10 Mar 2000 00:00:00 +0000</pubDate><guid>/p/rich-content/</guid><description>&lt;p>Hugo ships with several &lt;a class="link" href="https://gohugo.io/content-management/shortcodes/#use-hugo-s-built-in-shortcodes" target="_blank" rel="noopener"
 >Built-in Shortcodes&lt;/a> for rich content, along with a &lt;a class="link" href="https://gohugo.io/about/hugo-and-gdpr/" target="_blank" rel="noopener"
 >Privacy Config&lt;/a> and a set of Simple Shortcodes that enable static and no-JS versions of various social media embeds.&lt;/p>
 &lt;hr>
@@ -1204,7 +1204,7 @@ src="https://gitlab.com/-/snippets/2349278.js"
 &lt;blockquote>
 &lt;p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&lt;/p>&lt;span class="cite">&lt;span>― &lt;/span>&lt;cite>Some book&lt;/cite>&lt;/span>&lt;/blockquote>
 &lt;blockquote>
-&lt;p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&lt;/p>&lt;span class="cite">&lt;span>― &lt;/span>&lt;span>Somebody&lt;/span>&lt;cite>&lt;/cite>&lt;/span>&lt;/blockquote></description></item><item><title>Math Typesetting</title><link>/p/math-typesetting/</link><pubDate>Fri, 08 Mar 2019 00:00:00 +0000</pubDate><guid>/p/math-typesetting/</guid><description>&lt;p>Mathematical notation in a Hugo project can be enabled by using third party JavaScript libraries.&lt;/p>
+&lt;p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&lt;/p>&lt;span class="cite">&lt;span>― &lt;/span>&lt;span>Somebody&lt;/span>&lt;cite>&lt;/cite>&lt;/span>&lt;/blockquote></description></item><item><title>Math Typesetting</title><link>/p/math-typesetting/</link><pubDate>Wed, 08 Mar 2000 00:00:00 +0000</pubDate><guid>/p/math-typesetting/</guid><description>&lt;p>Mathematical notation in a Hugo project can be enabled by using third party JavaScript libraries.&lt;/p>
 &lt;p>In this example we will be using &lt;a class="link" href="https://katex.org/" target="_blank" rel="noopener"
 >KaTeX&lt;/a>&lt;/p>
 &lt;ul>

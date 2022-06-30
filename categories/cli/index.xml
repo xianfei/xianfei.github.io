@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>CLI on Xianfei's Blog</title><link>/categories/cli/</link><description>Recent content in CLI on Xianfei's Blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Wed, 29 Jun 2022 00:00:00 +0000</lastBuildDate><atom:link href="/categories/cli/index.xml" rel="self" type="application/rss+xml"/><item><title>Shell File Transfer —— 适用于Linux/macOS的局域网文件传输程序</title><link>/p/shell-file-trans/</link><pubDate>Wed, 29 Jun 2022 00:00:00 +0000</pubDate><guid>/p/shell-file-trans/</guid><description>&lt;img src="/p/shell-file-trans/1.webp" alt="Featured image of post Shell File Transfer —— 适用于Linux/macOS的局域网文件传输程序" />&lt;h2 id="功能介绍">功能介绍&lt;/h2>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>CLI on Xianfei's Blog</title><link>/categories/cli/</link><description>Recent content in CLI on Xianfei's Blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Tue, 05 Mar 2019 00:00:00 +0000</lastBuildDate><atom:link href="/categories/cli/index.xml" rel="self" type="application/rss+xml"/><item><title>Shell File Transfer —— 适用于Linux/macOS的局域网文件传输程序</title><link>/p/shell-file-trans/</link><pubDate>Tue, 05 Mar 2019 00:00:00 +0000</pubDate><guid>/p/shell-file-trans/</guid><description>&lt;img src="/p/shell-file-trans/1.webp" alt="Featured image of post Shell File Transfer —— 适用于Linux/macOS的局域网文件传输程序" />&lt;h2 id="功能介绍">功能介绍&lt;/h2>
 &lt;p>利用TCP/IP协议的局域网文件传输工具，通过ip地址及自定义的端口号进行连接。&lt;/p>
 &lt;h2 id="运行环境">运行环境&lt;/h2>
 &lt;p>通过测试的运行环境：macOS Mojave 10.14 &amp;amp; Fedora Linux Workstation 29&lt;/p>
@@ -238,7 +238,7 @@
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">rm -f filetemp
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div></description></item><item><title>扫雷 Command Line Version with C</title><link>/p/minesweeper-cli/</link><pubDate>Wed, 29 Jun 2022 00:00:00 +0000</pubDate><guid>/p/minesweeper-cli/</guid><description>&lt;img src="/p/minesweeper-cli/cta.png" alt="Featured image of post 扫雷 Command Line Version with C" />&lt;h1 id="前言">前言&lt;/h1>
+&lt;/div></description></item><item><title>扫雷 Command Line Version with C</title><link>/p/minesweeper-cli/</link><pubDate>Fri, 11 Jan 2019 00:00:00 +0000</pubDate><guid>/p/minesweeper-cli/</guid><description>&lt;img src="/p/minesweeper-cli/cta.png" alt="Featured image of post 扫雷 Command Line Version with C" />&lt;h1 id="前言">前言&lt;/h1>
 &lt;p>一个基于C语言的多平台控制台扫雷软件，可以实现Windows系统自带小游戏扫雷的所有功能。实现了自定义游戏参数、第一次不会踩到雷、挖雷、标记、自动处理无雷区域、一定条件下快速挖开周围区域的功能。控制台版本使用操作命令+行列坐标方式实现。&lt;/p>
 &lt;h1 id="流程图">流程图&lt;/h1>
 &lt;div class="gallery">&lt;img src="pic.webp">&lt;/div>
