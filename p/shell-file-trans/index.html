@@ -1,0 +1,223 @@
+<!doctype html><html lang=en-us dir=ltr><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="大一Linux开发实践课程作品"><title>Shell File Transfer —— 适用于Linux/macOS的局域网文件传输程序</title><link rel=canonical href=../../p/shell-file-trans/><link rel=stylesheet href=../../scss/style.min.ac77dcf8b111b51da39a92990f431923f210f3876d85798a2125667f96dc33a4.css><meta property="og:title" content="Shell File Transfer —— 适用于Linux/macOS的局域网文件传输程序"><meta property="og:description" content="大一Linux开发实践课程作品"><meta property="og:url" content="/p/shell-file-trans/"><meta property="og:site_name" content="Xianfei's Blog"><meta property="og:type" content="article"><meta property="article:section" content="Post"><meta property="article:published_time" content="2022-06-29T00:00:00+00:00"><meta property="article:modified_time" content="2022-06-29T00:00:00+00:00"><meta property="og:image" content="/p/shell-file-trans/1.webp"><meta name=twitter:title content="Shell File Transfer —— 适用于Linux/macOS的局域网文件传输程序"><meta name=twitter:description content="大一Linux开发实践课程作品"><meta name=twitter:card content="summary_large_image"><meta name=twitter:image content="/p/shell-file-trans/1.webp"></head><body class=article-page><script>(function(){const e="StackColorScheme";localStorage.getItem(e)||localStorage.setItem(e,"auto")})()</script><script>(function(){const t="StackColorScheme",e=localStorage.getItem(t),n=window.matchMedia("(prefers-color-scheme: dark)").matches===!0;e=="dark"||e==="auto"&&n?document.documentElement.dataset.scheme="dark":document.documentElement.dataset.scheme="light"})()</script><div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky"><button class="hamburger hamburger--spin" type=button id=toggle-menu aria-label="Toggle Menu">
+<span class=hamburger-box><span class=hamburger-inner></span></span></button><header><figure class=site-avatar><a href=../../><img src=../../imgs/avatar2_hu71215836cfc1201dad43a2a602d405c9_1044873_300x0_resize_box_3.png width=300 height=299 class=site-logo loading=lazy alt=Avatar></a>
+<span class=emoji>🍔</span></figure><div class=site-meta><h1 class=site-name><a href=../../>Xianfei's Blog</a></h1><h2 class=site-description>The only limit is your imagination.</h2></div></header><ol class=social-menu><li><a href=https://space.bilibili.com/9872607 target=_blank title=Bilibili><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="-3 -3 31 31" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><title>Bilibili icon</title><path d="M17.813 4.653h.854c1.51.054 2.769.578 3.773 1.574 1.004.995 1.524 2.249 1.56 3.76v7.36c-.036 1.51-.556 2.769-1.56 3.773s-2.262 1.524-3.773 1.56H5.333c-1.51-.036-2.769-.556-3.773-1.56S.036 18.858.0 17.347v-7.36c.036-1.511.556-2.765 1.56-3.76 1.004-.996 2.262-1.52 3.773-1.574h.774l-1.174-1.12a1.234 1.234.0 01-.373-.906c0-.356.124-.658.373-.907l.027-.027c.267-.249.573-.373.92-.373s.653.124.92.373L9.653 4.44c.071.071.134.142.187.213h4.267a.836.836.0 01.16-.213l2.853-2.747c.267-.249.573-.373.92-.373s.662.151.929.4.391.551.391.907c0 .355-.124.657-.373.906zM5.333 7.24c-.746.018-1.373.276-1.88.773-.506.498-.769 1.13-.786 1.894v7.52c.017.764.28 1.395.786 1.893.507.498 1.134.756 1.88.773h13.334c.746-.017 1.373-.275 1.88-.773.506-.498.769-1.129.786-1.893v-7.52c-.017-.765-.28-1.396-.786-1.894-.507-.497-1.134-.755-1.88-.773zM8 11.107c.373.0.684.124.933.373.25.249.383.569.4.96v1.173c-.017.391-.15.711-.4.96-.249.25-.56.374-.933.374s-.684-.125-.933-.374c-.25-.249-.383-.569-.4-.96V12.44c0-.373.129-.689.386-.947.258-.257.574-.386.947-.386zm8 0c.373.0.684.124.933.373.25.249.383.569.4.96v1.173c-.017.391-.15.711-.4.96-.249.25-.56.374-.933.374s-.684-.125-.933-.374c-.25-.249-.383-.569-.4-.96V12.44c.017-.391.15-.711.4-.96.249-.249.56-.373.933-.373z"/></svg></a></li><li><a href=https://github.com/xianfei target=_blank title=GitHub><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6.0 00-1.3-3.2 4.2 4.2.0 00-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3.0 00-6.2.0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2.0 00-.1 3.2A4.6 4.6.0 004 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg></a></li></ol><ol class=menu id=main-menu><li><a href=../../><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><polyline points="5 12 3 12 12 3 21 12 19 12"/><path d="M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7"/><path d="M9 21v-6a2 2 0 012-2h2a2 2 0 012 2v6"/></svg><span>Home</span></a></li><li><a href=../../about/><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="12" cy="7" r="4"/><path d="M6 21v-2a4 4 0 014-4h4a4 4 0 014 4v2"/></svg><span>About</span></a></li><li><a href=../../archives/><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><rect x="3" y="4" width="18" height="4" rx="2"/><path d="M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8"/><line x1="10" y1="12" x2="14" y2="12"/></svg><span>Archives</span></a></li><li><a href=../../search/><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="10" cy="10" r="7"/><line x1="21" y1="21" x2="15" y2="15"/></svg><span>Search</span></a></li><li><a href=../../links/><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><path d="M10 14a3.5 3.5.0 005 0l4-4a3.5 3.5.0 00-5-5l-.5.5"/><path d="M14 10a3.5 3.5.0 00-5 0l-4 4a3.5 3.5.0 005 5l.5-.5"/></svg><span>Links</span></a></li><div class=menu-bottom-section><li id=dark-mode-toggle><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="8" cy="12" r="2"/><rect x="2" y="6" width="20" height="12" rx="6"/></svg><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="16" cy="12" r="2"/><rect x="2" y="6" width="20" height="12" rx="6"/></svg><span>Dark Mode</span></li></div></ol></aside><main class="main full-width"><article class="has-image main-article"><header class=article-header><div class=article-image><a href=../../p/shell-file-trans/><img src=../../p/shell-file-trans/1_huf95364caf60a3b9d7580a3cfd70ebe86_78402_800x0_resize_q75_h2_box_2.webp srcset="../../p/shell-file-trans/1_huf95364caf60a3b9d7580a3cfd70ebe86_78402_800x0_resize_q75_h2_box_2.webp 800w, ../../p/shell-file-trans/1_huf95364caf60a3b9d7580a3cfd70ebe86_78402_1600x0_resize_q75_h2_box_2.webp 1600w" width=800 height=450 loading=lazy alt="Featured image of post Shell File Transfer —— 适用于Linux/macOS的局域网文件传输程序"></a></div><div class=article-details><header class=article-category><a href=../../categories/cli/>CLI</a>
+<a href=../../categories/shell/>Shell</a>
+<a href=../../categories/linux/>Linux</a>
+<a href=../../categories/coding/>Coding</a></header><div class=article-title-wrapper><h2 class=article-title><a href=../../p/shell-file-trans/>Shell File Transfer —— 适用于Linux/macOS的局域网文件传输程序</a></h2><h3 class=article-subtitle>大一Linux开发实践课程作品</h3></div><footer class=article-time><div><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><path d="M11.795 21H5a2 2 0 01-2-2V7a2 2 0 012-2h12a2 2 0 012 2v4"/><circle cx="18" cy="18" r="4"/><path d="M15 3v4"/><path d="M7 3v4"/><path d="M3 11h16"/><path d="M18 16.496V18l1 1"/></svg><time class=article-time--published>Jun 29, 2022</time></div><div><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 15"/></svg><time class=article-time--reading>3 minute read</time></div></footer></div></header><section class=article-content><h2 id=功能介绍>功能介绍</h2><p>利用TCP/IP协议的局域网文件传输工具，通过ip地址及自定义的端口号进行连接。</p><h2 id=运行环境>运行环境</h2><p>通过测试的运行环境：macOS Mojave 10.14 & Fedora Linux Workstation 29</p><p>依赖的软件包：dialog（图形库，需自己安装）、netcat(nc，用于对TCP/UDP进行读写，这两个系统自带)、net-tools（ifconfig，用于配置和显示Linux内核中网络接口，这两个系统自带）</p><p>Dialog安装方法：</p><h3 id=macos使用brew包管理器安装必要时请提供superuser权限>macOS：使用brew包管理器安装。必要时请提供superuser权限。</h3><p>在终端中输入以下命令</p><ol><li>brew安装命令：（如果安装过请跳过这一步）</li></ol><p><code>/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"</code></p><ol start=2><li>使用brew包管理器安装命令：</li></ol><p><code>brew install dialog</code></p><h3 id=fedora-使用yum包管理器安装>fedora: 使用yum包管理器安装。</h3><p>在终端中输入以下命令</p><p><code>sudo yum install dialog</code></p><h2 id=运行截图>运行截图</h2><div class=gallery><img src=1.webp></div><div class=gallery><img src=2.webp></div><div class=gallery><img src=3.webp></div><h2 id=源代码>源代码</h2><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>  1
+</span><span class=lnt>  2
+</span><span class=lnt>  3
+</span><span class=lnt>  4
+</span><span class=lnt>  5
+</span><span class=lnt>  6
+</span><span class=lnt>  7
+</span><span class=lnt>  8
+</span><span class=lnt>  9
+</span><span class=lnt> 10
+</span><span class=lnt> 11
+</span><span class=lnt> 12
+</span><span class=lnt> 13
+</span><span class=lnt> 14
+</span><span class=lnt> 15
+</span><span class=lnt> 16
+</span><span class=lnt> 17
+</span><span class=lnt> 18
+</span><span class=lnt> 19
+</span><span class=lnt> 20
+</span><span class=lnt> 21
+</span><span class=lnt> 22
+</span><span class=lnt> 23
+</span><span class=lnt> 24
+</span><span class=lnt> 25
+</span><span class=lnt> 26
+</span><span class=lnt> 27
+</span><span class=lnt> 28
+</span><span class=lnt> 29
+</span><span class=lnt> 30
+</span><span class=lnt> 31
+</span><span class=lnt> 32
+</span><span class=lnt> 33
+</span><span class=lnt> 34
+</span><span class=lnt> 35
+</span><span class=lnt> 36
+</span><span class=lnt> 37
+</span><span class=lnt> 38
+</span><span class=lnt> 39
+</span><span class=lnt> 40
+</span><span class=lnt> 41
+</span><span class=lnt> 42
+</span><span class=lnt> 43
+</span><span class=lnt> 44
+</span><span class=lnt> 45
+</span><span class=lnt> 46
+</span><span class=lnt> 47
+</span><span class=lnt> 48
+</span><span class=lnt> 49
+</span><span class=lnt> 50
+</span><span class=lnt> 51
+</span><span class=lnt> 52
+</span><span class=lnt> 53
+</span><span class=lnt> 54
+</span><span class=lnt> 55
+</span><span class=lnt> 56
+</span><span class=lnt> 57
+</span><span class=lnt> 58
+</span><span class=lnt> 59
+</span><span class=lnt> 60
+</span><span class=lnt> 61
+</span><span class=lnt> 62
+</span><span class=lnt> 63
+</span><span class=lnt> 64
+</span><span class=lnt> 65
+</span><span class=lnt> 66
+</span><span class=lnt> 67
+</span><span class=lnt> 68
+</span><span class=lnt> 69
+</span><span class=lnt> 70
+</span><span class=lnt> 71
+</span><span class=lnt> 72
+</span><span class=lnt> 73
+</span><span class=lnt> 74
+</span><span class=lnt> 75
+</span><span class=lnt> 76
+</span><span class=lnt> 77
+</span><span class=lnt> 78
+</span><span class=lnt> 79
+</span><span class=lnt> 80
+</span><span class=lnt> 81
+</span><span class=lnt> 82
+</span><span class=lnt> 83
+</span><span class=lnt> 84
+</span><span class=lnt> 85
+</span><span class=lnt> 86
+</span><span class=lnt> 87
+</span><span class=lnt> 88
+</span><span class=lnt> 89
+</span><span class=lnt> 90
+</span><span class=lnt> 91
+</span><span class=lnt> 92
+</span><span class=lnt> 93
+</span><span class=lnt> 94
+</span><span class=lnt> 95
+</span><span class=lnt> 96
+</span><span class=lnt> 97
+</span><span class=lnt> 98
+</span><span class=lnt> 99
+</span><span class=lnt>100
+</span><span class=lnt>101
+</span><span class=lnt>102
+</span><span class=lnt>103
+</span><span class=lnt>104
+</span><span class=lnt>105
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=line><span class=cl><span class=cp>#!/bin/bash
+</span></span></span><span class=line><span class=cl><span class=cp></span>send<span class=o>()</span>
+</span></span><span class=line><span class=cl><span class=o>{</span>
+</span></span><span class=line><span class=cl>dialog --inputbox <span class=s2>&#34;请将文件拖到这里，或者输入绝对路径&#34;</span> <span class=m>20</span> <span class=m>50</span> 2&gt; temp
+</span></span><span class=line><span class=cl><span class=k>if</span> <span class=o>[</span> <span class=nv>$?</span> !<span class=o>=</span> <span class=m>0</span> <span class=o>]</span>
+</span></span><span class=line><span class=cl><span class=k>then</span>
+</span></span><span class=line><span class=cl><span class=k>return</span> <span class=m>6</span>
+</span></span><span class=line><span class=cl><span class=k>fi</span>
+</span></span><span class=line><span class=cl><span class=nv>fileAddr</span><span class=o>=</span><span class=sb>`</span>cat temp<span class=sb>`</span>
+</span></span><span class=line><span class=cl><span class=nv>fileName</span><span class=o>=</span><span class=sb>`</span><span class=nb>echo</span> <span class=si>${</span><span class=nv>fileAddr</span><span class=p>##*/</span><span class=si>}</span><span class=sb>`</span>
+</span></span><span class=line><span class=cl>dialog --inputbox <span class=s2>&#34;请输入您想使用的端口号&#34;</span> <span class=m>20</span> <span class=m>50</span> 2&gt; temp
+</span></span><span class=line><span class=cl><span class=k>if</span> <span class=o>[</span> <span class=nv>$?</span> !<span class=o>=</span> <span class=m>0</span> <span class=o>]</span>
+</span></span><span class=line><span class=cl><span class=k>then</span>
+</span></span><span class=line><span class=cl><span class=k>return</span> <span class=m>6</span>
+</span></span><span class=line><span class=cl><span class=k>fi</span>
+</span></span><span class=line><span class=cl><span class=nv>sendPort</span><span class=o>=</span><span class=sb>`</span>cat temp<span class=sb>`</span>
+</span></span><span class=line><span class=cl>dialog --inputbox <span class=s2>&#34;请输入接收方的ip地址&#34;</span> <span class=m>20</span> <span class=m>50</span> 2&gt; temp
+</span></span><span class=line><span class=cl><span class=k>if</span> <span class=o>[</span> <span class=nv>$?</span> !<span class=o>=</span> <span class=m>0</span> <span class=o>]</span>
+</span></span><span class=line><span class=cl><span class=k>then</span>
+</span></span><span class=line><span class=cl><span class=k>return</span> <span class=m>6</span>
+</span></span><span class=line><span class=cl><span class=k>fi</span>
+</span></span><span class=line><span class=cl><span class=nv>recvIP</span><span class=o>=</span><span class=sb>`</span>cat temp<span class=sb>`</span>
+</span></span><span class=line><span class=cl>dialog --title 正在发送 --infobox <span class=s2>&#34;正在发送文件</span><span class=nv>$fileName</span><span class=s2> &#34;</span> <span class=m>20</span> <span class=m>50</span>
+</span></span><span class=line><span class=cl><span class=nb>echo</span> <span class=nv>$fileName</span> <span class=p>|</span> nc <span class=nv>$recvIP</span> <span class=nv>$sendPort</span>
+</span></span><span class=line><span class=cl><span class=k>if</span> <span class=o>[</span> <span class=nv>$?</span> !<span class=o>=</span> <span class=m>0</span> <span class=o>]</span>
+</span></span><span class=line><span class=cl><span class=k>then</span>
+</span></span><span class=line><span class=cl>dialog --colors --msgbox <span class=s2>&#34;\Z1 发送错误！请检查端口号及IP地址！&#34;</span> <span class=m>0</span> <span class=m>0</span>
+</span></span><span class=line><span class=cl><span class=k>return</span> <span class=m>6</span>
+</span></span><span class=line><span class=cl><span class=k>fi</span>
+</span></span><span class=line><span class=cl>sleep <span class=m>1</span>
+</span></span><span class=line><span class=cl>nc <span class=nv>$recvIP</span> <span class=nv>$sendPort</span> &lt; <span class=nv>$fileAddr</span>
+</span></span><span class=line><span class=cl><span class=k>if</span> <span class=o>[</span> <span class=nv>$?</span> !<span class=o>=</span> <span class=m>0</span> <span class=o>]</span>
+</span></span><span class=line><span class=cl><span class=k>then</span>
+</span></span><span class=line><span class=cl>dialog --colors --msgbox <span class=s2>&#34;\Z1 发送错误！&#34;</span> <span class=m>0</span> <span class=m>0</span>
+</span></span><span class=line><span class=cl><span class=k>return</span> <span class=m>6</span>
+</span></span><span class=line><span class=cl><span class=k>fi</span>
+</span></span><span class=line><span class=cl><span class=nv>fileSize</span><span class=o>=</span><span class=sb>`</span>ls -lh <span class=nv>$fileAddr</span> <span class=p>|</span> awk <span class=s1>&#39;{print $5}&#39;</span><span class=sb>`</span>
+</span></span><span class=line><span class=cl>dialog --msgbox <span class=s2>&#34;发送完成。\n文件名：</span><span class=nv>$fileName</span><span class=s2> \n大小：</span><span class=si>${</span><span class=nv>fileSize</span><span class=si>}</span><span class=s2>&#34;</span> <span class=m>20</span> <span class=m>50</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span><span class=line><span class=cl>recv<span class=o>()</span>
+</span></span><span class=line><span class=cl><span class=o>{</span>
+</span></span><span class=line><span class=cl>dialog --inputbox <span class=s2>&#34;请输入您想使用的端口号&#34;</span> <span class=m>20</span> <span class=m>50</span> 2&gt; temp
+</span></span><span class=line><span class=cl><span class=k>if</span> <span class=o>[</span> <span class=nv>$?</span> !<span class=o>=</span> <span class=m>0</span> <span class=o>]</span>
+</span></span><span class=line><span class=cl><span class=k>then</span>
+</span></span><span class=line><span class=cl><span class=k>return</span> <span class=m>6</span>
+</span></span><span class=line><span class=cl><span class=k>fi</span>
+</span></span><span class=line><span class=cl><span class=nv>recvPort</span><span class=o>=</span><span class=sb>`</span>cat temp<span class=sb>`</span>
+</span></span><span class=line><span class=cl>dialog --title <span class=s2>&#34;请选择接收路径&#34;</span> --fselect <span class=s2>&#34;</span><span class=si>${</span><span class=nv>HOME</span><span class=si>}</span><span class=s2>/&#34;</span> <span class=m>8</span> <span class=m>50</span> 2&gt; temp
+</span></span><span class=line><span class=cl><span class=k>if</span> <span class=o>[</span> <span class=nv>$?</span> !<span class=o>=</span> <span class=m>0</span> <span class=o>]</span>
+</span></span><span class=line><span class=cl><span class=k>then</span>
+</span></span><span class=line><span class=cl><span class=k>return</span> <span class=m>6</span>
+</span></span><span class=line><span class=cl><span class=k>fi</span>
+</span></span><span class=line><span class=cl><span class=nv>recvAddr</span><span class=o>=</span><span class=sb>`</span>cat temp<span class=sb>`</span>
+</span></span><span class=line><span class=cl><span class=nv>localIP</span><span class=o>=</span><span class=sb>`</span>ifconfig <span class=p>|</span> grep <span class=s2>&#34;inet&#34;</span> <span class=p>|</span> awk <span class=s1>&#39;{ print $2}&#39;</span> <span class=p>|</span> grep -v <span class=s2>&#34;127.0.0.1&#34;</span> <span class=p>|</span> grep -v <span class=s2>&#34;:&#34;</span><span class=sb>`</span>
+</span></span><span class=line><span class=cl>dialog --title 等待接受 --infobox <span class=s2>&#34;本机IP：</span><span class=nv>$localIP</span><span class=s2> \n端口号：</span><span class=nv>$recvPort</span><span class=s2>&#34;</span> <span class=m>20</span> <span class=m>50</span>
+</span></span><span class=line><span class=cl>nc -l <span class=nv>$recvPort</span> &gt; temp
+</span></span><span class=line><span class=cl><span class=k>if</span> <span class=o>[</span> <span class=nv>$?</span> !<span class=o>=</span> <span class=m>0</span> <span class=o>]</span>
+</span></span><span class=line><span class=cl><span class=k>then</span>
+</span></span><span class=line><span class=cl>dialog --colors --msgbox <span class=s2>&#34;\Z1 接收错误！&#34;</span> <span class=m>0</span> <span class=m>0</span>
+</span></span><span class=line><span class=cl><span class=k>return</span> <span class=m>6</span>
+</span></span><span class=line><span class=cl><span class=k>fi</span>
+</span></span><span class=line><span class=cl><span class=nv>recvFile</span><span class=o>=</span><span class=sb>`</span>cat temp<span class=sb>`</span>
+</span></span><span class=line><span class=cl>dialog --infobox <span class=s2>&#34;正在接收文件 </span><span class=nv>$recvFile</span><span class=s2> ……&#34;</span> <span class=m>20</span> <span class=m>50</span>
+</span></span><span class=line><span class=cl>nc -l <span class=nv>$recvPort</span> &gt; filetemp
+</span></span><span class=line><span class=cl><span class=k>if</span> <span class=o>[</span> <span class=nv>$?</span> !<span class=o>=</span> <span class=m>0</span> <span class=o>]</span>
+</span></span><span class=line><span class=cl><span class=k>then</span>
+</span></span><span class=line><span class=cl>dialog --colors --msgbox <span class=s2>&#34;\Z1 接收错误！&#34;</span> <span class=m>0</span> <span class=m>0</span>
+</span></span><span class=line><span class=cl><span class=k>return</span> <span class=m>6</span>
+</span></span><span class=line><span class=cl><span class=k>fi</span>
+</span></span><span class=line><span class=cl>mv filetemp <span class=si>${</span><span class=nv>recvAddr</span><span class=si>}</span>/<span class=si>${</span><span class=nv>recvFile</span><span class=si>}</span>
+</span></span><span class=line><span class=cl><span class=nv>fileSize</span><span class=o>=</span><span class=sb>`</span>ls -lh <span class=si>${</span><span class=nv>recvAddr</span><span class=si>}</span>/<span class=si>${</span><span class=nv>recvFile</span><span class=si>}</span> <span class=p>|</span> awk <span class=s1>&#39;{print $5}&#39;</span><span class=sb>`</span>
+</span></span><span class=line><span class=cl>dialog --msgbox <span class=s2>&#34;接收完成。\n文件名：</span><span class=nv>$recvFile</span><span class=s2> \n大小：</span><span class=si>${</span><span class=nv>fileSize</span><span class=si>}</span><span class=s2>&#34;</span> <span class=m>20</span> <span class=m>50</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span><span class=line><span class=cl>mainUI<span class=o>()</span>
+</span></span><span class=line><span class=cl><span class=o>{</span>
+</span></span><span class=line><span class=cl>dialog --cancel-label 退出 --title Shell文件传输助手 --menu <span class=s2>&#34; \n &#34;</span> <span class=m>20</span> <span class=m>50</span> <span class=m>8</span> <span class=m>1</span> <span class=s2>&#34;发送文件&#34;</span> <span class=m>2</span> <span class=s2>&#34;接收文件&#34;</span> <span class=m>3</span> <span class=s2>&#34;关于&#34;</span> <span class=m>4</span> <span class=s2>&#34;退出&#34;</span> 2&gt; temp
+</span></span><span class=line><span class=cl><span class=nv>a1</span><span class=o>=</span><span class=sb>`</span>cat temp<span class=sb>`</span>
+</span></span><span class=line><span class=cl><span class=k>case</span> <span class=nv>$a1</span> in
+</span></span><span class=line><span class=cl>1<span class=o>)</span>
+</span></span><span class=line><span class=cl>send
+</span></span><span class=line><span class=cl><span class=k>if</span> <span class=o>[</span> <span class=nv>$?</span> <span class=o>=</span> <span class=m>6</span> <span class=o>]</span>
+</span></span><span class=line><span class=cl><span class=k>then</span> 
+</span></span><span class=line><span class=cl>mainUI
+</span></span><span class=line><span class=cl><span class=k>fi</span>
+</span></span><span class=line><span class=cl><span class=p>;;</span>
+</span></span><span class=line><span class=cl>2<span class=o>)</span>
+</span></span><span class=line><span class=cl>recv
+</span></span><span class=line><span class=cl><span class=k>if</span> <span class=o>[</span> <span class=nv>$?</span> <span class=o>=</span> <span class=m>6</span> <span class=o>]</span>
+</span></span><span class=line><span class=cl><span class=k>then</span> 
+</span></span><span class=line><span class=cl>mainUI
+</span></span><span class=line><span class=cl><span class=k>fi</span>
+</span></span><span class=line><span class=cl><span class=p>;;</span>
+</span></span><span class=line><span class=cl>3<span class=o>)</span>
+</span></span><span class=line><span class=cl>dialog --colors --msgbox <span class=s2>&#34;Shell文件传输助手 \n\nBeta Version 2019.3.5\n\n\Z6开发人员：\n王衔飞  李思涵  胡嘉慧  丁玲&#34;</span> <span class=m>20</span> <span class=m>50</span>
+</span></span><span class=line><span class=cl>mainUI
+</span></span><span class=line><span class=cl><span class=p>;;</span>
+</span></span><span class=line><span class=cl>4<span class=o>)</span>
+</span></span><span class=line><span class=cl><span class=k>return</span>
+</span></span><span class=line><span class=cl><span class=p>;;</span>
+</span></span><span class=line><span class=cl><span class=k>esac</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span><span class=line><span class=cl>mainUI
+</span></span><span class=line><span class=cl>clear
+</span></span><span class=line><span class=cl>rm -f temp
+</span></span><span class=line><span class=cl>rm -f filetemp
+</span></span></code></pre></td></tr></table></div></div></section><footer class=article-footer><section class=article-copyright><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="12" cy="12" r="9"/><path d="M14.5 9a3.5 4 0 100 6"/></svg><span>Licensed under CC BY-NC-SA 4.0</span></section></footer></article><aside class=related-content--wrapper><h2 class=section-title>Related content</h2><div class=related-content><div class="flex article-list--tile"><article class=has-image><a href=../../p/minesweeper-cli/><div class=article-image><img src=../../p/minesweeper-cli/cta.6d59333a796cb13fd1bc8d074f5abbf3_hu5d6229566403b571e354b7e8d7d45994_52875_250x150_fill_box_smart1_3.png width=250 height=150 loading=lazy alt="Featured image of post 扫雷 Command Line Version with C" data-key=minesweeper-cli data-hash="md5-bVkzOnlssT/RvI0HT1q78w=="></div><div class=article-details><h2 class=article-title>扫雷 Command Line Version with C</h2></div></a></article></div></div></aside><script src=https://utteranc.es/client.js repo=xianfei/xianfei.github.io issue-term=pathname crossorigin=anonymous async></script><style>.utterances{max-width:unset}</style><script>function setUtterancesTheme(e){let t=document.querySelector(".utterances iframe");t&&t.contentWindow.postMessage({type:"set-theme",theme:`github-${e}`},"https://utteranc.es")}addEventListener("message",e=>{if(e.origin!=="https://utteranc.es")return;setUtterancesTheme(document.documentElement.dataset.scheme)}),window.addEventListener("onColorSchemeChange",e=>{setUtterancesTheme(e.detail)})</script><footer class=site-footer><section class=copyright>&copy;
+2020 -
+2022 Xianfei's Blog</section><section class=powerby>Built with <a href=https://gohugo.io/ target=_blank rel=noopener>Hugo</a><br>Theme <b><a href=https://github.com/CaiJimmy/hugo-theme-stack target=_blank rel=noopener data-version=3.12.0>Stack</a></b> designed by <a href=https://jimmycai.com target=_blank rel=noopener>Jimmy</a></section></footer><div class=pswp tabindex=-1 role=dialog aria-hidden=true><div class=pswp__bg></div><div class=pswp__scroll-wrap><div class=pswp__container><div class=pswp__item></div><div class=pswp__item></div><div class=pswp__item></div></div><div class="pswp__ui pswp__ui--hidden"><div class=pswp__top-bar><div class=pswp__counter></div><button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+<button class="pswp__button pswp__button--share" title=Share></button>
+<button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+<button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button><div class=pswp__preloader><div class=pswp__preloader__icn><div class=pswp__preloader__cut><div class=pswp__preloader__donut></div></div></div></div></div><div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap"><div class=pswp__share-tooltip></div></div><button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
+<button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button><div class=pswp__caption><div class=pswp__caption__center></div></div></div></div></div><script src=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo=" crossorigin=anonymous defer></script><script src=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU=" crossorigin=anonymous defer></script><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css crossorigin=anonymous><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css crossorigin=anonymous></main><aside class="sidebar right-sidebar sticky"><section class="widget archives"><div class=widget-icon><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><line x1="5" y1="9" x2="19" y2="9"/><line x1="5" y1="15" x2="19" y2="15"/><line x1="11" y1="4" x2="7" y2="20"/><line x1="17" y1="4" x2="13" y2="20"/></svg></div><h2 class="widget-title section-title">Table of contents</h2><div class=widget--toc><nav id=TableOfContents><ol><li><a href=#功能介绍>功能介绍</a></li><li><a href=#运行环境>运行环境</a><ol><li><a href=#macos使用brew包管理器安装必要时请提供superuser权限>macOS：使用brew包管理器安装。必要时请提供superuser权限。</a></li><li><a href=#fedora-使用yum包管理器安装>fedora: 使用yum包管理器安装。</a></li></ol></li><li><a href=#运行截图>运行截图</a></li><li><a href=#源代码>源代码</a></li></ol></nav></div></section></aside></div><script src=https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z+KMkF24hUW8WePSA9HM=" crossorigin=anonymous></script><script type=text/javascript src=../../ts/main.js defer></script>
+<script>(function(){const e=document.createElement("link");e.href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap",e.type="text/css",e.rel="stylesheet",document.head.appendChild(e)})()</script></body></html>
