@@ -4,8 +4,8 @@ title = "成语生成器"
 date = "2022-06-29"
 description = "用来生成田字格成语"
 categories = [
-    "前端",
-    "Web Technology",
+    "交互式文章",
+    "Web",
 ]
 series = ["Themes Guide"]
 aliases = ["migrate-from-jekyl"]
@@ -57,7 +57,9 @@ image = "banner.png"
 如今～，只好准备二战了。
           </textarea>
   </div>
-  <span style="margin-left: 50px;">by xianfei</span>
+
+  本文是**交互式Blog**，请尝试改变上方输入框中的文字！
+
 
   <script type="text/javascript">
     generate("势态研凉");

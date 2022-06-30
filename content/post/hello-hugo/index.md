@@ -2,7 +2,7 @@
 author = "Xianfei"
 title = "Hello World in Hugo"
 date = "2022-06-29"
-description = "Here is Xianfei's blog. Have a see!"
+description = "将原WordPress博客中的内容迁移至本站！"
 categories = [
     "Daily",
 ]
