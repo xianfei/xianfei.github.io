@@ -1,7 +1,7 @@
 +++
 author = "Xianfei"
 title = "成语生成器"
-date = "2022-06-29"
+date = "2022-01-12"
 description = "用来生成田字格成语"
 categories = [
     "交互式文章",

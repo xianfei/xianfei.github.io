@@ -1,7 +1,7 @@
 +++
 author = "Xianfei"
 title = "扫雷 Command Line Version with C"
-date = "2022-06-29"
+date = "2019-01-11"
 description = "大一C语言/Linux开发实践课程作业"
 categories = [
     "CLI","Coding","课程作业"

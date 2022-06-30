@@ -1,7 +1,7 @@
 +++
 author = "Xianfei"
 title = "Shell File Transfer —— 适用于Linux/macOS的局域网文件传输程序"
-date = "2022-06-29"
+date = "2019-03-05"
 description = "大一Linux开发实践课程作品"
 categories = [
     "CLI","Shell","Linux","Coding"

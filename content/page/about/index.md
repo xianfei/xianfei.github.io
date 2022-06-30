@@ -1,7 +1,7 @@
 ---
 title: About
-description: Hugo, the world's fastest framework for building websites
-date: '2019-02-28'
+description: I'm xianfei (衔飞) 
+date: '2022-06-28'
 aliases:
   - about-us
   - about-hugo
@@ -15,20 +15,34 @@ menu:
             icon: user
 ---
 
-Written in Go, Hugo is an open source static site generator available under the [Apache Licence 2.0.](https://github.com/gohugoio/hugo/blob/master/LICENSE) Hugo supports TOML, YAML and JSON data file types, Markdown and HTML content files and uses shortcodes to add rich content. Other notable features are taxonomies, multilingual mode, image processing, custom output formats, HTML/CSS/JS minification and support for Sass SCSS workflows.
+## Hi there, I'm xianfei (衔飞) 👋
 
-Hugo makes use of a variety of open source projects including:
+>  The only limit is your imagination.
 
-* https://github.com/yuin/goldmark
-* https://github.com/alecthomas/chroma
-* https://github.com/muesli/smartcrop
-* https://github.com/spf13/cobra
-* https://github.com/spf13/viper
+<img align="right" width="450" src="https://github-readme-stats.vercel.app/api?username=xianfei&show_icons=true&icon_color=0078e7&title_color=0078e7&include_all_commits=true"/>
 
-Hugo is ideal for blogs, corporate websites, creative portfolios, online magazines, single page applications or even a website with thousands of pages.
 
-Hugo is for people who want to hand code their own website without worrying about setting up complicated runtimes, dependencies and databases.
+- 🔭 I'm an undergraduate student of software engineering from China now. 就读于北京信息科技大学&北京邮电大学双培计划，现在大四。
+- 🏡 I'm living in Beijing and looking for a job in Beijing.
+- 🌱 I'm currently learning Computer Graphics & Machine Learning & Web Technologies.
+- 😍 I like eating delicious foods 🍔, traveling 🏝, photography 📸, coding 🧑‍💻 and sleeping 🛌.
+- 😡 I hate working overtime.
+- 💬 I like chating. Be free to ask me about anything [here](https://github.com/xianfei/xianfei/issues).
 
-Websites built with Hugo are extremelly fast, secure and can be deployed anywhere including, AWS, GitHub Pages, Heroku, Netlify and any other hosting provider.
+### Skills and Interested
 
-Learn more and contribute on [GitHub](https://github.com/gohugoio).
+- Programming Languages: C++/JavaScript/C/Java/Python
+
+- Other Languages: HTML/CSS/MarkDown/JSON/XML
+
+- Web Front-end Frameworks: Vue.js/Electron.js
+
+- Web Back-end Frameworks & Database: Express.js(Node.js)/MongoDB
+
+- Tools: Linux Shell/SSH/Git/VSCode/CMake/WireShark and etc.
+
+- Other: Arduino/Rasberry Pi
+
+### What's more
+- 🥰 You can follow me on [Bilibili: xianfei](https://space.bilibili.com/9872607) and 微信公众号：Xianfei
+- 📬 Email: xianfei@bupt.cn
