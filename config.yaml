@@ -2,6 +2,7 @@ baseurl:
 relativeURLs: true
 languageCode: en-us
 theme: hugo-theme-stack
+timeout: 300s
 paginate: 5
 title: Xianfei's Blog
 
