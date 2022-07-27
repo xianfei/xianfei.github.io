@@ -1,4 +1,1146 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Xianfei's Blog</title><link>/</link><description>Recent content on Xianfei's Blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Wed, 29 Jun 2022 00:00:00 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml"/><item><title>Hello World in Hugo</title><link>/p/hello-world-in-hugo/</link><pubDate>Wed, 29 Jun 2022 00:00:00 +0000</pubDate><guid>/p/hello-world-in-hugo/</guid><description>&lt;img src="/p/hello-world-in-hugo/banner.jpg" alt="Featured image of post Hello World in Hugo" />&lt;h1 id="hello-world-in-hugo">Hello World in Hugo&lt;/h1>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Xianfei's Blog</title><link>/</link><description>Recent content on Xianfei's Blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sun, 10 Jul 2022 00:00:00 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml"/><item><title>我们设计了一个有趣的社交软件——奶黄猫</title><link>/p/nhm/</link><pubDate>Sun, 10 Jul 2022 00:00:00 +0000</pubDate><guid>/p/nhm/</guid><description>&lt;img src="/p/nhm/nhm.png" alt="Featured image of post 我们设计了一个有趣的社交软件——奶黄猫" />&lt;style>
+.xf-video{
+margin-left: calc((var(--card-padding)) * -1);
+margin-right: calc((var(--card-padding)) * -1);
+width: calc(100% + var(--card-padding) * 2);
+}
+.xf-video video{
+width:100%;
+}
+&lt;/style>
+&lt;script>
+document.querySelector('article').style.setProperty('--accent-color', '#f9b02f')
+&lt;/script>
+&lt;p>　　2021 年 9 月，作为大四的最后一次小组开发课程，我们设计了一个有趣的社交软件——奶黄猫。我在小组中担任产品设计、前端/客户端开发的职位。&lt;/p>
+&lt;h2 id="演示视频">演示视频&lt;/h2>
+&lt;blockquote>
+&lt;p>视频使用AV1格式编码，请使用 Chrome 70+ / Firefox 67+ / Edge 79+ 浏览器进行播放。See more on &lt;a class="link" href="https://caniuse.com/av1" target="_blank" rel="noopener"
+>here.&lt;/a>&lt;/p>
+&lt;/blockquote>
+&lt;div class="xf-video">&lt;video src="nhm.webm" controls>&lt;/div>
+&lt;h2 id="设计想法">设计想法&lt;/h2>
+&lt;p>　　在设计这个该社交软件时，由于我们小组都是来自同一个班学同一个专业的程序员，于是我就想到了一个很有意思的想法——将类似于小程序的应用嵌入到动态区域内，来增强可交互性和趣味性。目前的社交软件往往支持在动态除了文字外添加照片、视频、文章超链接等，而我们认为动态的区域应该让用户自由发挥，所以我们设计了可编程动态，支持具有GUI的Web程序和面向入门程序员的CLI程序。&lt;/p>
+&lt;p>　　试想一下，刚上大学的你，学会了C语言，写下属于自己人生中的第一个程序时，那迫不及待想让亲朋好友体验的心情。而这个软件恰好能满足他们！&lt;/p>
+&lt;h2 id="待更新-blog-article">待更新 Blog Article&lt;/h2>
+&lt;p>预计添加交互、核心代码等&lt;/p>
+&lt;h2 id="接口文档">接口文档&lt;/h2>
+&lt;p>版本：2021-11-02 ver0.9 by xianfei&lt;/p>
+&lt;p>备注 time使用的为Unix时间戳，new Date().getTime()&lt;/p>
+&lt;h3 id="动态相关部分">动态相关部分&lt;/h3>
+&lt;ol>
+&lt;li>
+&lt;p>获取动态&lt;/p>
+&lt;p>HTTP请求方式：POST&lt;/p>
+&lt;p>URL： /moment/getMoments&lt;/p>
+&lt;p>POST Form：&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>参数&lt;/th>
+&lt;th>说明&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>userID&lt;/td>
+&lt;td>用户唯一标识符&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>type&lt;/td>
+&lt;td>0为广场 1为关注&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>lastMomentID&lt;/td>
+&lt;td>上次获取最后一条动态的ID，第一次获取为-1&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>length&lt;/td>
+&lt;td>本次获取的动态数&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>预期返回类型：Json Object&lt;/p>
+&lt;p>{&lt;/p>
+&lt;p>​ &amp;ldquo;status&amp;rdquo;:0,&lt;/p>
+&lt;p>​ &amp;ldquo;message&amp;rdquo;:&lt;/p>
+&lt;p>​ [{&lt;/p>
+&lt;p>​ &amp;ldquo;momentID&amp;rdquo;:&lt;code>当前动态ID&lt;/code>,&lt;/p>
+&lt;p>​ &amp;ldquo;userID&amp;rdquo;:&lt;code>用户ID，字符串&lt;/code>,&lt;/p>
+&lt;p>​ &amp;ldquo;userName&amp;rdquo;:&lt;code>用户昵称，字符串&lt;/code>,&lt;/p>
+&lt;p>​ &amp;ldquo;userAvatar&amp;rdquo;:&lt;code>用户头像，应为图片URL，字符串&lt;/code>,&lt;/p>
+&lt;p>​ &amp;ldquo;time&amp;rdquo;:&lt;code>此动态产生时间戳 整型&lt;/code>,&lt;/p>
+&lt;p>​ &amp;ldquo;text&amp;rdquo;:&lt;code>动态文字内容&lt;/code>,&lt;/p>
+&lt;p>​ &amp;ldquo;appendixType&amp;rdquo;:&lt;code>0无 1图片 2视频 3GUI程序代码段 4CLI程序代码段&lt;/code>,&lt;/p>
+&lt;p>​ &amp;ldquo;photos&amp;rdquo;:&lt;code>仅appendixType为1时读取该属性 为含一个或多个图片URL的数组 &lt;/code>,&lt;/p>
+&lt;p>​ &amp;ldquo;video&amp;rdquo;:&lt;code>仅appendixType为2时读取该属性 此项为视频URL &lt;/code>,&lt;/p>
+&lt;p>​ &amp;ldquo;appID&amp;rdquo;:&lt;code>仅appendixType为3/4时读取该属性&lt;/code>,&lt;/p>
+&lt;p>​ &amp;ldquo;likedNum&amp;rdquo;:&lt;code>点赞数 整型&lt;/code>,&lt;/p>
+&lt;p>​ &amp;ldquo;commentNum&amp;rdquo;:&lt;code>评论数 整型&lt;/code>,&lt;/p>
+&lt;p>​ &amp;ldquo;isLiked&amp;rdquo;:&lt;code>当前用户是否点赞了当前动态，Boolean&lt;/code>,&lt;/p>
+&lt;p>​ &amp;ldquo;isDel&amp;rdquo;:&lt;code>该动态是否已被删除，Boolean&lt;/code>,&lt;/p>
+&lt;p>​ &amp;ldquo;tag&amp;rdquo;:&lt;code>动态标签&lt;/code>&lt;/p>
+&lt;p>},{&lt;/p>
+&lt;p>​ //同上&lt;/p>
+&lt;p>}]&lt;/p>
+&lt;p>}&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>获取单个动态&lt;/p>
+&lt;p>HTTP请求方式：POST&lt;/p>
+&lt;p>URL： /moment/getMomentByID&lt;/p>
+&lt;p>POST Form：&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>参数&lt;/th>
+&lt;th>说明&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>userID&lt;/td>
+&lt;td>用户唯一标识符&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>momentID&lt;/td>
+&lt;td>动态的ID&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>预期返回类型：Json Object&lt;/p>
+&lt;p>{&lt;/p>
+&lt;p>​ &amp;ldquo;status&amp;rdquo;:0,&lt;/p>
+&lt;p>​ &amp;ldquo;message&amp;rdquo;:&lt;/p>
+&lt;p>{&lt;/p>
+&lt;p>​ &amp;ldquo;momentID&amp;rdquo;:&lt;code>当前动态ID&lt;/code>,&lt;/p>
+&lt;p>​ &amp;ldquo;userID&amp;rdquo;:&lt;code>用户ID，字符串&lt;/code>,&lt;/p>
+&lt;p>​ &amp;ldquo;userName&amp;rdquo;:&lt;code>用户昵称，字符串&lt;/code>,&lt;/p>
+&lt;p>​ &amp;ldquo;userAvatar&amp;rdquo;:&lt;code>用户头像，应为图片URL，字符串&lt;/code>,&lt;/p>
+&lt;p>​ &amp;ldquo;time&amp;rdquo;:&lt;code>此动态产生时间戳 整型&lt;/code>,&lt;/p>
+&lt;p>​ &amp;ldquo;text&amp;rdquo;:&lt;code>动态文字内容&lt;/code>,&lt;/p>
+&lt;p>​ &amp;ldquo;appendixType&amp;rdquo;:&lt;code>0无 1图片 2视频 3GUI程序代码段 4CLI程序代码段&lt;/code>,&lt;/p>
+&lt;p>​ &amp;ldquo;photos&amp;rdquo;:&lt;code>仅appendixType为1时读取该属性 为含一个或多个图片URL的数组 &lt;/code>,&lt;/p>
+&lt;p>​ &amp;ldquo;video&amp;rdquo;:&lt;code>仅appendixType为2时读取该属性 此项为视频URL &lt;/code>,&lt;/p>
+&lt;p>​ &amp;ldquo;appID&amp;rdquo;:&lt;code>仅appendixType为3/4时读取该属性&lt;/code>,&lt;/p>
+&lt;p>​ &amp;ldquo;likedNum&amp;rdquo;:&lt;code>点赞数 整型&lt;/code>,&lt;/p>
+&lt;p>​ &amp;ldquo;commentNum&amp;rdquo;:&lt;code>评论数 整型&lt;/code>,&lt;/p>
+&lt;p>​ &amp;ldquo;isLiked&amp;rdquo;:&lt;code>当前用户是否点赞了当前动态，Boolean&lt;/code>,&lt;/p>
+&lt;p>​ &amp;ldquo;isDel&amp;rdquo;:&lt;code>该动态是否已被删除，Boolean&lt;/code>,&lt;/p>
+&lt;p>​ &amp;ldquo;tag&amp;rdquo;:&lt;code>动态标签&lt;/code>&lt;/p>
+&lt;p>}&lt;/p>
+&lt;p>}&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>点赞/取消动态（对于已点赞再次点赞为取消）&lt;/p>
+&lt;p>HTTP请求方式：POST&lt;/p>
+&lt;p>URL： /moment/likeMoment&lt;/p>
+&lt;p>POST Form：&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>参数&lt;/th>
+&lt;th>说明&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>userID&lt;/td>
+&lt;td>用户唯一标识符&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>momentID&lt;/td>
+&lt;td>点赞的动态&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>预期返回类型：Json Object&lt;/p>
+&lt;p>{&lt;/p>
+&lt;p>​ &amp;ldquo;status&amp;rdquo;:0,&lt;/p>
+&lt;p>​ &amp;ldquo;message&amp;rdquo;:{&lt;/p>
+&lt;p>​ &amp;ldquo;isLiked&amp;rdquo;:&lt;code>当前用户是否点赞了当前动态，Boolean&lt;/code>,&lt;/p>
+&lt;p>​ &amp;ldquo;likedNum&amp;rdquo;:&lt;code>该动态点赞数&lt;/code>&lt;/p>
+&lt;p>​ }&lt;/p>
+&lt;p>}&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>发送评论&lt;/p>
+&lt;p>HTTP请求方式：POST&lt;/p>
+&lt;p>URL： /moment/commentMoment&lt;/p>
+&lt;p>POST Form：&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>参数&lt;/th>
+&lt;th>说明&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>userID&lt;/td>
+&lt;td>用户唯一标识符&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>momentID&lt;/td>
+&lt;td>评论的动态&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>commentText&lt;/td>
+&lt;td>评论内容&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>预期返回类型：Json Object&lt;/p>
+&lt;p>{&amp;ldquo;status&amp;rdquo;:0,&amp;ldquo;message&amp;rdquo;:&amp;quot;&amp;quot;}&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>获取评论&lt;/p>
+&lt;p>HTTP请求方式：POST&lt;/p>
+&lt;p>URL： /moment/getComment&lt;/p>
+&lt;p>POST Form：&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>参数&lt;/th>
+&lt;th>说明&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>userID&lt;/td>
+&lt;td>用户唯一标识符&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>momentID&lt;/td>
+&lt;td>动态ID&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>预期返回类型：Json Array&lt;/p>
+&lt;p>{&lt;/p>
+&lt;p>​ &amp;ldquo;status&amp;rdquo;:0,&lt;/p>
+&lt;p>​ &amp;ldquo;message&amp;rdquo;:[{&lt;/p>
+&lt;p>​ &amp;ldquo;commentID&amp;rdquo;:&lt;code>评论ID，字符串&lt;/code>,&lt;/p>
+&lt;p>​ &amp;ldquo;userID&amp;rdquo;:&lt;code>用户ID，字符串&lt;/code>,&lt;/p>
+&lt;p>​ &amp;ldquo;userName&amp;rdquo;:&lt;code>用户昵称，字符串&lt;/code>,&lt;/p>
+&lt;p>​ &amp;ldquo;userAvatar&amp;rdquo;:&lt;code>用户头像，应为图片URL，字符串&lt;/code>,&lt;/p>
+&lt;p>​ &amp;ldquo;time&amp;rdquo;:&lt;code>此评论产生时间戳 整型&lt;/code>,&lt;/p>
+&lt;p>​ &amp;ldquo;text&amp;rdquo;:&lt;code>内容&lt;/code>,&lt;/p>
+&lt;p>​ &amp;ldquo;likedNum&amp;rdquo;:&lt;code>点赞数&lt;/code>,&lt;/p>
+&lt;p>},{&lt;/p>
+&lt;p>// 同上&lt;/p>
+&lt;p>}]&lt;/p>
+&lt;p>}&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>获取点赞用户列表&lt;/p>
+&lt;p>HTTP请求方式：POST&lt;/p>
+&lt;p>URL： /moment/getLikedMomentUsers&lt;/p>
+&lt;p>POST Form：&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>参数&lt;/th>
+&lt;th>说明&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>userID&lt;/td>
+&lt;td>用户唯一标识符&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>momentID&lt;/td>
+&lt;td>动态ID&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>预期返回类型：Json Array&lt;/p>
+&lt;p>{&lt;/p>
+&lt;p>​ &amp;ldquo;status&amp;rdquo;:0,&lt;/p>
+&lt;p>​ &amp;ldquo;message&amp;rdquo;:[{&lt;/p>
+&lt;p>​ &amp;ldquo;userID&amp;rdquo;:&lt;code>用户ID，字符串&lt;/code>,&lt;/p>
+&lt;p>​ &amp;ldquo;userName&amp;rdquo;:&lt;code>用户昵称，字符串&lt;/code>,&lt;/p>
+&lt;p>​ &amp;ldquo;userAvatar&amp;rdquo;:&lt;code>用户头像，应为图片URL，字符串&lt;/code>,&lt;/p>
+&lt;p>},{&lt;/p>
+&lt;p>// 同上&lt;/p>
+&lt;p>}]&lt;/p>
+&lt;p>}&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>发表纯文本动态&lt;/p>
+&lt;p>HTTP请求方式：POST&lt;/p>
+&lt;p>URL： /moment/createMomentOnlyText&lt;/p>
+&lt;p>POST Form：&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>参数&lt;/th>
+&lt;th>说明&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>userID&lt;/td>
+&lt;td>用户唯一标识符&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>text&lt;/td>
+&lt;td>文本内容&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>tag&lt;/td>
+&lt;td>标签&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>预期返回类型：Json Object&lt;/p>
+&lt;p>{&amp;ldquo;status&amp;rdquo;:0,&amp;ldquo;message&amp;rdquo;:&amp;quot;&amp;quot;}&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>发表含图片文本动态&lt;/p>
+&lt;p>HTTP请求方式：POST&lt;/p>
+&lt;p>URL： /moment/createMomentWithPhotos&lt;/p>
+&lt;p>POST Form：&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>参数&lt;/th>
+&lt;th>说明&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>userID&lt;/td>
+&lt;td>用户唯一标识符&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>text&lt;/td>
+&lt;td>文本内容&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>tag&lt;/td>
+&lt;td>标签&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>photos&lt;/td>
+&lt;td>多张图片文件*&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>*参考 &lt;a class="link" href="https://blog.csdn.net/qq_38310446/article/details/87623991" target="_blank" rel="noopener"
+>https://blog.csdn.net/qq_38310446/article/details/87623991&lt;/a>&lt;/p>
+&lt;p>预期返回类型：Json Object&lt;/p>
+&lt;p>{&amp;ldquo;status&amp;rdquo;:0,&amp;ldquo;message&amp;rdquo;:&amp;quot;&amp;quot;}&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>发表含视频文本动态&lt;/p>
+&lt;p>HTTP请求方式：POST&lt;/p>
+&lt;p>URL： /moment/createMomentWithVideo&lt;/p>
+&lt;p>POST Form：&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>参数&lt;/th>
+&lt;th>说明&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>userID&lt;/td>
+&lt;td>用户唯一标识符&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>text&lt;/td>
+&lt;td>文本内容&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>tag&lt;/td>
+&lt;td>标签&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>video&lt;/td>
+&lt;td>视频文件&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>预期返回类型：Json Object&lt;/p>
+&lt;p>{&amp;ldquo;status&amp;rdquo;:0,&amp;ldquo;message&amp;rdquo;:&amp;quot;&amp;quot;}&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;!-- 10. 删除评论 -->
+&lt;ol start="9">
+&lt;li>
+&lt;p>删除评论&lt;/p>
+&lt;p>HTTP请求方式：POST&lt;/p>
+&lt;p>HTTP请求方式：POST&lt;/p>
+&lt;p>URL： /moment/delComment&lt;/p>
+&lt;p>POST Form：&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>参数&lt;/th>
+&lt;th>说明&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>userID&lt;/td>
+&lt;td>用户唯一标识符&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>commentID&lt;/td>
+&lt;td>点赞的评论&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>预期返回类型：Json Object&lt;/p>
+&lt;p>{&lt;/p>
+&lt;p>​ &amp;ldquo;status&amp;rdquo;:0,&lt;/p>
+&lt;p>​ &amp;ldquo;message&amp;rdquo;:&amp;quot;&amp;quot;&lt;/p>
+&lt;p>}&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>删除动态&lt;/p>
+&lt;p>HTTP请求方式：POST&lt;/p>
+&lt;p>URL： /moment/delMoment&lt;/p>
+&lt;p>POST Form：&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>参数&lt;/th>
+&lt;th>说明&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>userID&lt;/td>
+&lt;td>用户唯一标识符&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>momentID&lt;/td>
+&lt;td>动态ID&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>预期返回类型：Json Object&lt;/p>
+&lt;p>{&amp;ldquo;status&amp;rdquo;:0,&amp;ldquo;message&amp;rdquo;:&amp;quot;&amp;quot;}&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>获取某用户动态&lt;/p>
+&lt;p>HTTP请求方式：POST&lt;/p>
+&lt;p>URL： /moment/getUsersMoments&lt;/p>
+&lt;p>POST Form：&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>参数&lt;/th>
+&lt;th>说明&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>userID&lt;/td>
+&lt;td>用户唯一标识符&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>targetUserID&lt;/td>
+&lt;td>需要获取对方动态的ID&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>lastMomentID&lt;/td>
+&lt;td>上次获取最后一条动态的ID&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>length&lt;/td>
+&lt;td>本次获取的动态数&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>预期返回类型：Json Object&lt;/p>
+&lt;p>&lt;strong>返回值同 1 获取动态&lt;/strong>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>获取某类型动态&lt;/p>
+&lt;p>HTTP请求方式：POST&lt;/p>
+&lt;p>URL： /moment/getTagMoments&lt;/p>
+&lt;p>POST Form：&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>参数&lt;/th>
+&lt;th>说明&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>userID&lt;/td>
+&lt;td>用户唯一标识符&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>tag&lt;/td>
+&lt;td>希望获取的动态类型&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>lastMomentID&lt;/td>
+&lt;td>上次获取最后一条动态的ID&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>length&lt;/td>
+&lt;td>本次获取的动态数&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>预期返回类型：Json Object&lt;/p>
+&lt;p>&lt;strong>返回值同 1 获取动态&lt;/strong>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>举报动态&lt;/p>
+&lt;p>HTTP请求方式：POST&lt;/p>
+&lt;p>URL： /moment/reportMoment&lt;/p>
+&lt;p>POST Form：&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>参数&lt;/th>
+&lt;th>说明&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>userID&lt;/td>
+&lt;td>用户唯一标识符&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>momentID&lt;/td>
+&lt;td>被举报动态ID&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>message&lt;/td>
+&lt;td>举报理由&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>预期返回类型：Json Object&lt;/p>
+&lt;p>{&lt;/p>
+&lt;p>​ &amp;ldquo;status&amp;rdquo;:0,&lt;/p>
+&lt;p>​ &amp;ldquo;message&amp;rdquo;:&amp;quot;&amp;quot;&lt;/p>
+&lt;p>}&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>获取CLI程序段&lt;/p>
+&lt;p>HTTP请求方式：POST&lt;/p>
+&lt;p>URL： /moment/getAppCLI&lt;/p>
+&lt;p>POST Form：&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>参数&lt;/th>
+&lt;th>说明&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>appID&lt;/td>
+&lt;td>代码段唯一标识符&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>{&lt;/p>
+&lt;p>​ &amp;ldquo;status&amp;rdquo;:0,&lt;/p>
+&lt;p>​ &amp;ldquo;message&amp;rdquo;:{&lt;/p>
+&lt;p>​ &amp;ldquo;language&amp;rdquo;:&lt;code>编程语言&lt;/code>,&lt;/p>
+&lt;p>​ &amp;ldquo;code&amp;rdquo;:&lt;code>程序代码&lt;/code>,&lt;/p>
+&lt;p>​ &amp;ldquo;para&amp;rdquo;:&lt;code>保留段&lt;/code>,&lt;/p>
+&lt;p>​ }&lt;/p>
+&lt;p>}&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>发表含CLI程序段文本动态&lt;/p>
+&lt;p>HTTP请求方式：POST&lt;/p>
+&lt;p>URL： /moment/createMomentWithAppCLI&lt;/p>
+&lt;p>POST Form：&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>参数&lt;/th>
+&lt;th>说明&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>userID&lt;/td>
+&lt;td>用户唯一标识符&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>text&lt;/td>
+&lt;td>文本内容&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>tag&lt;/td>
+&lt;td>标签&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>language&lt;/td>
+&lt;td>编程语言&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>code&lt;/td>
+&lt;td>程序代码段&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>para&lt;/td>
+&lt;td>保留段&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>预期返回类型：Json Object&lt;/p>
+&lt;p>{&lt;/p>
+&lt;p>​ &amp;ldquo;status&amp;rdquo;:0,&lt;/p>
+&lt;p>​ &amp;ldquo;message&amp;rdquo;:&amp;quot;&amp;quot;&lt;/p>
+&lt;p>}&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>获取GUI程序段&lt;/p>
+&lt;p>HTTP请求方式：POST&lt;/p>
+&lt;p>URL： /moment/getAppGUI&lt;/p>
+&lt;p>POST Form：&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>参数&lt;/th>
+&lt;th>说明&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>appID&lt;/td>
+&lt;td>代码段唯一标识符&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>{&lt;/p>
+&lt;p>​ &amp;ldquo;status&amp;rdquo;:0,&lt;/p>
+&lt;p>​ &amp;ldquo;message&amp;rdquo;:{&lt;/p>
+&lt;p>​ &amp;ldquo;language&amp;rdquo;:&lt;code>编程语言&lt;/code>,&lt;/p>
+&lt;p>​ &amp;ldquo;code&amp;rdquo;:&lt;code>程序代码&lt;/code>,&lt;/p>
+&lt;p>​ &amp;ldquo;html&amp;rdquo;:&lt;code>HTML代码&lt;/code>,&lt;/p>
+&lt;p>​ &amp;ldquo;css&amp;rdquo;:&lt;code>css代码&lt;/code>,&lt;/p>
+&lt;p>​ &amp;ldquo;para&amp;rdquo;:&lt;code>保留段&lt;/code>,&lt;/p>
+&lt;p>​ }&lt;/p>
+&lt;p>}&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>发表含GUI程序段文本动态&lt;/p>
+&lt;p>HTTP请求方式：POST&lt;/p>
+&lt;p>URL： /moment/createMomentWithAppGUI&lt;/p>
+&lt;p>POST Form：&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>参数&lt;/th>
+&lt;th>说明&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>userID&lt;/td>
+&lt;td>用户唯一标识符&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>text&lt;/td>
+&lt;td>文本内容&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>tag&lt;/td>
+&lt;td>标签&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>language&lt;/td>
+&lt;td>编程语言&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>code&lt;/td>
+&lt;td>程序代码段&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>html&lt;/td>
+&lt;td>代码&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>css&lt;/td>
+&lt;td>代码&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>para&lt;/td>
+&lt;td>保留段&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>预期返回类型：Json Object&lt;/p>
+&lt;p>{&lt;/p>
+&lt;p>​ &amp;ldquo;status&amp;rdquo;:0,&lt;/p>
+&lt;p>​ &amp;ldquo;message&amp;rdquo;:&amp;quot;&amp;quot;&lt;/p>
+&lt;p>}&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;h3 id="用户相关">用户相关&lt;/h3>
+&lt;ol>
+&lt;li>
+&lt;p>获取某用户信息&lt;/p>
+&lt;p>HTTP请求方式：POST&lt;/p>
+&lt;p>URL： /user/getUsersInfo&lt;/p>
+&lt;p>POST Form：&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>参数&lt;/th>
+&lt;th>说明&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>userID&lt;/td>
+&lt;td>请求的用户ID&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>targetUserID&lt;/td>
+&lt;td>对方动态ID&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>预期返回类型：Json Object 对象数组&lt;/p>
+&lt;p>{&lt;/p>
+&lt;p>​ &amp;ldquo;status&amp;rdquo;:0,&lt;/p>
+&lt;p>​ &amp;ldquo;message&amp;rdquo;:{&lt;/p>
+&lt;p>​ &amp;ldquo;userID&amp;rdquo;:&lt;code>用户ID，字符串&lt;/code>,&lt;/p>
+&lt;p>​ &amp;ldquo;userName&amp;rdquo;:&lt;code>用户昵称，字符串&lt;/code>,&lt;/p>
+&lt;p>​ &amp;ldquo;userAvatar&amp;rdquo;:&lt;code>用户头像，应为图片URL，字符串&lt;/code>,&lt;/p>
+&lt;p>​ &amp;ldquo;follower&amp;rdquo;:&lt;code>粉丝数&lt;/code>,&lt;/p>
+&lt;p>​ &amp;ldquo;following&amp;rdquo;:&lt;code>关注数&lt;/code>,&lt;/p>
+&lt;p>​ &amp;ldquo;isMale&amp;rdquo;:&lt;code>性别&lt;/code>,&lt;/p>
+&lt;p>​ &amp;ldquo;description&amp;rdquo;:&lt;code>个性签名&lt;/code>,&lt;/p>
+&lt;p>​ &amp;ldquo;tag&amp;rdquo;:&lt;code>用户喜好标签&lt;/code>,&lt;/p>
+&lt;p>​ &amp;ldquo;relationship&amp;rdquo;:&lt;code>0无 1是粉丝 2已关注 3互相关注 &lt;/code>&lt;/p>
+&lt;p>​ }&lt;/p>
+&lt;p>}&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>修改用户信息&lt;/p>
+&lt;p>HTTP请求方式：POST&lt;/p>
+&lt;p>URL： /user/changeUsersInfo&lt;/p>
+&lt;p>POST Form：&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>参数&lt;/th>
+&lt;th>说明&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>userID&lt;/td>
+&lt;td>用户唯一标识符&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>userName&lt;/td>
+&lt;td>用户昵称&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>isMale&lt;/td>
+&lt;td>性别&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>description&lt;/td>
+&lt;td>个性签名&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>tag&lt;/td>
+&lt;td>用户喜好标签&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>预期返回类型：Json Object 对象数组&lt;/p>
+&lt;p>{&lt;/p>
+&lt;p>​ &amp;ldquo;status&amp;rdquo;:0,&lt;/p>
+&lt;p>​ &amp;ldquo;message&amp;rdquo;:&amp;quot;&amp;quot;&lt;/p>
+&lt;p>}&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>登录&lt;/p>
+&lt;p>HTTP请求方式：POST&lt;/p>
+&lt;p>URL： /user/login&lt;/p>
+&lt;p>POST Form：&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>参数&lt;/th>
+&lt;th>说明&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>user&lt;/td>
+&lt;td>用户ID/手机号&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>password&lt;/td>
+&lt;td>密码&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>预期返回类型：Json Object 对象数组&lt;/p>
+&lt;p>{&lt;/p>
+&lt;p>​ &amp;ldquo;status&amp;rdquo;:0,&lt;/p>
+&lt;p>​ &amp;ldquo;message&amp;rdquo;:{&amp;ldquo;userID&amp;rdquo;:&lt;code>用户唯一标识符&lt;/code>}&lt;/p>
+&lt;p>}&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>修改头像&lt;/p>
+&lt;p>HTTP请求方式：POST&lt;/p>
+&lt;p>URL： /user/changeAvatar&lt;/p>
+&lt;p>POST Form：&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>参数&lt;/th>
+&lt;th>说明&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>userID&lt;/td>
+&lt;td>用户ID&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>img&lt;/td>
+&lt;td>头像&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>预期返回类型：Json Object 对象数组&lt;/p>
+&lt;p>{&lt;/p>
+&lt;p>​ &amp;ldquo;status&amp;rdquo;:0,&lt;/p>
+&lt;p>​ &amp;ldquo;message&amp;rdquo;:&amp;quot;&amp;quot;&lt;/p>
+&lt;p>}&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>注册&lt;/p>
+&lt;p>HTTP请求方式：POST&lt;/p>
+&lt;p>URL： /user/register&lt;/p>
+&lt;p>POST Form：&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>参数&lt;/th>
+&lt;th>说明&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>userID&lt;/td>
+&lt;td>手机号&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>password&lt;/td>
+&lt;td>密码&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>userName&lt;/td>
+&lt;td>用户昵称&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>isMale&lt;/td>
+&lt;td>性别&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>预期返回类型：Json Object 对象数组&lt;/p>
+&lt;p>{&lt;/p>
+&lt;p>​ &amp;ldquo;status&amp;rdquo;:0,&lt;/p>
+&lt;p>​ &amp;ldquo;message&amp;rdquo;:{&amp;ldquo;userID&amp;rdquo;:&lt;code>用户唯一标识符&lt;/code>}&lt;/p>
+&lt;p>}&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>修改密码&lt;/p>
+&lt;p>HTTP请求方式：POST&lt;/p>
+&lt;p>URL： /user/changePassword&lt;/p>
+&lt;p>POST Form：&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>参数&lt;/th>
+&lt;th>说明&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>userID&lt;/td>
+&lt;td>用户ID&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>passwordOld&lt;/td>
+&lt;td>原密码&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>passwordNew&lt;/td>
+&lt;td>新密码&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>预期返回类型：Json Object 对象数组&lt;/p>
+&lt;p>{&lt;/p>
+&lt;p>​ &amp;ldquo;status&amp;rdquo;:0,&lt;/p>
+&lt;p>​ &amp;ldquo;message&amp;rdquo;:&amp;quot;&amp;quot;&lt;/p>
+&lt;p>}&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>获取粉丝列表&lt;/p>
+&lt;p>HTTP请求方式：POST&lt;/p>
+&lt;p>URL： /user/getFans&lt;/p>
+&lt;p>POST Form：&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>参数&lt;/th>
+&lt;th>说明&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>userID&lt;/td>
+&lt;td>请求的用户ID&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>targetUserID&lt;/td>
+&lt;td>对方动态ID&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>预期返回类型：Json Object 对象数组&lt;/p>
+&lt;p>{&lt;/p>
+&lt;p>​ &amp;ldquo;status&amp;rdquo;:0,&lt;/p>
+&lt;p>​ &amp;ldquo;message&amp;rdquo;:[{&lt;/p>
+&lt;p>​ &amp;ldquo;userID&amp;rdquo;:&lt;code>用户ID，字符串&lt;/code>,&lt;/p>
+&lt;p>​ &amp;ldquo;userName&amp;rdquo;:&lt;code>用户昵称，字符串&lt;/code>,&lt;/p>
+&lt;p>​ &amp;ldquo;userAvatar&amp;rdquo;:&lt;code>用户头像，应为图片URL，字符串&lt;/code>,&lt;/p>
+&lt;p>​ &amp;ldquo;relationship&amp;rdquo;:&lt;code>0无 1是粉丝 2已关注 3互相关注&lt;/code>&lt;/p>
+&lt;p>​ },{同上}]&lt;/p>
+&lt;p>}&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>获取关注列表&lt;/p>
+&lt;p>HTTP请求方式：POST&lt;/p>
+&lt;p>URL： /user/getFollowers&lt;/p>
+&lt;p>POST Form：&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>参数&lt;/th>
+&lt;th>说明&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>userID&lt;/td>
+&lt;td>请求的用户ID&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>targetUserID&lt;/td>
+&lt;td>对方的ID&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>预期返回类型：Json Object 对象数组&lt;/p>
+&lt;p>{&lt;/p>
+&lt;p>​ &amp;ldquo;status&amp;rdquo;:0,&lt;/p>
+&lt;p>​ &amp;ldquo;message&amp;rdquo;:[{&lt;/p>
+&lt;p>​ &amp;ldquo;userID&amp;rdquo;:&lt;code>用户ID，字符串&lt;/code>,&lt;/p>
+&lt;p>​ &amp;ldquo;userName&amp;rdquo;:&lt;code>用户昵称，字符串&lt;/code>,&lt;/p>
+&lt;p>​ &amp;ldquo;userAvatar&amp;rdquo;:&lt;code>用户头像，应为图片URL，字符串&lt;/code>,&lt;/p>
+&lt;p>​ &amp;ldquo;relationship&amp;rdquo;:&lt;code>0无 1是粉丝 2已关注 3互相关注&lt;/code>&lt;/p>
+&lt;p>​ }&lt;/p>
+&lt;p>​ ,{同上}]&lt;/p>
+&lt;p>}&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>举报用户&lt;/p>
+&lt;p>HTTP请求方式：POST&lt;/p>
+&lt;p>URL： /user/reportUser&lt;/p>
+&lt;p>POST Form：&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>参数&lt;/th>
+&lt;th>说明&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>userID&lt;/td>
+&lt;td>用户唯一标识符&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>targetUserID&lt;/td>
+&lt;td>被举报用户&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>message&lt;/td>
+&lt;td>举报理由&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>预期返回类型：Json Object&lt;/p>
+&lt;p>{&lt;/p>
+&lt;p>​ &amp;ldquo;status&amp;rdquo;:0,&lt;/p>
+&lt;p>​ &amp;ldquo;message&amp;rdquo;:&amp;quot;&amp;quot;&lt;/p>
+&lt;p>}&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>关注用户&lt;/p>
+&lt;p>HTTP请求方式：POST&lt;/p>
+&lt;p>URL： /user/followUser&lt;/p>
+&lt;p>POST Form：&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>参数&lt;/th>
+&lt;th>说明&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>userID&lt;/td>
+&lt;td>用户唯一标识符&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>targetUserID&lt;/td>
+&lt;td>被关注用户id&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>预期返回类型：Json Object&lt;/p>
+&lt;p>{&lt;/p>
+&lt;p>​ &amp;ldquo;status&amp;rdquo;:0,&lt;/p>
+&lt;p>​ &amp;ldquo;message&amp;rdquo;:&amp;quot;&amp;quot;&lt;/p>
+&lt;p>}&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>搜索用户&lt;/p>
+&lt;p>HTTP请求方式：POST&lt;/p>
+&lt;p>URL： /user/searchUser&lt;/p>
+&lt;p>POST Form：&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>参数&lt;/th>
+&lt;th>说明&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>userID&lt;/td>
+&lt;td>请求的用户ID&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>queryUserName&lt;/td>
+&lt;td>查询的用户名&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>预期返回类型：Json Object 对象数组&lt;/p>
+&lt;p>{&lt;/p>
+&lt;p>​ &amp;ldquo;status&amp;rdquo;:0,&lt;/p>
+&lt;p>​ &amp;ldquo;message&amp;rdquo;:[{&lt;/p>
+&lt;p>​ &amp;ldquo;userID&amp;rdquo;:&lt;code>用户ID，字符串&lt;/code>,&lt;/p>
+&lt;p>​ &amp;ldquo;userName&amp;rdquo;:&lt;code>用户昵称，字符串&lt;/code>,&lt;/p>
+&lt;p>​ &amp;ldquo;userAvatar&amp;rdquo;:&lt;code>用户头像，应为图片URL，字符串&lt;/code>,&lt;/p>
+&lt;p>​ &amp;ldquo;relationship&amp;rdquo;:&lt;code>0无 1是粉丝 2已关注 3互相关注&lt;/code>&lt;/p>
+&lt;p>​ }&lt;/p>
+&lt;p>​ ,{同上}]&lt;/p>
+&lt;p>}&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>取消关注用户&lt;/p>
+&lt;p>HTTP请求方式：POST&lt;/p>
+&lt;p>URL： /user/cancelFollowUser&lt;/p>
+&lt;p>POST Form：&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>参数&lt;/th>
+&lt;th>说明&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>userID&lt;/td>
+&lt;td>用户唯一标识符&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>targetUserID&lt;/td>
+&lt;td>被关注用户id&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>预期返回类型：Json Object&lt;/p>
+&lt;p>{&lt;/p>
+&lt;p>​ &amp;ldquo;status&amp;rdquo;:0,&lt;/p>
+&lt;p>​ &amp;ldquo;message&amp;rdquo;:&amp;quot;&amp;quot;&lt;/p>
+&lt;p>}&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;h3 id="通知">通知&lt;/h3>
+&lt;ol>
+&lt;li>
+&lt;p>获取通知&lt;/p>
+&lt;p>HTTP请求方式：POST&lt;/p>
+&lt;p>URL： /notice/getNotice&lt;/p>
+&lt;p>POST Form：&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>参数&lt;/th>
+&lt;th>说明&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>userID&lt;/td>
+&lt;td>请求的用户ID&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>预期返回类型：Json Object 对象数组&lt;/p>
+&lt;p>{&lt;/p>
+&lt;p>​ &amp;ldquo;status&amp;rdquo;:0,&lt;/p>
+&lt;p>​ &amp;ldquo;message&amp;rdquo;:[{&lt;/p>
+&lt;p>​ &amp;ldquo;type&amp;rdquo;:&lt;code>1新粉丝 2评论 3点赞 4系统公告&lt;/code>,&lt;/p>
+&lt;p>​ &amp;ldquo;userID&amp;rdquo;:&lt;code>用户ID，字符串，type为4时不检查此属性&lt;/code>,&lt;/p>
+&lt;p>​ &amp;ldquo;userName&amp;rdquo;:&lt;code>用户昵称，字符串，type为4时不检查此属性&lt;/code>,&lt;/p>
+&lt;p>​ &amp;ldquo;userAvatar&amp;rdquo;:&lt;code>用户头像，应为图片URL，字符串，type为4时不检查此属性&lt;/code>,&lt;/p>
+&lt;p>​ &amp;ldquo;note&amp;rdquo;:&lt;code>信息内容&lt;/code>,&lt;/p>
+&lt;p>​ &amp;ldquo;momentID&amp;rdquo;:&lt;code>仅type为2或3时使用此值，其余不检测该属性&lt;/code>,&lt;/p>
+&lt;p>​ &amp;ldquo;time&amp;rdquo;:&lt;code>当前通知产生时间&lt;/code>&lt;/p>
+&lt;p>​ }&lt;/p>
+&lt;p>​ ,{同上}]&lt;/p>
+&lt;p>}&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;h3 id="聊天">聊天&lt;/h3>
+&lt;ol>
+&lt;li>
+&lt;p>发送消息&lt;/p>
+&lt;p>协议：WebSocket 全双工&lt;/p>
+&lt;p>URL：/chat&lt;/p>
+&lt;p>数据报类型：JSON&lt;/p>
+&lt;p>数据报格式：&lt;/p>
+&lt;p>{&lt;/p>
+&lt;p>​ &amp;ldquo;formUserID&amp;rdquo;:&lt;code>发送消息的用户ID&lt;/code>,&lt;/p>
+&lt;p>​ &amp;ldquo;toUserID&amp;rdquo;:&lt;code>接收消息的用户ID&lt;/code>,&lt;/p>
+&lt;p>​ &amp;ldquo;message&amp;rdquo;:&lt;code>消息体&lt;/code>&lt;/p>
+&lt;p>}&lt;/p>
+&lt;/li>
+&lt;/ol></description></item><item><title>Hello World in Hugo</title><link>/p/hello-world-in-hugo/</link><pubDate>Wed, 29 Jun 2022 00:00:00 +0000</pubDate><guid>/p/hello-world-in-hugo/</guid><description>&lt;img src="/p/hello-world-in-hugo/banner.jpg" alt="Featured image of post Hello World in Hugo" />&lt;h1 id="hello-world-in-hugo">Hello World in Hugo&lt;/h1>
 &lt;p>Hi! I&amp;rsquo;m xianfei. I&amp;rsquo;m a student in the Department of Computer Science and Software Engineering, Beijing Information Science &amp;amp; Technology University (BISTU).&lt;/p>
 &lt;!-- &lt;iframe src="www.baidu.com"> --></description></item><item><title>About</title><link>/about/</link><pubDate>Tue, 28 Jun 2022 00:00:00 +0000</pubDate><guid>/about/</guid><description>&lt;h2 id="hi-there-im-xianfei-衔飞-">Hi there, I&amp;rsquo;m xianfei (衔飞) 👋&lt;/h2>
 &lt;blockquote>
@@ -1789,15 +2931,9 @@ alt="Photo by Helena Hertz on Unsplash"
 class="gallery-image"
 data-flex-grow="133"
 data-flex-basis="320px"
-> &lt;img src="./p/test-chinese/DSC02972.webp"
-width="6000"
-height="4000"
-srcset="./p/test-chinese/DSC02972_hu6fd206ce93e4cf64b7731bd138837fd2_1036592_480x0_resize_q75_h2_box_2.webp 480w, ./p/test-chinese/DSC02972_hu6fd206ce93e4cf64b7731bd138837fd2_1036592_1024x0_resize_q75_h2_box_2.webp 1024w"
+> &lt;img src="./p/test-chinese/DSC02972.avif"
 loading="lazy"
 alt="Photo by Hudai Gayiran on Unsplash"
-class="gallery-image"
-data-flex-grow="150"
-data-flex-basis="360px"
 >&lt;/p>
 &lt;div class="highlight">&lt;div class="chroma">
 &lt;table class="lntable">&lt;tr>&lt;td class="lntd">
