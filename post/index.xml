@@ -8,9 +8,6 @@ width: calc(100% + var(--card-padding) * 2);
 width:100%;
 }
 &lt;/style>
-&lt;script>
-document.querySelector('article').style.setProperty('--accent-color', '#f9b02f')
-&lt;/script>
 &lt;p>　　2021 年 9 月，作为大四的最后一次小组开发课程，我们设计了一个有趣的社交软件——奶黄猫。我在小组中担任产品设计、前端/客户端开发的职位。&lt;/p>
 &lt;h2 id="演示视频">演示视频&lt;/h2>
 &lt;blockquote>
@@ -1140,9 +1137,126 @@ document.querySelector('article').style.setProperty('--accent-color', '#f9b02f')
 &lt;p>​ &amp;ldquo;message&amp;rdquo;:&lt;code>消息体&lt;/code>&lt;/p>
 &lt;p>}&lt;/p>
 &lt;/li>
-&lt;/ol></description></item><item><title>Hello World in Hugo</title><link>/p/hello-world-in-hugo/</link><pubDate>Wed, 29 Jun 2022 00:00:00 +0000</pubDate><guid>/p/hello-world-in-hugo/</guid><description>&lt;img src="/p/hello-world-in-hugo/banner.jpg" alt="Featured image of post Hello World in Hugo" />&lt;h1 id="hello-world-in-hugo">Hello World in Hugo&lt;/h1>
-&lt;p>Hi! I&amp;rsquo;m xianfei. I&amp;rsquo;m a student in the Department of Computer Science and Software Engineering, Beijing Information Science &amp;amp; Technology University (BISTU).&lt;/p>
-&lt;!-- &lt;iframe src="www.baidu.com"> --></description></item><item><title>2021年度总结&amp;杂谈</title><link>/p/my2021/</link><pubDate>Thu, 27 Jan 2022 00:00:00 +0000</pubDate><guid>/p/my2021/</guid><description>&lt;img src="/p/my2021/clay-banks-HyczMwZbdLg-unsplash.jpg" alt="Featured image of post 2021年度总结&amp;杂谈" />&lt;style>
+&lt;/ol></description></item><item><title>AR冰墩墩与雪容融！在家也能和冰墩墩合照啦~</title><link>/p/ar2022/</link><pubDate>Wed, 09 Feb 2022 00:00:00 +0000</pubDate><guid>/p/ar2022/</guid><description>&lt;img src="/p/ar2022/ar2022.png" alt="Featured image of post AR冰墩墩与雪容融！在家也能和冰墩墩合照啦~" />&lt;style>
+@media screen and (max-width: 600px) {
+.xf-img {
+width: 100%;
+}
+.xf-img-2 {
+width: 80%;
+margin-left:10%;
+}
+}
+@media screen and (min-width: 600px) {
+.xf-img {
+width: 400px;
+margin-left: calc(50% - 200px)
+}
+.xf-img-2 {
+width: 300px;
+margin-left: calc(50% - 150px)
+}
+}
+.xf-video{
+margin-left: calc((var(--card-padding)) * -1);
+margin-right: calc((var(--card-padding)) * -1);
+width: calc(100% + var(--card-padding) * 2);
+}
+.xf-video video{
+width:100%;
+}
+&lt;/style>
+&lt;section style="margin: 10px 0%; box-sizing: border-box; line-height: 1.75em; visibility: visible;">&lt;section style="display: inline-block; width: 100%; vertical-align: top; background-color: rgb(240, 249, 255); border-width: 0px; border-style: none; border-color: rgb(62, 62, 62); overflow: hidden; padding: 29px; box-sizing: border-box; visibility: visible;">&lt;section style="box-sizing: border-box; visibility: visible;" powered-by="xiumi.us">&lt;p style="white-space: normal; margin: 0px; padding: 0px; box-sizing: border-box; visibility: visible;">&lt;br style="box-sizing: border-box; visibility: visible;">&lt;/p>&lt;/section>&lt;section style="text-align: center; justify-content: center; box-sizing: border-box; visibility: visible;" powered-by="xiumi.us">&lt;section style="text-align: justify; color: rgb(62, 62, 62); box-sizing: border-box; visibility: visible;">&lt;p style="text-align: center; white-space: normal; margin: 0px; padding: 0px; box-sizing: border-box; visibility: visible;">&lt;span style="color: rgb(122, 175, 231); box-sizing: border-box; visibility: visible;">&lt;strong style="box-sizing: border-box; visibility: visible;">最近，冰墩墩火了！&lt;/strong>&lt;/span>&lt;/p>&lt;p style="text-align: center; white-space: normal; margin: 0px; padding: 0px; box-sizing: border-box; visibility: visible;">&lt;span style="color: rgb(122, 175, 231); box-sizing: border-box; visibility: visible;">随着北京冬奥会开幕&lt;/span>&lt;/p>&lt;p style="text-align: center; white-space: normal; margin: 0px; padding: 0px; box-sizing: border-box; visibility: visible;">&lt;span style="color: rgb(122, 175, 231); box-sizing: border-box; visibility: visible;">吉祥物“冰墩墩”一跃成为现象级顶流&lt;/span>&lt;/p>&lt;p style="text-align: center; white-space: normal; margin: 0px; padding: 0px; box-sizing: border-box; visibility: visible;">&lt;span style="color: rgb(122, 175, 231); box-sizing: border-box; visibility: visible;">大家不禁纷纷直呼&lt;/span>&lt;/p>&lt;p style="text-align: center; white-space: normal; margin: 0px; padding: 0px; box-sizing: border-box; visibility: visible;">&lt;span style="color: rgb(122, 175, 231); box-sizing: border-box; visibility: visible;">&lt;strong style="box-sizing: border-box; visibility: visible;">“谁不想要一只可爱的冰墩墩！”&lt;/strong>&lt;/span>&lt;/p>&lt;p style="text-align: center; white-space: normal; margin: 0px; padding: 0px; box-sizing: border-box; visibility: visible;">&lt;span style="color: rgb(122, 175, 231); box-sizing: border-box; visibility: visible;">奥林匹克官方旗舰店冰墩墩周边一再售罄&lt;br style="box-sizing: border-box; visibility: visible;">&lt;/span>&lt;/p>&lt;p style="text-align: center; white-space: normal; margin: 0px; padding: 0px; box-sizing: border-box; visibility: visible;">&lt;span style="color: rgb(122, 175, 231); box-sizing: border-box; visibility: visible;">无论线上还是线下&lt;/span>&lt;/p>&lt;p style="text-align: center; white-space: normal; margin: 0px; padding: 0px; box-sizing: border-box; visibility: visible;">&lt;span style="color: rgb(122, 175, 231); box-sizing: border-box; visibility: visible;">都实力演绎“一墩难求”&lt;/span>&lt;/p>&lt;/section>&lt;/section>&lt;section style="transform: perspective(0px); transform-style: flat; box-sizing: border-box; visibility: visible;" powered-by="xiumi.us">&lt;section style="text-align: left; margin: 0px 0% -31px; justify-content: flex-start; transform: translate3d(21px, 0px, 0px) rotateY(180deg); box-sizing: border-box; visibility: visible;">&lt;section style="max-width: 100%; vertical-align: middle; display: inline-block; line-height: 0; width: 130px; height: auto; box-sizing: border-box; visibility: visible;">&lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 494.521 262.87" width="100%" style="box-sizing: border-box; visibility: visible;">&lt;g style="box-sizing: border-box; visibility: visible;">&lt;g style="box-sizing: border-box; visibility: visible;">&lt;polygon points="422.982 212.89 352.913 174.181 336.254 174.181 284.804 139.392 268.145 147.721 260.305 139.392 36.379 262.87 494.521 262.87 422.982 212.89" style="box-sizing: border-box; visibility: visible;" fill="rgb(192, 219, 252)">&lt;/polygon>&lt;g style="opacity: 0.52; box-sizing: border-box; visibility: visible;">&lt;path d="M377.2,206.847s3.43,15.68-20.579,0-60.269-36.259-60.269-36.259l43.609,43.228s-39.69-8.929-49-8.929-18.62,15.68-63.209,16.66c-37.587.826-108.243,34.526-148.589,40.774l150.512-1.932-169.5,2.175a88.087,88.087,0,0,0-19.239-2.208l-.343.189L260.305,139.392l7.84,8.329,16.659-8.329,51.45,34.789h16.659l53.543,29.58C392.891,204.742,377.2,206.847,377.2,206.847Z" style="box-sizing: border-box; visibility: visible;" fill="rgb(255, 255, 255)">&lt;/path>&lt;/g>&lt;polygon points="436.495 221.22 494.521 262.87 494.521 262.87 436.495 221.22" style="box-sizing: border-box; visibility: visible;" fill="rgb(255, 255, 255)">&lt;/polygon>&lt;polygon points="53.869 262.645 36.379 262.87 36.379 262.87 53.869 262.645" style="box-sizing: border-box; visibility: visible;" fill="rgb(255, 255, 255)">&lt;/polygon>&lt;g style="opacity: 0.52; box-sizing: border-box; visibility: visible;">&lt;path d="M286.841,161.768l-21.391-2.09s-5.689,19.456-27.248,13.305c-11.8,5.656-75.051,43.252-114.619,41.8l136.722-75.391,7.84,8.329,16.659-8.329,37.36,25.262Z" style="box-sizing: border-box; visibility: visible;" fill="rgb(255, 255, 255)">&lt;/path>&lt;/g>&lt;polygon points="44.176 212.89 80.548 174.181 89.196 174.181 115.902 139.392 124.55 147.721 128.62 139.392 244.857 262.87 7.041 262.87 44.176 212.89" style="box-sizing: border-box; visibility: visible;" fill="rgb(192, 219, 252)">&lt;/polygon>&lt;g style="opacity: 0.52; box-sizing: border-box; visibility: visible;">&lt;path d="M67.943,206.847s-1.781,15.68,10.682,0,31.285-36.259,31.285-36.259L87.273,213.816s20.6-8.929,25.435-8.929,9.665,15.68,32.811,16.66c19.511.826,56.188,34.526,77.131,40.774l-78.129-1.932,87.983,2.175a25.142,25.142,0,0,1,9.987-2.208l.178.189L128.62,139.392l-4.07,8.329-8.648-8.329L89.2,174.181H80.548l-27.794,29.58C59.8,204.742,67.943,206.847,67.943,206.847Z" style="box-sizing: border-box; visibility: visible;" fill="rgb(255, 255, 255)">&lt;/path>&lt;/g>&lt;polygon points="37.161 221.22 7.041 262.87 7.041 262.87 37.161 221.22" style="box-sizing: border-box; visibility: visible;" fill="rgb(255, 255, 255)">&lt;/polygon>&lt;polygon points="235.778 262.645 244.857 262.87 244.857 262.87 235.778 262.645" style="box-sizing: border-box; visibility: visible;" fill="rgb(255, 255, 255)">&lt;/polygon>&lt;g style="opacity: 0.52; box-sizing: border-box; visibility: visible;">&lt;path d="M114.845,161.768l11.1-2.09s2.953,19.456,14.144,13.305c6.127,5.656,38.958,43.252,59.5,41.8L128.62,139.392l-4.07,8.329-8.648-8.329L96.509,164.654Z" style="box-sizing: border-box; visibility: visible;" fill="rgb(255, 255, 255)">&lt;/path>&lt;/g>&lt;g style="opacity: 0.18; box-sizing: border-box; visibility: visible;">&lt;path d="M53.869,107.739h0a53.871,53.871,0,0,1,53.87-53.87h0A53.87,53.87,0,0,1,53.869,0h0A53.869,53.869,0,0,1,0,53.869H0A53.87,53.87,0,0,1,53.869,107.739Z" style="box-sizing: border-box; visibility: visible;" fill="rgb(61, 147, 227)">&lt;/path>&lt;/g>&lt;g style="opacity: 0.18; box-sizing: border-box; visibility: visible;">&lt;path d="M379.741,132.613h0a32.534,32.534,0,0,1,32.534-32.534h0a32.534,32.534,0,0,1-32.534-32.534h0a32.534,32.534,0,0,1-32.533,32.534h0A32.534,32.534,0,0,1,379.741,132.613Z" style="box-sizing: border-box; visibility: visible;" fill="rgb(61, 147, 227)">&lt;/path>&lt;/g>&lt;/g>&lt;/g>&lt;/svg>&lt;/section>&lt;/section>&lt;/section>&lt;/section>&lt;/section>
+&lt;h2 id="技术背景">技术背景&lt;/h2>
+&lt;p>增强现实（Augmented Reality，简称AR），也有对应VR虚拟实境一词的翻译称为实拟虚境或扩张现实，是指透过摄影机影像的位置及角度精算并加上图像分析技术，让屏幕上的虚拟世界能够与现实世界场景进行结合与交互的技术。这种技术于1990年提出。随着随身电子产品运算能力的提升，增强现实的用途也越来越广。&lt;/p>
+&lt;h2 id="效果演示">效果演示&lt;/h2>
+&lt;p>&lt;img src="../p/ar2022/1.jpg"
+width="3830"
+height="2305"
+srcset="../p/ar2022/1_huc6eb2c4186115cc395ee4ef074d2a6c5_690253_480x0_resize_q75_box.jpg 480w, ../p/ar2022/1_huc6eb2c4186115cc395ee4ef074d2a6c5_690253_1024x0_resize_q75_box.jpg 1024w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="166"
+data-flex-basis="398px"
+>&lt;/p>
+&lt;h2 id="使用方法">使用方法&lt;/h2>
+&lt;h3 id="android需要一部支持arcore并安装arcore的手机">Android：需要一部支持ARCore并安装ARCore的手机&lt;/h3>
+&lt;h4 id="检查arcore">检查ARCore&lt;/h4>
+&lt;p>对于ARCore的支持情况，可查看Google官方对于AR Core的文档（https://developers.google.com/ar/devices），如果自己的设备不支持且装有Magisk框架，可在Magisk中下载ARCore/Playground Patcher来强行支持&lt;/p>
+&lt;img class="xf-img" src="p1.webp">
+&lt;p>对于MIUI等国产手机，需要在设置中启动Google基础服务，并去小米应用商店更新ARCore。对于默认装有Google服务的手机应该是自带的。&lt;/p>
+&lt;h4 id="需要google应用或最新版的chrome打开网页">需要Google应用或最新版的Chrome打开网页&lt;/h4>
+&lt;p>网址：（建议翻墙进行）
+&lt;a class="link" href="https://xianfei.github.io/ar2022/" target="_blank" rel="noopener"
+>https://xianfei.github.io/ar2022/&lt;/a>&lt;/p>
+&lt;details>
+&lt;summary>点击显示网页二维码&lt;/summary>
+&lt;img class="xf-img" src="qr.png">
+&lt;/details>
+&lt;p>将该地址复制到Google应用或Chrome中即可。（iOS用户可以直接访问该链接）
+推荐在Google应用中打开效果更好，视频中所展示的是通过系统自带浏览器（不支持WebXR）调用Google APP展示3D AR交互。请Play商店中下载Google应用，否则将会提示如下：&lt;/p>
+&lt;img class="xf-img" src="p2.webp">
+&lt;p>或者使用Chrome等支持WebXR技术的浏览器进行打开，不过效果不如Google应用。WebXR是一项非常前沿的Web前端技术，浏览器们几乎很少支持&lt;/p>
+&lt;p>&lt;img src="../p/ar2022/xr.webp"
+width="1080"
+height="541"
+srcset="../p/ar2022/xr_hu7731898789b085148934d100659bfa5b_34206_480x0_resize_q75_h2_box_2.webp 480w, ../p/ar2022/xr_hu7731898789b085148934d100659bfa5b_34206_1024x0_resize_q75_h2_box_2.webp 1024w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="199"
+data-flex-basis="479px"
+>&lt;/p>
+&lt;h3 id="ios-直接在safari中访问网站即可">iOS: 直接在Safari中访问网站即可&lt;/h3>
+&lt;p>&lt;a class="link" href="https://xianfei.github.io/ar2022/" target="_blank" rel="noopener"
+>https://xianfei.github.io/ar2022/&lt;/a>&lt;/p>
+&lt;details>
+&lt;summary>点击显示网页二维码&lt;/summary>
+&lt;img class="xf-img" src="qr.png">
+&lt;/details>
+&lt;h3 id="点击立方体图标按钮进入ar模式">点击立方体图标按钮进入AR模式&lt;/h3>
+&lt;p>点击图中右下角的那个图标，即可进入AR模式。&lt;/p>
+&lt;img class="xf-img" src="p3.webp">
+&lt;p>如果顺利的话，应该可以看见冰墩墩和雪容融了&lt;/p>
+&lt;h2 id="酷安头条">酷安头条&lt;/h2>
+&lt;p>昨天凌晨睡觉前把它发到了酷安上，睡醒后发现上了头条，也有很多网友表示成功了，也有些网友提出了一些解决方案，没成功的读者可以在酷安评论区里看看有无有用的内容。&lt;/p>
+&lt;img class="xf-img" src="p4.webp">
+&lt;p>此处为一些酷安网友在评论区晒的成功截图：&lt;/p>
+&lt;img class="xf-img" src="p5.webp">
+&lt;h2 id="技术方案">技术方案&lt;/h2>
+&lt;p>建模：Blender 展示：model-viewer&lt;/p>
+&lt;p>&lt;img src="../p/ar2022/p6.png"
+width="1080"
+height="661"
+srcset="../p/ar2022/p6_hu373fbc29c2314c7bc00ecd22ef9f593a_170609_480x0_resize_box_3.png 480w, ../p/ar2022/p6_hu373fbc29c2314c7bc00ecd22ef9f593a_170609_1024x0_resize_box_3.png 1024w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="163"
+data-flex-basis="392px"
+>&lt;/p>
+&lt;p>AR展示技术可以参考Google ARCore WebXR 文档（ &lt;a class="link" href="https://developers.google.com/ar/develop/webxr/model-viewer" target="_blank" rel="noopener"
+>https://developers.google.com/ar/develop/webxr/model-viewer&lt;/a> ）简单易懂，对前端开发稍有了解的同学肯定是一看就会。&lt;/p>
+&lt;p>&lt;img src="../p/ar2022/640.png"
+width="1080"
+height="558"
+srcset="../p/ar2022/640_huee6eebd51ede7e073361738155c8e35e_113749_480x0_resize_box_3.png 480w, ../p/ar2022/640_huee6eebd51ede7e073361738155c8e35e_113749_1024x0_resize_box_3.png 1024w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="193"
+data-flex-basis="464px"
+>&lt;/p>
+&lt;p>此处我们只需导出glb文件即可（如果想要在iOS中也能进行预览则需要导出usdz文件）在Blender完成3D建模后只需要导出glb和usdz文件即可（如果不会建模可以去b站搜一下许多up主分享了模型文件）值得注意的是，玻璃材质等涉及反射折射的材料在AR上不一定能实现，建议使用半透明的实色材质来绘制冰墩墩的外壳&lt;/p>
+&lt;p>&lt;img src="../p/ar2022/640-1.png"
+width="1080"
+height="696"
+srcset="../p/ar2022/640-1_hu93d2f6cd75b9d3d26d3d62dcbfb98dae_401197_480x0_resize_box_3.png 480w, ../p/ar2022/640-1_hu93d2f6cd75b9d3d26d3d62dcbfb98dae_401197_1024x0_resize_box_3.png 1024w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="155"
+data-flex-basis="372px"
+>&lt;/p>
+&lt;p>项目源代码：&lt;/p>
+&lt;p>&lt;a class="link" href="https://github.com/xianfei/xianfei.github.io/tree/master/static/ar2022" target="_blank" rel="noopener"
+>https://github.com/xianfei/xianfei.github.io/tree/master/static/ar2022&lt;/a>&lt;/p></description></item><item><title>2021年度总结&amp;杂谈</title><link>/p/my2021/</link><pubDate>Thu, 27 Jan 2022 00:00:00 +0000</pubDate><guid>/p/my2021/</guid><description>&lt;img src="/p/my2021/clay-banks-HyczMwZbdLg-unsplash.jpg" alt="Featured image of post 2021年度总结&amp;杂谈" />&lt;style>
 @media screen and (max-width: 600px) {
 .xf-img {
 width: 100%;
@@ -2850,65 +2964,7 @@ wd.style.lineHeight = `${fontSize}px`;
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div></description></item><item><title>Chinese Test</title><link>/p/test-chinese/</link><pubDate>Sat, 09 Sep 2000 00:00:00 +0000</pubDate><guid>/p/test-chinese/</guid><description>&lt;img src="/p/test-chinese/helena-hertz-wWZzXlDpMog-unsplash.jpg" alt="Featured image of post Chinese Test" />&lt;h2 id="正文测试">正文测试&lt;/h2>
-&lt;p>而这些并不是完全重要，更加重要的问题是， 带着这些问题，我们来审视一下学生会退会。 既然如何， 对我个人而言，学生会退会不仅仅是一个重大的事件，还可能会改变我的人生。 我们不得不面对一个非常尴尬的事实，那就是， 可是，即使是这样，学生会退会的出现仍然代表了一定的意义。 学生会退会，发生了会如何，不发生又会如何。 经过上述讨论， 生活中，若学生会退会出现了，我们就不得不考虑它出现了的事实。 学生会退会，到底应该如何实现。 这样看来， 在这种困难的抉择下，本人思来想去，寝食难安。 对我个人而言，学生会退会不仅仅是一个重大的事件，还可能会改变我的人生。 就我个人来说，学生会退会对我的意义，不能不说非常重大。 莎士比亚曾经提到过，人的一生是短的，但如果卑劣地过这一生，就太长了。这似乎解答了我的疑惑。 莫扎特说过一句富有哲理的话，谁和我一样用功，谁就会和我一样成功。这启发了我， 对我个人而言，学生会退会不仅仅是一个重大的事件，还可能会改变我的人生。 学生会退会，到底应该如何实现。 一般来说， 从这个角度来看， 这种事实对本人来说意义重大，相信对这个世界也是有一定意义的。 在这种困难的抉择下，本人思来想去，寝食难安。 了解清楚学生会退会到底是一种怎么样的存在，是解决一切问题的关键。 一般来说， 生活中，若学生会退会出现了，我们就不得不考虑它出现了的事实。 问题的关键究竟为何？ 而这些并不是完全重要，更加重要的问题是。&lt;/p>
-&lt;p>奥斯特洛夫斯基曾经说过，共同的事业，共同的斗争，可以使人们产生忍受一切的力量。　带着这句话，我们还要更加慎重的审视这个问题： 一般来讲，我们都必须务必慎重的考虑考虑。 既然如此， 这种事实对本人来说意义重大，相信对这个世界也是有一定意义的。 带着这些问题，我们来审视一下学生会退会。 我认为， 我认为， 在这种困难的抉择下，本人思来想去，寝食难安。 问题的关键究竟为何？ 每个人都不得不面对这些问题。 在面对这种问题时， 要想清楚，学生会退会，到底是一种怎么样的存在。 我认为， 既然如此， 每个人都不得不面对这些问题。 在面对这种问题时， 那么， 我认为， 学生会退会因何而发生。&lt;/p>
-&lt;h2 id="引用">引用&lt;/h2>
-&lt;blockquote>
-&lt;p>思念是最暖的忧伤像一双翅膀&lt;br>
-让我停不了飞不远在过往游荡&lt;br>
-不告而别的你 就算为了我着想&lt;br>
-这么沉痛的呵护 我怎么能翱翔&lt;/p>
-&lt;p>&lt;em>&lt;a class="link" href="https://www.youtube.com/watch?v=3aypp_YlBzI" target="_blank" rel="noopener"
->最暖的憂傷 - 田馥甄&lt;/a>&lt;/em>&lt;/p>
-&lt;/blockquote>
-&lt;h2 id="图片">图片&lt;/h2>
-&lt;p>&lt;img src="../p/test-chinese/florian-klauer-nptLmg6jqDo-unsplash.jpg"
-width="667"
-height="1000"
-srcset="../p/test-chinese/florian-klauer-nptLmg6jqDo-unsplash_hu595aaf3b3dbbb41af5aed8d3958cc9f9_13854_480x0_resize_q75_box.jpg 480w, ../p/test-chinese/florian-klauer-nptLmg6jqDo-unsplash_hu595aaf3b3dbbb41af5aed8d3958cc9f9_13854_1024x0_resize_q75_box.jpg 1024w"
-loading="lazy"
-alt="Photo by Florian Klauer on Unsplash"
-class="gallery-image"
-data-flex-grow="66"
-data-flex-basis="160px"
-> &lt;img src="../p/test-chinese/luca-bravo-alS7ewQ41M8-unsplash.jpg"
-width="1000"
-height="667"
-srcset="../p/test-chinese/luca-bravo-alS7ewQ41M8-unsplash_hu0a3f1163de68d0b9471979ebf0ecf11e_32400_480x0_resize_q75_box.jpg 480w, ../p/test-chinese/luca-bravo-alS7ewQ41M8-unsplash_hu0a3f1163de68d0b9471979ebf0ecf11e_32400_1024x0_resize_q75_box.jpg 1024w"
-loading="lazy"
-alt="Photo by Luca Bravo on Unsplash"
-class="gallery-image"
-data-flex-grow="149"
-data-flex-basis="359px"
->&lt;/p>
-&lt;p>&lt;img src="../p/test-chinese/helena-hertz-wWZzXlDpMog-unsplash.jpg"
-width="1000"
-height="750"
-srcset="../p/test-chinese/helena-hertz-wWZzXlDpMog-unsplash_hu45a5e3ad5e058da6a00650ed8fd40bea_15530_480x0_resize_q75_box.jpg 480w, ../p/test-chinese/helena-hertz-wWZzXlDpMog-unsplash_hu45a5e3ad5e058da6a00650ed8fd40bea_15530_1024x0_resize_q75_box.jpg 1024w"
-loading="lazy"
-alt="Photo by Helena Hertz on Unsplash"
-class="gallery-image"
-data-flex-grow="133"
-data-flex-basis="320px"
-> &lt;img src="../p/test-chinese/DSC02972.avif"
-loading="lazy"
-alt="Photo by Hudai Gayiran on Unsplash"
->&lt;/p>
-&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
-&lt;/span>&lt;span class="lnt">2
-&lt;/span>&lt;span class="lnt">3
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-markdown" data-lang="markdown">&lt;span class="line">&lt;span class="cl">![&lt;span class="nt">Photo by Florian Klauer on Unsplash&lt;/span>](&lt;span class="na">florian-klauer-nptLmg6jqDo-unsplash.jpg&lt;/span>) ![&lt;span class="nt">Photo by Luca Bravo on Unsplash&lt;/span>](&lt;span class="na">luca-bravo-alS7ewQ41M8-unsplash.jpg&lt;/span>)
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">![&lt;span class="nt">Photo by Helena Hertz on Unsplash&lt;/span>](&lt;span class="na">helena-hertz-wWZzXlDpMog-unsplash.jpg&lt;/span>) ![&lt;span class="nt">Photo by Hudai Gayiran on Unsplash&lt;/span>](&lt;span class="na">hudai-gayiran-3Od_VKcDEAA-unsplash.jpg&lt;/span>)
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;p>相册语法来自 &lt;a class="link" href="https://typlog.com/" target="_blank" rel="noopener"
->Typlog&lt;/a>&lt;/p></description></item><item><title>Markdown Syntax Guide</title><link>/p/markdown-syntax-guide/</link><pubDate>Sat, 11 Mar 2000 00:00:00 +0000</pubDate><guid>/p/markdown-syntax-guide/</guid><description>&lt;img src="/p/markdown-syntax-guide/pawel-czerwinski-8uZPynIu-rQ-unsplash.jpg" alt="Featured image of post Markdown Syntax Guide" />&lt;p>This article offers a sample of basic Markdown syntax that can be used in Hugo content files, also it shows whether basic HTML elements are decorated with CSS in a Hugo theme.&lt;/p>
+&lt;/div></description></item><item><title>Markdown Syntax Guide</title><link>/p/markdown-syntax-guide/</link><pubDate>Sat, 11 Mar 2000 00:00:00 +0000</pubDate><guid>/p/markdown-syntax-guide/</guid><description>&lt;img src="/p/markdown-syntax-guide/pawel-czerwinski-8uZPynIu-rQ-unsplash.jpg" alt="Featured image of post Markdown Syntax Guide" />&lt;p>This article offers a sample of basic Markdown syntax that can be used in Hugo content files, also it shows whether basic HTML elements are decorated with CSS in a Hugo theme.&lt;/p>
 &lt;h2 id="headings">Headings&lt;/h2>
 &lt;p>The following HTML &lt;code>&amp;lt;h1&amp;gt;&lt;/code>—&lt;code>&amp;lt;h6&amp;gt;&lt;/code> elements represent six levels of section headings. &lt;code>&amp;lt;h1&amp;gt;&lt;/code> is the highest section level while &lt;code>&amp;lt;h6&amp;gt;&lt;/code> is the lowest.&lt;/p>
 &lt;h1 id="h1">H1&lt;/h1>
@@ -3124,126 +3180,4 @@ alt="Google"
 >talk&lt;/a> during Gopherfest, November 18, 2015.&amp;#160;&lt;a href="#fnref:1" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
 &lt;/li>
 &lt;/ol>
-&lt;/div></description></item><item><title>Rich Content</title><link>/p/rich-content/</link><pubDate>Fri, 10 Mar 2000 00:00:00 +0000</pubDate><guid>/p/rich-content/</guid><description>&lt;p>Hugo ships with several &lt;a class="link" href="https://gohugo.io/content-management/shortcodes/#use-hugo-s-built-in-shortcodes" target="_blank" rel="noopener"
->Built-in Shortcodes&lt;/a> for rich content, along with a &lt;a class="link" href="https://gohugo.io/about/hugo-and-gdpr/" target="_blank" rel="noopener"
->Privacy Config&lt;/a> and a set of Simple Shortcodes that enable static and no-JS versions of various social media embeds.&lt;/p>
-&lt;hr>
-&lt;h2 id="youtube-privacy-enhanced-shortcode">YouTube Privacy Enhanced Shortcode&lt;/h2>
-&lt;div class="video-wrapper">
-&lt;iframe loading="lazy"
-src="https://www.youtube.com/embed/ZJthWmvUzzc"
-allowfullscreen
-title="YouTube Video"
->
-&lt;/iframe>
-&lt;/div>
-&lt;br>
-&lt;hr>
-&lt;h2 id="twitter-simple-shortcode">Twitter Simple Shortcode&lt;/h2>
-&lt;style type="text/css">
-.twitter-tweet {
-font: 14px/1.45 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
-border-left: 4px solid #2b7bb9;
-padding-left: 1.5em;
-color: #555;
-}
-.twitter-tweet a {
-color: #2b7bb9;
-text-decoration: none;
-}
-blockquote.twitter-tweet a:hover,
-blockquote.twitter-tweet a:focus {
-text-decoration: underline;
-}
-&lt;/style>
-&lt;blockquote class="twitter-tweet">&lt;p lang="en" dir="ltr">“In addition to being more logical, asymmetry has the advantage that its complete appearance is far more optically effective than symmetry.”&lt;br>— Jan Tschichold &lt;a href="https://t.co/gcv7SrhvJb">pic.twitter.com/gcv7SrhvJb&lt;/a>&lt;/p>&amp;mdash; Graphic Design History (@DesignReviewed) &lt;a href="https://twitter.com/DesignReviewed/status/1085870671291310081?ref_src=twsrc%5Etfw">January 17, 2019&lt;/a>&lt;/blockquote>
-&lt;br>
-&lt;hr>
-&lt;h2 id="vimeo-simple-shortcode">Vimeo Simple Shortcode&lt;/h2>
-&lt;style>
-.__h_video {
-position: relative;
-padding-bottom: 56.23%;
-height: 0;
-overflow: hidden;
-width: 100%;
-background: #000;
-}
-.__h_video img {
-width: 100%;
-height: auto;
-color: #000;
-}
-.__h_video .play {
-height: 72px;
-width: 72px;
-left: 50%;
-top: 50%;
-margin-left: -36px;
-margin-top: -36px;
-position: absolute;
-cursor: pointer;
-}
-&lt;/style>
-&lt;div class="s_video_simple __h_video">
-&lt;a href="https://vimeo.com/4.8912912e&amp;#43;07" rel="noopener" target="_blank">
-&lt;img src="https://i.vimeocdn.com/video/337401969-979f0cc9f55fdf305fb8984e90d92639ec9d7ecc4c9dfbc6536e28edb43784ce-d_640" srcset="https://i.vimeocdn.com/video/337401969-979f0cc9f55fdf305fb8984e90d92639ec9d7ecc4c9dfbc6536e28edb43784ce-d_640 1x, https://i.vimeocdn.com/video/337401969-979f0cc9f55fdf305fb8984e90d92639ec9d7ecc4c9dfbc6536e28edb43784ce-d_640 2x" alt="Sing Jan Swing - Kinetic Type">
-&lt;div class="play">&lt;svg version="1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 61 61">&lt;circle cx="30.5" cy="30.5" r="30.5" opacity=".8" fill="#000">&lt;/circle>&lt;path d="M25.3 19.2c-2.1-1.2-3.8-.2-3.8 2.2v18.1c0 2.4 1.7 3.4 3.8 2.2l16.6-9.1c2.1-1.2 2.1-3.2 0-4.4l-16.6-9z" fill="#fff">&lt;/path>&lt;/svg>&lt;/div>&lt;/a>&lt;/div>
-&lt;h2 id="bilibilibi-shortcode">bilibilibi Shortcode&lt;/h2>
-&lt;div class="video-wrapper">
-&lt;iframe src="https://player.bilibili.com/player.html?as_wide=1&amp;amp;high_quality=1&amp;amp;page=1&amp;aid=498363026"
-scrolling="no"
-frameborder="no"
-framespacing="0"
-allowfullscreen="true"
->
-&lt;/iframe>
-&lt;/div>
-&lt;h2 id="gist-shortcode">Gist Shortcode&lt;/h2>
-&lt;script type="application/javascript" src="https://gist.github.com/spf13/7896402.js">&lt;/script>
-&lt;h2 id="gitlab-snippets-shortcode">Gitlab Snippets Shortcode&lt;/h2>
-&lt;script
-type="application/javascript"
-src="https://gitlab.com/-/snippets/2349278.js"
->&lt;/script>
-&lt;h2 id="quote-shortcode">Quote Shortcode&lt;/h2>
-&lt;p>Stack adds a &lt;code>quote&lt;/code> shortcode. For example:&lt;/p>
-&lt;blockquote>
-&lt;p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&lt;/p>&lt;span class="cite">&lt;span>― &lt;/span>&lt;span>A famous person, &lt;/span>&lt;a href="https://en.wikipedia.org/wiki/Book">&lt;cite>The book they wrote&lt;/cite>&lt;/a>&lt;/span>&lt;/blockquote>
-&lt;blockquote>
-&lt;p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&lt;/p>&lt;span class="cite">&lt;span>― &lt;/span>&lt;a href="https://en.wikipedia.org/wiki/Book">&lt;cite>Anonymous book&lt;/cite>&lt;/a>&lt;/span>&lt;/blockquote>
-&lt;blockquote>
-&lt;p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&lt;/p>&lt;span class="cite">&lt;span>― &lt;/span>&lt;cite>Some book&lt;/cite>&lt;/span>&lt;/blockquote>
-&lt;blockquote>
-&lt;p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&lt;/p>&lt;span class="cite">&lt;span>― &lt;/span>&lt;span>Somebody&lt;/span>&lt;cite>&lt;/cite>&lt;/span>&lt;/blockquote></description></item><item><title>Math Typesetting</title><link>/p/math-typesetting/</link><pubDate>Wed, 08 Mar 2000 00:00:00 +0000</pubDate><guid>/p/math-typesetting/</guid><description>&lt;p>Mathematical notation in a Hugo project can be enabled by using third party JavaScript libraries.&lt;/p>
-&lt;p>In this example we will be using &lt;a class="link" href="https://katex.org/" target="_blank" rel="noopener"
->KaTeX&lt;/a>&lt;/p>
-&lt;ul>
-&lt;li>Create a partial under &lt;code>/layouts/partials/math.html&lt;/code>&lt;/li>
-&lt;li>Within this partial reference the &lt;a class="link" href="https://katex.org/docs/autorender.html" target="_blank" rel="noopener"
->Auto-render Extension&lt;/a> or host these scripts locally.&lt;/li>
-&lt;li>Include the partial in your templates like so:&lt;/li>
-&lt;/ul>
-&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
-&lt;/span>&lt;span class="lnt">2
-&lt;/span>&lt;span class="lnt">3
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">&lt;span class="o">{{&lt;/span> &lt;span class="k">if&lt;/span> or .Params.math .Site.Params.math &lt;span class="o">}}&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="o">{{&lt;/span> partial &lt;span class="s2">&amp;#34;math.html&amp;#34;&lt;/span> . &lt;span class="o">}}&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="o">{{&lt;/span> end &lt;span class="o">}}&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;ul>
-&lt;li>To enable KaTex globally set the parameter &lt;code>math&lt;/code> to &lt;code>true&lt;/code> in a project&amp;rsquo;s configuration&lt;/li>
-&lt;li>To enable KaTex on a per page basis include the parameter &lt;code>math: true&lt;/code> in content files&lt;/li>
-&lt;/ul>
-&lt;p>&lt;strong>Note:&lt;/strong> Use the online reference of &lt;a class="link" href="https://katex.org/docs/supported.html" target="_blank" rel="noopener"
->Supported TeX Functions&lt;/a>&lt;/p>
-&lt;h3 id="examples">Examples&lt;/h3>
-&lt;p>Block math:
-$$
-\varphi = 1+\frac{1} {1+\frac{1} {1+\frac{1} {1+\cdots} } }
-$$&lt;/p></description></item></channel></rss>
+&lt;/div></description></item></channel></rss>
