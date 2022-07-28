@@ -2,9 +2,13 @@
 author: Xianfei
 title: 我们设计了一个有趣的社交软件——奶黄猫
 date: 2022-07-10
-description: 一个可编程的交互式信息流社交软件
 slug: nhm
 image: nhm.png
+color: "#f9b02f"
+categories:
+    - coding
+    - 产品设计
+    - UI
 ---
 
 <style>
@@ -18,10 +22,7 @@ image: nhm.png
     width:100%;
 }
 </style>
-<script>
-    document.querySelector('article').style.setProperty('--accent-color', '#f9b02f')
 
-</script>
 
 　　2021 年 9 月，作为大四的最后一次小组开发课程，我们设计了一个有趣的社交软件——奶黄猫。我在小组中担任产品设计、前端/客户端开发的职位。
 

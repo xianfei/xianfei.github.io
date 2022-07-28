@@ -1,13 +1,17 @@
 <div class="article-details">
+
+
     {{ if .Params.categories }}
     <header class="article-category">
         {{ range (.GetTerms "categories") }}
-            <a href="{{ .RelPermalink }}" {{ with .Params.style }}style="background-color: {{ .background }}; color: {{ .color }};"{{ end }}>
+            <a href="{{ .RelPermalink }}" style="background-color: {{ $.Params.color }};">
                 {{ .LinkTitle }}
             </a>
         {{ end }}
+        
     </header>
     {{ end }}
+
 
     <div class="article-title-wrapper">
         <h2 class="article-title">
