@@ -3,6 +3,45 @@
     <script>
         document.querySelector('article').style.setProperty('--accent-color', {{.}})
     </script>
+    <style>
+        .xf-img-full {
+                max-width:calc(100% + var(--card-padding) * 2) !important;
+                margin-left: calc((var(--card-padding)) * -1);
+        margin-right: calc((var(--card-padding)) * -1);
+        width: calc(100% + var(--card-padding) * 2);
+            }
+        @media screen and (max-width: 600px) {
+            .xf-img {
+                width: 100%;
+            }
+            .xf-img-2 {
+                width: 80%;
+                margin-left:10%;
+            }
+        }
+        
+        @media screen and (min-width: 600px) {
+            .xf-img {
+                width: 400px;
+                margin-left: calc(50% - 200px)
+            } 
+            .xf-img-2 {
+                width: 300px;
+                margin-left: calc(50% - 150px)
+            }   
+        }
+        
+        .xf-video{
+            margin-left: calc((var(--card-padding)) * -1);
+            margin-right: calc((var(--card-padding)) * -1);
+            width: calc(100% + var(--card-padding) * 2);
+        }
+        
+        .xf-video video{
+            width:100%;
+        }
+        
+        </style>
     {{ end }}
     <!-- Refer to https://discourse.gohugo.io/t/responsive-tables-in-markdown/10639/5 -->
     {{ $wrappedTable := printf "<div class=\"table-wrapper\">${1}</div>" }}

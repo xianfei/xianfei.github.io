@@ -1,0 +1,55 @@
+{{- $src := .Get "src" | default (.Get 0) -}}
+<div
+    style="
+        margin-left: calc((var(--card-padding)) * -1);
+        margin-right: calc((var(--card-padding)) * -1);
+        width: calc(100% + var(--card-padding) * 2);
+    "
+>
+    <style>
+        .asciinema-terminal {
+            overflow-x: hidden !important;
+            padding: 0 !important;
+            padding-left: 20px;
+            margin-left: 0 !important;
+            margin-right: 0 !important;
+        }
+    </style>
+    <link rel="stylesheet" type="text/css" href="/libs/asciinema-player.css" />
+    <script src="/libs/asciinema-player.min.js"></script>
+    <div id="player{{- $src -}}"></div>
+    <script>
+        {
+            let player = AsciinemaPlayer.create(
+                "{{- $src -}}",
+                document.getElementById("player{{- $src -}}"),
+                { cols: 80, rows: 10 }
+            );
+            let hasPlayed = false;
+            window.addEventListener("scroll", () => {
+                var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+        var cHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+        var oDiv = document.getElementById("player{{- $src -}}");
+        if (scrollTop > (oDiv.offsetTop - cHeight)){
+            if(!hasPlayed){
+                player.play();
+                hasPlayed = true;
+            }
+        }
+                
+            });
+        }
+    </script>
+</div>
+➜  ~ asciinema rec          
+asciinema: recording asciicast to /var/folders/mh/llwc_vhx0pl94glmh7jfs80c0000gn/T/tmp3civihua-ascii.cast
+asciinema: press <ctrl-d> or type "exit" when you're done
+➜  ~ emcc
+emcc: error: no input files
+➜  ~ emcc --version
+emcc (Emscripten gcc/clang-like replacement + linker emulating GNU ld) 3.1.17-git
+Copyright (C) 2014 the Emscripten authors (see AUTHORS.txt)
+This is free and open source software under the MIT license.
+There is NO warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+➜  ~ 
