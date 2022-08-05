@@ -1,7 +1,6 @@
 ---
 author: Xianfei
 title: WebAssembly了解一下！
-description: 不会还以为在Web上只能运行JavaScript吧！
 date: 2022-06-01
 slug: wasm
 image: wasm.png

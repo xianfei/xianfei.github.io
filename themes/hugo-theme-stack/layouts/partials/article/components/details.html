@@ -1,10 +1,10 @@
-<div class="article-details">
+<div class="article-details" {{ if .Params.categories }}style="padding-top: 0px;margin-top: -20px;"{{ end }}>
 
 
     {{ if .Params.categories }}
     <header class="article-category">
         {{ range (.GetTerms "categories") }}
-            <a href="{{ .RelPermalink }}" style="background-color: {{ $.Params.color }};">
+            <a href="{{ .RelPermalink }}" style="background-color: {{ $.Params.color }}ee;backdrop-filter: saturate(2) blur(25px);--color1: {{ $.Params.color }}55;--color2: {{ $.Params.color }}77;">
                 {{ .LinkTitle }}
             </a>
         {{ end }}

@@ -39,6 +39,12 @@
                 .article-category a {
                     background: nth($defaultTagBackgrounds, $i);
                     color: nth($defaultTagColors, $i);
+                    border-radius: 20px;
+                    transition: box-shadow 0.3s ease;
+                    box-shadow: 0px 4px 8px var(--color1), 0px 0px 2px var(--color1), 0px 0px 1px var(--color1) !important;
+                }
+                .article-category a:hover{
+                    box-shadow: 0px 5px 10px var(--color2), 0px 2px 6px var(--color2), 0px 0px 1px var(--color2) !important;
                 }
             }
         }
