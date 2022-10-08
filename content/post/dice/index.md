@@ -3,6 +3,7 @@ author: Xianfei
 title: 关于喝酒的时候玩骰子的一些概率计算
 date: 2022-10-02
 slug: dice
+color: '#bb3718'
 image: banner.png
 categories:
     - Life
@@ -24,4 +25,17 @@ categories:
 
 ## 进一步分析
 
-对于这个游戏，我们再叫骰子之前，可以看一下自己有什么骰子。一般情况下，我们也会根据自己已经有的骰子，来决定我们要叫什么的。
+对于这个游戏，我们再叫骰子之前，可以看一下自己有什么骰子。一般情况下，我们也会根据自己已经有的骰子，来决定我们要叫什么的。于是我们的代码也可以考虑到这一点，即已知部分信息然后计算概率。还是当前的人数和骰子数，假设我知道我现在有了2个1和2个4，那么我叫“12个4”的胜率足足有58%，远远高于不知道任何信息时“12个4”的胜率。
+
+## 编写工具
+
+为了方便读者在实战中应用此理论，我根据上述介绍编写了一个小工具，可以计算概率，也可以帮助读者更好的理解本文中的内容。
+<iframe src="dice.html" style="width:100%;height:550px;border:none;border-radius:20px;box-shadow: var(--shadow-l1);"></iframe>
+
+源代码：[https://github.com/xianfei/xianfei.github.io/blob/master/content/post/dice/dice.html](https://github.com/xianfei/xianfei.github.io/blob/master/content/post/dice/dice.html)
+
+## 结束语
+
+其实吧，喝酒玩骰子就是图一乐，遇到心仪的对象，自己多喝几杯也无妨。
+
+封面图片：https://unsplash.com/photos/pQyTChJwEDI
