@@ -1,5 +1,6 @@
 ---
-title: Links
+title: 友情链接
+slug: links
 links:
   - title: 旧版本博客主页
     description: Based on WordPress.

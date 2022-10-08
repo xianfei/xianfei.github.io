@@ -1,11 +1,8 @@
 ---
-title: About
+title: 个人简介
+slug: about
 description: I'm xianfei (衔飞) 
 date: '2022-06-28'
-aliases:
-  - about-us
-  - about-hugo
-  - contact
 license: CC BY-NC-ND
 lastmod: '2020-10-09'
 menu:
