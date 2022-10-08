@@ -7,7 +7,15 @@
 &lt;img class="xf-img" src="1.webp">
 &lt;p>也就是说在这种情况下，对于“5个1”的叫法，“开”他的胜率约为49%；对于“10个x”（1&amp;lt;x&amp;lt;7,x∈N），“开”他的胜率约为54%。&lt;/p>
 &lt;h2 id="进一步分析">进一步分析&lt;/h2>
-&lt;p>对于这个游戏，我们再叫骰子之前，可以看一下自己有什么骰子。一般情况下，我们也会根据自己已经有的骰子，来决定我们要叫什么的。&lt;/p></description></item><item><title>2021年度总结&amp;杂谈</title><link>/p/my2021/</link><pubDate>Thu, 27 Jan 2022 00:00:00 +0000</pubDate><guid>/p/my2021/</guid><description>&lt;img src="/p/my2021/clay-banks-HyczMwZbdLg-unsplash.jpg" alt="Featured image of post 2021年度总结&amp;杂谈" />&lt;style>
+&lt;p>对于这个游戏，我们再叫骰子之前，可以看一下自己有什么骰子。一般情况下，我们也会根据自己已经有的骰子，来决定我们要叫什么的。于是我们的代码也可以考虑到这一点，即已知部分信息然后计算概率。还是当前的人数和骰子数，假设我知道我现在有了2个1和2个4，那么我叫“12个4”的胜率足足有58%，远远高于不知道任何信息时“12个4”的胜率。&lt;/p>
+&lt;h2 id="编写工具">编写工具&lt;/h2>
+&lt;p>为了方便读者在实战中应用此理论，我根据上述介绍编写了一个小工具，可以计算概率，也可以帮助读者更好的理解本文中的内容。&lt;/p>
+&lt;iframe src="dice.html" style="width:100%;height:550px;border:none;border-radius:20px;box-shadow: var(--shadow-l1);">&lt;/iframe>
+&lt;p>源代码：&lt;a class="link" href="https://github.com/xianfei/xianfei.github.io/blob/master/content/post/dice/dice.html" target="_blank" rel="noopener"
+>https://github.com/xianfei/xianfei.github.io/blob/master/content/post/dice/dice.html&lt;/a>&lt;/p>
+&lt;h2 id="结束语">结束语&lt;/h2>
+&lt;p>其实吧，喝酒玩骰子就是图一乐，遇到心仪的对象，自己多喝几杯也无妨。&lt;/p>
+&lt;p>封面图片：https://unsplash.com/photos/pQyTChJwEDI&lt;/p></description></item><item><title>2021年度总结&amp;杂谈</title><link>/p/my2021/</link><pubDate>Thu, 27 Jan 2022 00:00:00 +0000</pubDate><guid>/p/my2021/</guid><description>&lt;img src="/p/my2021/clay-banks-HyczMwZbdLg-unsplash.jpg" alt="Featured image of post 2021年度总结&amp;杂谈" />&lt;style>
 @media screen and (max-width: 600px) {
 .xf-img {
 width: 100%;
