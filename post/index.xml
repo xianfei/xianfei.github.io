@@ -1,4 +1,13 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on Xianfei's Blog</title><link>/post/</link><description>Recent content in Posts on Xianfei's Blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Mon, 29 Aug 2022 00:00:00 +0000</lastBuildDate><atom:link href="/post/index.xml" rel="self" type="application/rss+xml"/><item><title>来聊聊我的本科毕业设计吧</title><link>/p/bishe/</link><pubDate>Mon, 29 Aug 2022 00:00:00 +0000</pubDate><guid>/p/bishe/</guid><description>&lt;img src="/p/bishe/sysmocap.png" alt="Featured image of post 来聊聊我的本科毕业设计吧" />&lt;p>完整版毕业论文可在微信公众号Xianfei进行查看。&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on 衔飞的博客</title><link>/post/</link><description>Recent content in Posts on 衔飞的博客</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Sun, 02 Oct 2022 00:00:00 +0000</lastBuildDate><atom:link href="/post/index.xml" rel="self" type="application/rss+xml"/><item><title>关于喝酒的时候玩骰子的一些概率计算</title><link>/p/dice/</link><pubDate>Sun, 02 Oct 2022 00:00:00 +0000</pubDate><guid>/p/dice/</guid><description>&lt;img src="/p/dice/banner.png" alt="Featured image of post 关于喝酒的时候玩骰子的一些概率计算" />&lt;h2 id="前言">前言&lt;/h2>
+&lt;p>国庆的时候，我的一个学弟朋友邀请我参加一次轰趴活动，其实无非就是去喝酒、玩游戏、唱歌、吃饭。最后一项活动就是喝酒了，顺便摇骰子猜点数。具体的规则可以上网上查一下，&lt;a class="link" href="https://zhinan.sogou.com/guide/d1610025575.htm" target="_blank" rel="noopener"
+>大概就是这样&lt;/a>。&lt;/p>
+&lt;p>此次游戏因为我们的骰子数量只有30个，我们有7个人参与此次活动，只够每个人4个骰子。&lt;/p>
+&lt;h2 id="概率初步计算">概率初步计算&lt;/h2>
+&lt;p>在游戏环节中，我们想过进行概率计算，由于当时在活动现场不适合思考这种问题，于是就简单的得出了“不是很好算”这个结论。不过要回答“什么时候喊开，胜率最大”这个问题，我们还是要用概率去计算。这不，第二天我就在想这个问题，由于本人的数学水平不是很好，所以使用了计算机代码对整个过程进行模拟，结果如下：&lt;/p>
+&lt;img class="xf-img" src="1.webp">
+&lt;p>也就是说在这种情况下，对于“5个1”的叫法，“开”他的胜率约为49%；对于“10个x”（1&amp;lt;x&amp;lt;7,x∈N），“开”他的胜率约为54%。&lt;/p>
+&lt;h2 id="进一步分析">进一步分析&lt;/h2>
+&lt;p>对于这个游戏，我们再叫骰子之前，可以看一下自己有什么骰子。一般情况下，我们也会根据自己已经有的骰子，来决定我们要叫什么的。&lt;/p></description></item><item><title>来聊聊我的本科毕业设计吧</title><link>/p/bishe/</link><pubDate>Mon, 29 Aug 2022 00:00:00 +0000</pubDate><guid>/p/bishe/</guid><description>&lt;img src="/p/bishe/sysmocap.png" alt="Featured image of post 来聊聊我的本科毕业设计吧" />&lt;p>完整版毕业论文可在微信公众号Xianfei进行查看。&lt;/p>
 &lt;p>目前该项目的英文版论文已被收录至IEEE ISMAR 2022-Adjunct中。&lt;/p>
 &lt;p>该项目截至发稿前在Github已获得1.5k Stars，介绍视频在B站获得了2.7万赞及1.1万硬币。&lt;/p>
 &lt;p>&lt;a class="link" href="https://github.com/xianfei/SysMocap/" target="_blank" rel="noopener"

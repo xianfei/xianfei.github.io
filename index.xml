@@ -1,4 +1,13 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Xianfei's Blog</title><link>/</link><description>Recent content on Xianfei's Blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Mon, 29 Aug 2022 00:00:00 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml"/><item><title>来聊聊我的本科毕业设计吧</title><link>/p/bishe/</link><pubDate>Mon, 29 Aug 2022 00:00:00 +0000</pubDate><guid>/p/bishe/</guid><description>&lt;img src="/p/bishe/sysmocap.png" alt="Featured image of post 来聊聊我的本科毕业设计吧" />&lt;p>完整版毕业论文可在微信公众号Xianfei进行查看。&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>衔飞的博客</title><link>/</link><description>Recent content on 衔飞的博客</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Sun, 02 Oct 2022 00:00:00 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml"/><item><title>关于喝酒的时候玩骰子的一些概率计算</title><link>/p/dice/</link><pubDate>Sun, 02 Oct 2022 00:00:00 +0000</pubDate><guid>/p/dice/</guid><description>&lt;img src="/p/dice/banner.png" alt="Featured image of post 关于喝酒的时候玩骰子的一些概率计算" />&lt;h2 id="前言">前言&lt;/h2>
+&lt;p>国庆的时候，我的一个学弟朋友邀请我参加一次轰趴活动，其实无非就是去喝酒、玩游戏、唱歌、吃饭。最后一项活动就是喝酒了，顺便摇骰子猜点数。具体的规则可以上网上查一下，&lt;a class="link" href="https://zhinan.sogou.com/guide/d1610025575.htm" target="_blank" rel="noopener"
+>大概就是这样&lt;/a>。&lt;/p>
+&lt;p>此次游戏因为我们的骰子数量只有30个，我们有7个人参与此次活动，只够每个人4个骰子。&lt;/p>
+&lt;h2 id="概率初步计算">概率初步计算&lt;/h2>
+&lt;p>在游戏环节中，我们想过进行概率计算，由于当时在活动现场不适合思考这种问题，于是就简单的得出了“不是很好算”这个结论。不过要回答“什么时候喊开，胜率最大”这个问题，我们还是要用概率去计算。这不，第二天我就在想这个问题，由于本人的数学水平不是很好，所以使用了计算机代码对整个过程进行模拟，结果如下：&lt;/p>
+&lt;img class="xf-img" src="1.webp">
+&lt;p>也就是说在这种情况下，对于“5个1”的叫法，“开”他的胜率约为49%；对于“10个x”（1&amp;lt;x&amp;lt;7,x∈N），“开”他的胜率约为54%。&lt;/p>
+&lt;h2 id="进一步分析">进一步分析&lt;/h2>
+&lt;p>对于这个游戏，我们再叫骰子之前，可以看一下自己有什么骰子。一般情况下，我们也会根据自己已经有的骰子，来决定我们要叫什么的。&lt;/p></description></item><item><title>来聊聊我的本科毕业设计吧</title><link>/p/bishe/</link><pubDate>Mon, 29 Aug 2022 00:00:00 +0000</pubDate><guid>/p/bishe/</guid><description>&lt;img src="/p/bishe/sysmocap.png" alt="Featured image of post 来聊聊我的本科毕业设计吧" />&lt;p>完整版毕业论文可在微信公众号Xianfei进行查看。&lt;/p>
 &lt;p>目前该项目的英文版论文已被收录至IEEE ISMAR 2022-Adjunct中。&lt;/p>
 &lt;p>该项目截至发稿前在Github已获得1.5k Stars，介绍视频在B站获得了2.7万赞及1.1万硬币。&lt;/p>
 &lt;p>&lt;a class="link" href="https://github.com/xianfei/SysMocap/" target="_blank" rel="noopener"
@@ -1236,7 +1245,7 @@ width:100%;
 &lt;p>​ &amp;ldquo;message&amp;rdquo;:&lt;code>消息体&lt;/code>&lt;/p>
 &lt;p>}&lt;/p>
 &lt;/li>
-&lt;/ol></description></item><item><title>About</title><link>/about/</link><pubDate>Tue, 28 Jun 2022 00:00:00 +0000</pubDate><guid>/about/</guid><description>&lt;h2 id="hi-there-im-xianfei-衔飞-">Hi there, I&amp;rsquo;m xianfei (衔飞) 👋&lt;/h2>
+&lt;/ol></description></item><item><title>个人简介</title><link>/about/</link><pubDate>Tue, 28 Jun 2022 00:00:00 +0000</pubDate><guid>/about/</guid><description>&lt;h2 id="hi-there-im-xianfei-衔飞-">Hi there, I&amp;rsquo;m xianfei (衔飞) 👋&lt;/h2>
 &lt;blockquote>
 &lt;p>The only limit is your imagination.&lt;/p>
 &lt;/blockquote>
@@ -2579,7 +2588,21 @@ wd.style.lineHeight = `${fontSize}px`;
 }
 }
 &lt;/script>&lt;blockquote>
-&lt;/blockquote></description></item><item><title>Archives</title><link>/archives/</link><pubDate>Tue, 28 May 2019 00:00:00 +0000</pubDate><guid>/archives/</guid><description/></item><item><title>Shell File Transfer —— 适用于Linux/macOS的局域网文件传输程序</title><link>/p/shell-file-trans/</link><pubDate>Tue, 05 Mar 2019 00:00:00 +0000</pubDate><guid>/p/shell-file-trans/</guid><description>&lt;img src="/p/shell-file-trans/1.webp" alt="Featured image of post Shell File Transfer —— 适用于Linux/macOS的局域网文件传输程序" />&lt;h2 id="功能介绍">功能介绍&lt;/h2>
+&lt;/blockquote></description></item><item><title>摄影作品展</title><link>/gallery/</link><pubDate>Tue, 28 May 2019 00:00:00 +0000</pubDate><guid>/gallery/</guid><description>&lt;h2 id="入口">入口&lt;/h2>
+&lt;p>正在建设中，请稍后再来。&lt;/p>
+&lt;img class="xf-img-2" src="111.jpg">
+&lt;h2 id="前言">前言&lt;/h2>
+&lt;p>摄影是本人的业余爱好之一，平时也就拍拍人像、日常、活动等等；&lt;/p>
+&lt;p>经历：&lt;/p>
+&lt;ul>
+&lt;li>2020-2021 北邮摄影社，社长&lt;/li>
+&lt;li>2018-2021 北邮校学生会礼仪队，摄影&lt;/li>
+&lt;li>2020-2021 北邮鸿雁新媒体中心，摄影&lt;/li>
+&lt;li>2019-2020 北邮校团委宣传部，摄影&lt;/li>
+&lt;li>2018-2019 北邮青年新媒体中心，摄影&amp;amp;摄像&lt;/li>
+&lt;li>2017 第23届IDO漫展 官方摄影师&lt;/li>
+&lt;li>2015-2018 回龙观育新学校YDTV电视台，摄像&amp;amp;剪辑&lt;/li>
+&lt;/ul></description></item><item><title>Shell File Transfer —— 适用于Linux/macOS的局域网文件传输程序</title><link>/p/shell-file-trans/</link><pubDate>Tue, 05 Mar 2019 00:00:00 +0000</pubDate><guid>/p/shell-file-trans/</guid><description>&lt;img src="/p/shell-file-trans/1.webp" alt="Featured image of post Shell File Transfer —— 适用于Linux/macOS的局域网文件传输程序" />&lt;h2 id="功能介绍">功能介绍&lt;/h2>
 &lt;p>利用TCP/IP协议的局域网文件传输工具，通过ip地址及自定义的端口号进行连接。&lt;/p>
 &lt;h2 id="运行环境">运行环境&lt;/h2>
 &lt;p>通过测试的运行环境：macOS Mojave 10.14 &amp;amp; Fedora Linux Workstation 29&lt;/p>
@@ -3556,4 +3579,4 @@ alt="Google"
 >talk&lt;/a> during Gopherfest, November 18, 2015.&amp;#160;&lt;a href="#fnref:1" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
 &lt;/li>
 &lt;/ol>
-&lt;/div></description></item><item><title>Links</title><link>/links/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/links/</guid><description>&lt;p>这里是一些相关链接及友情链接！&lt;/p></description></item><item><title>Search</title><link>/search/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/search/</guid><description/></item></channel></rss>
+&lt;/div></description></item><item><title>搜索</title><link>/search/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/search/</guid><description/></item><item><title>友情链接</title><link>/links/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/links/</guid><description>&lt;p>这里是一些相关链接及友情链接！&lt;/p></description></item></channel></rss>
