@@ -11,9 +11,11 @@ menu:
 
 ## 入口
 
-正在建设中，请稍后再来。
+正在建设中……
 
-<img class="xf-img-2" src="111.jpg">
+国内可访问 [https://xianfei.ml:8001/gallery/](https://xianfei.ml:8001/gallery/)
+
+稍后会重新整理，搬到github pages上。
 
 ## 前言
 
