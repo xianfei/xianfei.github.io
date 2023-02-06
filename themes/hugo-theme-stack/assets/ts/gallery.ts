@@ -169,6 +169,17 @@ class StackGallery {
         });
 
         ps.init();
+
+        ps.listen('close', function () {
+            
+            document.querySelector("meta[name=theme-color]").remove();
+
+        });
+
+        const oMeta = document.createElement('meta');
+    oMeta.content = '#000000';
+    oMeta.name = 'theme-color';
+    document.getElementsByTagName('head')[0].appendChild(oMeta);
     }
 
     private bindClick() {

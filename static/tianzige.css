@@ -1,0 +1,92 @@
+.ci-box {
+    margin: 0;
+    padding: 0;
+    width: 88px;
+    height: 88px;
+    margin: 2px;
+}
+
+.ci-box .wd {
+    font-size: 32px !important;
+    line-height: 40px;
+    margin-top: -3px;
+}
+
+.ci-box {
+    width: 50px;
+    height: 50px;
+    display: inline-block;
+    box-sizing: border-box;
+    border: 2px solid #980f29;
+    position: relative;
+    overflow: hidden;
+}
+
+.ci-box .lt-2rb {
+    width: 147.07821049%;
+    height: 147.07821049%;
+    display: inline-block;
+    border: 1px dashed #980f29;
+    transform: rotate(45deg) translate(-25%, 50%);
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.ci-box .rt-2lb {
+    width: 147.07821049%;
+    height: 147.07821049%;
+    display: inline-block;
+    border: 1px dashed #980f29;
+    transform: rotate(-45deg) translate(25%, -50%);
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.ci-box .rm-2lm {
+    width: 106%;
+    height: 100%;
+    display: inline-block;
+    transform: translate(-3%, 50%);
+    position: absolute;
+    border: 1px dashed #980f29;
+    top: 0;
+    left: 0;
+}
+
+.ci-box .tm-2bm {
+    width: 100%;
+    height: 106%;
+    display: inline-block;
+    transform: translate(-50%, -3%);
+    position: absolute;
+    border: 1px dashed #980f29;
+    left: 0;
+    top: 0;
+}
+
+.ci-box .ci {
+    position: relative;
+    font-family: 'Noto Serif SC', 'KaiTi SC', 'Kai', "楷体";
+    font-weight: 500;
+    height: 100%;
+    font-size: 0;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.ci-box .ci .wd {
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
+    font-size: 40px;
+}
+
+.ci-box .ci:before {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 0;
+    vertical-align: middle;
+}

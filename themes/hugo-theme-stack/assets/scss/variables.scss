@@ -92,10 +92,10 @@ $defaultTagColors: #fff, #fff, #fff, #fff, #fff;
 */
 :root {
     --article-font-family: var(--base-font-family);
-    --article-font-size: 1.6rem;
+    --article-font-size: 1.5rem;
 
     @include respond(md) {
-        --article-font-size: 1.7rem;
+        --article-font-size: 1.6rem;
     }
 
     --article-line-height: 1.85;
@@ -156,6 +156,13 @@ $defaultTagColors: #fff, #fff, #fff, #fff, #fff;
     --pre-text-color: #f8f8f2;
     --pre-background-color: #272822;
     @import "partials/highlight/dark.scss";
+
+    .article-image{
+        img{
+            filter: opacity(0.9);
+        }
+    }
+
 }
 
 :root {

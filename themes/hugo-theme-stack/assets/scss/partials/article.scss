@@ -59,17 +59,30 @@
     gap: 15px;
 }
 
+@font-face {
+    font-family: 'SmileySans';
+    src:  url("/SmileySans-Oblique.otf.woff2") format('woff2');
+}
+
 .article-title {
     font-weight: 600;
     margin: 0;
     color: var(--card-text-color-main);
-    font-size: 2.2rem;
+    font-size: 2.4rem;
 
     @include respond(xl) {
-        font-size: 2.4rem;
+        font-size: 2.6rem;
     }
 
     a {
+        font-family: 'SmileySans';
+
+        filter: opacity(0.8);
+
+        // color: #333 !important;
+
+        font-weight: 400;
+
         color: var(--card-text-color-main);
 
         &:hover {
@@ -83,9 +96,9 @@
     color: var(--card-text-color-secondary);
     line-height: 1.5;
     margin: 0;
-    font-size: 1.75rem;
+    font-size: 1.3rem;
     @include respond(xl) {
-        font-size: 2rem;
+        font-size: 1.5rem;
     }
 }
 

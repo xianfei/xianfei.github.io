@@ -93,7 +93,7 @@ categories:
 
 <div class="user-dynamic">
     <div class="user-info">
-        <img src="http://localhost:1313/imgs/avatar2_hu71215836cfc1201dad43a2a602d405c9_1044873_300x0_resize_box_3.png" class="avatar">
+        <img src="/imgs/avatar2_hu71215836cfc1201dad43a2a602d405c9_1044873_300x0_resize_box_3.png" class="avatar">
         <div class="name">Xianfei</div>
         <div class="desc">A software engineer.</div>
     </div>
@@ -114,7 +114,7 @@ categories:
 
 <div class="user-dynamic">
     <div class="user-info">
-        <img src="http://localhost:1313/imgs/avatar2_hu71215836cfc1201dad43a2a602d405c9_1044873_300x0_resize_box_3.png" class="avatar">
+        <img src="/imgs/avatar2_hu71215836cfc1201dad43a2a602d405c9_1044873_300x0_resize_box_3.png" class="avatar">
         <div class="name">Xianfei</div>
         <div class="desc">A software engineer.</div>
     </div>

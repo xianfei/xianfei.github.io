@@ -4,7 +4,8 @@ title = "2021年度总结&杂谈"
 date = "2022-01-27"
 description = "再见2021，你好2022"
 categories = [
-    "Life"
+    "Life",
+    "年度总结"
 ]
 image = "clay-banks-HyczMwZbdLg-unsplash.jpg"
 slug = "my2021"

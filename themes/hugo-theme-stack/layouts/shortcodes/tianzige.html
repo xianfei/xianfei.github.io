@@ -1,0 +1,49 @@
+<link rel="stylesheet" href="/tianzige.css">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400;1,700
+&family=Noto+Serif+SC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<div id='test-groud-{{ index .Params 0 }}' style="text-align: center;font-size:0;">
+</div>
+
+
+<script type="text/javascript">
+
+    generate("{{ index .Params 0 }}");
+
+    function generate(wenzi) {
+        let groud = document.getElementById('test-groud-{{ index .Params 0 }}');
+        groud.innerHTML = "";
+
+        for (let item of wenzi) {
+            let div = document.createElement("div");
+            div.className = 'ci-box';
+            div.innerHTML = `<div class="lt-2rb line"></div>
+       <div class="rt-2lb line"></div>
+       <div class="rm-2lm line"></div>
+       <div class="tm-2bm line"></div>
+       <div class="ci">
+           <span class="wd">${item}</span>
+       </div>`;
+
+            groud.appendChild(div);
+        }
+
+    }
+
+    function changeFontSize(fontSize) {
+        let box = document.querySelectorAll("#test-groud .ci-box");
+        let wds = document.querySelectorAll('#test-groud .ci-box .wd');
+
+        for (let b of box) {
+            b.style.width = `${fontSize * 1.2}px`;
+            b.style.height = `${fontSize * 1.2}px`;
+
+        }
+
+        for (let wd of wds) {
+            wd.style.fontSize = `${fontSize}px`;
+            wd.style.lineHeight = `${fontSize}px`;
+        }
+    }
+</script>

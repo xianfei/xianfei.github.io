@@ -16,23 +16,23 @@ body {
     -moz-osx-font-smoothing: grayscale;
 }
 
-/* scrollbar styles for Firefox */
-* {
-    scrollbar-width: auto;
-    scrollbar-color: var(--scrollbar-thumb) transparent;
-}
-/**/
+// /* scrollbar styles for Firefox */
+// * {
+//     scrollbar-width: auto;
+//     scrollbar-color: var(--scrollbar-thumb) transparent;
+// }
+// /**/
 
-/* scrollbar styles for Chromium */
-::-webkit-scrollbar {
-    height: auto;
-}
+// /* scrollbar styles for Chromium */
+// ::-webkit-scrollbar {
+//     height: auto;
+// }
 
-::-webkit-scrollbar-thumb {
-    background-color: var(--scrollbar-thumb);
-}
+// ::-webkit-scrollbar-thumb {
+//     background-color: var(--scrollbar-thumb);
+// }
 
-::-webkit-scrollbar-track {
-    background-color: transparent;
-}
-/**/
+// ::-webkit-scrollbar-track {
+//     background-color: transparent;
+// }
+// /**/
