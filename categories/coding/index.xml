@@ -76,7 +76,7 @@ color: #777;
 &lt;p>在设计这个该社交软件时，由于我们小组都是来自同一个班学同一个专业的程序员，于是我就想到了一个很有意思的想法——将类似于小程序的应用嵌入到动态区域内，来增强可交互性和趣味性。目前的社交软件往往支持在动态除了文字外添加照片、视频等，向下方所展示的一样。&lt;/p>
 &lt;div class="user-dynamic">
 &lt;div class="user-info">
-&lt;img src="http://localhost:1313/imgs/avatar2_hu71215836cfc1201dad43a2a602d405c9_1044873_300x0_resize_box_3.png" class="avatar">
+&lt;img src="../../imgs/avatar2_hu71215836cfc1201dad43a2a602d405c9_1044873_300x0_resize_box_3.png" class="avatar">
 &lt;div class="name">Xianfei&lt;/div>
 &lt;div class="desc">A software engineer.&lt;/div>
 &lt;/div>
@@ -95,7 +95,7 @@ Today I'm excited to tell you that we have just launched our new social app, Cre
 &lt;p>而我们认为动态的区域应该让用户自由发挥，所以我们设计了可编程动态，大大提高了社交软件用户动态的可交互性及可玩性。当你想与你的朋友分享一个小游戏时，你的朋友无需点开链接，即可直接进行游玩。&lt;/p>
 &lt;div class="user-dynamic">
 &lt;div class="user-info">
-&lt;img src="http://localhost:1313/imgs/avatar2_hu71215836cfc1201dad43a2a602d405c9_1044873_300x0_resize_box_3.png" class="avatar">
+&lt;img src="../../imgs/avatar2_hu71215836cfc1201dad43a2a602d405c9_1044873_300x0_resize_box_3.png" class="avatar">
 &lt;div class="name">Xianfei&lt;/div>
 &lt;div class="desc">A software engineer.&lt;/div>
 &lt;/div>

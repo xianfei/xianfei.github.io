@@ -1,0 +1,2047 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>年度总结 on 衔飞的博客</title><link>/categories/%E5%B9%B4%E5%BA%A6%E6%80%BB%E7%BB%93/</link><description>Recent content in 年度总结 on 衔飞的博客</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Wed, 01 Feb 2023 00:00:00 +0000</lastBuildDate><atom:link href="/categories/%E5%B9%B4%E5%BA%A6%E6%80%BB%E7%BB%93/index.xml" rel="self" type="application/rss+xml"/><item><title>再见2022，你好2023——年度总结&amp;旅行总结&amp;杂谈</title><link>/p/2022to2023/</link><pubDate>Wed, 01 Feb 2023 00:00:00 +0000</pubDate><guid>/p/2022to2023/</guid><description>&lt;img src="/p/2022to2023/2023banner.webp" alt="Featured image of post 再见2022，你好2023——年度总结&amp;旅行总结&amp;杂谈" />&lt;style>
+.article-content .gallery{
+gap:5px !important;
+margin-top: -28px;
+}
+&lt;/style>
+&lt;h2 id="前言">前言&lt;/h2>
+&lt;p>2022年的绝大多数时间，都是在基于清零政策的疫情防控下度过的，因此错过了最后半学期的校园时光（大四下整个在家中度过的），失去了毕业典礼、拍毕业照、毕业旅行……&lt;/p>
+&lt;p>在最后一个月，由于某些众所周知的原因迎来了突如其来的放开，让绝大多数在前三年对新冠“只闻其名”的人们突如其来的感受到了它的“温暖”（物理上的，体温），猝不及防的给疫情画上了一个句号。于是在放开之后，果不其然，我也阳了。&lt;/p>
+&lt;p>为了弥补2022年的遗憾，在我阳康之后，策划了一场旅行计划，所以今年的年度总结有一点点不一样，先从2023年初的旅行讲起。在下文中尽量避开“疫情”这个话题，并且着重于通过一些事情进行的思考，而不仅仅是“朋友圈合订本”。&lt;/p>
+&lt;p>此处附上一首BGM：给你一瓶魔法药水——告五人，最近比较喜欢的一首歌，可以边听边往下看。&lt;/p>
+&lt;iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 style="width: 330px; margin: auto; display: block;" src="//music.163.com/outchain/player?type=2&amp;id=1959667345&amp;auto=0&amp;height=66">&lt;/iframe>
+&lt;h2 id="旅行">旅行&lt;/h2>
+&lt;p>其实这场旅行是在2022年底策划的，但是最后处理完许多事情然后敲定好时间，决定1.3开始这次旅行，返回时间待定。初步规划的顺序是北京-&amp;gt;长沙-&amp;gt;深圳-&amp;gt;广州-&amp;gt;桂林-&amp;gt;北京，除往返北京乘坐飞机外，其余乘坐高铁。&lt;/p>
+&lt;h3 id="长沙人间烟火气">长沙——人间烟火气&lt;/h3>
+&lt;blockquote>
+&lt;p>李克强称赞地摊经济、小店经济：是人间的烟火，是中国的生机。&lt;/p>
+&lt;/blockquote>
+&lt;p>来到长沙，给我的第一印象就是：长沙的人说普通话很有意思！尤其是刚去点茶颜悦色的时候，让我想起来了我一个同学——古乃草（大家可以去关注&lt;a class="link" href="https://space.bilibili.com/140075416" target="_blank" rel="noopener"
+>她的b站&lt;/a>，去云南的两个视频真的很棒），她是一个湖南的妹子，到长沙的时候感觉大家说话都很像她！&lt;/p>
+&lt;img class="xf-img-2" src="hxr.webp">
+&lt;p>长沙（在我眼中）是一个以小吃和夜生活著称的城市，以及其举世闻名的茶饮料：&lt;/p>
+&lt;link rel="stylesheet" href="../../tianzige.css">
+&lt;link rel="preconnect" href="https://fonts.gstatic.com">
+&lt;link href="https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400;1,700
+&amp;family=Noto+Serif+SC:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+&lt;div id='test-groud-茶颜悦色' style="text-align: center;font-size:0;">
+&lt;/div>
+&lt;script type="text/javascript">
+generate("茶颜悦色");
+function generate(wenzi) {
+let groud = document.getElementById('test-groud-茶颜悦色');
+groud.innerHTML = "";
+for (let item of wenzi) {
+let div = document.createElement("div");
+div.className = 'ci-box';
+div.innerHTML = `&lt;div class="lt-2rb line">&lt;/div>
+&lt;div class="rt-2lb line">&lt;/div>
+&lt;div class="rm-2lm line">&lt;/div>
+&lt;div class="tm-2bm line">&lt;/div>
+&lt;div class="ci">
+&lt;span class="wd">${item}&lt;/span>
+&lt;/div>`;
+groud.appendChild(div);
+}
+}
+function changeFontSize(fontSize) {
+let box = document.querySelectorAll("#test-groud .ci-box");
+let wds = document.querySelectorAll('#test-groud .ci-box .wd');
+for (let b of box) {
+b.style.width = `${fontSize * 1.2}px`;
+b.style.height = `${fontSize * 1.2}px`;
+}
+for (let wd of wds) {
+wd.style.fontSize = `${fontSize}px`;
+wd.style.lineHeight = `${fontSize}px`;
+}
+}
+&lt;/script>
+&lt;img class="xf-img-full" src="DSC00393.webp" style="margin-top:-30px;">
+&lt;p>茶颜悦色在奶茶类饮料中算是很好喝的，不同于Coco这种使用红茶+植脂末+糖浆制作的奶茶，茶颜悦色使用牛奶加茶制作，并加上了往往在咖啡中才会有的奶泡，并在其中几款中配备了动脂奶油的奶油顶，使得其又好看又好喝，简直就是来长沙必点品。&lt;/p>
+&lt;p> 
+&lt;img src="../../p/2022to2023/1.webp"
+width="1080"
+height="1080"
+srcset="../../p/2022to2023/1_hu5d61eabbb4797fdf412516a867991833_38124_480x0_resize_q60_h2_box_2.webp 480w, ../../p/2022to2023/1_hu5d61eabbb4797fdf412516a867991833_38124_1536x0_resize_q60_h2_box_2.webp 1536w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="100"
+data-flex-basis="240px"
+> &lt;img src="../../p/2022to2023/2.webp"
+width="1080"
+height="1080"
+srcset="../../p/2022to2023/2_hu39edb0020935eb942f2da0a24b1929cc_36456_480x0_resize_q60_h2_box_2.webp 480w, ../../p/2022to2023/2_hu39edb0020935eb942f2da0a24b1929cc_36456_1536x0_resize_q60_h2_box_2.webp 1536w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="100"
+data-flex-basis="240px"
+> &lt;img src="../../p/2022to2023/3.webp"
+width="1080"
+height="1080"
+srcset="../../p/2022to2023/3_hue948bfe4c5840a12e0fc409f76201b66_33146_480x0_resize_q60_h2_box_2.webp 480w, ../../p/2022to2023/3_hue948bfe4c5840a12e0fc409f76201b66_33146_1536x0_resize_q60_h2_box_2.webp 1536w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="100"
+data-flex-basis="240px"
+>&lt;/p>
+&lt;p>长沙的茶颜悦色可以说是到处都是，走几步就有一家，并且茶颜悦色还有游园会，可以购买一些相关的周边产品。&lt;/p>
+&lt;p> 
+&lt;img src="../../p/2022to2023/DSC00082.webp"
+width="6000"
+height="4000"
+srcset="../../p/2022to2023/DSC00082_hud492e8ffc36f275a5de0b3dd7f3084ab_525382_480x0_resize_q60_h2_box_2.webp 480w, ../../p/2022to2023/DSC00082_hud492e8ffc36f275a5de0b3dd7f3084ab_525382_1536x0_resize_q60_h2_box_2.webp 1536w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="150"
+data-flex-basis="360px"
+> &lt;img src="../../p/2022to2023/DSC00734.webp"
+width="6000"
+height="4000"
+srcset="../../p/2022to2023/DSC00734_hu81ce50bc57df65665cb6d86611f56b28_445998_480x0_resize_q60_h2_box_2.webp 480w, ../../p/2022to2023/DSC00734_hu81ce50bc57df65665cb6d86611f56b28_445998_1536x0_resize_q60_h2_box_2.webp 1536w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="150"
+data-flex-basis="360px"
+>&lt;/p>
+&lt;p>&lt;img src="../../p/2022to2023/DSC00729.webp"
+width="6000"
+height="4000"
+srcset="../../p/2022to2023/DSC00729_huceda7153aaa016da8477d74926d23dee_509348_480x0_resize_q60_h2_box_2.webp 480w, ../../p/2022to2023/DSC00729_huceda7153aaa016da8477d74926d23dee_509348_1536x0_resize_q60_h2_box_2.webp 1536w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="150"
+data-flex-basis="360px"
+> &lt;img src="../../p/2022to2023/DSC00732.webp"
+width="6000"
+height="4000"
+srcset="../../p/2022to2023/DSC00732_hueb0770ea86147488d25871666077a641_753052_480x0_resize_q60_h2_box_2.webp 480w, ../../p/2022to2023/DSC00732_hueb0770ea86147488d25871666077a641_753052_1536x0_resize_q60_h2_box_2.webp 1536w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="150"
+data-flex-basis="360px"
+>&lt;/p>
+&lt;p>此外呢初次来湖南，不得不吃的当然是湖南菜啦：&lt;/p>
+&lt;link rel="stylesheet" href="../../tianzige.css">
+&lt;link rel="preconnect" href="https://fonts.gstatic.com">
+&lt;link href="https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400;1,700
+&amp;family=Noto+Serif+SC:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+&lt;div id='test-groud-湘菜' style="text-align: center;font-size:0;">
+&lt;/div>
+&lt;script type="text/javascript">
+generate("湘菜");
+function generate(wenzi) {
+let groud = document.getElementById('test-groud-湘菜');
+groud.innerHTML = "";
+for (let item of wenzi) {
+let div = document.createElement("div");
+div.className = 'ci-box';
+div.innerHTML = `&lt;div class="lt-2rb line">&lt;/div>
+&lt;div class="rt-2lb line">&lt;/div>
+&lt;div class="rm-2lm line">&lt;/div>
+&lt;div class="tm-2bm line">&lt;/div>
+&lt;div class="ci">
+&lt;span class="wd">${item}&lt;/span>
+&lt;/div>`;
+groud.appendChild(div);
+}
+}
+function changeFontSize(fontSize) {
+let box = document.querySelectorAll("#test-groud .ci-box");
+let wds = document.querySelectorAll('#test-groud .ci-box .wd');
+for (let b of box) {
+b.style.width = `${fontSize * 1.2}px`;
+b.style.height = `${fontSize * 1.2}px`;
+}
+for (let wd of wds) {
+wd.style.fontSize = `${fontSize}px`;
+wd.style.lineHeight = `${fontSize}px`;
+}
+}
+&lt;/script>
+&lt;blockquote>
+&lt;p>湘菜，亦称湖南菜，是具有鲜明湖南地方特色菜肴的统称。湘菜以辣味丰富适当、制作严谨、突出菜肴本味而著名。湘菜是中国八大菜系之一，因此于海外，湘菜被视作中国菜的代表之一。&lt;/p>
+&lt;/blockquote>
+&lt;p>好吧，对我来说就是，湘菜好辣🌶！我在北京感觉我还算比较能吃辣的，但是吃湘菜还是得说一句“少放辣”，不过很多地方会跟你说少放辣做不了，“辣椒炒肉少放辣椒怎么做啊”。&lt;/p>
+&lt;p> 
+&lt;img src="../../p/2022to2023/IMG_20230103_211959.webp"
+width="5792"
+height="3861"
+srcset="../../p/2022to2023/IMG_20230103_211959_hu655e4161f553971a44d2a415d3af5e81_1054998_480x0_resize_q60_h2_box_2.webp 480w, ../../p/2022to2023/IMG_20230103_211959_hu655e4161f553971a44d2a415d3af5e81_1054998_1536x0_resize_q60_h2_box_2.webp 1536w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="150"
+data-flex-basis="360px"
+>&lt;/p>
+&lt;link rel="stylesheet" href="../../tianzige.css">
+&lt;link rel="preconnect" href="https://fonts.gstatic.com">
+&lt;link href="https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400;1,700
+&amp;family=Noto+Serif+SC:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+&lt;div id='test-groud-解放西路' style="text-align: center;font-size:0;">
+&lt;/div>
+&lt;script type="text/javascript">
+generate("解放西路");
+function generate(wenzi) {
+let groud = document.getElementById('test-groud-解放西路');
+groud.innerHTML = "";
+for (let item of wenzi) {
+let div = document.createElement("div");
+div.className = 'ci-box';
+div.innerHTML = `&lt;div class="lt-2rb line">&lt;/div>
+&lt;div class="rt-2lb line">&lt;/div>
+&lt;div class="rm-2lm line">&lt;/div>
+&lt;div class="tm-2bm line">&lt;/div>
+&lt;div class="ci">
+&lt;span class="wd">${item}&lt;/span>
+&lt;/div>`;
+groud.appendChild(div);
+}
+}
+function changeFontSize(fontSize) {
+let box = document.querySelectorAll("#test-groud .ci-box");
+let wds = document.querySelectorAll('#test-groud .ci-box .wd');
+for (let b of box) {
+b.style.width = `${fontSize * 1.2}px`;
+b.style.height = `${fontSize * 1.2}px`;
+}
+for (let wd of wds) {
+wd.style.fontSize = `${fontSize}px`;
+wd.style.lineHeight = `${fontSize}px`;
+}
+}
+&lt;/script>
+&lt;p>长沙的凌晨两三点，是我在北方从未见过的一番景象。&lt;/p>
+&lt;p> 
+&lt;img src="../../p/2022to2023/DSC00325.webp"
+width="6000"
+height="4000"
+srcset="../../p/2022to2023/DSC00325_hu1e310063ada8e29aa3c9e6dd0d5d97e4_1087652_480x0_resize_q60_h2_box_2.webp 480w, ../../p/2022to2023/DSC00325_hu1e310063ada8e29aa3c9e6dd0d5d97e4_1087652_1536x0_resize_q60_h2_box_2.webp 1536w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="150"
+data-flex-basis="360px"
+> &lt;img src="../../p/2022to2023/DSC00349.webp"
+width="6000"
+height="4000"
+srcset="../../p/2022to2023/DSC00349_hu1746f7f4081a4559d480fbc097066f43_966970_480x0_resize_q60_h2_box_2.webp 480w, ../../p/2022to2023/DSC00349_hu1746f7f4081a4559d480fbc097066f43_966970_1536x0_resize_q60_h2_box_2.webp 1536w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="150"
+data-flex-basis="360px"
+> &lt;img src="../../p/2022to2023/DSC00312.webp"
+width="6000"
+height="4000"
+srcset="../../p/2022to2023/DSC00312_hud08052ffb016be05af245f8def68c5f2_665426_480x0_resize_q60_h2_box_2.webp 480w, ../../p/2022to2023/DSC00312_hud08052ffb016be05af245f8def68c5f2_665426_1536x0_resize_q60_h2_box_2.webp 1536w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="150"
+data-flex-basis="360px"
+>&lt;/p>
+&lt;p>这里是传说中的解放西路，B站知名纪录片《守护解放西》就是讲的这里。这一条街上有着密密麻麻的饭馆、小吃摊和酒吧等，可能是长沙夜里最热闹的地方之一。&lt;/p>
+&lt;link rel="stylesheet" href="../../tianzige.css">
+&lt;link rel="preconnect" href="https://fonts.gstatic.com">
+&lt;link href="https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400;1,700
+&amp;family=Noto+Serif+SC:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+&lt;div id='test-groud-长沙文和友' style="text-align: center;font-size:0;">
+&lt;/div>
+&lt;script type="text/javascript">
+generate("长沙文和友");
+function generate(wenzi) {
+let groud = document.getElementById('test-groud-长沙文和友');
+groud.innerHTML = "";
+for (let item of wenzi) {
+let div = document.createElement("div");
+div.className = 'ci-box';
+div.innerHTML = `&lt;div class="lt-2rb line">&lt;/div>
+&lt;div class="rt-2lb line">&lt;/div>
+&lt;div class="rm-2lm line">&lt;/div>
+&lt;div class="tm-2bm line">&lt;/div>
+&lt;div class="ci">
+&lt;span class="wd">${item}&lt;/span>
+&lt;/div>`;
+groud.appendChild(div);
+}
+}
+function changeFontSize(fontSize) {
+let box = document.querySelectorAll("#test-groud .ci-box");
+let wds = document.querySelectorAll('#test-groud .ci-box .wd');
+for (let b of box) {
+b.style.width = `${fontSize * 1.2}px`;
+b.style.height = `${fontSize * 1.2}px`;
+}
+for (let wd of wds) {
+wd.style.fontSize = `${fontSize}px`;
+wd.style.lineHeight = `${fontSize}px`;
+}
+}
+&lt;/script>
+&lt;p>文和友是在室内建了一些看起来像室外的这种建筑，复古了当年老长沙的样子，还是值得来逛逛的，具体可以在小红书上搜一下~&lt;/p>
+&lt;p>这部分邀请一个朋友当模特拍了几张，还没修好，过几天补上来。&lt;/p>
+&lt;p>&lt;code>TODO: 待补全&lt;/code>&lt;/p>
+&lt;p>最后附上一份一个在长沙认识的朋友分享给我的旅行攻略：&lt;/p>
+&lt;blockquote>
+&lt;details>&lt;summary>长沙旅游推荐：(点击查看全文)&lt;/summary>&lt;br>1.&amp;nbsp;省博物馆（必去，提前几天买票）&lt;br>2.&amp;nbsp;橘子洲（主要是为了毛爷爷，感受一下沁园春）&lt;br>3.&amp;nbsp;岳麓山：脚下就是湖南大学，夏天的时候日出文化可流行了，都没站的地方。&lt;br>4.&amp;nbsp;杜甫江阁：那边很多中年轻人在那边打发自己的业余时间，吹弹拉唱写打牌&lt;br>5.&amp;nbsp;太平老街的《臭豆腐博物馆》（可以看看，试试里面的臭豆腐，不同于黑色经典，黑色经典的大肉肠也可以试试，或者打卡冬瓜山大肉肠）&lt;br>6.&amp;nbsp;长郡中学门口的《金记》糖油粑粑&lt;br>7.&amp;nbsp;长郡中学门口的《左姑娘泡菜》，《金花泡菜》，爱吃泡菜的一定要尝尝哇&lt;br>8.&amp;nbsp;茶颜的每一款都很绝，更绝的是周边也超美，所以一定要积会员卡积分啊&lt;br>9.&amp;nbsp;《吴酥生》的冰淇淋泡芙和绿豆糕（每次来都要点好吧），或者都正街的《258》，七八种口味的绿豆糕，自带一股清香。&lt;br>10.&amp;nbsp;《巷子猪脚》（夜宵店，开了十几年了，味道很绝，但是非常辣，还原长沙辣度）&lt;br>11.&amp;nbsp;《公交新村粉》（必打卡好吧）&lt;br>12.&amp;nbsp;《笨萝卜》（黄兴广场那边，便宜又好吃，但是得提前一两小时排队！！）&lt;br>13.&amp;nbsp;太平老街的《酒怪》小酒馆（都是自酿的酒，值得一试，环境也很特别），还有南门口店的《杨嗲甜酒》（这家必须好吧）&lt;br>14.&amp;nbsp;《金碗牛肉》总店（每一个菜都很好吃，提前预订，不然招牌菜会售完）&lt;br>15.&amp;nbsp;来长沙也想吃烧烤的话，那一定要去《客串》啦！！（都正街店，超级多明星吃过，必点小黄鱼）&lt;br>16.&amp;nbsp;在长沙想吃烤肉的话，可以吃《么子烤肉》&lt;br>17.&amp;nbsp;要感受一下民谣吧的氛围的话，可以去都正街的《忘浮沉藏式酒吧》&lt;br>18.&amp;nbsp;《炊烟时代》的小炒黄牛肉&lt;br>19.&amp;nbsp;第一光头粉&lt;br>20.&amp;nbsp;聚味瞿记龙虾堂（五一广场店，每一道菜都非常好吃，缺点就是要提前排队）&lt;br>21.&amp;nbsp;桂香南县麻辣肉（比绝味好吃）&lt;br>22.&amp;nbsp;国金中心的探鱼也不错
+&lt;/blockquote>
+&lt;/details>
+&lt;h3 id="深圳改革开放的现代繁荣">深圳——改革开放的现代繁荣&lt;/h3>
+&lt;blockquote>
+&lt;p>“1979年，那是一个春天，有一位老人，在中国的南海边，划了一个圈……”&lt;br>&lt;div style="text-align: right;"> ——《春天的故事》&lt;/div>&lt;/p>
+&lt;/blockquote>
+&lt;p>深圳作为一个沿海城市，在冬天去真的很舒服。在欢乐港湾那边的海边的草地上坐着，看着大海和旁边的摩天轮，很是惬意。并且“来了就是深圳人”的这句宣传语，让每一个来到深圳的无论是游客还是打工人，都能感受到这个城市的温度。（至少北京是不会说出“来了就是北京人”这种话的）&lt;/p>
+&lt;p> 
+&lt;img src="../../p/2022to2023/DSC05184.webp"
+width="2276"
+height="1280"
+srcset="../../p/2022to2023/DSC05184_huff21b2eb48fd4adb82deff332f2cdfe7_141018_480x0_resize_q60_h2_box_2.webp 480w, ../../p/2022to2023/DSC05184_huff21b2eb48fd4adb82deff332f2cdfe7_141018_1536x0_resize_q60_h2_box_2.webp 1536w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="177"
+data-flex-basis="426px"
+>&lt;/p>
+&lt;p>是的，我就像图中的这些人们一样，在这里坐着，想一想人生，选一选前几天的照片。中午和卷卷与流水老师从壹方城吃完八合里牛肉火锅之后走到了这里，by the way 卷卷是一个很有意思的人。&lt;/p>
+&lt;p> 
+&lt;img src="../../p/2022to2023/WechatIMG24.webp"
+width="1080"
+height="1374"
+srcset="../../p/2022to2023/WechatIMG24_hu2318e05c676c0bbd6bc7dbb62c9d0ceb_65678_480x0_resize_q60_h2_box_2.webp 480w, ../../p/2022to2023/WechatIMG24_hu2318e05c676c0bbd6bc7dbb62c9d0ceb_65678_1536x0_resize_q60_h2_box_2.webp 1536w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="78"
+data-flex-basis="188px"
+> &lt;img src="../../p/2022to2023/WechatIMG23.webp"
+width="1080"
+height="1003"
+srcset="../../p/2022to2023/WechatIMG23_hu5df2f8807d3cb9b4c5b8b0d18b2b2b41_51936_480x0_resize_q60_h2_box_2.webp 480w, ../../p/2022to2023/WechatIMG23_hu5df2f8807d3cb9b4c5b8b0d18b2b2b41_51936_1536x0_resize_q60_h2_box_2.webp 1536w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="107"
+data-flex-basis="258px"
+> &lt;img src="../../p/2022to2023/WechatIMG21.webp"
+width="1080"
+height="860"
+srcset="../../p/2022to2023/WechatIMG21_huad19290e8bdba94104aa367c3879d763_31520_480x0_resize_q60_h2_box_2.webp 480w, ../../p/2022to2023/WechatIMG21_huad19290e8bdba94104aa367c3879d763_31520_1536x0_resize_q60_h2_box_2.webp 1536w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="125"
+data-flex-basis="301px"
+> &lt;img src="../../p/2022to2023/WechatIMG22.webp"
+width="1080"
+height="2400"
+srcset="../../p/2022to2023/WechatIMG22_hucf6a8cd9ceee70c57e01f23aa035e95f_127812_480x0_resize_q60_h2_box_2.webp 480w, ../../p/2022to2023/WechatIMG22_hucf6a8cd9ceee70c57e01f23aa035e95f_127812_1536x0_resize_q60_h2_box_2.webp 1536w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="45"
+data-flex-basis="108px"
+>&lt;/p>
+&lt;p>&lt;img src="../../p/2022to2023/mmexport1673269649607.webp"
+width="6000"
+height="4000"
+srcset="../../p/2022to2023/mmexport1673269649607_hudb9dd37da59473445c7725e5fb9e1a21_725874_480x0_resize_q60_h2_box_2.webp 480w, ../../p/2022to2023/mmexport1673269649607_hudb9dd37da59473445c7725e5fb9e1a21_725874_1536x0_resize_q60_h2_box_2.webp 1536w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="150"
+data-flex-basis="360px"
+> &lt;img src="../../p/2022to2023/mmexport1673269623860.webp"
+width="6000"
+height="4000"
+srcset="../../p/2022to2023/mmexport1673269623860_hu16e8aa0456caa7c8a466365a4f23d5eb_1476362_480x0_resize_q60_h2_box_2.webp 480w, ../../p/2022to2023/mmexport1673269623860_hu16e8aa0456caa7c8a466365a4f23d5eb_1476362_1536x0_resize_q60_h2_box_2.webp 1536w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="150"
+data-flex-basis="360px"
+>&lt;/p>
+&lt;p>其实来深圳，很重要的一点是来一个在数码电子方面听了很多次的地方：&lt;/p>
+&lt;link rel="stylesheet" href="../../tianzige.css">
+&lt;link rel="preconnect" href="https://fonts.gstatic.com">
+&lt;link href="https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400;1,700
+&amp;family=Noto+Serif+SC:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+&lt;div id='test-groud-华强北' style="text-align: center;font-size:0;">
+&lt;/div>
+&lt;script type="text/javascript">
+generate("华强北");
+function generate(wenzi) {
+let groud = document.getElementById('test-groud-华强北');
+groud.innerHTML = "";
+for (let item of wenzi) {
+let div = document.createElement("div");
+div.className = 'ci-box';
+div.innerHTML = `&lt;div class="lt-2rb line">&lt;/div>
+&lt;div class="rt-2lb line">&lt;/div>
+&lt;div class="rm-2lm line">&lt;/div>
+&lt;div class="tm-2bm line">&lt;/div>
+&lt;div class="ci">
+&lt;span class="wd">${item}&lt;/span>
+&lt;/div>`;
+groud.appendChild(div);
+}
+}
+function changeFontSize(fontSize) {
+let box = document.querySelectorAll("#test-groud .ci-box");
+let wds = document.querySelectorAll('#test-groud .ci-box .wd');
+for (let b of box) {
+b.style.width = `${fontSize * 1.2}px`;
+b.style.height = `${fontSize * 1.2}px`;
+}
+for (let wd of wds) {
+wd.style.fontSize = `${fontSize}px`;
+wd.style.lineHeight = `${fontSize}px`;
+}
+}
+&lt;/script>
+&lt;p>华强北，是我从小就听过的一个词语，也是自从我开始对电子和数码产品产生热爱之后听过最多的一个国内的地名。从上小学初中那会儿买手机流行买“水货”的苹果三星，到后来的美版iPhone魔改卡贴、高仿AirPods和原装实现一样的功能、给手机扩容等等等等，总觉得华强北是个很神奇的地方。&lt;/p>
+&lt;p>正好，2022年年底从同学那里收来了一台二手MacBook Pro 13（2018款，8+512），除了显示屏内屏坏了以外，其他都没毛病，成色相当新，花了两千出头。正好想着之后去华强北，给它换块屏的同时，把内存扩大到16G。去华强北是现在淘宝上联系了个店家然后直接去的，整体比较顺利。华强北这边维修还是很不错的，是当着你的面维修，只要你不嫌无聊，你就可以坐在旁边看着他修。换屏的时候我是全程看着他干的，扩容内存的时候由于搞BGA的时间还是比较长的，正好加上要到饭点儿了所以吃完饭回来拿的。&lt;/p>
+&lt;p> 
+&lt;img src="../../p/2022to2023/IMG_20221231_153626.webp"
+width="5792"
+height="4344"
+srcset="../../p/2022to2023/IMG_20221231_153626_hud91d978522da3430a6fca7e33ae50644_621064_480x0_resize_q60_h2_box_2.webp 480w, ../../p/2022to2023/IMG_20221231_153626_hud91d978522da3430a6fca7e33ae50644_621064_1536x0_resize_q60_h2_box_2.webp 1536w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="133"
+data-flex-basis="320px"
+> &lt;img src="../../p/2022to2023/IMG_20230107_192047.webp"
+width="5191"
+height="3732"
+srcset="../../p/2022to2023/IMG_20230107_192047_hu05265daffc78c89e1bf25624fd1cc678_514232_480x0_resize_q60_h2_box_2.webp 480w, ../../p/2022to2023/IMG_20230107_192047_hu05265daffc78c89e1bf25624fd1cc678_514232_1536x0_resize_q60_h2_box_2.webp 1536w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="139"
+data-flex-basis="333px"
+>&lt;/p>
+&lt;p>附上前后对比图，换屏花了500块钱，是非原装的屏幕，有一点点过饱和；升级到16G内存也花了500块钱，总之也是第一次知道MacBook的内存和硬盘都能升级。&lt;/p>
+&lt;p> 
+&lt;img src="../../p/2022to2023/IMG_20230107_171710.webp"
+width="5792"
+height="4344"
+srcset="../../p/2022to2023/IMG_20230107_171710_hu81242213cf8c1f90221fefa5185d264e_487548_480x0_resize_q60_h2_box_2.webp 480w, ../../p/2022to2023/IMG_20230107_171710_hu81242213cf8c1f90221fefa5185d264e_487548_1536x0_resize_q60_h2_box_2.webp 1536w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="133"
+data-flex-basis="320px"
+> &lt;img src="../../p/2022to2023/IMG_20230107_165646.webp"
+width="4344"
+height="5792"
+srcset="../../p/2022to2023/IMG_20230107_165646_hubaf9505860108c5154a934324f7f6737_523016_480x0_resize_q60_h2_box_2.webp 480w, ../../p/2022to2023/IMG_20230107_165646_hubaf9505860108c5154a934324f7f6737_523016_1536x0_resize_q60_h2_box_2.webp 1536w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="75"
+data-flex-basis="180px"
+> &lt;img src="../../p/2022to2023/IMG_20230107_163112.webp"
+width="5792"
+height="4344"
+srcset="../../p/2022to2023/IMG_20230107_163112_hu6029ec645a8b9fa1a6f4c3c2f9a7d90a_332822_480x0_resize_q60_h2_box_2.webp 480w, ../../p/2022to2023/IMG_20230107_163112_hu6029ec645a8b9fa1a6f4c3c2f9a7d90a_332822_1536x0_resize_q60_h2_box_2.webp 1536w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="133"
+data-flex-basis="320px"
+>&lt;/p>
+&lt;p>去华强北的时候叫上了在深圳的两个朋友——水池老师和卡卡姐。华强北这个地方除了卖电子数码产品之外，还有购物中心什么的，我们当晚还在那里吃了椰子鸡。&lt;/p>
+&lt;p> 
+&lt;img src="../../p/2022to2023/MTXX_MH20230111143141127.webp"
+width="4096"
+height="2731"
+srcset="../../p/2022to2023/MTXX_MH20230111143141127_huc7f9a9e291702b359c6863959bfd9155_434620_480x0_resize_q60_h2_box_2.webp 480w, ../../p/2022to2023/MTXX_MH20230111143141127_huc7f9a9e291702b359c6863959bfd9155_434620_1536x0_resize_q60_h2_box_2.webp 1536w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="149"
+data-flex-basis="359px"
+> &lt;img src="../../p/2022to2023/MTXX_MH20230111143231012.webp"
+width="4096"
+height="2730"
+srcset="../../p/2022to2023/MTXX_MH20230111143231012_hude8ffde192d3972d912879aac3062518_366330_480x0_resize_q60_h2_box_2.webp 480w, ../../p/2022to2023/MTXX_MH20230111143231012_hude8ffde192d3972d912879aac3062518_366330_1536x0_resize_q60_h2_box_2.webp 1536w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="150"
+data-flex-basis="360px"
+>&lt;/p>
+&lt;p>&lt;img src="../../p/2022to2023/mmexport1673269730559.webp"
+width="4160"
+height="2773"
+srcset="../../p/2022to2023/mmexport1673269730559_hu728fdd17b89ac71c72784efb05829066_265728_480x0_resize_q60_h2_box_2.webp 480w, ../../p/2022to2023/mmexport1673269730559_hu728fdd17b89ac71c72784efb05829066_265728_1536x0_resize_q60_h2_box_2.webp 1536w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="150"
+data-flex-basis="360px"
+>&lt;/p>
+&lt;link rel="stylesheet" href="../../tianzige.css">
+&lt;link rel="preconnect" href="https://fonts.gstatic.com">
+&lt;link href="https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400;1,700
+&amp;family=Noto+Serif+SC:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+&lt;div id='test-groud-世界之窗' style="text-align: center;font-size:0;">
+&lt;/div>
+&lt;script type="text/javascript">
+generate("世界之窗");
+function generate(wenzi) {
+let groud = document.getElementById('test-groud-世界之窗');
+groud.innerHTML = "";
+for (let item of wenzi) {
+let div = document.createElement("div");
+div.className = 'ci-box';
+div.innerHTML = `&lt;div class="lt-2rb line">&lt;/div>
+&lt;div class="rt-2lb line">&lt;/div>
+&lt;div class="rm-2lm line">&lt;/div>
+&lt;div class="tm-2bm line">&lt;/div>
+&lt;div class="ci">
+&lt;span class="wd">${item}&lt;/span>
+&lt;/div>`;
+groud.appendChild(div);
+}
+}
+function changeFontSize(fontSize) {
+let box = document.querySelectorAll("#test-groud .ci-box");
+let wds = document.querySelectorAll('#test-groud .ci-box .wd');
+for (let b of box) {
+b.style.width = `${fontSize * 1.2}px`;
+b.style.height = `${fontSize * 1.2}px`;
+}
+for (let wd of wds) {
+wd.style.fontSize = `${fontSize}px`;
+wd.style.lineHeight = `${fontSize}px`;
+}
+}
+&lt;/script>
+&lt;p>深圳可以叫的上来名的景点少之又少，晚上去世界之窗吧，是因为它刚好那天有烟火表演🎆！这几年在北京生活已经很久没看过烟花了，潦草的放几张照片吧~&lt;/p>
+&lt;blockquote>
+&lt;p>等不到天黑，烟火不会太完美。&lt;br>&lt;div style="text-align: right;"> ——《她说》林俊杰&lt;/div>&lt;/p>
+&lt;/blockquote>
+&lt;p> 
+&lt;img src="../../p/2022to2023/DSC04779.webp"
+width="6000"
+height="4000"
+srcset="../../p/2022to2023/DSC04779_hu0bf1992d0067aaef8e175fb6c414db37_3917202_480x0_resize_q60_h2_box_2.webp 480w, ../../p/2022to2023/DSC04779_hu0bf1992d0067aaef8e175fb6c414db37_3917202_1536x0_resize_q60_h2_box_2.webp 1536w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="150"
+data-flex-basis="360px"
+>&lt;/p>
+&lt;p>&lt;img src="../../p/2022to2023/DSC04763.webp"
+width="6000"
+height="4000"
+srcset="../../p/2022to2023/DSC04763_hu5d2d17af15ea51d796e5192dcc97f2b8_1385292_480x0_resize_q60_h2_box_2.webp 480w, ../../p/2022to2023/DSC04763_hu5d2d17af15ea51d796e5192dcc97f2b8_1385292_1536x0_resize_q60_h2_box_2.webp 1536w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="150"
+data-flex-basis="360px"
+> &lt;img src="../../p/2022to2023/DSC04628.webp"
+width="4000"
+height="6000"
+srcset="../../p/2022to2023/DSC04628_hu181475b20111a6e693850bd4918d2ed7_1795140_480x0_resize_q60_h2_box_2.webp 480w, ../../p/2022to2023/DSC04628_hu181475b20111a6e693850bd4918d2ed7_1795140_1536x0_resize_q60_h2_box_2.webp 1536w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="66"
+data-flex-basis="160px"
+> &lt;img src="../../p/2022to2023/DSC04756.webp"
+width="6000"
+height="4000"
+srcset="../../p/2022to2023/DSC04756_hu995e610e89eb98389d366fb1272a5d13_968230_480x0_resize_q60_h2_box_2.webp 480w, ../../p/2022to2023/DSC04756_hu995e610e89eb98389d366fb1272a5d13_968230_1536x0_resize_q60_h2_box_2.webp 1536w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="150"
+data-flex-basis="360px"
+>&lt;/p>
+&lt;link rel="stylesheet" href="../../tianzige.css">
+&lt;link rel="preconnect" href="https://fonts.gstatic.com">
+&lt;link href="https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400;1,700
+&amp;family=Noto+Serif+SC:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+&lt;div id='test-groud-弘法寺' style="text-align: center;font-size:0;">
+&lt;/div>
+&lt;script type="text/javascript">
+generate("弘法寺");
+function generate(wenzi) {
+let groud = document.getElementById('test-groud-弘法寺');
+groud.innerHTML = "";
+for (let item of wenzi) {
+let div = document.createElement("div");
+div.className = 'ci-box';
+div.innerHTML = `&lt;div class="lt-2rb line">&lt;/div>
+&lt;div class="rt-2lb line">&lt;/div>
+&lt;div class="rm-2lm line">&lt;/div>
+&lt;div class="tm-2bm line">&lt;/div>
+&lt;div class="ci">
+&lt;span class="wd">${item}&lt;/span>
+&lt;/div>`;
+groud.appendChild(div);
+}
+}
+function changeFontSize(fontSize) {
+let box = document.querySelectorAll("#test-groud .ci-box");
+let wds = document.querySelectorAll('#test-groud .ci-box .wd');
+for (let b of box) {
+b.style.width = `${fontSize * 1.2}px`;
+b.style.height = `${fontSize * 1.2}px`;
+}
+for (let wd of wds) {
+wd.style.fontSize = `${fontSize}px`;
+wd.style.lineHeight = `${fontSize}px`;
+}
+}
+&lt;/script>
+&lt;blockquote>
+&lt;p>弘法寺位于中国广东省深圳市罗湖区仙湖植物园内，背靠梧桐山，是一座汉传佛教寺院。&lt;/p>
+&lt;/blockquote>
+&lt;p>去的那天正好赶上下小雨🌧，颇有一番仙境的的感觉。拍照挺好看的！此外，由于它在仙湖植物园内，能看见许多我在北方看不到的植物。&lt;/p>
+&lt;div class="xf-video">&lt;video src="yanshi1.mp4" loop autoplay muted>&lt;/div>
+&lt;p>&lt;img src="../../p/2022to2023/DSC05215.webp"
+width="5752"
+height="3834"
+srcset="../../p/2022to2023/DSC05215_huc591ef9ccbdf756b205bece60a44ac2c_1620836_480x0_resize_q60_h2_box_2.webp 480w, ../../p/2022to2023/DSC05215_huc591ef9ccbdf756b205bece60a44ac2c_1620836_1536x0_resize_q60_h2_box_2.webp 1536w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="150"
+data-flex-basis="360px"
+> &lt;img src="../../p/2022to2023/mmexport1673724522273.webp"
+width="6000"
+height="4000"
+srcset="../../p/2022to2023/mmexport1673724522273_hu271eb20636f33d88bb8f084499a27bc6_932078_480x0_resize_q60_h2_box_2.webp 480w, ../../p/2022to2023/mmexport1673724522273_hu271eb20636f33d88bb8f084499a27bc6_932078_1536x0_resize_q60_h2_box_2.webp 1536w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="150"
+data-flex-basis="360px"
+>&lt;/p>
+&lt;p>&lt;img src="../../p/2022to2023/mmexport1673724496089.webp"
+width="4096"
+height="2730"
+srcset="../../p/2022to2023/mmexport1673724496089_huaa63c8541f682d8c8d0bf436e8c185d6_189212_480x0_resize_q60_h2_box_2.webp 480w, ../../p/2022to2023/mmexport1673724496089_huaa63c8541f682d8c8d0bf436e8c185d6_189212_1536x0_resize_q60_h2_box_2.webp 1536w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="150"
+data-flex-basis="360px"
+> &lt;img src="../../p/2022to2023/mmexport1673724515886.webp"
+width="2730"
+height="4096"
+srcset="../../p/2022to2023/mmexport1673724515886_huf1cfa1926224ca4c7aa1a003e2fb0200_367194_480x0_resize_q60_h2_box_2.webp 480w, ../../p/2022to2023/mmexport1673724515886_huf1cfa1926224ca4c7aa1a003e2fb0200_367194_1536x0_resize_q60_h2_box_2.webp 1536w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="66"
+data-flex-basis="159px"
+> &lt;img src="../../p/2022to2023/mmexport1673725149852.webp"
+width="4096"
+height="2730"
+srcset="../../p/2022to2023/mmexport1673725149852_hu449ebaff2261045005dd908b744f7b2d_565050_480x0_resize_q60_h2_box_2.webp 480w, ../../p/2022to2023/mmexport1673725149852_hu449ebaff2261045005dd908b744f7b2d_565050_1536x0_resize_q60_h2_box_2.webp 1536w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="150"
+data-flex-basis="360px"
+>&lt;/p>
+&lt;p>哦对，在南油附近发现了一加比较小的店，做的肠粉真的很好吃！来观看一下做肠粉的视频吧！&lt;/p>
+&lt;div class="xf-video">&lt;video src="changfen.mp4" controls>&lt;/div>
+&lt;p>他家的肠粉可以说是又便宜又好吃了，比许多有名的连锁品牌要好吃的多。&lt;/p>
+&lt;div class="xf-video">&lt;video src="changfen2.mp4" loop autoplay muted>&lt;/div>
+&lt;p>&lt;img src="../../p/2022to2023/IMG_20230110_134152.webp"
+width="5792"
+height="4344"
+srcset="../../p/2022to2023/IMG_20230110_134152_hu0109e950fd77e297a0cf198ecd3b1fa2_551124_480x0_resize_q60_h2_box_2.webp 480w, ../../p/2022to2023/IMG_20230110_134152_hu0109e950fd77e297a0cf198ecd3b1fa2_551124_1536x0_resize_q60_h2_box_2.webp 1536w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="133"
+data-flex-basis="320px"
+> &lt;img src="../../p/2022to2023/IMG_20230110_133836.webp"
+width="4344"
+height="5792"
+srcset="../../p/2022to2023/IMG_20230110_133836_hu8a33a8c144c9bb70348ba82907d032a7_738372_480x0_resize_q60_h2_box_2.webp 480w, ../../p/2022to2023/IMG_20230110_133836_hu8a33a8c144c9bb70348ba82907d032a7_738372_1536x0_resize_q60_h2_box_2.webp 1536w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="75"
+data-flex-basis="180px"
+>&lt;/p>
+&lt;h3 id="广州老广东特色">广州——老广东特色&lt;/h3>
+&lt;p>在深圳的时候，可能并不觉得有特别多的广东特色，身边的人都讲着普通话，吃饭的馆子也和北京没有多大的区别，但是来到广州，就是一番截然不同的感觉了。&lt;/p>
+&lt;p>刚到广州的第一天晚上，来到了老城区这边——越秀区，从上下九步行街一路走到了永庆坊。当天也是有一点点下雨，湿漉漉的路面上反射着地面上的灯光，有一种老城区独有的热闹。&lt;/p>
+&lt;link rel="stylesheet" href="../../tianzige.css">
+&lt;link rel="preconnect" href="https://fonts.gstatic.com">
+&lt;link href="https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400;1,700
+&amp;family=Noto+Serif+SC:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+&lt;div id='test-groud-永庆坊' style="text-align: center;font-size:0;">
+&lt;/div>
+&lt;script type="text/javascript">
+generate("永庆坊");
+function generate(wenzi) {
+let groud = document.getElementById('test-groud-永庆坊');
+groud.innerHTML = "";
+for (let item of wenzi) {
+let div = document.createElement("div");
+div.className = 'ci-box';
+div.innerHTML = `&lt;div class="lt-2rb line">&lt;/div>
+&lt;div class="rt-2lb line">&lt;/div>
+&lt;div class="rm-2lm line">&lt;/div>
+&lt;div class="tm-2bm line">&lt;/div>
+&lt;div class="ci">
+&lt;span class="wd">${item}&lt;/span>
+&lt;/div>`;
+groud.appendChild(div);
+}
+}
+function changeFontSize(fontSize) {
+let box = document.querySelectorAll("#test-groud .ci-box");
+let wds = document.querySelectorAll('#test-groud .ci-box .wd');
+for (let b of box) {
+b.style.width = `${fontSize * 1.2}px`;
+b.style.height = `${fontSize * 1.2}px`;
+}
+for (let wd of wds) {
+wd.style.fontSize = `${fontSize}px`;
+wd.style.lineHeight = `${fontSize}px`;
+}
+}
+&lt;/script>
+&lt;p> 
+&lt;img src="../../p/2022to2023/DSC05633.webp"
+width="6000"
+height="4000"
+srcset="../../p/2022to2023/DSC05633_huc21052a5317108a1007c59b425a0309c_1951326_480x0_resize_q60_h2_box_2.webp 480w, ../../p/2022to2023/DSC05633_huc21052a5317108a1007c59b425a0309c_1951326_1536x0_resize_q60_h2_box_2.webp 1536w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="150"
+data-flex-basis="360px"
+> &lt;img src="../../p/2022to2023/DSC05713.webp"
+width="4000"
+height="6000"
+srcset="../../p/2022to2023/DSC05713_hu26dbf8aedc3f1fc618b9719c50acabde_1550052_480x0_resize_q60_h2_box_2.webp 480w, ../../p/2022to2023/DSC05713_hu26dbf8aedc3f1fc618b9719c50acabde_1550052_1536x0_resize_q60_h2_box_2.webp 1536w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="66"
+data-flex-basis="160px"
+> &lt;img src="../../p/2022to2023/DSC05577.webp"
+width="6000"
+height="4000"
+srcset="../../p/2022to2023/DSC05577_hu18c2ba900df675adb145f00a9c7cd123_1312096_480x0_resize_q60_h2_box_2.webp 480w, ../../p/2022to2023/DSC05577_hu18c2ba900df675adb145f00a9c7cd123_1312096_1536x0_resize_q60_h2_box_2.webp 1536w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="150"
+data-flex-basis="360px"
+>&lt;/p>
+&lt;p>正好是一个广州的学妹带我来逛这里，在广州本地人点菜都是用粤语来点菜的。去了附近的&lt;b>东湖酒楼(永庆坊店)&lt;/b>，是一家老字号的粤菜馆。这个烤乳鸽简直是太好吃了！第一次吃就被惊艳到了，这次旅行吃了三四只鸽子还是他们家的最好吃！&lt;/p>
+&lt;p> 
+&lt;img src="../../p/2022to2023/mmexport1673448176472.webp"
+width="6000"
+height="4000"
+srcset="../../p/2022to2023/mmexport1673448176472_hu90d15a000179802abae653d26e561cd1_1060174_480x0_resize_q60_h2_box_2.webp 480w, ../../p/2022to2023/mmexport1673448176472_hu90d15a000179802abae653d26e561cd1_1060174_1536x0_resize_q60_h2_box_2.webp 1536w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="150"
+data-flex-basis="360px"
+> &lt;img src="../../p/2022to2023/WechatIMG43.webp"
+width="1080"
+height="2773"
+srcset="../../p/2022to2023/WechatIMG43_huf3dac11f392d711cdb1692bb56385497_131422_480x0_resize_q60_h2_box_2.webp 480w, ../../p/2022to2023/WechatIMG43_huf3dac11f392d711cdb1692bb56385497_131422_1536x0_resize_q60_h2_box_2.webp 1536w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="38"
+data-flex-basis="93px"
+>&lt;/p>
+&lt;p>&lt;img src="../../p/2022to2023/DSC05604.webp"
+width="6000"
+height="4000"
+srcset="../../p/2022to2023/DSC05604_hu72107d6c4ecf3ad62b17f306d697222e_1173686_480x0_resize_q60_h2_box_2.webp 480w, ../../p/2022to2023/DSC05604_hu72107d6c4ecf3ad62b17f306d697222e_1173686_1536x0_resize_q60_h2_box_2.webp 1536w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="150"
+data-flex-basis="360px"
+> &lt;img src="../../p/2022to2023/DSC05600.webp"
+width="6000"
+height="4000"
+srcset="../../p/2022to2023/DSC05600_hu3f40a85c39dc8805bbd1940c18654d5d_253224_480x0_resize_q60_h2_box_2.webp 480w, ../../p/2022to2023/DSC05600_hu3f40a85c39dc8805bbd1940c18654d5d_253224_1536x0_resize_q60_h2_box_2.webp 1536w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="150"
+data-flex-basis="360px"
+> &lt;img src="../../p/2022to2023/mmexport1673448171068.webp"
+width="4946"
+height="3298"
+srcset="../../p/2022to2023/mmexport1673448171068_hu4d43480ae14f47493ce8415b54dcd15d_537944_480x0_resize_q60_h2_box_2.webp 480w, ../../p/2022to2023/mmexport1673448171068_hu4d43480ae14f47493ce8415b54dcd15d_537944_1536x0_resize_q60_h2_box_2.webp 1536w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="149"
+data-flex-basis="359px"
+> &lt;img src="../../p/2022to2023/DSC05609.webp"
+width="6000"
+height="4000"
+srcset="../../p/2022to2023/DSC05609_hu250dbac2e3181afa24aa3586255eb7a9_1019086_480x0_resize_q60_h2_box_2.webp 480w, ../../p/2022to2023/DSC05609_hu250dbac2e3181afa24aa3586255eb7a9_1019086_1536x0_resize_q60_h2_box_2.webp 1536w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="150"
+data-flex-basis="360px"
+>&lt;/p>
+&lt;p>顺便帮学妹拍了一些照片，还是很好看的！&lt;/p>
+&lt;p> 
+&lt;img src="../../p/2022to2023/mmexport1674398552773.webp"
+width="4096"
+height="2730"
+srcset="../../p/2022to2023/mmexport1674398552773_hu83ff5dead6033affb63d3f13eb48f80d_239832_480x0_resize_q60_h2_box_2.webp 480w, ../../p/2022to2023/mmexport1674398552773_hu83ff5dead6033affb63d3f13eb48f80d_239832_1536x0_resize_q60_h2_box_2.webp 1536w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="150"
+data-flex-basis="360px"
+> &lt;img src="../../p/2022to2023/mmexport1674398565231.webp"
+width="2730"
+height="4096"
+srcset="../../p/2022to2023/mmexport1674398565231_hu51439aefb0dbce390baa55c1fb613f42_233956_480x0_resize_q60_h2_box_2.webp 480w, ../../p/2022to2023/mmexport1674398565231_hu51439aefb0dbce390baa55c1fb613f42_233956_1536x0_resize_q60_h2_box_2.webp 1536w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="66"
+data-flex-basis="159px"
+>&lt;/p>
+&lt;p>&lt;img src="../../p/2022to2023/DSC05489.webp"
+width="6000"
+height="4000"
+srcset="../../p/2022to2023/DSC05489_huc7428dc6c03069e6f8970aa0783beee4_361502_480x0_resize_q60_h2_box_2.webp 480w, ../../p/2022to2023/DSC05489_huc7428dc6c03069e6f8970aa0783beee4_361502_1536x0_resize_q60_h2_box_2.webp 1536w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="150"
+data-flex-basis="360px"
+> &lt;img src="../../p/2022to2023/mmexport1674398522962.webp"
+width="4096"
+height="2730"
+srcset="../../p/2022to2023/mmexport1674398522962_hud4000e985998c18663506b131b06da38_261318_480x0_resize_q60_h2_box_2.webp 480w, ../../p/2022to2023/mmexport1674398522962_hud4000e985998c18663506b131b06da38_261318_1536x0_resize_q60_h2_box_2.webp 1536w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="150"
+data-flex-basis="360px"
+>&lt;/p>
+&lt;p>第二天去了番禺去找七七同学。&lt;/p>
+&lt;p>&lt;code>TODO: 待补全&lt;/code>
+北京路 广州塔&amp;amp;珠江 越秀公园&lt;/p>
+&lt;h3 id="桂林出名的自然风光">桂林——出名的自然风光&lt;/h3>
+&lt;p> 
+&lt;img src="../../p/2022to2023/DSC06027.webp"
+width="6000"
+height="3375"
+srcset="../../p/2022to2023/DSC06027_hu0fc56510dd700263e58b0f905ccc456c_1081506_480x0_resize_q60_h2_box_2.webp 480w, ../../p/2022to2023/DSC06027_hu0fc56510dd700263e58b0f905ccc456c_1081506_1536x0_resize_q60_h2_box_2.webp 1536w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="177"
+data-flex-basis="426px"
+>&lt;/p>
+&lt;p>&lt;code>TODO: 待补全&lt;/code>&lt;/p>
+&lt;h2 id="daily">Daily&lt;/h2>
+&lt;p>2022的daily由于众所周知的原因，可能没那么有趣，主要是干饭为主（这里就不发吃的了，感兴趣的不如去看我朋友圈）。想来想去，不如挑几件事儿来说一说吧。&lt;/p>
+&lt;h3 id="春游">春游&lt;/h3>
+&lt;link rel="stylesheet" href="../../tianzige.css">
+&lt;link rel="preconnect" href="https://fonts.gstatic.com">
+&lt;link href="https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400;1,700
+&amp;family=Noto+Serif+SC:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+&lt;div id='test-groud-玉渊潭' style="text-align: center;font-size:0;">
+&lt;/div>
+&lt;script type="text/javascript">
+generate("玉渊潭");
+function generate(wenzi) {
+let groud = document.getElementById('test-groud-玉渊潭');
+groud.innerHTML = "";
+for (let item of wenzi) {
+let div = document.createElement("div");
+div.className = 'ci-box';
+div.innerHTML = `&lt;div class="lt-2rb line">&lt;/div>
+&lt;div class="rt-2lb line">&lt;/div>
+&lt;div class="rm-2lm line">&lt;/div>
+&lt;div class="tm-2bm line">&lt;/div>
+&lt;div class="ci">
+&lt;span class="wd">${item}&lt;/span>
+&lt;/div>`;
+groud.appendChild(div);
+}
+}
+function changeFontSize(fontSize) {
+let box = document.querySelectorAll("#test-groud .ci-box");
+let wds = document.querySelectorAll('#test-groud .ci-box .wd');
+for (let b of box) {
+b.style.width = `${fontSize * 1.2}px`;
+b.style.height = `${fontSize * 1.2}px`;
+}
+for (let wd of wds) {
+wd.style.fontSize = `${fontSize}px`;
+wd.style.lineHeight = `${fontSize}px`;
+}
+}
+&lt;/script>
+&lt;p>每年的三四月份其实都回去玉渊潭看樱花，今年也不例外，玉渊潭也毫不例外的人山人海。&lt;/p>
+&lt;blockquote>
+&lt;p>京城柳初绿，玉渊樱已红。&lt;/p>
+&lt;/blockquote>
+&lt;p> 
+&lt;img src="../../p/2022to2023/mmexport1649253343034.webp"
+width="6000"
+height="4000"
+srcset="../../p/2022to2023/mmexport1649253343034_hub420a0ea185c1e0dc856a7ef20d9edd5_2583380_480x0_resize_q60_h2_box_2.webp 480w, ../../p/2022to2023/mmexport1649253343034_hub420a0ea185c1e0dc856a7ef20d9edd5_2583380_1536x0_resize_q60_h2_box_2.webp 1536w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="150"
+data-flex-basis="360px"
+> &lt;img src="../../p/2022to2023/mmexport1649253346343.webp"
+width="6000"
+height="4000"
+srcset="../../p/2022to2023/mmexport1649253346343_hu158978785b1d0d28336c3c172fbedc9a_452998_480x0_resize_q60_h2_box_2.webp 480w, ../../p/2022to2023/mmexport1649253346343_hu158978785b1d0d28336c3c172fbedc9a_452998_1536x0_resize_q60_h2_box_2.webp 1536w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="150"
+data-flex-basis="360px"
+>&lt;/p>
+&lt;p>&lt;img src="../../p/2022to2023/2022-04-09-22-44-12-738.webp"
+width="6000"
+height="4000"
+srcset="../../p/2022to2023/2022-04-09-22-44-12-738_hu02cc0cd03de5646843b2125a90afa783_524046_480x0_resize_q60_h2_box_2.webp 480w, ../../p/2022to2023/2022-04-09-22-44-12-738_hu02cc0cd03de5646843b2125a90afa783_524046_1536x0_resize_q60_h2_box_2.webp 1536w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="150"
+data-flex-basis="360px"
+> &lt;img src="../../p/2022to2023/2022-04-09-22-45-00-724.webp"
+width="6000"
+height="4000"
+srcset="../../p/2022to2023/2022-04-09-22-45-00-724_hube46004a54e681e1e09861c2f43bf7f6_428424_480x0_resize_q60_h2_box_2.webp 480w, ../../p/2022to2023/2022-04-09-22-45-00-724_hube46004a54e681e1e09861c2f43bf7f6_428424_1536x0_resize_q60_h2_box_2.webp 1536w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="150"
+data-flex-basis="360px"
+> &lt;img src="../../p/2022to2023/mmexport1649253344680.webp"
+width="6000"
+height="4000"
+srcset="../../p/2022to2023/mmexport1649253344680_hud3a5bfa542a51f10ce1003cecc218448_282452_480x0_resize_q60_h2_box_2.webp 480w, ../../p/2022to2023/mmexport1649253344680_hud3a5bfa542a51f10ce1003cecc218448_282452_1536x0_resize_q60_h2_box_2.webp 1536w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="150"
+data-flex-basis="360px"
+>&lt;/p>
+&lt;p>&lt;img src="../../p/2022to2023/DSC05108.webp"
+width="6000"
+height="4000"
+srcset="../../p/2022to2023/DSC05108_hu8b9aaf569b7d0a36e231a5a72e008c8e_467328_480x0_resize_q60_h2_box_2.webp 480w, ../../p/2022to2023/DSC05108_hu8b9aaf569b7d0a36e231a5a72e008c8e_467328_1536x0_resize_q60_h2_box_2.webp 1536w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="150"
+data-flex-basis="360px"
+> &lt;img src="../../p/2022to2023/7dbf746cb517bc0ab5579afd2ea566f.webp"
+width="1280"
+height="720"
+srcset="../../p/2022to2023/7dbf746cb517bc0ab5579afd2ea566f_hue580de6c4ed7c5144b2250aa4e4fa44f_114112_480x0_resize_q60_h2_box_2.webp 480w, ../../p/2022to2023/7dbf746cb517bc0ab5579afd2ea566f_hue580de6c4ed7c5144b2250aa4e4fa44f_114112_1536x0_resize_q60_h2_box_2.webp 1536w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="177"
+data-flex-basis="426px"
+> &lt;img src="../../p/2022to2023/DSC05123.webp"
+width="6000"
+height="4000"
+srcset="../../p/2022to2023/DSC05123_hua53758a3c3554023b9044f1d33cd58e2_428714_480x0_resize_q60_h2_box_2.webp 480w, ../../p/2022to2023/DSC05123_hua53758a3c3554023b9044f1d33cd58e2_428714_1536x0_resize_q60_h2_box_2.webp 1536w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="150"
+data-flex-basis="360px"
+>&lt;/p>
+&lt;h3 id="野餐">野餐&lt;/h3>
+&lt;p>由于北京五六月份的一段时间不让堂食，所以我和小伙伴们决定去野餐！于是搬上桌子和椅子，带上卡式炉、鸳鸯锅和火锅食材，找了一片没有人的小森林，我们就开始野餐啦！在吃完火锅过后，我们拿了一副扑克牌开始打牌，很快乐~&lt;/p>
+&lt;p> 
+&lt;img src="../../p/2022to2023/DSC05858.webp"
+width="6000"
+height="4000"
+srcset="../../p/2022to2023/DSC05858_hu135c479356aa93fa1d92cef04148d6d7_947366_480x0_resize_q60_h2_box_2.webp 480w, ../../p/2022to2023/DSC05858_hu135c479356aa93fa1d92cef04148d6d7_947366_1536x0_resize_q60_h2_box_2.webp 1536w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="150"
+data-flex-basis="360px"
+> &lt;img src="../../p/2022to2023/DSC05866.webp"
+width="5664"
+height="3768"
+srcset="../../p/2022to2023/DSC05866_hu387ea47cb2bc0d201c1879f50e60b1e8_655738_480x0_resize_q60_h2_box_2.webp 480w, ../../p/2022to2023/DSC05866_hu387ea47cb2bc0d201c1879f50e60b1e8_655738_1536x0_resize_q60_h2_box_2.webp 1536w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="150"
+data-flex-basis="360px"
+>&lt;/p>
+&lt;p>&lt;img src="../../p/2022to2023/C0127.MP4_snapshot_00.04.565.webp"
+width="1920"
+height="1080"
+srcset="../../p/2022to2023/C0127.MP4_snapshot_00.04.565_hua67fe71f194dfc7eb3a5bd50476a6dda_69484_480x0_resize_q60_h2_box_2.webp 480w, ../../p/2022to2023/C0127.MP4_snapshot_00.04.565_hua67fe71f194dfc7eb3a5bd50476a6dda_69484_1536x0_resize_q60_h2_box_2.webp 1536w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="177"
+data-flex-basis="426px"
+> &lt;img src="../../p/2022to2023/0d002a94375bfcd889952f4c91ff0d9.webp"
+width="1706"
+height="1280"
+srcset="../../p/2022to2023/0d002a94375bfcd889952f4c91ff0d9_hu89d27cd8e0c7c9160a7dbf9ddcdf4255_152088_480x0_resize_q60_h2_box_2.webp 480w, ../../p/2022to2023/0d002a94375bfcd889952f4c91ff0d9_hu89d27cd8e0c7c9160a7dbf9ddcdf4255_152088_1536x0_resize_q60_h2_box_2.webp 1536w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="133"
+data-flex-basis="319px"
+> &lt;img src="../../p/2022to2023/C0128.MP4_snapshot_00.19.587.webp"
+width="1920"
+height="1080"
+srcset="../../p/2022to2023/C0128.MP4_snapshot_00.19.587_huae09ccc2ac1d42ebf41c6a447beb8545_54800_480x0_resize_q60_h2_box_2.webp 480w, ../../p/2022to2023/C0128.MP4_snapshot_00.19.587_huae09ccc2ac1d42ebf41c6a447beb8545_54800_1536x0_resize_q60_h2_box_2.webp 1536w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="177"
+data-flex-basis="426px"
+>&lt;/p>
+&lt;h3 id="志愿者">志愿者&lt;/h3>
+&lt;p>今年正好赶上北京举办2022冬奥会，后来寒假期间有一天群里发了一个冬残奥会城市志愿者的补充报名活动，大概是又缺岗位了问有没有同学想要去，我就顺手报了一个。当志愿者还是很有意思的！&lt;/p>
+&lt;p> 
+&lt;img src="../../p/2022to2023/DSC04062.webp"
+width="4954"
+height="2700"
+srcset="../../p/2022to2023/DSC04062_hub2a6e6f25a01d0478d6f7b2c58d4c6ce_713278_480x0_resize_q60_h2_box_2.webp 480w, ../../p/2022to2023/DSC04062_hub2a6e6f25a01d0478d6f7b2c58d4c6ce_713278_1536x0_resize_q60_h2_box_2.webp 1536w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="183"
+data-flex-basis="440px"
+>&lt;/p>
+&lt;p>城市志愿者的工作内容比较简单，主要是为了疏导观众、和观众打招呼什么的，相当于冬残奥气氛组。&lt;/p>
+&lt;p> 
+&lt;img src="../../p/2022to2023/DSC03954.webp"
+width="6000"
+height="4000"
+srcset="../../p/2022to2023/DSC03954_hu78d1c9562d4fe29ddc5e09d539fb7750_600342_480x0_resize_q60_h2_box_2.webp 480w, ../../p/2022to2023/DSC03954_hu78d1c9562d4fe29ddc5e09d539fb7750_600342_1536x0_resize_q60_h2_box_2.webp 1536w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="150"
+data-flex-basis="360px"
+> &lt;img src="../../p/2022to2023/DSC03991.webp"
+width="6000"
+height="4000"
+srcset="../../p/2022to2023/DSC03991_hude56cf395502292091c38aa01bf5a8ba_361732_480x0_resize_q60_h2_box_2.webp 480w, ../../p/2022to2023/DSC03991_hude56cf395502292091c38aa01bf5a8ba_361732_1536x0_resize_q60_h2_box_2.webp 1536w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="150"
+data-flex-basis="360px"
+> &lt;img src="../../p/2022to2023/DSC03736.webp"
+width="6000"
+height="4000"
+srcset="../../p/2022to2023/DSC03736_hu7d32fba1d39b29b673744e4190617146_2697606_480x0_resize_q60_h2_box_2.webp 480w, ../../p/2022to2023/DSC03736_hu7d32fba1d39b29b673744e4190617146_2697606_1536x0_resize_q60_h2_box_2.webp 1536w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="150"
+data-flex-basis="360px"
+>&lt;/p>
+&lt;p>&lt;img src="../../p/2022to2023/DSC04432.webp"
+width="5705"
+height="3803"
+srcset="../../p/2022to2023/DSC04432_hu06f2979419caf8f33432e34c06078a0f_382478_480x0_resize_q60_h2_box_2.webp 480w, ../../p/2022to2023/DSC04432_hu06f2979419caf8f33432e34c06078a0f_382478_1536x0_resize_q60_h2_box_2.webp 1536w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="150"
+data-flex-basis="360px"
+> &lt;img src="../../p/2022to2023/DSC03241.webp"
+width="4000"
+height="6000"
+srcset="../../p/2022to2023/DSC03241_hu55ac66f587765ed3fd067e1815bd6268_566306_480x0_resize_q60_h2_box_2.webp 480w, ../../p/2022to2023/DSC03241_hu55ac66f587765ed3fd067e1815bd6268_566306_1536x0_resize_q60_h2_box_2.webp 1536w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="66"
+data-flex-basis="160px"
+> &lt;img src="../../p/2022to2023/DSC03102.webp"
+width="6000"
+height="4000"
+srcset="../../p/2022to2023/DSC03102_hu301599374044424268e3d79967c6c8d7_1033314_480x0_resize_q60_h2_box_2.webp 480w, ../../p/2022to2023/DSC03102_hu301599374044424268e3d79967c6c8d7_1033314_1536x0_resize_q60_h2_box_2.webp 1536w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="150"
+data-flex-basis="360px"
+>&lt;/p>
+&lt;h2 id="thinking">Thinking&lt;/h2>
+&lt;p>年终总结吧，想写一点点更经过思考的东西在里面，而不是简简单单的介绍生活。我十分喜欢和朋友们聊天，也喜欢深入地交流或思考一些话题。&lt;/p>
+&lt;p>（这部分总是忘，想到啥写啥吧）&lt;/p>
+&lt;h3 id="科技与生活">科技与生活&lt;/h3>
+&lt;p>作为一个科技工作者吧，如何将科技让我们的生活变得更美好也是一个值得思考的话题。以下分享两个小小的事情，让我更加愿意在计算摄影与计算机视觉研究的这条道路上走得更远。&lt;/p>
+&lt;ol>
+&lt;li>计算摄影与拍星星&lt;/li>
+&lt;/ol>
+&lt;blockquote>
+&lt;p>计算摄影是指使用数字计算而不是光学处理的数字图像捕获和处理技术。计算摄影可以提高照相机的能力，或者引入基于胶片的摄影根本不可能的特征，或者降低照相机元件的成本或尺寸。&lt;/p>
+&lt;/blockquote>
+&lt;p>2022年秋天的一个晚上，正当我带着有些许难过的心情打算在小区附近的小河边散步的时候，​偶然一抬头，发现天空中好多星星。感觉到这个景色真好看，正好想到了Google Camera有Night Sight模式，于是拿出手机，尝试拍下来。本来对手机没报太大希望，结果居然拍出来了和我预想中能排到差不多的画面（因为之前玩摄影的经验告诉我，在恰当的参数设置下，其实夜晚相机拍出来的会比肉眼看到的还要好看），或许这也是算法提升带给人们生活偶然的一些小惊喜吧。&lt;/p>
+&lt;p> 
+&lt;img src="../../p/2022to2023/AGC_20221116_001728331.NIGHT.webp"
+width="4208"
+height="3120"
+srcset="../../p/2022to2023/AGC_20221116_001728331.NIGHT_hu5cd0a69fc77bda2d0970071657517f5f_257614_480x0_resize_q60_h2_box_2.webp 480w, ../../p/2022to2023/AGC_20221116_001728331.NIGHT_hu5cd0a69fc77bda2d0970071657517f5f_257614_1536x0_resize_q60_h2_box_2.webp 1536w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="134"
+data-flex-basis="323px"
+> &lt;img src="../../p/2022to2023/LieAll_20221105_005115034.NIGHT.webp"
+width="7820"
+height="5864"
+srcset="../../p/2022to2023/LieAll_20221105_005115034.NIGHT_hu8f81b70e5841958a3bd9b928699026ab_1062052_480x0_resize_q60_h2_box_2.webp 480w, ../../p/2022to2023/LieAll_20221105_005115034.NIGHT_hu8f81b70e5841958a3bd9b928699026ab_1062052_1536x0_resize_q60_h2_box_2.webp 1536w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="133"
+data-flex-basis="320px"
+>&lt;/p>
+&lt;p>这让我想起了2017年吧，我上高中的时候去澳大利亚，从悉尼飞往北京的航班上，在大约赤道上空的位置，我看见过我所见过的最好看的星空，但是当时打开手机拍摄一片漆黑，拿着相机也由于所需要的快门时间过长（ISO6400，光圈全开也需要三秒）而无法拍到一张清晰的照片，大概是这个样子。我当时就在想，如果能有现在的计算摄影技术，那么这一定是一张极为震撼的照片。&lt;/p>
+&lt;p> 
+&lt;img src="../../p/2022to2023/DSC02525.webp"
+width="6000"
+height="4000"
+srcset="../../p/2022to2023/DSC02525_hu7dd72447f0be6b2229fcff152cbc69e5_682526_480x0_resize_q60_h2_box_2.webp 480w, ../../p/2022to2023/DSC02525_hu7dd72447f0be6b2229fcff152cbc69e5_682526_1536x0_resize_q60_h2_box_2.webp 1536w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="150"
+data-flex-basis="360px"
+> &lt;img src="../../p/2022to2023/DSC02530.webp"
+width="6000"
+height="4000"
+srcset="../../p/2022to2023/DSC02530_hu724b7deb968b455fc28f1d9e6b4ab29f_410672_480x0_resize_q60_h2_box_2.webp 480w, ../../p/2022to2023/DSC02530_hu724b7deb968b455fc28f1d9e6b4ab29f_410672_1536x0_resize_q60_h2_box_2.webp 1536w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="150"
+data-flex-basis="360px"
+>&lt;/p>
+&lt;p>就像拍星星一样，以往一个需要专业相机加上三脚架固定在某个位置才能拍出来的照片，现如今我们只需要拿着手机手持就可以拍出来。我相信随着科技的发展，拿出手机，无需专业摄影知识的每一个人，都能随手拍出一张想要的照片，也可以利用计算摄影所带来的宽容度来给后期调整带来丰富的空间。&lt;/p>
+&lt;ol start="2">
+&lt;li>计算机视觉与照片的管理&lt;/li>
+&lt;/ol>
+&lt;p>我十分热爱拍照片，有时候只是把它当做一种记录或者说纪念，像写日记一样。许嵩的《摄影艺术》中有一句歌词“时光流转，谁还用日记本，往事有底片为证”，虽然底片被HEIF/HEIC这种高效的数字化的存储格式所取代，但也只是为了帮助我更高效更省空间的存储这些“日记”。我在Google Photos上备份了有超过十万张照片，Google Photos有着我认为商用环境中最棒的算法加持，在多年前就支持了使用自然语言搜索相册、人脸及物品识别、AI-based图像编辑等等。&lt;/p>
+&lt;p>前几天晚上在思考人生的时候，随手拿起来了一个我放在床上的毛绒玩具。忽然觉得这个毛绒玩具已经陪伴我很多年了，想回忆一下过去，于是我打开手机上的Google Photos搜索了它，翻到了和它经过的点点滴滴。&lt;/p>
+&lt;p>2017年的时候，我和当时的一个好朋友一起逛街，我们一起看到了这个白熊，我觉得它特别可爱，于是她就把它买了下来送给了我。&lt;/p>
+&lt;p> 
+&lt;img src="../../p/2022to2023/WX20230205-140246@2x.webp"
+width="2110"
+height="1504"
+srcset="../../p/2022to2023/WX20230205-140246@2x_huecf39c75de755292d948e6b6e5ce2407_82194_480x0_resize_q60_h2_box_2.webp 480w, ../../p/2022to2023/WX20230205-140246@2x_huecf39c75de755292d948e6b6e5ce2407_82194_1536x0_resize_q60_h2_box_2.webp 1536w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="140"
+data-flex-basis="336px"
+>&lt;/p>
+&lt;p>之后上高三的时候，我抱着它去学校上课，不想听课的时候还可以垫着它睡觉。&lt;/p>
+&lt;p> 
+&lt;img src="../../p/2022to2023/WX20230205-140119@2x.webp"
+width="2120"
+height="922"
+srcset="../../p/2022to2023/WX20230205-140119@2x_huebf318a547377e851050166121192bec_73342_480x0_resize_q60_h2_box_2.webp 480w, ../../p/2022to2023/WX20230205-140119@2x_huebf318a547377e851050166121192bec_73342_1536x0_resize_q60_h2_box_2.webp 1536w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="229"
+data-flex-basis="551px"
+>&lt;/p>
+&lt;p>之后上大学的时候需要住宿舍，由于来到了沙河这么偏僻的地方上学，所以从家里搬了不少东西去陪着我，也包括这个白熊。&lt;/p>
+&lt;p> 
+&lt;img src="../../p/2022to2023/WX20230205-140045@2x.webp"
+width="2112"
+height="880"
+srcset="../../p/2022to2023/WX20230205-140045@2x_hue593007fbd76a2bad82167fb2a898e21_72696_480x0_resize_q60_h2_box_2.webp 480w, ../../p/2022to2023/WX20230205-140045@2x_hue593007fbd76a2bad82167fb2a898e21_72696_1536x0_resize_q60_h2_box_2.webp 1536w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="240"
+data-flex-basis="576px"
+>&lt;/p>
+&lt;p>它还和我当时在宜家新买的大狗勾陪着我一起写代码做实验🥺。&lt;/p>
+&lt;p> 
+&lt;img src="../../p/2022to2023/WX20230205-140143@2x.webp"
+width="2126"
+height="996"
+srcset="../../p/2022to2023/WX20230205-140143@2x_hu04c0d83ffeb9169bbaca9eaf119c986c_109566_480x0_resize_q60_h2_box_2.webp 480w, ../../p/2022to2023/WX20230205-140143@2x_hu04c0d83ffeb9169bbaca9eaf119c986c_109566_1536x0_resize_q60_h2_box_2.webp 1536w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="213"
+data-flex-basis="512px"
+>&lt;/p>
+&lt;p>与数字化的文字记录相比，照片在之前看来是一种更难于搜索和管理的载体，但是有了现在的基于计算机视觉的技术，这一点也不太需要担心了。反而，使用照片可以更加省事儿且逼真的记录下当时的场景。&lt;/p>
+&lt;h3 id="关于mbti-enfp">关于MBTI-ENFP&lt;/h3>
+&lt;p>此处和几个ENFP的朋友交流的时候有一些感悟，这里可能主要的关键点是“外向”与“内向”吧。&lt;/p>
+&lt;ol>
+&lt;li>Ideal Match (理想匹配)&lt;/li>
+&lt;/ol>
+&lt;p>有人可能注意过MBTI性格测试结果给出了一张Compatibility Chart，里面大概讲了什么样的性格的人比较合得来。我们可以看到内向和外向的在一起是理想匹配。但是和朋友的聊天中在思考一个问题，如果我很外向和喜欢社交，真的能给内向的ta足够的安全感吗。&lt;/p>
+&lt;p> 
+&lt;img src="../../p/2022to2023/mbti.webp"
+width="773"
+height="744"
+srcset="../../p/2022to2023/mbti_hu537e0ca0a2bd7ac95b9b31709acbeb13_24844_480x0_resize_q60_h2_box_2.webp 480w, ../../p/2022to2023/mbti_hu537e0ca0a2bd7ac95b9b31709acbeb13_24844_1536x0_resize_q60_h2_box_2.webp 1536w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="103"
+data-flex-basis="249px"
+> &lt;img src="../../p/2022to2023/WechatIMG35.webp"
+width="991"
+height="1489"
+srcset="../../p/2022to2023/WechatIMG35_hud57c521d27aad471c75ac45d6a9f17ae_65278_480x0_resize_q60_h2_box_2.webp 480w, ../../p/2022to2023/WechatIMG35_hud57c521d27aad471c75ac45d6a9f17ae_65278_1536x0_resize_q60_h2_box_2.webp 1536w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="66"
+data-flex-basis="159px"
+>&lt;/p>
+&lt;ol start="2">
+&lt;li>什么是快乐星球&lt;/li>
+&lt;/ol>
+&lt;p>这是针对知乎上一个的问题：&lt;a class="link" href="https://www.zhihu.com/question/528276616/answer/2637804333" target="_blank" rel="noopener"
+>为何我发现在中国ENFP真的很少？&lt;/a> 的思考，和朋友们聊天更多的感觉是“感同身受”吧，但如何改变或者说把外向的人们汇集在一起或者说让整个社交变得更有趣，我们也没什么想法。&lt;/p>
+&lt;h3 id="目标与道路">目标与道路&lt;/h3>
+&lt;p>和很多朋友聊过的一个问题就是，为什么学这个专业，或者说这个专业是你自己选出来的吗，感觉身边大多数人在上大学之前对于自己学什么是没有特别明确的想法的，很多朋友给出的答案是“我家里人帮我选的”、“听说这个专业好就业”、“我啥专业都报了，看分数到那个分数段就随缘学什么专业吧”等等。&lt;/p>
+&lt;p>在我之前以为，大学里那些“大学霸”们会是那种对当前专业很有求知欲很热衷于探索的，比如我当时的大学委就是这样。年底的时候和一个朋友聊天，偶然发现她居然是她们专业的第一或第二，但是她对她们专业大概态度就是骂骂咧咧。于是我就问她，那你为什么不考虑换个专业或者说你是怎么学到成绩这么好的，她说她也不知道自己该学什么，让她学什么她都能学得很好。&lt;/p>
+&lt;p>经常会思考，每个人为什么会学这个专业，我一直觉得计算机或者说编程并不是每一个人都适合的，虽然我不知道这个话说得有没有道理。但是确实，即使我就读于计算机专业，我刚上大学的时候也发现有的同学对计算机是完全不了解的。可能是我上大学之前对计算机这方面了解还比较多吧，上大学之后我经常觉得一些可能是称之为常识的东西，有的同学居然不知道。&lt;/p>
+&lt;p>我在大学之后的目标以及方向也不是特别明确，但是我是热爱写代码和研究新事物的。所以在大学期间我感觉我似乎把许多技术都了解、尝试、浅浅的研究了一下，比如从单片机到操作系统，前后端数据库，桌面与移动端GUI程序开发，机器学习与图像处理什么的自己也都做过一些尝试并写过许多代码。我不认为那些专注于一个技术明确就业方向与像我这样都研究一遍最后也没有明确的就业方向的谁优谁劣，毕竟还有许多人大学毕业之后从事的工作与自己本科学的没什么关系。&lt;/p>
+&lt;h2 id="毕业考研与读研">毕业、考研与读研&lt;/h2>
+&lt;p>&lt;code>TODO: 待补全&lt;/code>&lt;/p></description></item><item><title>2021年度总结&amp;杂谈</title><link>/p/my2021/</link><pubDate>Thu, 27 Jan 2022 00:00:00 +0000</pubDate><guid>/p/my2021/</guid><description>&lt;img src="/p/my2021/clay-banks-HyczMwZbdLg-unsplash.jpg" alt="Featured image of post 2021年度总结&amp;杂谈" />&lt;style>
+@media screen and (max-width: 600px) {
+.xf-img {
+width: 100%;
+}
+.xf-img-2 {
+width: 80%;
+margin-left:10%;
+}
+}
+@media screen and (min-width: 600px) {
+.xf-img {
+width: 400px;
+margin-left: calc(50% - 200px)
+}
+.xf-img-2 {
+width: 300px;
+margin-left: calc(50% - 150px)
+}
+}
+.article-content .gallery{
+gap:3px !important;
+margin-top: -32px;
+}
+.xf-video{
+margin-left: calc((var(--card-padding)) * -1);
+margin-right: calc((var(--card-padding)) * -1);
+width: calc(100% + var(--card-padding) * 2);
+}
+.xf-video video{
+width:100%;
+}
+&lt;/style>
+&lt;p>　　2021 年或许是平平淡淡的一年，又或许是充满挑战的一年。最近几天打算写一写自己的心得吧，或许也算是对去年的总结，又或是对未来的展望。文笔欠佳，见谅。&lt;/p>
+&lt;p>　　首先来写写 2021 年吧，一转眼就大四了，大四的生活主要是在准备考研，考不考得上也不好说，就在今儿看空卡老师的公众号时看到了一调消息，觉得还挺好笑的。&lt;/p>
+&lt;img class="xf-img" src="12751643259087_.pic_.webp">
+&lt;p>说道这里还有一个很好笑的：势态研凉&lt;/p>
+&lt;img class="xf-img" src="QQ20220127-184455@2x.webp">
+&lt;p>好了，言归正传，让我来分享2021都经历了什么有趣的事情吧！&lt;/p>
+&lt;h2 id="20217-秦皇岛之旅自驾游">2021.7 秦皇岛之旅——自驾游&lt;/h2>
+&lt;p> 
+&lt;img src="../../p/my2021/DSC00689.webp"
+width="6000"
+height="4000"
+srcset="../../p/my2021/DSC00689_hu3608e42707a50fa3efee06a5b47cc513_517448_480x0_resize_q60_h2_box_2.webp 480w, ../../p/my2021/DSC00689_hu3608e42707a50fa3efee06a5b47cc513_517448_1536x0_resize_q60_h2_box_2.webp 1536w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="150"
+data-flex-basis="360px"
+> &lt;img src="../../p/my2021/DSC00701.webp"
+width="6000"
+height="4000"
+srcset="../../p/my2021/DSC00701_hu176bd3ffde007f6c9ea9f48d53d3d9d3_712268_480x0_resize_q60_h2_box_2.webp 480w, ../../p/my2021/DSC00701_hu176bd3ffde007f6c9ea9f48d53d3d9d3_712268_1536x0_resize_q60_h2_box_2.webp 1536w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="150"
+data-flex-basis="360px"
+> &lt;img src="../../p/my2021/DSC00629.webp"
+width="6000"
+height="4000"
+srcset="../../p/my2021/DSC00629_huc8017519c97d397a426c8cc2d96a2ae2_1003114_480x0_resize_q60_h2_box_2.webp 480w, ../../p/my2021/DSC00629_huc8017519c97d397a426c8cc2d96a2ae2_1003114_1536x0_resize_q60_h2_box_2.webp 1536w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="150"
+data-flex-basis="360px"
+> &lt;img src="../../p/my2021/DSC00531.webp"
+width="6000"
+height="4000"
+srcset="../../p/my2021/DSC00531_hu2c3fa971d3c926a3b945ca675d183154_662842_480x0_resize_q60_h2_box_2.webp 480w, ../../p/my2021/DSC00531_hu2c3fa971d3c926a3b945ca675d183154_662842_1536x0_resize_q60_h2_box_2.webp 1536w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="150"
+data-flex-basis="360px"
+>&lt;/p>
+&lt;p>&lt;img src="../../p/my2021/DSC00508.webp"
+width="6000"
+height="4000"
+srcset="../../p/my2021/DSC00508_hu325021fed5f589fe35799a5ba3a5300b_327278_480x0_resize_q60_h2_box_2.webp 480w, ../../p/my2021/DSC00508_hu325021fed5f589fe35799a5ba3a5300b_327278_1536x0_resize_q60_h2_box_2.webp 1536w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="150"
+data-flex-basis="360px"
+> &lt;img src="../../p/my2021/DSC00501.webp"
+width="6000"
+height="4000"
+srcset="../../p/my2021/DSC00501_hu05f5de4f0a2b672e86c127a3b10d5661_302632_480x0_resize_q60_h2_box_2.webp 480w, ../../p/my2021/DSC00501_hu05f5de4f0a2b672e86c127a3b10d5661_302632_1536x0_resize_q60_h2_box_2.webp 1536w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="150"
+data-flex-basis="360px"
+> &lt;img src="../../p/my2021/DSC00493.webp"
+width="6000"
+height="4000"
+srcset="../../p/my2021/DSC00493_hua781badc948bfbb03dddb37362a9aa48_744086_480x0_resize_q60_h2_box_2.webp 480w, ../../p/my2021/DSC00493_hua781badc948bfbb03dddb37362a9aa48_744086_1536x0_resize_q60_h2_box_2.webp 1536w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="150"
+data-flex-basis="360px"
+> &lt;img src="../../p/my2021/DSC00475.webp"
+width="6000"
+height="4000"
+srcset="../../p/my2021/DSC00475_huf96bef67b937b6d8dce9b6de71823e42_478524_480x0_resize_q60_h2_box_2.webp 480w, ../../p/my2021/DSC00475_huf96bef67b937b6d8dce9b6de71823e42_478524_1536x0_resize_q60_h2_box_2.webp 1536w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="150"
+data-flex-basis="360px"
+>&lt;/p>
+&lt;p>&lt;img src="../../p/my2021/DSC00466.webp"
+width="6000"
+height="4000"
+srcset="../../p/my2021/DSC00466_hu7082dabaefed3060e06ba7f1c1480818_478356_480x0_resize_q60_h2_box_2.webp 480w, ../../p/my2021/DSC00466_hu7082dabaefed3060e06ba7f1c1480818_478356_1536x0_resize_q60_h2_box_2.webp 1536w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="150"
+data-flex-basis="360px"
+> &lt;img src="../../p/my2021/DSC00452.webp"
+width="6000"
+height="4000"
+srcset="../../p/my2021/DSC00452_hue932327cadd7b4ee785b5e1ce47da95d_1113598_480x0_resize_q60_h2_box_2.webp 480w, ../../p/my2021/DSC00452_hue932327cadd7b4ee785b5e1ce47da95d_1113598_1536x0_resize_q60_h2_box_2.webp 1536w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="150"
+data-flex-basis="360px"
+> &lt;img src="../../p/my2021/DSC00424.webp"
+width="6000"
+height="4000"
+srcset="../../p/my2021/DSC00424_hu473f7c9868c76b8e60d442abbc296041_524392_480x0_resize_q60_h2_box_2.webp 480w, ../../p/my2021/DSC00424_hu473f7c9868c76b8e60d442abbc296041_524392_1536x0_resize_q60_h2_box_2.webp 1536w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="150"
+data-flex-basis="360px"
+> &lt;img src="../../p/my2021/DSC00419.webp"
+width="6000"
+height="4000"
+srcset="../../p/my2021/DSC00419_hu400c32b3dc1be29ebe57fe969bd1880c_380000_480x0_resize_q60_h2_box_2.webp 480w, ../../p/my2021/DSC00419_hu400c32b3dc1be29ebe57fe969bd1880c_380000_1536x0_resize_q60_h2_box_2.webp 1536w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="150"
+data-flex-basis="360px"
+>&lt;/p>
+&lt;p>&lt;img src="../../p/my2021/DSC00319.webp"
+width="6000"
+height="4000"
+srcset="../../p/my2021/DSC00319_hu257686817814c1cdb97e583c578f7938_2022166_480x0_resize_q60_h2_box_2.webp 480w, ../../p/my2021/DSC00319_hu257686817814c1cdb97e583c578f7938_2022166_1536x0_resize_q60_h2_box_2.webp 1536w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="150"
+data-flex-basis="360px"
+> &lt;img src="../../p/my2021/DSC00272.webp"
+width="6000"
+height="4000"
+srcset="../../p/my2021/DSC00272_huca821b95104e19d40807443a6de0f151_694080_480x0_resize_q60_h2_box_2.webp 480w, ../../p/my2021/DSC00272_huca821b95104e19d40807443a6de0f151_694080_1536x0_resize_q60_h2_box_2.webp 1536w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="150"
+data-flex-basis="360px"
+> &lt;img src="../../p/my2021/DSC00206.webp"
+width="6000"
+height="4000"
+srcset="../../p/my2021/DSC00206_hu015f99fbf3a9a96e8eb92b2b085ad8d3_678102_480x0_resize_q60_h2_box_2.webp 480w, ../../p/my2021/DSC00206_hu015f99fbf3a9a96e8eb92b2b085ad8d3_678102_1536x0_resize_q60_h2_box_2.webp 1536w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="150"
+data-flex-basis="360px"
+> &lt;img src="../../p/my2021/1628792910522.jpeg"
+width="4898"
+height="3265"
+srcset="../../p/my2021/1628792910522_hu72eb9df7417f2c86bb229881bb896d70_293110_480x0_resize_q60_box.jpeg 480w, ../../p/my2021/1628792910522_hu72eb9df7417f2c86bb229881bb896d70_293110_1536x0_resize_q60_box.jpeg 1536w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="150"
+data-flex-basis="360px"
+>&lt;/p>
+&lt;p>　　2021的那个暑假，偶然提到了Aranya——秦皇岛的一个很文艺的社区，正好大家也想去海边了，以及想到了自驾游，于是我们就想到了这么一个安排！车还是那辆老车——老捷达，但是这个车别看虽然老，真的是好开，当时是晚上去的走的夜路，开了四个多小时吧开到了北戴河~&lt;/p>
+&lt;img class="xf-img-2" src="Screenshot.webp">
+&lt;p>　　这次出去玩我们订的是民宿，可以自己做饭，自己吃火锅。秦皇岛的物价很便宜，我们在那边有一家很喜欢的冰激凌店——碰碰凉，还有一家炸鸡店，可能是在北京生活习惯了，那边的这些东西物价还不到北京的一半儿而且量大！到了民宿，我们先要规划一下后几天的行程，对于我这样一个学软件工程专业的工科生，电脑当然是必不可少的了！我们第一天用电脑规划行程，后几天就是用电脑看电影了！&lt;/p>
+&lt;img class="xf-img" src="IMG_20210630_232323.webp">
+&lt;p>　　我们决定第一天去Aranya，感受一下文艺气息，第二天去北戴河老虎石，第三天上午逛逛就准备回去了。当晚我们到那儿都很饿，于是就到了那附近的一家大排档撸串！你还别说他家的牛肉穿是真的好吃，比在北京吃的很多餐馆的都要好吃~&lt;/p>
+&lt;p> 
+&lt;img src="../../p/my2021/1628793611899.jpeg.webp"
+width="6000"
+height="4000"
+srcset="../../p/my2021/1628793611899.jpeg_huf2bd754cbe8198a2c585602666041d4a_264664_480x0_resize_q60_h2_box_2.webp 480w, ../../p/my2021/1628793611899.jpeg_huf2bd754cbe8198a2c585602666041d4a_264664_1536x0_resize_q60_h2_box_2.webp 1536w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="150"
+data-flex-basis="360px"
+> &lt;img src="../../p/my2021/1628793617148.jpeg.webp"
+width="6000"
+height="4000"
+srcset="../../p/my2021/1628793617148.jpeg_huf9c7157bb080c999da4fac70dd74821a_225924_480x0_resize_q60_h2_box_2.webp 480w, ../../p/my2021/1628793617148.jpeg_huf9c7157bb080c999da4fac70dd74821a_225924_1536x0_resize_q60_h2_box_2.webp 1536w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="150"
+data-flex-basis="360px"
+> &lt;img src="../../p/my2021/1628793619116.jpeg.webp"
+width="6000"
+height="4000"
+srcset="../../p/my2021/1628793619116.jpeg_huf4b195b66a147b3648f0c5b0cf7db83f_323868_480x0_resize_q60_h2_box_2.webp 480w, ../../p/my2021/1628793619116.jpeg_huf4b195b66a147b3648f0c5b0cf7db83f_323868_1536x0_resize_q60_h2_box_2.webp 1536w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="150"
+data-flex-basis="360px"
+> &lt;img src="../../p/my2021/1628793643183.jpeg.webp"
+width="6000"
+height="4000"
+srcset="../../p/my2021/1628793643183.jpeg_hubf328fc681484e224b350f1f8eaf48ce_295142_480x0_resize_q60_h2_box_2.webp 480w, ../../p/my2021/1628793643183.jpeg_hubf328fc681484e224b350f1f8eaf48ce_295142_1536x0_resize_q60_h2_box_2.webp 1536w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="150"
+data-flex-basis="360px"
+>&lt;/p>
+&lt;p>&lt;img src="../../p/my2021/1628793654357.jpeg.webp"
+width="6000"
+height="4000"
+srcset="../../p/my2021/1628793654357.jpeg_hu70caef702646ac51ee1a10fff4fc80dc_264874_480x0_resize_q60_h2_box_2.webp 480w, ../../p/my2021/1628793654357.jpeg_hu70caef702646ac51ee1a10fff4fc80dc_264874_1536x0_resize_q60_h2_box_2.webp 1536w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="150"
+data-flex-basis="360px"
+> &lt;img src="../../p/my2021/1628793658835.jpeg.webp"
+width="6000"
+height="4000"
+srcset="../../p/my2021/1628793658835.jpeg_hu0ba028836f182f6098aecfe774e2773e_236204_480x0_resize_q60_h2_box_2.webp 480w, ../../p/my2021/1628793658835.jpeg_hu0ba028836f182f6098aecfe774e2773e_236204_1536x0_resize_q60_h2_box_2.webp 1536w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="150"
+data-flex-basis="360px"
+> &lt;img src="../../p/my2021/1628793657526.jpeg.webp"
+width="6000"
+height="4000"
+srcset="../../p/my2021/1628793657526.jpeg_hu2bc544e48f138cb09f2ceed9a1b05c3b_321270_480x0_resize_q60_h2_box_2.webp 480w, ../../p/my2021/1628793657526.jpeg_hu2bc544e48f138cb09f2ceed9a1b05c3b_321270_1536x0_resize_q60_h2_box_2.webp 1536w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="150"
+data-flex-basis="360px"
+>&lt;/p>
+&lt;p>　　吃完已经快凌晨一点了，于是我们决定——夜里看海！就像《藏起来》歌词“有人相爱，有人夜里开车看海”那样，我们把车开到了海边。这个地方白天是个景区，停车要钱，晚上也就没人管了。&lt;/p>
+&lt;p>　　第二天来到Aranya，这真是一个十分文艺的小镇，建立在海边，可能大家所熟知的就是Aranya教堂了吧，这里借用小米同学的星轨。&lt;/p>
+&lt;div class="xf-video">&lt;video src="1.mp4" controls>&lt;/div>
+&lt;p>　　总的而言，在秦皇岛的旅途还是很开心的，也是我第一次自驾游。如果你对此感兴趣可以去看一下我的B站上的Vlog（https://www.bilibili.com/video/av504760418）&lt;/p>
+&lt;div class="video-wrapper">
+&lt;iframe src="https://player.bilibili.com/player.html?as_wide=1&amp;amp;high_quality=1&amp;amp;page=1&amp;aid=504760418"
+scrolling="no"
+frameborder="no"
+framespacing="0"
+allowfullscreen="true"
+>
+&lt;/iframe>
+&lt;/div>
+&lt;h2 id="20218-妙峰山野营">2021.8 妙峰山野营&lt;/h2>
+&lt;p>　　去秦皇岛是第一次自驾游的话，那么去妙峰山是我第一次自驾野营。其中有一个同学他对这方面很有经验，并且自己有帐篷什么的，我们还带了炭火和羊肉串、鱼豆腐、鸡翅等烧烤食材，可以在野外烧烤~&lt;/p>
+&lt;p> 
+&lt;img src="../../p/my2021/IMG_20210826_223028_2.webp"
+width="4000"
+height="3000"
+srcset="../../p/my2021/IMG_20210826_223028_2_huf3d27b375dbebbca30208b4277e289e7_564852_480x0_resize_q60_h2_box_2.webp 480w, ../../p/my2021/IMG_20210826_223028_2_huf3d27b375dbebbca30208b4277e289e7_564852_1536x0_resize_q60_h2_box_2.webp 1536w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="133"
+data-flex-basis="320px"
+> &lt;img src="../../p/my2021/mmexport1630063466759.webp"
+width="6000"
+height="4000"
+srcset="../../p/my2021/mmexport1630063466759_hu009d0617659a2470ef81f04893594cc4_1475752_480x0_resize_q60_h2_box_2.webp 480w, ../../p/my2021/mmexport1630063466759_hu009d0617659a2470ef81f04893594cc4_1475752_1536x0_resize_q60_h2_box_2.webp 1536w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="150"
+data-flex-basis="360px"
+> &lt;img src="../../p/my2021/mmexport1630063468098.webp"
+width="6000"
+height="4000"
+srcset="../../p/my2021/mmexport1630063468098_hubb90c4a36c4bab46844d1998e8b2e585_119406_480x0_resize_q60_h2_box_2.webp 480w, ../../p/my2021/mmexport1630063468098_hubb90c4a36c4bab46844d1998e8b2e585_119406_1536x0_resize_q60_h2_box_2.webp 1536w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="150"
+data-flex-basis="360px"
+> &lt;img src="../../p/my2021/mmexport1630063477302.webp"
+width="6000"
+height="4000"
+srcset="../../p/my2021/mmexport1630063477302_hu602d3000435a151fe6f69b57e27c62b8_1192626_480x0_resize_q60_h2_box_2.webp 480w, ../../p/my2021/mmexport1630063477302_hu602d3000435a151fe6f69b57e27c62b8_1192626_1536x0_resize_q60_h2_box_2.webp 1536w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="150"
+data-flex-basis="360px"
+>&lt;/p>
+&lt;p>&lt;img src="../../p/my2021/mmexport1630063501771.webp"
+width="3986"
+height="2990"
+srcset="../../p/my2021/mmexport1630063501771_hu3fc1dcb443bcc24e4265998593e53dc5_251150_480x0_resize_q60_h2_box_2.webp 480w, ../../p/my2021/mmexport1630063501771_hu3fc1dcb443bcc24e4265998593e53dc5_251150_1536x0_resize_q60_h2_box_2.webp 1536w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="133"
+data-flex-basis="319px"
+> &lt;img src="../../p/my2021/mmexport1630063511273.webp"
+width="3986"
+height="2656"
+srcset="../../p/my2021/mmexport1630063511273_hufa85bec0322d301784f5b95beb364331_118450_480x0_resize_q60_h2_box_2.webp 480w, ../../p/my2021/mmexport1630063511273_hufa85bec0322d301784f5b95beb364331_118450_1536x0_resize_q60_h2_box_2.webp 1536w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="150"
+data-flex-basis="360px"
+> &lt;img src="../../p/my2021/mmexport1630064716032.webp"
+width="1704"
+height="1136"
+srcset="../../p/my2021/mmexport1630064716032_hu8df8e5827fe43ee8f1fd989bfa005b1d_46904_480x0_resize_q60_h2_box_2.webp 480w, ../../p/my2021/mmexport1630064716032_hu8df8e5827fe43ee8f1fd989bfa005b1d_46904_1536x0_resize_q60_h2_box_2.webp 1536w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="150"
+data-flex-basis="360px"
+> &lt;img src="../../p/my2021/mmexport1630065160064.webp"
+width="1620"
+height="1080"
+srcset="../../p/my2021/mmexport1630065160064_hu82e57c34542c4b1a3031297330da15ee_90492_480x0_resize_q60_h2_box_2.webp 480w, ../../p/my2021/mmexport1630065160064_hu82e57c34542c4b1a3031297330da15ee_90492_1536x0_resize_q60_h2_box_2.webp 1536w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="150"
+data-flex-basis="360px"
+>&lt;/p>
+&lt;p>　　同样这次活动也拍了vlog~如果感兴趣可以去看一下（https://www.bilibili.com/video/av717669473）&lt;/p>
+&lt;div class="video-wrapper">
+&lt;iframe src="https://player.bilibili.com/player.html?as_wide=1&amp;amp;high_quality=1&amp;amp;page=1&amp;aid=717669473"
+scrolling="no"
+frameborder="no"
+framespacing="0"
+allowfullscreen="true"
+>
+&lt;/iframe>
+&lt;/div>
+&lt;h2 id="20215-大创">2021.5 大创&lt;/h2>
+&lt;p>　　北邮每年的大创展我都很喜欢，也是我每年必去的活动，在这里可以看到许多同学很有意思的想法，和他们交流技术，思维的碰撞之间或许能产生不一样的火花！&lt;/p>
+&lt;p> 
+&lt;img src="../../p/my2021/DSC05493.webp"
+width="6000"
+height="4000"
+srcset="../../p/my2021/DSC05493_hud27fc63ecb6e457d1cafaa988ca15682_856272_480x0_resize_q60_h2_box_2.webp 480w, ../../p/my2021/DSC05493_hud27fc63ecb6e457d1cafaa988ca15682_856272_1536x0_resize_q60_h2_box_2.webp 1536w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="150"
+data-flex-basis="360px"
+> &lt;img src="../../p/my2021/DSC05458.webp"
+width="6000"
+height="4000"
+srcset="../../p/my2021/DSC05458_huef2bf9b89e5b4fb339abb1e8872c7191_557466_480x0_resize_q60_h2_box_2.webp 480w, ../../p/my2021/DSC05458_huef2bf9b89e5b4fb339abb1e8872c7191_557466_1536x0_resize_q60_h2_box_2.webp 1536w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="150"
+data-flex-basis="360px"
+> &lt;img src="../../p/my2021/DSC05370.webp"
+width="4914"
+height="3276"
+srcset="../../p/my2021/DSC05370_hu97d29502f90be1450562e4070d23818c_554268_480x0_resize_q60_h2_box_2.webp 480w, ../../p/my2021/DSC05370_hu97d29502f90be1450562e4070d23818c_554268_1536x0_resize_q60_h2_box_2.webp 1536w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="150"
+data-flex-basis="360px"
+> &lt;img src="../../p/my2021/DSC05510.webp"
+width="6000"
+height="4000"
+srcset="../../p/my2021/DSC05510_hude4fd523c0ff4da18ffdb44bd64b7f6e_982382_480x0_resize_q60_h2_box_2.webp 480w, ../../p/my2021/DSC05510_hude4fd523c0ff4da18ffdb44bd64b7f6e_982382_1536x0_resize_q60_h2_box_2.webp 1536w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="150"
+data-flex-basis="360px"
+>&lt;/p>
+&lt;p>&lt;img src="../../p/my2021/DSC05542.webp"
+width="6000"
+height="4000"
+srcset="../../p/my2021/DSC05542_hu5e55ccda6a27a74d8c420493f0ca8279_557988_480x0_resize_q60_h2_box_2.webp 480w, ../../p/my2021/DSC05542_hu5e55ccda6a27a74d8c420493f0ca8279_557988_1536x0_resize_q60_h2_box_2.webp 1536w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="150"
+data-flex-basis="360px"
+> &lt;img src="../../p/my2021/DSC05581.webp"
+width="4274"
+height="2849"
+srcset="../../p/my2021/DSC05581_hue71e1a2bb5e6eecc3adb2bc821a5937a_137682_480x0_resize_q60_h2_box_2.webp 480w, ../../p/my2021/DSC05581_hue71e1a2bb5e6eecc3adb2bc821a5937a_137682_1536x0_resize_q60_h2_box_2.webp 1536w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="150"
+data-flex-basis="360px"
+> &lt;img src="../../p/my2021/DSC05709.webp"
+width="6000"
+height="4000"
+srcset="../../p/my2021/DSC05709_hu0a3f1352b8b8527905f799676c8b2e33_445068_480x0_resize_q60_h2_box_2.webp 480w, ../../p/my2021/DSC05709_hu0a3f1352b8b8527905f799676c8b2e33_445068_1536x0_resize_q60_h2_box_2.webp 1536w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="150"
+data-flex-basis="360px"
+> &lt;img src="../../p/my2021/DSC05600.webp"
+width="6000"
+height="4000"
+srcset="../../p/my2021/DSC05600_hue2d61e276ebeec76dac9d235545fd7a3_294008_480x0_resize_q60_h2_box_2.webp 480w, ../../p/my2021/DSC05600_hue2d61e276ebeec76dac9d235545fd7a3_294008_1536x0_resize_q60_h2_box_2.webp 1536w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="150"
+data-flex-basis="360px"
+>&lt;/p>
+&lt;h2 id="20214-舞会">2021.4 舞会&lt;/h2>
+&lt;p>　　其实我是被叫来当摄影拍拍照的，平时在学校团委、青媒等学生组织当新闻摄影报道学校活动，而这次舞会不是官方活动所以我可以拍拍照顺便参与一下，感谢北邮舞协的朋友们教我如何跳舞！&lt;/p>
+&lt;p> 
+&lt;img src="../../p/my2021/3221643275772_.pic_.webp"
+width="1080"
+height="720"
+srcset="../../p/my2021/3221643275772_.pic__hu7f9bd1ac2eade32c0fc580620e123a4f_49594_480x0_resize_q60_h2_box_2.webp 480w, ../../p/my2021/3221643275772_.pic__hu7f9bd1ac2eade32c0fc580620e123a4f_49594_1536x0_resize_q60_h2_box_2.webp 1536w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="150"
+data-flex-basis="360px"
+> &lt;img src="../../p/my2021/3211643275772_.pic_.webp"
+width="1080"
+height="721"
+srcset="../../p/my2021/3211643275772_.pic__hubf28d19df432dcfe285d15063ae01d05_39656_480x0_resize_q60_h2_box_2.webp 480w, ../../p/my2021/3211643275772_.pic__hubf28d19df432dcfe285d15063ae01d05_39656_1536x0_resize_q60_h2_box_2.webp 1536w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="149"
+data-flex-basis="359px"
+> &lt;img src="../../p/my2021/3201643275772_.pic_.webp"
+width="1080"
+height="720"
+srcset="../../p/my2021/3201643275772_.pic__hu1ddc8cb044e4285348e9e788bb647470_41082_480x0_resize_q60_h2_box_2.webp 480w, ../../p/my2021/3201643275772_.pic__hu1ddc8cb044e4285348e9e788bb647470_41082_1536x0_resize_q60_h2_box_2.webp 1536w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="150"
+data-flex-basis="360px"
+>&lt;/p>
+&lt;p>&lt;img src="../../p/my2021/DSC032051.webp"
+width="5285"
+height="3523"
+srcset="../../p/my2021/DSC032051_hu19bf28f96b8523d6026c74bf02448ab4_691332_480x0_resize_q60_h2_box_2.webp 480w, ../../p/my2021/DSC032051_hu19bf28f96b8523d6026c74bf02448ab4_691332_1536x0_resize_q60_h2_box_2.webp 1536w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="150"
+data-flex-basis="360px"
+> &lt;img src="../../p/my2021/DSC03109.webp"
+width="6000"
+height="4000"
+srcset="../../p/my2021/DSC03109_huc01d57778b5fcdd7c26aabfc8b68315b_474888_480x0_resize_q60_h2_box_2.webp 480w, ../../p/my2021/DSC03109_huc01d57778b5fcdd7c26aabfc8b68315b_474888_1536x0_resize_q60_h2_box_2.webp 1536w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="150"
+data-flex-basis="360px"
+> &lt;img src="../../p/my2021/DSC02732.webp"
+width="6000"
+height="4000"
+srcset="../../p/my2021/DSC02732_hua0f3d7d9decfabca7c58f256621a4b0d_1439690_480x0_resize_q60_h2_box_2.webp 480w, ../../p/my2021/DSC02732_hua0f3d7d9decfabca7c58f256621a4b0d_1439690_1536x0_resize_q60_h2_box_2.webp 1536w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="150"
+data-flex-basis="360px"
+> &lt;img src="../../p/my2021/DSC02989.webp"
+width="6000"
+height="4000"
+srcset="../../p/my2021/DSC02989_huf8cf0f06f5376fbb74af3f678fcd61fa_1303226_480x0_resize_q60_h2_box_2.webp 480w, ../../p/my2021/DSC02989_huf8cf0f06f5376fbb74af3f678fcd61fa_1303226_1536x0_resize_q60_h2_box_2.webp 1536w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="150"
+data-flex-basis="360px"
+>&lt;/p>
+&lt;h2 id="兴趣爱好摄影">兴趣爱好——摄影&lt;/h2>
+&lt;p>　　最早喜欢摄影是从高中开始，当时其实主要就是为了拍学校的一些活动（当时在学校电视台工作），之后大学也因为之前拍过不错的作品而在军训加入摄影宣传组（文体宣）而不用训练，在2021年也拍了许多自己满意的照片，还是像以前一样以人像摄影及校园活动为主。大家可以访问本站的摄影作品展（https://xianfei.ml:8001/gallery/）来观看哦~&lt;/p>
+&lt;img src="Screen-Shot-2022-01-27-at-5.38.05-PM.webp">
+&lt;h2 id="兴趣爱好美食制作">兴趣爱好——美食制作&lt;/h2>
+&lt;p>　　俗话说得好，民以食为天，而好吃的食物，能使人在心情不好时感到治愈。其实我甚至向往以后的生活：开一个小饭馆，饭点儿做做菜迎接一些客人，而不是饭点儿的时候接一些外包项目写写代码赚一些小钱。感觉这样生活应该也不会太累也不会太穷。&lt;/p>
+&lt;p> 
+&lt;img src="../../p/my2021/2021-09-30-17-56-27-161.webp"
+width="4000"
+height="3000"
+srcset="../../p/my2021/2021-09-30-17-56-27-161_huea913bc3eaedbe2ec3e8db30645f8d90_281212_480x0_resize_q60_h2_box_2.webp 480w, ../../p/my2021/2021-09-30-17-56-27-161_huea913bc3eaedbe2ec3e8db30645f8d90_281212_1536x0_resize_q60_h2_box_2.webp 1536w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="133"
+data-flex-basis="320px"
+>
+&lt;img src="../../p/my2021/2021-10-01-12-36-01-075.webp"
+width="4000"
+height="3000"
+srcset="../../p/my2021/2021-10-01-12-36-01-075_hu139efc5ddd54fbc895522b337bd72404_606754_480x0_resize_q60_h2_box_2.webp 480w, ../../p/my2021/2021-10-01-12-36-01-075_hu139efc5ddd54fbc895522b337bd72404_606754_1536x0_resize_q60_h2_box_2.webp 1536w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="133"
+data-flex-basis="320px"
+>
+&lt;img src="../../p/my2021/2021-10-02-23-26-56-585.webp"
+width="4000"
+height="3000"
+srcset="../../p/my2021/2021-10-02-23-26-56-585_hu0bf74bb0d6c0126314dbc73a94b08a4a_556176_480x0_resize_q60_h2_box_2.webp 480w, ../../p/my2021/2021-10-02-23-26-56-585_hu0bf74bb0d6c0126314dbc73a94b08a4a_556176_1536x0_resize_q60_h2_box_2.webp 1536w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="133"
+data-flex-basis="320px"
+>
+&lt;img src="../../p/my2021/2021-10-07-22-59-45-140.webp"
+width="4000"
+height="3000"
+srcset="../../p/my2021/2021-10-07-22-59-45-140_huc451cdf64e9356179ccae35a05c74aeb_298916_480x0_resize_q60_h2_box_2.webp 480w, ../../p/my2021/2021-10-07-22-59-45-140_huc451cdf64e9356179ccae35a05c74aeb_298916_1536x0_resize_q60_h2_box_2.webp 1536w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="133"
+data-flex-basis="320px"
+>&lt;/p>
+&lt;p>&lt;img src="../../p/my2021/2021-10-16-12-18-01-162.webp"
+width="4000"
+height="3000"
+srcset="../../p/my2021/2021-10-16-12-18-01-162_hu3031efd44da8db45550c77de5da07b95_244428_480x0_resize_q60_h2_box_2.webp 480w, ../../p/my2021/2021-10-16-12-18-01-162_hu3031efd44da8db45550c77de5da07b95_244428_1536x0_resize_q60_h2_box_2.webp 1536w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="133"
+data-flex-basis="320px"
+>
+&lt;img src="../../p/my2021/2021-10-30-19-43-51-524.webp"
+width="4000"
+height="3000"
+srcset="../../p/my2021/2021-10-30-19-43-51-524_hua8fbb7fc27263509d6cbfd8376e9dabc_258544_480x0_resize_q60_h2_box_2.webp 480w, ../../p/my2021/2021-10-30-19-43-51-524_hua8fbb7fc27263509d6cbfd8376e9dabc_258544_1536x0_resize_q60_h2_box_2.webp 1536w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="133"
+data-flex-basis="320px"
+>
+&lt;img src="../../p/my2021/2021-11-07-18-08-48-781.webp"
+width="4000"
+height="3000"
+srcset="../../p/my2021/2021-11-07-18-08-48-781_hu4466bdeaa24a21d32ffa27d0d48c11e0_208756_480x0_resize_q60_h2_box_2.webp 480w, ../../p/my2021/2021-11-07-18-08-48-781_hu4466bdeaa24a21d32ffa27d0d48c11e0_208756_1536x0_resize_q60_h2_box_2.webp 1536w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="133"
+data-flex-basis="320px"
+>
+&lt;img src="../../p/my2021/2021-11-07-18-08-55-558.webp"
+width="4000"
+height="3000"
+srcset="../../p/my2021/2021-11-07-18-08-55-558_hucb2a462a6dbc4496aff733f0b8ff191a_824604_480x0_resize_q60_h2_box_2.webp 480w, ../../p/my2021/2021-11-07-18-08-55-558_hucb2a462a6dbc4496aff733f0b8ff191a_824604_1536x0_resize_q60_h2_box_2.webp 1536w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="133"
+data-flex-basis="320px"
+>&lt;/p>
+&lt;p>&lt;img src="../../p/my2021/2022-01-10-16-44-03-043.webp"
+width="4000"
+height="3000"
+srcset="../../p/my2021/2022-01-10-16-44-03-043_hu7764cab26e5f0ddeb818ebf3dc742cec_286146_480x0_resize_q60_h2_box_2.webp 480w, ../../p/my2021/2022-01-10-16-44-03-043_hu7764cab26e5f0ddeb818ebf3dc742cec_286146_1536x0_resize_q60_h2_box_2.webp 1536w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="133"
+data-flex-basis="320px"
+>
+&lt;img src="../../p/my2021/2022-01-11-19-04-14-662.webp"
+width="4000"
+height="3000"
+srcset="../../p/my2021/2022-01-11-19-04-14-662_hu4428aa8fa2a831cd1d5c2e8ea6ab2baf_262288_480x0_resize_q60_h2_box_2.webp 480w, ../../p/my2021/2022-01-11-19-04-14-662_hu4428aa8fa2a831cd1d5c2e8ea6ab2baf_262288_1536x0_resize_q60_h2_box_2.webp 1536w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="133"
+data-flex-basis="320px"
+>
+&lt;img src="../../p/my2021/2022-01-14-19-46-06-085.webp"
+width="4000"
+height="3000"
+srcset="../../p/my2021/2022-01-14-19-46-06-085_hu71b3369d47b93aa89c1c80a367f43b0f_319664_480x0_resize_q60_h2_box_2.webp 480w, ../../p/my2021/2022-01-14-19-46-06-085_hu71b3369d47b93aa89c1c80a367f43b0f_319664_1536x0_resize_q60_h2_box_2.webp 1536w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="133"
+data-flex-basis="320px"
+>
+&lt;img src="../../p/my2021/2022-01-17-23-30-47-622.webp"
+width="4000"
+height="3000"
+srcset="../../p/my2021/2022-01-17-23-30-47-622_hub8b789cf1a9b4c32692e56be6957d985_370026_480x0_resize_q60_h2_box_2.webp 480w, ../../p/my2021/2022-01-17-23-30-47-622_hub8b789cf1a9b4c32692e56be6957d985_370026_1536x0_resize_q60_h2_box_2.webp 1536w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="133"
+data-flex-basis="320px"
+>&lt;/p>
+&lt;p>&lt;img src="../../p/my2021/2022-01-23-23-06-35-496.webp"
+width="4000"
+height="3000"
+srcset="../../p/my2021/2022-01-23-23-06-35-496_hu1f2b15a6007ead7864ac34283abbf1c6_443146_480x0_resize_q60_h2_box_2.webp 480w, ../../p/my2021/2022-01-23-23-06-35-496_hu1f2b15a6007ead7864ac34283abbf1c6_443146_1536x0_resize_q60_h2_box_2.webp 1536w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="133"
+data-flex-basis="320px"
+>
+&lt;img src="../../p/my2021/IMG_20210929_114456.webp"
+width="4000"
+height="3000"
+srcset="../../p/my2021/IMG_20210929_114456_hud2d5701436fa24d8da3dc7a63ec57d18_453988_480x0_resize_q60_h2_box_2.webp 480w, ../../p/my2021/IMG_20210929_114456_hud2d5701436fa24d8da3dc7a63ec57d18_453988_1536x0_resize_q60_h2_box_2.webp 1536w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="133"
+data-flex-basis="320px"
+>
+&lt;img src="../../p/my2021/IMG_20210929_183834.webp"
+width="4000"
+height="3000"
+srcset="../../p/my2021/IMG_20210929_183834_huc32be3f4f707dd41f5495ac6893cd674_325904_480x0_resize_q60_h2_box_2.webp 480w, ../../p/my2021/IMG_20210929_183834_huc32be3f4f707dd41f5495ac6893cd674_325904_1536x0_resize_q60_h2_box_2.webp 1536w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="133"
+data-flex-basis="320px"
+>
+&lt;img src="../../p/my2021/IMG_20210929_184300_1.webp"
+width="4000"
+height="3000"
+srcset="../../p/my2021/IMG_20210929_184300_1_hu60c1c31530a89febcea2f388795df9e4_229490_480x0_resize_q60_h2_box_2.webp 480w, ../../p/my2021/IMG_20210929_184300_1_hu60c1c31530a89febcea2f388795df9e4_229490_1536x0_resize_q60_h2_box_2.webp 1536w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="133"
+data-flex-basis="320px"
+>&lt;/p>
+&lt;p>&lt;img src="../../p/my2021/IMG_20211001_173801.webp"
+width="4000"
+height="3000"
+srcset="../../p/my2021/IMG_20211001_173801_hu05d2c3df7254a3ae5b5ee7e6fc03fb87_440398_480x0_resize_q60_h2_box_2.webp 480w, ../../p/my2021/IMG_20211001_173801_hu05d2c3df7254a3ae5b5ee7e6fc03fb87_440398_1536x0_resize_q60_h2_box_2.webp 1536w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="133"
+data-flex-basis="320px"
+>
+&lt;img src="../../p/my2021/IMG_20211013_175126_1.webp"
+width="4000"
+height="3000"
+srcset="../../p/my2021/IMG_20211013_175126_1_hu96e74d68ce9ef158b273818af06d9c18_267224_480x0_resize_q60_h2_box_2.webp 480w, ../../p/my2021/IMG_20211013_175126_1_hu96e74d68ce9ef158b273818af06d9c18_267224_1536x0_resize_q60_h2_box_2.webp 1536w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="133"
+data-flex-basis="320px"
+>
+&lt;img src="../../p/my2021/IMG_20211016_115607.webp"
+width="4000"
+height="3000"
+srcset="../../p/my2021/IMG_20211016_115607_hue1a775d9081dd731e4524f6d95c5a26b_324492_480x0_resize_q60_h2_box_2.webp 480w, ../../p/my2021/IMG_20211016_115607_hue1a775d9081dd731e4524f6d95c5a26b_324492_1536x0_resize_q60_h2_box_2.webp 1536w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="133"
+data-flex-basis="320px"
+>
+&lt;img src="../../p/my2021/IMG_20220124_173628.webp"
+width="4000"
+height="3000"
+srcset="../../p/my2021/IMG_20220124_173628_hu9cf3f2e0df96542c5818c17ccc68f123_209262_480x0_resize_q60_h2_box_2.webp 480w, ../../p/my2021/IMG_20220124_173628_hu9cf3f2e0df96542c5818c17ccc68f123_209262_1536x0_resize_q60_h2_box_2.webp 1536w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="133"
+data-flex-basis="320px"
+>&lt;/p>
+&lt;p>&lt;img src="../../p/my2021/mmexport2d35802032bad59cb3a79ed9890f4249_1642839372851.jpeg.webp"
+width="640"
+height="360"
+srcset="../../p/my2021/_huf581cdd206fe9162814b782c7f567d9b_9248_84c624f7ffe0820c3171897bb00c094b.webp 480w, ../../p/my2021/_huf581cdd206fe9162814b782c7f567d9b_9248_3fd781e092de71bf5d3f91478ac82bff.webp 1536w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="177"
+data-flex-basis="426px"
+>
+&lt;img src="../../p/my2021/PXL_20211031_042318525.MP_.webp"
+width="4000"
+height="3000"
+srcset="../../p/my2021/PXL_20211031_042318525.MP__hu6478bef0057c876e77b3f4ac3f7b6853_238912_480x0_resize_q60_h2_box_2.webp 480w, ../../p/my2021/PXL_20211031_042318525.MP__hu6478bef0057c876e77b3f4ac3f7b6853_238912_1536x0_resize_q60_h2_box_2.webp 1536w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="133"
+data-flex-basis="320px"
+>
+&lt;img src="../../p/my2021/PXL_20211118_035633034.webp"
+width="4000"
+height="3000"
+srcset="../../p/my2021/PXL_20211118_035633034_hu530491a05b5cfe8b00ca6cf7b0c5df9f_299744_480x0_resize_q60_h2_box_2.webp 480w, ../../p/my2021/PXL_20211118_035633034_hu530491a05b5cfe8b00ca6cf7b0c5df9f_299744_1536x0_resize_q60_h2_box_2.webp 1536w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="133"
+data-flex-basis="320px"
+>
+&lt;img src="../../p/my2021/PXL_20211118_040426833.webp"
+width="4000"
+height="3000"
+srcset="../../p/my2021/PXL_20211118_040426833_hue927a86a80fcca8ea82f097d69f078ee_310712_480x0_resize_q60_h2_box_2.webp 480w, ../../p/my2021/PXL_20211118_040426833_hue927a86a80fcca8ea82f097d69f078ee_310712_1536x0_resize_q60_h2_box_2.webp 1536w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="133"
+data-flex-basis="320px"
+>&lt;/p>
+&lt;h2 id="编程">编程&lt;/h2>
+&lt;p>　　我的专业是软件工程，所以编程应该也算是我的本行了，在暑假感谢于崔Sir的安排让我体验了一把打工人的生活，去工作了几天，帮忙完成一个小项目，用C++写一些大项目中涉及到的算法并进行测试，工资是每天一千块钱。这也算第一次去上班挣钱了吧~&lt;/p>
+&lt;p>　　如果研究生没考上的话，之后也就是要去就业了，或者边工作边准备明年再考一年？不过无论到时候是不是在工作，还要保持学习的热情及对新知识的渴望。之前老师经常说，学会以后把所学的给其他人讲出来，会加深你对知识的理解，所以我决定在b站分享一些实用的编程技术。目前在做的是速成全栈工程师，做一个提问箱的系统，目前已经上传完第一集，第二集已经录完正在剪辑了，欢迎大家去看一下以及给个三连关注什么的！（https://www.bilibili.com/video/av808225151）&lt;/p>
+&lt;img src="Screen-Shot-2022-01-27-at-5.56.06-PM.webp">
+&lt;h2 id="人际交往">人际交往&lt;/h2>
+&lt;p>　　人际关系是困扰人类的永恒课题，人的烦恼绝大多数都是周围人带来的。人际交往的本质就是“社会认可战”，综合运用精神、物质、情感认可才是获胜的最佳策略。让你我都有良好的感觉，或者说是过得开心才是最重要的，俗话说得好“和气生财”，往往老板聊得来就可能会让你多多光顾一家店。最近看老梁讲的《如何练就令人拍案叫绝的现场反应》，讲的很是好，他还推出过情商课，这些在YouTube上能看到。我在本站搬运了一份，《如何练就令人拍案叫绝的现场反应》，讲的十分好，两个小时，强烈推荐大家能把他看完。（https://xianfei.ml:8001/?p=460，不支持iOS设备）&lt;/p>
+&lt;img src="Screen-Shot-2022-01-27-at-6.02.14-PM.webp">
+&lt;h2 id="2021-2022-元旦跨年">2021-2022 元旦跨年&lt;/h2>
+&lt;p>　　2022的元旦，和同学们到北京城里的胡同（东四那边）玩了玩，最近很喜欢许多奇奇怪怪而又没什么用的好玩的东西，生活嘛，应该充满仪式感。&lt;/p>
+&lt;p> 
+&lt;img src="../../p/my2021/DSC02029.webp"
+width="3037"
+height="2025"
+srcset="../../p/my2021/DSC02029_hu21580318a65fad793e38a37b278b946b_477516_480x0_resize_q60_h2_box_2.webp 480w, ../../p/my2021/DSC02029_hu21580318a65fad793e38a37b278b946b_477516_1536x0_resize_q60_h2_box_2.webp 1536w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="149"
+data-flex-basis="359px"
+>
+&lt;img src="../../p/my2021/12311641188622_.pic_hd.webp"
+width="1440"
+height="960"
+srcset="../../p/my2021/12311641188622_.pic_hd_hu62e721f9c4dc867d792837aeec34a42e_98116_480x0_resize_q60_h2_box_2.webp 480w, ../../p/my2021/12311641188622_.pic_hd_hu62e721f9c4dc867d792837aeec34a42e_98116_1536x0_resize_q60_h2_box_2.webp 1536w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="150"
+data-flex-basis="360px"
+>
+&lt;img src="../../p/my2021/DSC01943.webp"
+width="6000"
+height="4000"
+srcset="../../p/my2021/DSC01943_hu504e37866b5eaab5370cb53891562f7c_337102_480x0_resize_q60_h2_box_2.webp 480w, ../../p/my2021/DSC01943_hu504e37866b5eaab5370cb53891562f7c_337102_1536x0_resize_q60_h2_box_2.webp 1536w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="150"
+data-flex-basis="360px"
+>
+&lt;img src="../../p/my2021/DSC01782.webp"
+width="3919"
+height="2613"
+srcset="../../p/my2021/DSC01782_hu58e6a2f0b260a14ff319e22662d7ab8f_606176_480x0_resize_q60_h2_box_2.webp 480w, ../../p/my2021/DSC01782_hu58e6a2f0b260a14ff319e22662d7ab8f_606176_1536x0_resize_q60_h2_box_2.webp 1536w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="149"
+data-flex-basis="359px"
+>&lt;/p>
+&lt;p>&lt;img src="../../p/my2021/DSC01851.webp"
+width="6000"
+height="4000"
+srcset="../../p/my2021/DSC01851_huc5bb28ff41e99bf790b1ecf4091007c2_1944626_480x0_resize_q60_h2_box_2.webp 480w, ../../p/my2021/DSC01851_huc5bb28ff41e99bf790b1ecf4091007c2_1944626_1536x0_resize_q60_h2_box_2.webp 1536w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="150"
+data-flex-basis="360px"
+>
+&lt;img src="../../p/my2021/DSC01978.webp"
+width="6000"
+height="4000"
+srcset="../../p/my2021/DSC01978_huf602a0a56556a9cd8e6e90cbd5753fd4_359784_480x0_resize_q60_h2_box_2.webp 480w, ../../p/my2021/DSC01978_huf602a0a56556a9cd8e6e90cbd5753fd4_359784_1536x0_resize_q60_h2_box_2.webp 1536w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="150"
+data-flex-basis="360px"
+>
+&lt;img src="../../p/my2021/DSC01915.webp"
+width="4529"
+height="3019"
+srcset="../../p/my2021/DSC01915_hua6a74e60a868bbe5eebccfe3789ce803_746160_480x0_resize_q60_h2_box_2.webp 480w, ../../p/my2021/DSC01915_hua6a74e60a868bbe5eebccfe3789ce803_746160_1536x0_resize_q60_h2_box_2.webp 1536w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="150"
+data-flex-basis="360px"
+>
+&lt;img src="../../p/my2021/DSC01955.webp"
+width="6000"
+height="4000"
+srcset="../../p/my2021/DSC01955_hu0d7c02cb2aeaa26c5509025e68a9c007_799344_480x0_resize_q60_h2_box_2.webp 480w, ../../p/my2021/DSC01955_hu0d7c02cb2aeaa26c5509025e68a9c007_799344_1536x0_resize_q60_h2_box_2.webp 1536w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="150"
+data-flex-basis="360px"
+>&lt;/p>
+&lt;p>&lt;img src="../../p/my2021/DSC01984.webp"
+width="5320"
+height="3547"
+srcset="../../p/my2021/DSC01984_hu79b7fc596df8b641c98705de312f4496_298094_480x0_resize_q60_h2_box_2.webp 480w, ../../p/my2021/DSC01984_hu79b7fc596df8b641c98705de312f4496_298094_1536x0_resize_q60_h2_box_2.webp 1536w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="149"
+data-flex-basis="359px"
+>
+&lt;img src="../../p/my2021/DSC02962.webp"
+width="5414"
+height="3609"
+srcset="../../p/my2021/DSC02962_huebc17949c1dab73f51b024eb112e4d96_524410_480x0_resize_q60_h2_box_2.webp 480w, ../../p/my2021/DSC02962_huebc17949c1dab73f51b024eb112e4d96_524410_1536x0_resize_q60_h2_box_2.webp 1536w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="150"
+data-flex-basis="360px"
+>
+&lt;img src="../../p/my2021/DSC02994.webp"
+width="5867"
+height="3911"
+srcset="../../p/my2021/DSC02994_hu178d0299b3e0a304a51759ba1f3eb3b9_272834_480x0_resize_q60_h2_box_2.webp 480w, ../../p/my2021/DSC02994_hu178d0299b3e0a304a51759ba1f3eb3b9_272834_1536x0_resize_q60_h2_box_2.webp 1536w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="150"
+data-flex-basis="360px"
+>
+&lt;img src="../../p/my2021/DSC02995.webp"
+width="6000"
+height="4000"
+srcset="../../p/my2021/DSC02995_hufd6e8e762e4b8e1045604fbd6fdb610c_392564_480x0_resize_q60_h2_box_2.webp 480w, ../../p/my2021/DSC02995_hufd6e8e762e4b8e1045604fbd6fdb610c_392564_1536x0_resize_q60_h2_box_2.webp 1536w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="150"
+data-flex-basis="360px"
+>&lt;/p>
+&lt;p>&lt;img src="../../p/my2021/DSC02962-1.webp"
+width="5414"
+height="3609"
+srcset="../../p/my2021/DSC02962-1_huebc17949c1dab73f51b024eb112e4d96_524410_480x0_resize_q60_h2_box_2.webp 480w, ../../p/my2021/DSC02962-1_huebc17949c1dab73f51b024eb112e4d96_524410_1536x0_resize_q60_h2_box_2.webp 1536w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="150"
+data-flex-basis="360px"
+>
+&lt;img src="../../p/my2021/DSC02914.webp"
+width="5848"
+height="3899"
+srcset="../../p/my2021/DSC02914_hu981758cb5df5dc3cf3b1b4302c687ba9_1176430_480x0_resize_q60_h2_box_2.webp 480w, ../../p/my2021/DSC02914_hu981758cb5df5dc3cf3b1b4302c687ba9_1176430_1536x0_resize_q60_h2_box_2.webp 1536w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="149"
+data-flex-basis="359px"
+>
+&lt;img src="../../p/my2021/DSC02929.webp"
+width="6000"
+height="4000"
+srcset="../../p/my2021/DSC02929_hu61ec330c303d0c3fdb25df96d4e95767_702110_480x0_resize_q60_h2_box_2.webp 480w, ../../p/my2021/DSC02929_hu61ec330c303d0c3fdb25df96d4e95767_702110_1536x0_resize_q60_h2_box_2.webp 1536w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="150"
+data-flex-basis="360px"
+>
+&lt;img src="../../p/my2021/DSC02935.webp"
+width="5051"
+height="3367"
+srcset="../../p/my2021/DSC02935_hu1d9600705aca2aba14c88640bc481c4d_908988_480x0_resize_q60_h2_box_2.webp 480w, ../../p/my2021/DSC02935_hu1d9600705aca2aba14c88640bc481c4d_908988_1536x0_resize_q60_h2_box_2.webp 1536w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="150"
+data-flex-basis="360px"
+>&lt;/p>
+&lt;p>&lt;img src="../../p/my2021/DSC02963.webp"
+width="6000"
+height="4000"
+srcset="../../p/my2021/DSC02963_hu71bd957f7ef0170676505b718a9f1364_1239190_480x0_resize_q60_h2_box_2.webp 480w, ../../p/my2021/DSC02963_hu71bd957f7ef0170676505b718a9f1364_1239190_1536x0_resize_q60_h2_box_2.webp 1536w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="150"
+data-flex-basis="360px"
+>
+&lt;img src="../../p/my2021/DSC02968.webp"
+width="6000"
+height="4000"
+srcset="../../p/my2021/DSC02968_huf14aae9d1221440808a476292fdad3af_591498_480x0_resize_q60_h2_box_2.webp 480w, ../../p/my2021/DSC02968_huf14aae9d1221440808a476292fdad3af_591498_1536x0_resize_q60_h2_box_2.webp 1536w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="150"
+data-flex-basis="360px"
+>
+&lt;img src="../../p/my2021/DSC02972.webp"
+width="6000"
+height="4000"
+srcset="../../p/my2021/DSC02972_hu31743eb9bfda18530180b1a36fbac141_825958_480x0_resize_q60_h2_box_2.webp 480w, ../../p/my2021/DSC02972_hu31743eb9bfda18530180b1a36fbac141_825958_1536x0_resize_q60_h2_box_2.webp 1536w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="150"
+data-flex-basis="360px"
+>&lt;/p>
+&lt;h2 id="2022">2022&lt;/h2>
+&lt;p>　　2022，希望生活能够更好，希望开开心心，希望世界和平，希望考研上岸。&lt;/p>
+&lt;p> 
+&lt;img src="../../p/my2021/640.jpeg"
+width="1080"
+height="720"
+srcset="../../p/my2021/640_huc04d0a9c9eae0eb1e7a45c4d942b2e8b_102424_480x0_resize_q60_box.jpeg 480w, ../../p/my2021/640_huc04d0a9c9eae0eb1e7a45c4d942b2e8b_102424_1536x0_resize_q60_box.jpeg 1536w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="150"
+data-flex-basis="360px"
+>&lt;/p>
+&lt;p>　　年初去打卡了著名的地铁上岸站，正好芽芽同学就住在门头沟，顺便让她当个导游了，也祝她能考研上岸！&lt;/p>
+&lt;p>　　突然想到明年就毕业了，希望疫情能够好转，能有一个更好的毕业旅行吧！如果有什么好的想法，欢迎在评论区留言！&lt;/p></description></item></channel></rss>
