@@ -66,7 +66,7 @@ params:
             default: Licensed under CC BY-NC-SA 4.0
 
     comments:
-        enabled: true
+        enabled: false
         provider: utterances
 
         disqusjs:
@@ -179,7 +179,7 @@ params:
 
     imageProcessing:
         cover:
-            enabled: true
+            enabled: false
         content:
             enabled: true
 

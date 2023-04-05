@@ -11,10 +11,19 @@ categories:
 ---
 
 <style>
-    .article-content .gallery{
+@media screen and (max-width: 600px) {
+        .article-content .gallery{
+        gap:5px !important;
+        margin-top: -24px;
+    }
+}
+
+@media screen and (min-width: 600px) {
+        .article-content .gallery{
         gap:5px !important;
         margin-top: -28px;
     }
+}
 </style>
 
 ## 前言
@@ -83,9 +92,9 @@ categories:
 
 文和友是在室内建了一些看起来像室外的这种建筑，复古了当年老长沙的样子，还是值得来逛逛的，具体可以在小红书上搜一下~
 
-这部分邀请一个朋友当模特拍了几张，还没修好，过几天补上来。
+这部分邀请一个朋友（雅诗姐姐）当模特拍了几张。
 
-`TODO: 待补全`
+
 
 最后附上一份一个在长沙认识的朋友分享给我的旅行攻略：
 
