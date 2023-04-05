@@ -11,11 +11,11 @@ menu:
 
 ## 入口
 
-正在建设中……
+正在整理中…… [点击这里访问](/categories/%E6%91%84%E5%BD%B1%E4%BD%9C%E5%93%81%E5%B1%95/)
 
-国内可访问 [https://xianfei.ml:8001/gallery/](https://xianfei.ml:8001/gallery/)
-
-稍后会重新整理，搬到github pages上。
+```
+<script>window.location.href="/categories/%E6%91%84%E5%BD%B1%E4%BD%9C%E5%93%81%E5%B1%95/"</script>
+```
 
 ## 前言
 
