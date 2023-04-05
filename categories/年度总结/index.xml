@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>年度总结 on 衔飞的博客</title><link>/categories/%E5%B9%B4%E5%BA%A6%E6%80%BB%E7%BB%93/</link><description>Recent content in 年度总结 on 衔飞的博客</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Wed, 01 Feb 2023 00:00:00 +0000</lastBuildDate><atom:link href="/categories/%E5%B9%B4%E5%BA%A6%E6%80%BB%E7%BB%93/index.xml" rel="self" type="application/rss+xml"/><item><title>再见2022，你好2023——年度总结&amp;旅行总结&amp;杂谈</title><link>/p/2022to2023/</link><pubDate>Wed, 01 Feb 2023 00:00:00 +0000</pubDate><guid>/p/2022to2023/</guid><description>&lt;img src="/p/2022to2023/2023banner.webp" alt="Featured image of post 再见2022，你好2023——年度总结&amp;旅行总结&amp;杂谈" />&lt;style>
+@media screen and (max-width: 600px) {
+.article-content .gallery{
+gap:5px !important;
+margin-top: -24px;
+}
+}
+@media screen and (min-width: 600px) {
 .article-content .gallery{
 gap:5px !important;
 margin-top: -28px;
+}
 }
 &lt;/style>
 &lt;h2 id="前言">前言&lt;/h2>
@@ -276,8 +284,7 @@ wd.style.lineHeight = `${fontSize}px`;
 }
 &lt;/script>
 &lt;p>文和友是在室内建了一些看起来像室外的这种建筑，复古了当年老长沙的样子，还是值得来逛逛的，具体可以在小红书上搜一下~&lt;/p>
-&lt;p>这部分邀请一个朋友当模特拍了几张，还没修好，过几天补上来。&lt;/p>
-&lt;p>&lt;code>TODO: 待补全&lt;/code>&lt;/p>
+&lt;p>这部分邀请一个朋友（雅诗姐姐）当模特拍了几张。&lt;/p>
 &lt;p>最后附上一份一个在长沙认识的朋友分享给我的旅行攻略：&lt;/p>
 &lt;blockquote>
 &lt;details>&lt;summary>长沙旅游推荐：(点击查看全文)&lt;/summary>&lt;br>1.&amp;nbsp;省博物馆（必去，提前几天买票）&lt;br>2.&amp;nbsp;橘子洲（主要是为了毛爷爷，感受一下沁园春）&lt;br>3.&amp;nbsp;岳麓山：脚下就是湖南大学，夏天的时候日出文化可流行了，都没站的地方。&lt;br>4.&amp;nbsp;杜甫江阁：那边很多中年轻人在那边打发自己的业余时间，吹弹拉唱写打牌&lt;br>5.&amp;nbsp;太平老街的《臭豆腐博物馆》（可以看看，试试里面的臭豆腐，不同于黑色经典，黑色经典的大肉肠也可以试试，或者打卡冬瓜山大肉肠）&lt;br>6.&amp;nbsp;长郡中学门口的《金记》糖油粑粑&lt;br>7.&amp;nbsp;长郡中学门口的《左姑娘泡菜》，《金花泡菜》，爱吃泡菜的一定要尝尝哇&lt;br>8.&amp;nbsp;茶颜的每一款都很绝，更绝的是周边也超美，所以一定要积会员卡积分啊&lt;br>9.&amp;nbsp;《吴酥生》的冰淇淋泡芙和绿豆糕（每次来都要点好吧），或者都正街的《258》，七八种口味的绿豆糕，自带一股清香。&lt;br>10.&amp;nbsp;《巷子猪脚》（夜宵店，开了十几年了，味道很绝，但是非常辣，还原长沙辣度）&lt;br>11.&amp;nbsp;《公交新村粉》（必打卡好吧）&lt;br>12.&amp;nbsp;《笨萝卜》（黄兴广场那边，便宜又好吃，但是得提前一两小时排队！！）&lt;br>13.&amp;nbsp;太平老街的《酒怪》小酒馆（都是自酿的酒，值得一试，环境也很特别），还有南门口店的《杨嗲甜酒》（这家必须好吧）&lt;br>14.&amp;nbsp;《金碗牛肉》总店（每一个菜都很好吃，提前预订，不然招牌菜会售完）&lt;br>15.&amp;nbsp;来长沙也想吃烧烤的话，那一定要去《客串》啦！！（都正街店，超级多明星吃过，必点小黄鱼）&lt;br>16.&amp;nbsp;在长沙想吃烤肉的话，可以吃《么子烤肉》&lt;br>17.&amp;nbsp;要感受一下民谣吧的氛围的话，可以去都正街的《忘浮沉藏式酒吧》&lt;br>18.&amp;nbsp;《炊烟时代》的小炒黄牛肉&lt;br>19.&amp;nbsp;第一光头粉&lt;br>20.&amp;nbsp;聚味瞿记龙虾堂（五一广场店，每一道菜都非常好吃，缺点就是要提前排队）&lt;br>21.&amp;nbsp;桂香南县麻辣肉（比绝味好吃）&lt;br>22.&amp;nbsp;国金中心的探鱼也不错

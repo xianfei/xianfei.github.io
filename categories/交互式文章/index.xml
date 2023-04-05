@@ -69,5 +69,4 @@ wd.style.fontSize = `${fontSize}px`;
 wd.style.lineHeight = `${fontSize}px`;
 }
 }
-&lt;/script>&lt;blockquote>
-&lt;/blockquote></description></item></channel></rss>
+&lt;/script></description></item></channel></rss>
