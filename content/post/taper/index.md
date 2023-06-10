@@ -44,6 +44,8 @@ categories:
 - YJH（嗜鱼山夫）
 - 云水
 - Mr.Leeeeeeeeee
+- 旺仔小兔（赵小赵/赵慧er）
+- Serendipity（武老师）
 
 ### in 广州
 
@@ -149,9 +151,21 @@ With： 山风
 
 With： YJH
 
+Google Photos：[https://photos.app.goo.gl/M8PEQxXwHaurishw7](https://photos.app.goo.gl/M8PEQxXwHaurishw7)
+
+&nbsp;
+![](WX20230610-233034@2x.webp)
+
 ### 2023-04-03 腾讯（北京）
 
 With： YJH
 
 &nbsp;
 ![](d73531e11ffa7dccfdde68bb75b97e.webp) ![](WechatIMG375.jpeg.webp) ![](67231d7fc2a0949d81c82bd0ad3560.webp)
+
+### 2023-05-21 奥森
+
+With：旺仔小兔（赵小赵/赵慧er）
+
+&nbsp;
+![](WechatIMG516.jpeg.webp) ![](WechatIMG519.jpeg.webp) ![](WechatIMG518.jpeg.webp) 
