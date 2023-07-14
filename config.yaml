@@ -2,7 +2,7 @@ baseurl:
 relativeURLs: true
 languageCode: zh-cn
 theme: hugo-theme-stack
-timeout: 300s
+timeout: 900s
 paginate: 5
 title: Xianfei's Blog
 
@@ -179,7 +179,7 @@ params:
 
     imageProcessing:
         cover:
-            enabled: false
+            enabled: true
         content:
             enabled: true
 
