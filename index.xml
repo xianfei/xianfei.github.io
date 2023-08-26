@@ -4652,17 +4652,12 @@ wd.style.fontSize = `${fontSize}px`;
 wd.style.lineHeight = `${fontSize}px`;
 }
 }
-&lt;/script></description></item><item><title>摄影作品展</title><link>/gallery/</link><pubDate>Tue, 28 May 2019 00:00:00 +0000</pubDate><guid>/gallery/</guid><description>&lt;h2 id="入口">入口&lt;/h2>
-&lt;p>正在整理中…… &lt;a class="link" href="./categories/%E6%91%84%E5%BD%B1%E4%BD%9C%E5%93%81%E5%B1%95/" >点击这里访问&lt;/a>&lt;/p>
-&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">&amp;lt;script&amp;gt;window.location.href=&amp;#34;/categories/%E6%91%84%E5%BD%B1%E4%BD%9C%E5%93%81%E5%B1%95/&amp;#34;&amp;lt;/script&amp;gt;
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;h2 id="前言">前言&lt;/h2>
+&lt;/script></description></item><item><title>摄影作品集</title><link>/gallery/</link><pubDate>Tue, 28 May 2019 00:00:00 +0000</pubDate><guid>/gallery/</guid><description>&lt;h2 id="入口">入口&lt;/h2>
+&lt;p>&lt;a class="link" href="https://photography.xianfei.win/" target="_blank" rel="noopener"
+>点击这里访问&lt;/a>&lt;/p>
+&lt;p>&lt;a class="link" href="https://photography.xianfei.win/" target="_blank" rel="noopener"
+>https://photography.xianfei.win/&lt;/a>&lt;/p>
+&lt;h2 id="前言">前言&lt;/h2>
 &lt;p>摄影是本人的业余爱好之一，平时也就拍拍人像、日常、活动等等；&lt;/p>
 &lt;p>经历：&lt;/p>
 &lt;ul>
@@ -4673,7 +4668,11 @@ wd.style.lineHeight = `${fontSize}px`;
 &lt;li>2018-2019 北邮青年新媒体中心，摄影&amp;amp;摄像&lt;/li>
 &lt;li>2017 第23届IDO漫展 官方摄影师&lt;/li>
 &lt;li>2015-2018 回龙观育新学校YDTV电视台，摄像&amp;amp;剪辑&lt;/li>
-&lt;/ul></description></item><item><title>Shell File Transfer —— 适用于Linux/macOS的局域网文件传输程序</title><link>/p/shell-file-trans/</link><pubDate>Tue, 05 Mar 2019 00:00:00 +0000</pubDate><guid>/p/shell-file-trans/</guid><description>&lt;img src="/p/shell-file-trans/1.webp" alt="Featured image of post Shell File Transfer —— 适用于Linux/macOS的局域网文件传输程序" />&lt;h2 id="功能介绍">功能介绍&lt;/h2>
+&lt;/ul>
+&lt;h2 id="摄影作品集-构建工具">摄影作品集 构建工具&lt;/h2>
+&lt;p>构建工具：https://github.com/xianfei/zing-gallery-next&lt;/p>
+&lt;p>托管：Github Pages&lt;/p>
+&lt;p>构建产物/网页源代码：https://github.com/xianfei/xianfei-photography-portfolio&lt;/p></description></item><item><title>Shell File Transfer —— 适用于Linux/macOS的局域网文件传输程序</title><link>/p/shell-file-trans/</link><pubDate>Tue, 05 Mar 2019 00:00:00 +0000</pubDate><guid>/p/shell-file-trans/</guid><description>&lt;img src="/p/shell-file-trans/1.webp" alt="Featured image of post Shell File Transfer —— 适用于Linux/macOS的局域网文件传输程序" />&lt;h2 id="功能介绍">功能介绍&lt;/h2>
 &lt;p>利用TCP/IP协议的局域网文件传输工具，通过ip地址及自定义的端口号进行连接。&lt;/p>
 &lt;h2 id="运行环境">运行环境&lt;/h2>
 &lt;p>通过测试的运行环境：macOS Mojave 10.14 &amp;amp; Fedora Linux Workstation 29&lt;/p>
