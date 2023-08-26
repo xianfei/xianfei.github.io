@@ -1,5 +1,5 @@
 ---
-title: "摄影作品展"
+title: "摄影作品集"
 date: 2019-05-28
 slug: "gallery"
 menu:
@@ -11,11 +11,9 @@ menu:
 
 ## 入口
 
-正在整理中…… [点击这里访问](/categories/%E6%91%84%E5%BD%B1%E4%BD%9C%E5%93%81%E5%B1%95/)
+[点击这里访问](https://photography.xianfei.win/)
 
-```
-<script>window.location.href="/categories/%E6%91%84%E5%BD%B1%E4%BD%9C%E5%93%81%E5%B1%95/"</script>
-```
+https://photography.xianfei.win/
 
 ## 前言
 
@@ -30,3 +28,11 @@ menu:
 - 2018-2019 北邮青年新媒体中心，摄影&摄像
 - 2017 第23届IDO漫展 官方摄影师
 - 2015-2018 回龙观育新学校YDTV电视台，摄像&剪辑
+
+## 摄影作品集 构建工具
+
+构建工具：https://github.com/xianfei/zing-gallery-next
+
+托管：Github Pages
+
+构建产物/网页源代码：https://github.com/xianfei/xianfei-photography-portfolio
