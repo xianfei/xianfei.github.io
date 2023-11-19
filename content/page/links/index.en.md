@@ -1,5 +1,5 @@
 ---
-title: 友情链接
+title: Links
 slug: links
 links:
   - title: 北京信息科技大学 
@@ -27,4 +27,4 @@ menu:
 comments: false
 ---
 
-这里是一些相关链接及友情链接！
+Here's some links

@@ -7,10 +7,10 @@ paginate: 5
 title: Xianfei's Blog
 
 languages:
-    # en:
-    #     languageName: English
-    #     title: Xianfei's Blog
-    #     weight: 1
+    en:
+        languageName: English
+        title: Xianfei's Blog
+        weight: 2
     zh-cn:
         languageName: 中文
         title: 衔飞的博客
