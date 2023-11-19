@@ -1,0 +1,317 @@
+<!doctype html><html lang=en dir=ltr><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="Introduction After completing my postgraduate exams last year, I decided to learn how to use Python to invoke machine learning libraries, having previously only known some basic Flask operations.
+This is a web-based image object recognition project built on the xyolo library, (just for fun). The frontend was developed using pure native techniques (I hadn’t learned Vue back then), and the backend API part is implemented using Flask. The code is extremely simple."><title>Building a Simple Python Backend for Web-Based Object Recognition</title><link rel=canonical href=../../../en/p/yolo/><link rel=stylesheet href=../../../scss/style.min.7419d3a38aca85366e24e744cccb945224e7388571ebfda4f22c9fb4f04f6540.css><meta property="og:title" content="Building a Simple Python Backend for Web-Based Object Recognition"><meta property="og:description" content="Introduction After completing my postgraduate exams last year, I decided to learn how to use Python to invoke machine learning libraries, having previously only known some basic Flask operations.
+This is a web-based image object recognition project built on the xyolo library, (just for fun). The frontend was developed using pure native techniques (I hadn’t learned Vue back then), and the backend API part is implemented using Flask. The code is extremely simple."><meta property="og:url" content="/en/p/yolo/"><meta property="og:site_name" content="Xianfei's Blog"><meta property="og:type" content="article"><meta property="article:section" content="Post"><meta property="article:published_time" content="2022-05-08T00:00:00+00:00"><meta property="article:modified_time" content="2022-05-08T00:00:00+00:00"><meta property="og:image" content="/en/p/yolo/banner.png"><meta name=twitter:title content="Building a Simple Python Backend for Web-Based Object Recognition"><meta name=twitter:description content="Introduction After completing my postgraduate exams last year, I decided to learn how to use Python to invoke machine learning libraries, having previously only known some basic Flask operations.
+This is a web-based image object recognition project built on the xyolo library, (just for fun). The frontend was developed using pure native techniques (I hadn’t learned Vue back then), and the backend API part is implemented using Flask. The code is extremely simple."><meta name=twitter:card content="summary_large_image"><meta name=twitter:image content="/en/p/yolo/banner.png"></head><body class=article-page><script>(function(){const e="StackColorScheme";localStorage.getItem(e)||localStorage.setItem(e,"auto")})()</script><script>(function(){const t="StackColorScheme",e=localStorage.getItem(t),n=window.matchMedia("(prefers-color-scheme: dark)").matches===!0;e=="dark"||e==="auto"&&n?document.documentElement.dataset.scheme="dark":document.documentElement.dataset.scheme="light"})()</script><div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky"><button class="hamburger hamburger--spin" type=button id=toggle-menu aria-label="Toggle Menu">
+<span class=hamburger-box><span class=hamburger-inner></span></span></button><header><figure class=site-avatar><a href=../../../en><img src=../../../imgs/avatar2_hu71215836cfc1201dad43a2a602d405c9_1044873_300x0_resize_box_3.png width=300 height=299 class=site-logo loading=lazy alt=Avatar></a>
+<span class=emoji>🍔</span></figure><div class=site-meta><h1 class=site-name><a href=../../../en>Xianfei's Blog</a></h1><h2 class=site-description>The only limit is your imagination.</h2></div></header><ol class=social-menu><li><a href=https://space.bilibili.com/9872607 target=_blank title=Bilibili><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="-3 -3 31 31" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><title>Bilibili icon</title><path d="M17.813 4.653h.854c1.51.054 2.769.578 3.773 1.574 1.004.995 1.524 2.249 1.56 3.76v7.36c-.036 1.51-.556 2.769-1.56 3.773s-2.262 1.524-3.773 1.56H5.333c-1.51-.036-2.769-.556-3.773-1.56S.036 18.858.0 17.347v-7.36c.036-1.511.556-2.765 1.56-3.76 1.004-.996 2.262-1.52 3.773-1.574h.774l-1.174-1.12a1.234 1.234.0 01-.373-.906c0-.356.124-.658.373-.907l.027-.027c.267-.249.573-.373.92-.373s.653.124.92.373L9.653 4.44c.071.071.134.142.187.213h4.267a.836.836.0 01.16-.213l2.853-2.747c.267-.249.573-.373.92-.373s.662.151.929.4.391.551.391.907c0 .355-.124.657-.373.906zM5.333 7.24c-.746.018-1.373.276-1.88.773-.506.498-.769 1.13-.786 1.894v7.52c.017.764.28 1.395.786 1.893.507.498 1.134.756 1.88.773h13.334c.746-.017 1.373-.275 1.88-.773.506-.498.769-1.129.786-1.893v-7.52c-.017-.765-.28-1.396-.786-1.894-.507-.497-1.134-.755-1.88-.773zM8 11.107c.373.0.684.124.933.373.25.249.383.569.4.96v1.173c-.017.391-.15.711-.4.96-.249.25-.56.374-.933.374s-.684-.125-.933-.374c-.25-.249-.383-.569-.4-.96V12.44c0-.373.129-.689.386-.947.258-.257.574-.386.947-.386zm8 0c.373.0.684.124.933.373.25.249.383.569.4.96v1.173c-.017.391-.15.711-.4.96-.249.25-.56.374-.933.374s-.684-.125-.933-.374c-.25-.249-.383-.569-.4-.96V12.44c.017-.391.15-.711.4-.96.249-.249.56-.373.933-.373z"/></svg></a></li><li><a href=https://github.com/xianfei target=_blank title=GitHub><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6.0 00-1.3-3.2 4.2 4.2.0 00-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3.0 00-6.2.0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2.0 00-.1 3.2A4.6 4.6.0 004 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg></a></li></ol><ol class=menu id=main-menu><li><a href=../../../en/><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><polyline points="5 12 3 12 12 3 21 12 19 12"/><path d="M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7"/><path d="M9 21v-6a2 2 0 012-2h2a2 2 0 012 2v6"/></svg><span>Home</span></a></li><li><a href=../../../en/about/><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="12" cy="7" r="4"/><path d="M6 21v-2a4 4 0 014-4h4a4 4 0 014 4v2"/></svg><span>About Me</span></a></li><li><a href=../../../en/gallery/><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><rect x="3" y="4" width="18" height="4" rx="2"/><path d="M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8"/><line x1="10" y1="12" x2="14" y2="12"/></svg><span>Photography Portfolio</span></a></li><li><a href=../../../en/search/><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="10" cy="10" r="7"/><line x1="21" y1="21" x2="15" y2="15"/></svg><span>Search</span></a></li><li><a href=../../../en/links/><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><path d="M10 14a3.5 3.5.0 005 0l4-4a3.5 3.5.0 00-5-5l-.5.5"/><path d="M14 10a3.5 3.5.0 00-5 0l-4 4a3.5 3.5.0 005 5l.5-.5"/></svg><span>Links</span></a></li><div class=menu-bottom-section><li id=i18n-switch><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 5h7"/><path d="M9 3v2c0 4.418-2.239 8-5 8"/><path d="M5 9c-.003 2.144 2.952 3.908 6.7 4"/><path d="M12 20l4-9 4 9"/><path d="M19.1 18h-6.2"/></svg><select name=language onchange="window.location.href=this.selectedOptions[0].value"><option value=/>中文</option><option value=/en/ selected>English</option></select></li><li id=dark-mode-toggle><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="8" cy="12" r="2"/><rect x="2" y="6" width="20" height="12" rx="6"/></svg><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="16" cy="12" r="2"/><rect x="2" y="6" width="20" height="12" rx="6"/></svg><span>Dark Mode</span></li></div></ol></aside><main class="main full-width"><article class="has-image main-article"><header class=article-header><div class=article-image><a href=../../../en/p/yolo/><img src=../../../en/p/yolo/banner_hueca99897b332f16a3fd737e22c709ddd_1173106_800x0_resize_box_3.png srcset="../../../en/p/yolo/banner_hueca99897b332f16a3fd737e22c709ddd_1173106_800x0_resize_box_3.png 800w, ../../../en/p/yolo/banner_hueca99897b332f16a3fd737e22c709ddd_1173106_1600x0_resize_box_3.png 1600w" width=800 height=310 loading=lazy alt="Featured image of post Building a Simple Python Backend for Web-Based Object Recognition"></a></div><div class=article-details style=padding-top:0;margin-top:-20px><header class=article-category><a href=../../../en/categories/computer-vision/ style=background-color:#c35a25ee;backdrop-filter:saturate(2)blur(25px);--color1:#c35a2555;--color2:#c35a2577>Computer Vision</a>
+<a href=../../../en/categories/machine-learning/ style=background-color:#c35a25ee;backdrop-filter:saturate(2)blur(25px);--color1:#c35a2555;--color2:#c35a2577>Machine Learning</a>
+<a href=../../../en/categories/web/ style=background-color:#c35a25ee;backdrop-filter:saturate(2)blur(25px);--color1:#c35a2555;--color2:#c35a2577>Web</a></header><div class=article-title-wrapper><h2 class=article-title><a href=../../../en/p/yolo/>Building a Simple Python Backend for Web-Based Object Recognition</a></h2></div><footer class=article-time><div><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><path d="M11.795 21H5a2 2 0 01-2-2V7a2 2 0 012-2h12a2 2 0 012 2v4"/><circle cx="18" cy="18" r="4"/><path d="M15 3v4"/><path d="M7 3v4"/><path d="M3 11h16"/><path d="M18 16.496V18l1 1"/></svg><time class=article-time--published>May 08, 2022</time></div><div><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 15"/></svg><time class=article-time--reading>4 minute read</time></div></footer><footer class=article-translations><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 5h7"/><path d="M9 3v2c0 4.418-2.239 8-5 8"/><path d="M5 9c-.003 2.144 2.952 3.908 6.7 4"/><path d="M12 20l4-9 4 9"/><path d="M19.1 18h-6.2"/></svg><div><a href=../../../p/yolo/ class=link>中文</a></div></footer></div></header><section class=article-content><script>document.querySelector("article").style.setProperty("--accent-color","#c35a25")</script><style>.xf-img-full{max-width:calc(100% + var(--card-padding) * 2)!important;margin-left:calc((var(--card-padding)) * -1);margin-right:calc((var(--card-padding)) * -1);width:calc(100% + var(--card-padding) * 2)}@media screen and (max-width:600px){.xf-img{width:100%}.xf-img-2{width:80%;margin-left:10%}}@media screen and (min-width:600px){.xf-img{width:400px;margin-left:calc(50% - 200px)}.xf-img-2{width:300px;margin-left:calc(50% - 150px)}}.xf-video{margin-left:calc((var(--card-padding)) * -1);margin-right:calc((var(--card-padding)) * -1);width:calc(100% + var(--card-padding) * 2)}.xf-video video{width:100%}.wx-emoji{display:inline-block;width:24px;height:24px;margin-bottom:-6px;background-repeat:no-repeat;background-image:url(/wx-faces.png);background-size:calc(1320px/2 * (2/3))calc(538px/2 * (2/3))}</style><h2 id=introduction>Introduction</h2><p>After completing my postgraduate exams last year, I decided to learn how to use Python to invoke machine learning libraries, having previously only known some basic Flask operations.</p><p>This is a web-based image object recognition project built on the xyolo library, <del>(just for fun)</del>. The frontend was developed using pure native techniques (I hadn’t learned Vue back then), and the backend API part is implemented using Flask. The code is extremely simple.</p><h2 id=preview>Preview</h2><p>Here are a few images to give you an idea of what the final output looks like. The different colored boxes in the images are drawn by frontend divs, and the recognition result tags are also rendered using HTML. Finally, a table is drawn to display the recognition results and accuracy.</p><p><img src=../../../en/p/yolo/0.jpg width=718 height=467 srcset="../../../en/p/yolo/0_hu64e799feafd7035abede561e44709ee2_58868_480x0_resize_q60_box.jpg 480w, ../../../en/p/yolo/0_hu64e799feafd7035abede561e44709ee2_58868_1536x0_resize_q60_box.jpg 1536w" loading=lazy class=gallery-image data-flex-grow=153 data-flex-basis=368px> <img src=../../../en/p/yolo/1.jpg width=718 height=601 srcset="../../../en/p/yolo/1_hua0a107464dc3770fe43bf7e29cf61984_88126_480x0_resize_q60_box.jpg 480w, ../../../en/p/yolo/1_hua0a107464dc3770fe43bf7e29cf61984_88126_1536x0_resize_q60_box.jpg 1536w" loading=lazy class=gallery-image data-flex-grow=119 data-flex-basis=286px> <img src=../../../en/p/yolo/2.jpg width=718 height=601 srcset="../../../en/p/yolo/2_hubd46cd3e987183c6ca51eab1afd3bd48_74402_480x0_resize_q60_box.jpg 480w, ../../../en/p/yolo/2_hubd46cd3e987183c6ca51eab1afd3bd48_74402_1536x0_resize_q60_box.jpg 1536w" loading=lazy class=gallery-image data-flex-grow=119 data-flex-basis=286px></p><h2 id=implementation>Implementation</h2><h3 id=backend-code>Backend Code</h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=kn>import</span> <span class=nn>numpy</span>
+</span></span><span class=line><span class=cl><span class=kn>from</span> <span class=nn>xyolo</span> <span class=kn>import</span> <span class=n>YOLO</span><span class=p>,</span> <span class=n>DefaultYolo3Config</span>
+</span></span><span class=line><span class=cl><span class=kn>from</span> <span class=nn>xyolo</span> <span class=kn>import</span> <span class=n>init_yolo_v3</span>
+</span></span><span class=line><span class=cl><span class=kn>from</span> <span class=nn>flask</span> <span class=kn>import</span> <span class=n>Flask</span><span class=p>,</span> <span class=n>jsonify</span><span class=p>,</span> <span class=n>request</span>
+</span></span><span class=line><span class=cl><span class=kn>from</span> <span class=nn>flask_cors</span> <span class=kn>import</span> <span class=n>CORS</span>
+</span></span><span class=line><span class=cl><span class=kn>from</span> <span class=nn>PIL</span> <span class=kn>import</span> <span class=n>Image</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=n>app</span> <span class=o>=</span> <span class=n>Flask</span><span class=p>(</span><span class=vm>__name__</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=n>CORS</span><span class=p>(</span><span class=n>app</span><span class=p>,</span> <span class=n>resources</span><span class=o>=</span><span class=sa>r</span><span class=s1>&#39;/*&#39;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=n>config</span> <span class=o>=</span> <span class=n>DefaultYolo3Config</span><span class=p>()</span>
+</span></span><span class=line><span class=cl><span class=n>init_yolo_v3</span><span class=p>(</span><span class=n>config</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=n>yolo</span> <span class=o>=</span> <span class=n>YOLO</span><span class=p>(</span><span class=n>config</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nd>@app.route</span><span class=p>(</span><span class=s1>&#39;/postimg&#39;</span><span class=p>,</span> <span class=n>methods</span><span class=o>=</span><span class=p>[</span><span class=s1>&#39;POST&#39;</span><span class=p>])</span>
+</span></span><span class=line><span class=cl><span class=k>def</span> <span class=nf>hello_world</span><span class=p>():</span>
+</span></span><span class=line><span class=cl>    <span class=n>img</span> <span class=o>=</span> <span class=n>Image</span><span class=o>.</span><span class=n>open</span><span class=p>(</span><span class=n>request</span><span class=o>.</span><span class=n>files</span><span class=p>[</span><span class=s1>&#39;file&#39;</span><span class=p>]</span><span class=o>.</span><span class=n>stream</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>    <span class=n>result</span> <span class=o>=</span> <span class=n>yolo</span><span class=o>.</span><span class=n>detect_image</span><span class=p>(</span><span class=n>img</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>    <span class=nb>print</span><span class=p>(</span><span class=n>result</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>    <span class=k>return</span> <span class=n>jsonify</span><span class=p>({</span><span class=s1>&#39;result&#39;</span><span class=p>:</span><span class=n>numpy</span><span class=o>.</span><span class=n>array</span><span class=p>(</span><span class=n>result</span><span class=p>)</span><span class=o>.</span><span class=n>tolist</span><span class=p>()})</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>if</span> <span class=vm>__name__</span> <span class=o>==</span> <span class=s1>&#39;__main__&#39;</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>    <span class=n>app</span><span class=o>.</span><span class=n>run</span><span class=p>(</span><span class=n>host</span><span class=o>=</span><span class=s1>&#39;0.0.0.0&#39;</span><span class=p>,</span> <span class=n>port</span><span class=o>=</span><span class=mi>8808</span><span class=p>,</span> <span class=n>debug</span><span class=o>=</span><span class=kc>True</span><span class=p>)</span>
+</span></span></code></pre></td></tr></table></div></div><h3 id=frontend-code>Frontend Code</h3><p>Took a shortcut here, it&rsquo;s all in HTML</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>  1
+</span><span class=lnt>  2
+</span><span class=lnt>  3
+</span><span class=lnt>  4
+</span><span class=lnt>  5
+</span><span class=lnt>  6
+</span><span class=lnt>  7
+</span><span class=lnt>  8
+</span><span class=lnt>  9
+</span><span class=lnt> 10
+</span><span class=lnt> 11
+</span><span class=lnt> 12
+</span><span class=lnt> 13
+</span><span class=lnt> 14
+</span><span class=lnt> 15
+</span><span class=lnt> 16
+</span><span class=lnt> 17
+</span><span class=lnt> 18
+</span><span class=lnt> 19
+</span><span class=lnt> 20
+</span><span class=lnt> 21
+</span><span class=lnt> 22
+</span><span class=lnt> 23
+</span><span class=lnt> 24
+</span><span class=lnt> 25
+</span><span class=lnt> 26
+</span><span class=lnt> 27
+</span><span class=lnt> 28
+</span><span class=lnt> 29
+</span><span class=lnt> 30
+</span><span class=lnt> 31
+</span><span class=lnt> 32
+</span><span class=lnt> 33
+</span><span class=lnt> 34
+</span><span class=lnt> 35
+</span><span class=lnt> 36
+</span><span class=lnt> 37
+</span><span class=lnt> 38
+</span><span class=lnt> 39
+</span><span class=lnt> 40
+</span><span class=lnt> 41
+</span><span class=lnt> 42
+</span><span class=lnt> 43
+</span><span class=lnt> 44
+</span><span class=lnt> 45
+</span><span class=lnt> 46
+</span><span class=lnt> 47
+</span><span class=lnt> 48
+</span><span class=lnt> 49
+</span><span class=lnt> 50
+</span><span class=lnt> 51
+</span><span class=lnt> 52
+</span><span class=lnt> 53
+</span><span class=lnt> 54
+</span><span class=lnt> 55
+</span><span class=lnt> 56
+</span><span class=lnt> 57
+</span><span class=lnt> 58
+</span><span class=lnt> 59
+</span><span class=lnt> 60
+</span><span class=lnt> 61
+</span><span class=lnt> 62
+</span><span class=lnt> 63
+</span><span class=lnt> 64
+</span><span class=lnt> 65
+</span><span class=lnt> 66
+</span><span class=lnt> 67
+</span><span class=lnt> 68
+</span><span class=lnt> 69
+</span><span class=lnt> 70
+</span><span class=lnt> 71
+</span><span class=lnt> 72
+</span><span class=lnt> 73
+</span><span class=lnt> 74
+</span><span class=lnt> 75
+</span><span class=lnt> 76
+</span><span class=lnt> 77
+</span><span class=lnt> 78
+</span><span class=lnt> 79
+</span><span class=lnt> 80
+</span><span class=lnt> 81
+</span><span class=lnt> 82
+</span><span class=lnt> 83
+</span><span class=lnt> 84
+</span><span class=lnt> 85
+</span><span class=lnt> 86
+</span><span class=lnt> 87
+</span><span class=lnt> 88
+</span><span class=lnt> 89
+</span><span class=lnt> 90
+</span><span class=lnt> 91
+</span><span class=lnt> 92
+</span><span class=lnt> 93
+</span><span class=lnt> 94
+</span><span class=lnt> 95
+</span><span class=lnt> 96
+</span><span class=lnt> 97
+</span><span class=lnt> 98
+</span><span class=lnt> 99
+</span><span class=lnt>100
+</span><span class=lnt>101
+</span><span class=lnt>102
+</span><span class=lnt>103
+</span><span class=lnt>104
+</span><span class=lnt>105
+</span><span class=lnt>106
+</span><span class=lnt>107
+</span><span class=lnt>108
+</span><span class=lnt>109
+</span><span class=lnt>110
+</span><span class=lnt>111
+</span><span class=lnt>112
+</span><span class=lnt>113
+</span><span class=lnt>114
+</span><span class=lnt>115
+</span><span class=lnt>116
+</span><span class=lnt>117
+</span><span class=lnt>118
+</span><span class=lnt>119
+</span><span class=lnt>120
+</span><span class=lnt>121
+</span><span class=lnt>122
+</span><span class=lnt>123
+</span><span class=lnt>124
+</span><span class=lnt>125
+</span><span class=lnt>126
+</span><span class=lnt>127
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-html data-lang=html><span class=line><span class=cl><span class=cp>&lt;!DOCTYPE html&gt;</span>
+</span></span><span class=line><span class=cl><span class=p>&lt;</span><span class=nt>html</span> <span class=na>lang</span><span class=o>=</span><span class=s>&#34;en&#34;</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>&lt;</span><span class=nt>head</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=p>&lt;</span><span class=nt>meta</span> <span class=na>charset</span><span class=o>=</span><span class=s>&#34;UTF-8&#34;</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=p>&lt;</span><span class=nt>meta</span> <span class=na>http-equiv</span><span class=o>=</span><span class=s>&#34;X-UA-Compatible&#34;</span> <span class=na>content</span><span class=o>=</span><span class=s>&#34;IE=edge&#34;</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=p>&lt;</span><span class=nt>meta</span> <span class=na>name</span><span class=o>=</span><span class=s>&#34;viewport&#34;</span> <span class=na>content</span><span class=o>=</span><span class=s>&#34;width=device-width, initial-scale=1.0&#34;</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=p>&lt;</span><span class=nt>title</span><span class=p>&gt;</span>Let&#39;s See What&#39;s Here<span class=p>&lt;/</span><span class=nt>title</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=p>&lt;</span><span class=nt>script</span> <span class=na>type</span><span class=o>=</span><span class=s>&#34;text/javascript&#34;</span> <span class=na>src</span><span class=o>=</span><span class=s>&#34;https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js&#34;</span><span class=p>&gt;&lt;/</span><span class=nt>script</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=p>&lt;</span><span class=nt>style</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=nt>input</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>            <span class=k>margin</span><span class=p>:</span> <span class=mi>15</span><span class=kt>px</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>        <span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>        <span class=p>.</span><span class=nc>myimg</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>            <span class=k>max-height</span><span class=p>:</span> <span class=mi>100</span><span class=kt>vh</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>            <span class=k>max-width</span><span class=p>:</span> <span class=mi>100</span><span class=kt>%</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>            <span class=k>margin</span><span class=p>:</span> <span class=kc>auto</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>        <span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>        <span class=p>.</span><span class=nc>target-info</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>            <span class=k>color</span><span class=p>:</span> <span class=mh>#f00</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>            <span class=k>padding</span><span class=p>:</span> <span class=mi>10</span><span class=kt>px</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>            <span class=k>border</span><span class=p>:</span> <span class=kc>solid</span> <span class=mi>3</span><span class=kt>px</span> <span class=mh>#f00</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>        <span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>        <span class=nt>table</span><span class=o>,</span>
+</span></span><span class=line><span class=cl>        <span class=nt>th</span><span class=o>,</span>
+</span></span><span class=line><span class=cl>        <span class=nt>td</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>            <span class=k>border</span><span class=p>:</span> <span class=mi>1</span><span class=kt>px</span> <span class=kc>solid</span> <span class=kc>black</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>        <span class=p>}</span>
+</span></span><span class=line><span class=cl>    <span class=p>&lt;/</span><span class=nt>style</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl><span class=p>&lt;/</span><span class=nt>head</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>&lt;</span><span class=nt>body</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=p>&lt;</span><span class=nt>h2</span><span class=p>&gt;</span>Let&#39;s See What&#39;s In Here!<span class=p>&lt;/</span><span class=nt>h2</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=p>&lt;</span><span class=nt>p</span><span class=p>&gt;</span>Supports dragging and dropping images below this line of text<span class=p>&lt;/</span><span class=nt>p</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=p>&lt;</span><span class=nt>div</span> <span class=na>id</span><span class=o>=</span><span class=s>&#34;dropBox&#34;</span> <span class=na>style</span><span class=o>=</span><span class=s>&#34;min-height: 100px; min-height: 100px;&#34;</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=p>&lt;</span><span class=nt>div</span> <span class=na>id</span><span class=o>=</span><span class=s>&#34;target&#34;</span> <span class=na>style</span><span class=o>=</span><span class=s>&#34;position:absolute&#34;</span><span class=p>&gt;&lt;/</span><span class=nt>div</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=p>&lt;</span><span class=nt>img</span> <span class=na>src</span><span class=o>=</span><span class=s>&#34;&#34;</span> <span class=na>id</span><span class=o>=</span><span class=s>&#34;myimg&#34;</span> <span class=na>class</span><span class=o>=</span><span class=s>&#34;myimg&#34;</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=p>&lt;/</span><span class=nt>div</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=p>&lt;</span><span class=nt>input</span> <span class=na>id</span><span class=o>=</span><span class=s>&#34;fileInput&#34;</span> <span class=na>type</span><span class=o>=</span><span class=s>&#34;file&#34;</span> <span class=na>onchange</span><span class=o>=</span><span class=s>&#34;processFiles(this.files)&#34;</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=p>&lt;</span><span class=nt>img</span> <span class=na>id</span><span class=o>=</span><span class=s>&#34;thumbnail&#34;</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=p>&lt;</span><span class=nt>p</span> <span class=na>id</span><span class=o>=</span><span class=s>&#34;stat&#34;</span><span class=p>&gt;</span>Ready<span class=p>&lt;/</span><span class=nt>p</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=p>&lt;</span><span class=nt>table</span> <span class=na>id</span><span class=o>=</span><span class=s>&#34;restab&#34;</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=p>&lt;</span><span class=nt>tr</span><span class=p>&gt;&lt;</span><span class=nt>th</span><span class=p>&gt;</span>Object<span class=p>&lt;/</span><span class=nt>th</span><span class=p>&gt;&lt;</span><span class=nt>th</span><span class=p>&gt;</span>Confidence<span class=p>&lt;/</span><span class=nt>th</span><span class=p>&gt;&lt;/</span><span class=nt>tr</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=p>&lt;/</span><span class=nt>table</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=p>&lt;</span><span class=nt>p</span><span class=p>&gt;</span>by xianfei 2021.12<span class=p>&lt;/</span><span class=nt>p</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=p>&lt;</span><span class=nt>script</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=kd>var</span> <span class=nx>dropBox</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=nb>window</span><span class=p>.</span><span class=nx>onload</span> <span class=o>=</span> <span class=kd>function</span> <span class=p>()</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=nx>dropBox</span> <span class=o>=</span> <span class=nb>document</span><span class=p>.</span><span class=nx>getElementById</span><span class=p>(</span><span class=s2>&#34;dropBox&#34;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>        <span class=nx>dropBox</span><span class=p>.</span><span class=nx>ondragenter</span> <span class=o>=</span> <span class=nx>ignoreDrag</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>        <span class=nx>dropBox</span><span class=p>.</span><span class=nx>ondragover</span> <span class=o>=</span> <span class=nx>ignoreDrag</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>        <span class=nx>dropBox</span><span class=p>.</span><span class=nx>ondrop</span> <span class=o>=</span> <span class=nx>drop</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=kd>function</span> <span class=nx>ignoreDrag</span><span class=p>(</span><span class=nx>e</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=c1>// We&#39;re handling the drag-and-drop, so make sure no other elements take this event
+</span></span></span><span class=line><span class=cl><span class=c1></span>        <span class=nx>e</span><span class=p>.</span><span class=nx>stopPropagation</span><span class=p>();</span>
+</span></span><span class=line><span class=cl>        <span class=nx>e</span><span class=p>.</span><span class=nx>preventDefault</span><span class=p>();</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=kd>function</span> <span class=nx>drop</span><span class=p>(</span><span class=nx>e</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=c1>// Stop propagation and prevent default behavior
+</span></span></span><span class=line><span class=cl><span class=c1></span>        <span class=nx>e</span><span class=p>.</span><span class=nx>stopPropagation</span><span class=p>();</span>
+</span></span><span class=line><span class=cl>        <span class=nx>e</span><span class=p>.</span><span class=nx>preventDefault</span><span class=p>();</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>        <span class=c1>// Get the files that were dragged in
+</span></span></span><span class=line><span class=cl><span class=c1></span>        <span class=kd>var</span> <span class=nx>data</span> <span class=o>=</span> <span class=nx>e</span><span class=p>.</span><span class=nx>dataTransfer</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>        <span class=kd>var</span> <span class=nx>files</span> <span class=o>=</span> <span class=nx>data</span><span class=p>.</span><span class=nx>files</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>        <span class=c1>// Pass them to the real file processing function
+</span></span></span><span class=line><span class=cl><span class=c1></span>        <span class=nx>processFiles</span><span class=p>(</span><span class=nx>files</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=kd>function</span> <span class=nx>ran</span><span class=p>()</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=k>return</span> <span class=nb>Math</span><span class=p>.</span><span class=nx>floor</span><span class=p>(</span><span class=nb>Math</span><span class=p>.</span><span class=nx>random</span><span class=p>()</span> <span class=o>*</span> <span class=mi>256</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=kd>function</span> <span class=nx>processFiles</span><span class=p>(</span><span class=nx>files</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=nx>$</span><span class=p>(</span><span class=s1>&#39;#stat&#39;</span><span class=p>).</span><span class=nx>html</span><span class=p>(</span><span class=s1>&#39;Uploading and processing...&#39;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>        <span class=kd>var</span> <span class=nx>file</span> <span class=o>=</span> <span class=nx>files</span><span class=p>[</span><span class=mi>0</span><span class=p>];</span>
+</span></span><span class=line><span class=cl>        <span class=kr>const</span> <span class=nx>formData</span> <span class=o>=</span> <span class=k>new</span> <span class=nx>FormData</span><span class=p>();</span>
+</span></span><span class=line><span class=cl>        <span class=nx>formData</span><span class=p>.</span><span class=nx>append</span><span class=p>(</span><span class=s1>&#39;file&#39;</span><span class=p>,</span> <span class=nx>file</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>        <span class=nx>fetch</span><span class=p>(</span><span class=s2>&#34;/postimg&#34;</span><span class=p>,</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>            <span class=nx>body</span><span class=o>:</span> <span class=nx>formData</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>            <span class=nx>method</span><span class=o>:</span> <span class=s2>&#34;post&#34;</span>
+</span></span><span class=line><span class=cl>        <span class=p>}).</span><span class=nx>then</span><span class=p>(</span><span class=nx>res</span> <span class=p>=&gt;</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>            <span class=nx>res</span><span class=p>.</span><span class=nx>json</span><span class=p>().</span><span class=nx>then</span><span class=p>(</span><span class=nx>json</span> <span class=p>=&gt;</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>                <span class=nx>$</span><span class=p>(</span><span class=s1>&#39;#stat&#39;</span><span class=p>).</span><span class=nx>html</span><span class=p>(</span><span class=s1>&#39;Detected &#39;</span> <span class=o>+</span> <span class=nx>json</span><span class=p>.</span><span class=nx>result</span><span class=p>.</span><span class=nx>length</span> <span class=o>+</span> <span class=s1>&#39; objects.&#39;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>                <span class=kd>var</span> <span class=nx>e</span> <span class=o>=</span> <span class=nx>$</span><span class=p>(</span><span class=s1>&#39;#myimg&#39;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>                <span class=kd>var</span> <span class=nx>heightRate</span> <span class=o>=</span> <span class=nx>e</span><span class=p>.</span><span class=nx>height</span><span class=p>()</span> <span class=o>/</span> <span class=nx>e</span><span class=p>[</span><span class=mi>0</span><span class=p>].</span><span class=nx>naturalHeight</span>
+</span></span><span class=line><span class=cl>                <span class=kd>var</span> <span class=nx>widthRate</span> <span class=o>=</span> <span class=nx>e</span><span class=p>.</span><span class=nx>width</span><span class=p>()</span> <span class=o>/</span> <span class=nx>e</span><span class=p>[</span><span class=mi>0</span><span class=p>].</span><span class=nx>naturalWidth</span>
+</span></span><span class=line><span class=cl>                <span class=k>if</span> <span class=p>(</span><span class=nx>json</span><span class=p>.</span><span class=nx>result</span><span class=p>.</span><span class=nx>length</span> <span class=o>==</span> <span class=mi>0</span><span class=p>)</span> <span class=nx>$</span><span class=p>(</span><span class=s1>&#39;#target&#39;</span><span class=p>).</span><span class=nx>append</span><span class=p>(</span><span class=s1>&#39;&lt;div style=&#34;position:absolute;width:100px;&#34;&gt;Detection Failed&lt;/div&gt;&#39;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>                <span class=k>for</span> <span class=p>(</span><span class=kd>var</span> <span class=nx>i</span> <span class=k>of</span> <span class=nx>json</span><span class=p>.</span><span class=nx>result</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>                    <span class=kd>var</span> <span class=nx>color</span> <span class=o>=</span> <span class=s1>&#39;rgb(&#39;</span> <span class=o>+</span> <span class=nx>ran</span><span class=p>()</span> <span class=o>+</span> <span class=s1>&#39;,&#39;</span> <span class=o>+</span> <span class=nx>ran</span><span class=p>()</span> <span class=o>+</span> <span class=s1>&#39;,&#39;</span> <span class=o>+</span> <span class=nx>ran</span><span class=p>()</span> <span class=o>+</span> <span class=s1>&#39;)&#39;</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>                    <span class=nx>$</span><span class=p>(</span><span class=s1>&#39;#restab&#39;</span><span class=p>).</span><span class=nx>append</span><span class=p>(</span><span class=s1>&#39;&lt;tr style=&#34;color:&#39;</span> <span class=o>+</span> <span class=nx>color</span> <span class=o>+</span> <span class=s1>&#39;;&#34;&gt;&lt;td&gt;&#39;</span><span class=o>+</span><span class=nx>i</span><span class=p>[</span><span class=mi>0</span><span class=p>]</span><span class=o>+</span><span class=s1>&#39;&lt;/td&gt;&lt;td&gt;&#39;</span><span class=o>+</span><span class=nx>i</span><span class=p>[</span><span class=mi>2</span><span class=p>]</span><span class=o>+</span><span class=s1>&#39;&lt;/td&gt;&lt;/tr&gt;&#39;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>                    <span class=nx>$</span><span class=p>(</span><span class=s1>&#39;#target&#39;</span><span class=p>).</span><span class=nx>append</span><span class=p>(</span><span class=s1>&#39;&lt;div style=&#34;position:absolute;margin-left:&#39;</span> <span class=o>+</span> <span class=nx>i</span><span class=p>[</span><span class=mi>3</span><span class=p>]</span> <span class=o>*</span> <span class=nx>widthRate</span> <span class=o>+</span> <span class=s1>&#39;px;margin-top:&#39;</span> <span class=o>+</span> <span class=nx>i</span><span class=p>[</span><span class=mi>4</span><span class=p>]</span> <span class=o>*</span> <span class=nx>heightRate</span> <span class=o>+</span> <span class=s1>&#39;px;width: &#39;</span> <span class=o>+</span> <span class=p>(</span><span class=nx>i</span><span class=p>[</span><span class=mi>5</span><span class=p>]</span> <span class=o>-</span> <span class=nx>i</span><span class=p>[</span><span class=mi>3</span><span class=p>])</span> <span class=o>*</span> <span class=nx>widthRate</span> <span class=o>+</span> <span class=s1>&#39;px;height: &#39;</span> <span class=o>+</span> <span class=p>(</span><span class=nx>i</span><span class=p>[</span><span class=mi>6</span><span class=p>]</span> <span class=o>-</span> <span class=nx>i</span><span class=p>[</span><span class=mi>4</span><span class=p>])</span> <span class=o>*</span> <span class=nx>heightRate</span> <span class=o>+</span> <span class=s1>&#39;px;border-color: &#39;</span> <span class=o>+</span> <span class=nx>color</span> <span class=o>+</span> <span class=s1>&#39;;color:&#39;</span> <span class=o>+</span> <span class=nx>color</span> <span class=o>+</span> <span class=s1>&#39;;&#34; class=&#34;target-info&#34;&gt;&#39;</span> <span class=o>+</span> <span class=nx>i</span><span class=p>[</span><span class=mi>0</span><span class=p>]</span> <span class=o>+</span> <span class=s1>&#39;&lt;/div&gt;&#39;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>                <span class=p>}</span>
+</span></span><span class=line><span class=cl>                <span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>json</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>            <span class=p>})</span>
+</span></span><span class=line><span class=cl>        <span class=p>}).</span><span class=k>catch</span><span class=p>(</span><span class=nx>ex</span> <span class=p>=&gt;</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>            <span class=nx>consoleLog</span><span class=p>(</span><span class=s2>&#34;Submission failed:&#34;</span> <span class=o>+</span> <span class=nx>ex</span><span class=p>.</span><span class=nx>toString</span><span class=p>());</span>
+</span></span><span class=line><span class=cl>        <span class=p>});</span>
+</span></span><span class=line><span class=cl>        <span class=kd>var</span> <span class=nx>output</span> <span class=o>=</span> <span class=nb>document</span><span class=p>.</span><span class=nx>getElementById</span><span class=p>(</span><span class=s2>&#34;fileOutput&#34;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>        <span class=c1>// Create a FileReader
+</span></span></span><span class=line><span class=cl><span class=c1></span>        <span class=kd>var</span> <span class=nx>reader</span> <span class=o>=</span> <span class=k>new</span> <span class=nx>FileReader</span><span class=p>();</span>
+</span></span><span class=line><span class=cl>        <span class=c1>// Set up what to do when the data is ready
+</span></span></span><span class=line><span class=cl><span class=c1></span>        <span class=nx>reader</span><span class=p>.</span><span class=nx>onload</span> <span class=o>=</span> <span class=kd>function</span> <span class=p>(</span><span class=nx>e</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>            <span class=c1>// Use the image URL to draw the background of the dropBox
+</span></span></span><span class=line><span class=cl><span class=c1></span>            <span class=nx>$</span><span class=p>(</span><span class=s1>&#39;#myimg&#39;</span><span class=p>)[</span><span class=mi>0</span><span class=p>].</span><span class=nx>src</span> <span class=o>=</span> <span class=nx>e</span><span class=p>.</span><span class=nx>target</span><span class=p>.</span><span class=nx>result</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>            <span class=nx>$</span><span class=p>(</span><span class=s1>&#39;#target&#39;</span><span class=p>).</span><span class=nx>html</span><span class=p>(</span><span class=s1>&#39;&#39;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>            <span class=nx>$</span><span class=p>(</span><span class=s1>&#39;#restab&#39;</span><span class=p>).</span><span class=nx>html</span><span class=p>(</span><span class=s1>&#39;&lt;tr&gt;&lt;th&gt;Object&lt;/th&gt;&lt;th&gt;Confidence&lt;/th&gt;&lt;/tr&gt;&#39;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>        <span class=p>};</span>
+</span></span><span class=line><span class=cl>        <span class=c1>// Read the image
+</span></span></span><span class=line><span class=cl><span class=c1></span>        <span class=nx>reader</span><span class=p>.</span><span class=nx>readAsDataURL</span><span class=p>(</span><span class=nx>file</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=kd>function</span> <span class=nx>showFileInput</span><span class=p>()</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=kd>var</span> <span class=nx>fileInput</span> <span class=o>=</span> <span class=nb>document</span><span class=p>.</span><span class=nx>getElementById</span><span class=p>(</span><span class=s2>&#34;fileInput&#34;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>        <span class=nx>fileInput</span><span class=p>.</span><span class=nx>click</span><span class=p>();</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=cl>    <span class=p>&lt;/</span><span class=nt>script</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl><span class=p>&lt;/</span><span class=nt>body</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>&lt;/</span><span class=nt>html</span><span class=p>&gt;</span>
+</span></span></code></pre></td></tr></table></div></div><script>function getIndex(e){const n=["[微笑]","[撇嘴]","[色]","[发呆]","[得意]","[流泪]","[害羞]","[闭嘴]","[睡]","[大哭]","[尴尬]","[发怒]","[调皮]","[呲牙]","[惊讶]","[难过]","[囧]","[抓狂]","[吐]","[偷笑]","[愉快]","[白眼]","[傲慢]","[困]","[惊恐]","[憨笑]","[悠闲]","[咒骂]","[疑问]","[嘘]","[晕]","[衰]","[骷髅]","[敲打]","[再见]","[擦汗]","[抠鼻]","[鼓掌]","[坏笑]","[右哼哼]","[鄙视]","[委屈]","[快哭了]","[阴险]","[亲亲]","[可怜]","[笑脸]","[生病]","[脸红]","[破涕为笑]","[恐惧]","[失望]","[无语]","[嘿哈]","[捂脸]","[奸笑]","[机智]","[皱眉]","[耶]","[吃瓜]","[加油]","[汗]","[天啊]","[Emm]","[社会社会]","[旺柴]","[好的]","[打脸]","[哇]","[翻白眼]","[666]","[让我看看]","[叹气]","[苦涩]","[裂开]","[嘴唇]","[爱心]","[心碎]","[拥抱]","[强]","[弱]","[握手]","[胜利]","[抱拳]","[勾引]","[拳头]","[OK]","[合十]","[啤酒]","[咖啡]","[蛋糕]","[玫瑰]","[凋谢]","[菜刀]","[炸弹]","[便便]","[月亮]","[太阳]","[庆祝]","[礼物]","[红包]","[發]","[福]","[烟花]","[爆竹]","[猪头]","[跳跳]","[发抖]","[转圈]","[流汗]","[西瓜]","[左哼哼]","[怄火]","[哈欠]","[奋斗]","[鬼魂]","[小狗]","[篮球]","[乒乓]","[饭]","[闪电]","[刀]","[足球]","[瓢虫]","[差劲]","[爱你]","[NO]","[爱情]","[飞吻]","[茶]","[蜡烛]","[酷]","[饥饿]","[折磨]","[糗大了]","[吓]"],s=["[微笑]","[撇嘴]","[色]","[发呆]","[得意]","[流泪]","[害羞]","[闭嘴]","[睡]","[大哭]","[尴尬]","[发怒]","[调皮]","[呲牙]","[惊讶]","[难过]","[冷汗]","[抓狂]","[吐]","[偷笑]","[愉快]","[白眼]","[傲慢]","[困]","[惊恐]","[憨笑]","[悠闲]","[咒骂]","[疑问]","[嘘]","[晕]","[衰]","[骷髅]","[敲打]","[再见]","[擦汗]","[抠鼻]","[鼓掌]","[坏笑]","[右哼哼]","[鄙视]","[委屈]","[快哭了]","[阴险]","[亲亲]","[可怜]","[笑脸]","[Happy]","[Sick]","[Flushed]","[Lol]","[Terror]","[LetDown]","[Duh]","[嘿哈]","[捂脸]","[奸笑]","[机智]","[皱眉]","[耶]","[吃瓜]","[加油]","[汗]","[天啊]","[Emm]","[社会社会]","[旺柴]","[好的]","[打脸]","[哇]","[Boring]","[Awesome]","[LetMeSee]","[Sigh]","[Hurt]","[Broken]","[嘴唇]","[爱心]","[心碎]","[拥抱]","[强]","[弱]","[握手]","[胜利]","[抱拳]","[勾引]","[拳头]","[OK]","[Worship]","[啤酒]","[咖啡]","[蛋糕]","[玫瑰]","[凋谢]","[菜刀]","[炸弹]","[便便]","[月亮]","[太阳]","[Party]","[礼物]","[红包]","[發]","[福]","[Fireworks]","[爆竹]","[猪头]","[跳跳]","[发抖]","[转圈]","[流汗]","[西瓜]","[左哼哼]","[怄火]","[哈欠]","[奋斗]","[鬼魂]","[小狗]"];let t=n.indexOf(e);return t<0&&(t=s.indexOf(e)),t}function textConvert(e){let t=e,s=/\[(.+?)\]/g,n=t.match(s);return n?.length>0&&n.forEach(e=>{let n=getIndex(e);if(n<0)return;let s=n%17*19.5*2*(2/3),o=Math.floor(n/17)*19.5*2*(2/3),i=`background-position:${-s}px ${-o}px;`;t=t.replace(e,`<div style='${i}' class='wx-emoji'></div>`)}),t}window.addEventListener("load",()=>{for(var e of document.querySelectorAll(".wxbq"))e.innerHTML=textConvert(e.innerText)})</script></section><footer class=article-footer><section class=article-copyright><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="12" cy="12" r="9"/><path d="M14.5 9a3.5 4 0 100 6"/></svg><span>Licensed under CC BY-NC-SA 4.0</span></section></footer></article><aside class=related-content--wrapper><h2 class=section-title>Related content</h2><div class=related-content><div class="flex article-list--tile"><article class=has-image><a href=../../../en/p/wasm/><div class=article-image><img src=../../../en/p/wasm/wasm_en.f58b4374d692b9f9e7968bc58bb35c98_hu62a2ad89b24ed5d36d9d3527de6d729e_333213_250x150_fill_box_smart1_3.png width=250 height=150 loading=lazy alt="Featured image of post Get to Know WebAssembly!" data-key=wasm data-hash="md5-9YtDdNaSufnnlovFi7NcmA=="></div><div class=article-details><h2 class=article-title>Get to Know WebAssembly!</h2></div></a></article><article class=has-image><a href=../../../en/p/ar2022/><div class=article-image><img src=../../../en/p/ar2022/ar2022.86e71b46a993f3fbc6a15d7f052ece23_huf6485039128f9075441ee9cad5d655c0_500386_250x150_fill_box_smart1_3.png width=250 height=150 loading=lazy alt="Featured image of post AR Bing Dwen Dwen and Snow Rong Rong! Now you can take a selfie with Bing Dwen Dwen at home!" data-key=ar2022 data-hash="md5-hucbRqmT8/vGoV1/BS7OIw=="></div><div class=article-details><h2 class=article-title>AR Bing Dwen Dwen and Snow Rong Rong! Now you can take a selfie with Bing Dwen Dwen at home!</h2></div></a></article></div></div></aside><footer class=site-footer><section class=copyright>&copy;
+2020 -
+2023 Xianfei's Blog</section><section class=powerby>Hosted on <b>Github Pages</b>. Build with <b>Hugo</b>. <a href=https://github.com/xianfei/xianfei.github.io>View source code on Github</a></section></footer><div class=pswp tabindex=-1 role=dialog aria-hidden=true><div class=pswp__bg></div><div class=pswp__scroll-wrap><div class=pswp__container><div class=pswp__item></div><div class=pswp__item></div><div class=pswp__item></div></div><div class="pswp__ui pswp__ui--hidden"><div class=pswp__top-bar><div class=pswp__counter></div><button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+<button class="pswp__button pswp__button--share" title=Share></button>
+<button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+<button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button><div class=pswp__preloader><div class=pswp__preloader__icn><div class=pswp__preloader__cut><div class=pswp__preloader__donut></div></div></div></div></div><div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap"><div class=pswp__share-tooltip></div></div><button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
+<button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button><div class=pswp__caption><div class=pswp__caption__center></div></div></div></div></div><script src=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo=" crossorigin=anonymous defer></script><script src=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU=" crossorigin=anonymous defer></script><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css crossorigin=anonymous><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css crossorigin=anonymous></main><aside class="sidebar right-sidebar sticky"><section class="widget archives"><div class=widget-icon><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><line x1="5" y1="9" x2="19" y2="9"/><line x1="5" y1="15" x2="19" y2="15"/><line x1="11" y1="4" x2="7" y2="20"/><line x1="17" y1="4" x2="13" y2="20"/></svg></div><h2 class="widget-title section-title">Table of contents</h2><div class=widget--toc><nav id=TableOfContents><ol><li><a href=#introduction>Introduction</a></li><li><a href=#preview>Preview</a></li><li><a href=#implementation>Implementation</a><ol><li><a href=#backend-code>Backend Code</a></li><li><a href=#frontend-code>Frontend Code</a></li></ol></li></ol></nav></div></section></aside></div><script src=https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z+KMkF24hUW8WePSA9HM=" crossorigin=anonymous></script><script type=text/javascript src=../../../ts/main.js defer></script>
+<script></script></body></html>

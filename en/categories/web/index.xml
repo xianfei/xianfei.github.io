@@ -1,0 +1,707 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Web on Xianfei's Blog</title><link>/en/categories/web/</link><description>Recent content in Web on Xianfei's Blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Wed, 01 Jun 2022 00:00:00 +0000</lastBuildDate><atom:link href="/en/categories/web/index.xml" rel="self" type="application/rss+xml"/><item><title>Get to Know WebAssembly!</title><link>/en/p/wasm/</link><pubDate>Wed, 01 Jun 2022 00:00:00 +0000</pubDate><guid>/en/p/wasm/</guid><description>&lt;img src="/en/p/wasm/wasm_en.png" alt="Featured image of post Get to Know WebAssembly!" />&lt;h2 id="what-is-webassembly">What is WebAssembly?&lt;/h2>
+&lt;blockquote>
+&lt;p>WebAssembly (abbreviated Wasm) is a binary instruction format for a stack-based virtual machine. Wasm is designed as a portable compilation target for programming languages, enabling deployment on the web for client and server applications.&lt;/p>&lt;span class="cite">&lt;span>― &lt;/span>&lt;a href="https://webassembly.org/">&lt;cite>webassembly.org&lt;/cite>&lt;/a>&lt;/span>&lt;/blockquote>
+&lt;p>WebAssembly is a novel coding approach that operates in modern web browsers - it&amp;rsquo;s a low-level, assembly-like language with a compact binary format that runs at near-native performance. It provides a compilation target for languages like C/C++, enabling them to run on the Web. It&amp;rsquo;s also designed to coexist with JavaScript, allowing both to work together.&lt;/p>
+&lt;p>For the web platform, WebAssembly is of significant importance - it offers a way for code written in various languages to run at near-native speeds on the Web. In this scenario, client-side software that previously couldn&amp;rsquo;t run in this way can now operate on the Web.&lt;/p>
+&lt;p>WebAssembly is designed to work in tandem with JavaScript - using WebAssembly&amp;rsquo;s JavaScript API, you can load WebAssembly modules into a JavaScript application and share functionality between them. This allows you to leverage the performance and power of WebAssembly along with the expressiveness and flexibility of JavaScript in the same application, even if you may not know how to write WebAssembly code.&lt;/p>
+&lt;p>The above three sections are from MDN: &lt;a class="link" href="https://developer.mozilla.org/zh-CN/docs/WebAssembly" target="_blank" rel="noopener"
+>https://developer.mozilla.org/zh-CN/docs/WebAssembly&lt;/a>&lt;/p>
+&lt;h2 id="installing-the-compiler">Installing the Compiler&lt;/h2>
+&lt;p>First, we need to install a WebAssembly compiler, &lt;strong>emscripten&lt;/strong>. For macOS, you can use brew for installation.&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">brew install emscripten
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h3 id="testing-if-emscripten-is-successfully-installed">Testing if emscripten is Successfully Installed&lt;/h3>
+&lt;p>Here, we can run &lt;code>emcc&lt;/code> and &lt;code>emcc --version&lt;/code> to test if it&amp;rsquo;s installed successfully.&lt;/p>
+&lt;img class="xf-img-full" src="p1.png">
+&lt;h2 id="running-c-code-in-the-web">Running C Code in the Web&lt;/h2>
+&lt;p>C++, due to its support for function overloading, object-oriented programming, and namespaces, has less intuitive symbol names (mangled symbols) compared to C. This article will start with demonstrating using C.&lt;/p>
+&lt;h3 id="writing-c-code">Writing C Code&lt;/h3>
+&lt;p>Below, we write a very simple C language example that will return the sum of two numbers. In your working directory, create a file named test.c.&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-c" data-lang="c">&lt;span class="line">&lt;span class="cl">&lt;span class="cp">#include&lt;/span> &lt;span class="cpf">&amp;lt;stdio.h&amp;gt;&lt;/span>&lt;span class="cp">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cp">#include&lt;/span> &lt;span class="cpf">&amp;lt;emscripten/emscripten.h&amp;gt;&lt;/span>&lt;span class="cp">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cp">&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">// The code in main() will execute once the WASM module is loaded
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>&lt;span class="kt">int&lt;/span> &lt;span class="nf">main&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="kt">int&lt;/span> &lt;span class="n">argc&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="kt">char&lt;/span> &lt;span class="o">**&lt;/span> &lt;span class="n">argv&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nf">printf&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;WebAssembly module loaded&lt;/span>&lt;span class="se">\n&lt;/span>&lt;span class="s">&amp;#34;&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">// Returns the sum of two numbers
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>&lt;span class="kt">int&lt;/span> &lt;span class="n">EMSCRIPTEN_KEEPALIVE&lt;/span> &lt;span class="nf">get_sum&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="kt">int&lt;/span> &lt;span class="n">a&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="kt">int&lt;/span> &lt;span class="n">b&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="n">a&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="n">b&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h3 id="compiling-c-to-webassembly">Compiling C to WebAssembly&lt;/h3>
+&lt;p>Now that we have the C code, the next step is to compile it into wasm. Not only that, but we also need to generate the corresponding JavaScript glue code to get it running.&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">emcc test.c -s &lt;span class="nv">WASM&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="m">1&lt;/span> -O2 -o index.js
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>The meanings of each parameter are as follows:&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>emcc&lt;/code> — represents the Emscripten compiler;&lt;/li>
+&lt;li>&lt;code>test.c&lt;/code> — the file containing C code;&lt;/li>
+&lt;li>&lt;code>-s WASM=1&lt;/code> — specifies the use of WebAssembly;&lt;/li>
+&lt;li>&lt;code>-O2&lt;/code> — code optimization level;&lt;/li>
+&lt;li>&lt;code>-o index.js&lt;/code> — specifies the generation of a JS file containing all the glue code needed for the wasm module;&lt;/li>
+&lt;/ul>
+&lt;p>After compilation, index.js and index.wasm files will be generated.&lt;/p>
+&lt;h3 id="writing-html-code">Writing HTML Code&lt;/h3>
+&lt;p>There&amp;rsquo;s a powerful API available in browsers for handling WebAssembly. We won&amp;rsquo;t delve deep into it here as it goes beyond the scope of a beginner&amp;rsquo;s tutorial. We only need the Module interface and its ccall method. This method allows us to call a function from the C code by its name, and then use it just like a regular JS function.&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;span class="lnt">6
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-javascript" data-lang="javascript">&lt;span class="line">&lt;span class="cl">&lt;span class="kd">var&lt;/span> &lt;span class="nx">result&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nx">Module&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">ccall&lt;/span>&lt;span class="p">(&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s2">&amp;#34;funcName&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="c1">// function name
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span> &lt;span class="s2">&amp;#34;number&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="c1">// return type
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span> &lt;span class="p">[&lt;/span>&lt;span class="s2">&amp;#34;number&amp;#34;&lt;/span>&lt;span class="p">],&lt;/span> &lt;span class="c1">// parameter types
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span> &lt;span class="p">[&lt;/span>&lt;span class="mi">42&lt;/span>&lt;span class="p">]&lt;/span> &lt;span class="c1">// arguments
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>After calling this method, &lt;code>result&lt;/code> will have all the functionality of the corresponding C function. All parameters except the function name are optional.&lt;/p>
+&lt;p>We can also use a shorthand version (using the symbol name):&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-javascript" data-lang="javascript">&lt;span class="line">&lt;span class="cl">&lt;span class="kd">var&lt;/span> &lt;span class="nx">result&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nx">_funcName&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">args&lt;/span>&lt;span class="p">...);&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>Next, we need to write an HTML file, named here as index.html, containing a button and a div block to display the result.&lt;/p>
+&lt;p>Then&lt;/p>
+&lt;p>we add a script tag to write the code for calling the wasm module in JavaScript. Thanks to the presence of the glue code (index.js), this task becomes very simple as it has already handled all the wiring for us.&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;span class="lnt">14
+&lt;/span>&lt;span class="lnt">15
+&lt;/span>&lt;span class="lnt">16
+&lt;/span>&lt;span class="lnt">17
+&lt;/span>&lt;span class="lnt">18
+&lt;/span>&lt;span class="lnt">19
+&lt;/span>&lt;span class="lnt">20
+&lt;/span>&lt;span class="lnt">21
+&lt;/span>&lt;span class="lnt">22
+&lt;/span>&lt;span class="lnt">23
+&lt;/span>&lt;span class="lnt">24
+&lt;/span>&lt;span class="lnt">25
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-html" data-lang="html">&lt;span class="line">&lt;span class="cl">&lt;span class="cp">&amp;lt;!DOCTYPE html&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">html&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">head&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">meta&lt;/span> &lt;span class="na">charset&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">&amp;#34;utf-8&amp;#34;&lt;/span> &lt;span class="p">/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">meta&lt;/span> &lt;span class="na">http-equiv&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">&amp;#34;X-UA-Compatible&amp;#34;&lt;/span> &lt;span class="na">content&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">&amp;#34;IE=edge&amp;#34;&lt;/span> &lt;span class="p">/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">title&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>WebAssembly Example&lt;span class="p">&amp;lt;/&lt;/span>&lt;span class="nt">title&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">meta&lt;/span> &lt;span class="na">name&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">&amp;#34;viewport&amp;#34;&lt;/span> &lt;span class="na">content&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">&amp;#34;width=device-width, initial-scale=1&amp;#34;&lt;/span> &lt;span class="p">/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">&amp;lt;/&lt;/span>&lt;span class="nt">head&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">body&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">button&lt;/span> &lt;span class="na">id&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">&amp;#34;run&amp;#34;&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>Execute!&lt;span class="p">&amp;lt;/&lt;/span>&lt;span class="nt">button&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">div&lt;/span> &lt;span class="na">id&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">&amp;#34;result&amp;#34;&lt;/span>&lt;span class="p">&amp;gt;&amp;lt;/&lt;/span>&lt;span class="nt">div&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">script&lt;/span> &lt;span class="na">src&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">&amp;#34;index.js&amp;#34;&lt;/span>&lt;span class="p">&amp;gt;&amp;lt;/&lt;/span>&lt;span class="nt">script&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">script&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">// When the button is clicked, its value will change
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span> &lt;span class="kd">var&lt;/span> &lt;span class="nx">runButton&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nb">document&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">querySelector&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;#run&amp;#34;&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">runButton&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">addEventListener&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;click&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="kd">function&lt;/span> &lt;span class="p">()&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">// Call the get_sum function in the C code
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span> &lt;span class="kd">var&lt;/span> &lt;span class="nx">result&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nx">_get_sum&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="mi">2&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">4&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nb">document&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">querySelector&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;#result&amp;#34;&lt;/span>&lt;span class="p">).&lt;/span>&lt;span class="nx">innerText&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nx">result&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">});&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">&amp;lt;/&lt;/span>&lt;span class="nt">script&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">&amp;lt;/&lt;/span>&lt;span class="nt">body&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">&amp;lt;/&lt;/span>&lt;span class="nt">html&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>Then access the webpage, here using the Live Server plugin of VSCode for access (other HTTP file servers also work), &lt;strong>do not run by directly opening the html file&lt;/strong> (due to CORS local file restrictions).&lt;/p>
+&lt;img class="xf-img-full" src="p3.webp">
+&lt;h2 id="what-about-c">What About C++?&lt;/h2>
+&lt;p>First, convert the above code to C++ and save it as a test.cpp file.&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-c++" data-lang="c++">&lt;span class="line">&lt;span class="cl">&lt;span class="cp">#include&lt;/span> &lt;span class="cpf">&amp;lt;iostream&amp;gt;&lt;/span>&lt;span class="cp">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cp">#include&lt;/span> &lt;span class="cpf">&amp;lt;emscripten/emscripten.h&amp;gt;&lt;/span>&lt;span class="cp">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cp">&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">// The code in main() will execute once the WASM module is loaded
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>&lt;span class="kt">int&lt;/span> &lt;span class="nf">main&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="kt">int&lt;/span> &lt;span class="n">argc&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="kt">char&lt;/span> &lt;span class="o">**&lt;/span> &lt;span class="n">argv&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">std&lt;/span>&lt;span class="o">::&lt;/span>&lt;span class="n">cout&lt;/span> &lt;span class="o">&amp;lt;&amp;lt;&lt;/span> &lt;span class="s">&amp;#34;WebAssembly module loaded&amp;#34;&lt;/span> &lt;span class="o">&amp;lt;&amp;lt;&lt;/span> &lt;span class="n">std&lt;/span>&lt;span class="o">::&lt;/span>&lt;span class="n">endl&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">// Returns the sum of two numbers
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>&lt;span class="kt">int&lt;/span> &lt;span class="n">EMSCRIPTEN_KEEPALIVE&lt;/span> &lt;span class="nf">get_sum&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="kt">int&lt;/span> &lt;span class="n">a&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="kt">int&lt;/span> &lt;span class="n">b&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="n">a&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="n">b&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>Then compile in the same way.&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">emcc test.cpp -s &lt;span class="nv">WASM&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="m">1&lt;/span> -O2 -o index.js
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>C++ has complex &lt;a class="link" href="http://web.mit.edu/tibbetts/Public/inside-c/www/mangling.html" target="_blank" rel="noopener"
+>Symbol Mangling&lt;/a> rules. Let&amp;rsquo;s start by analyzing a standard C++ file, compile it with g++ and then analyze the symbols using the nm command, as shown in the image below.&lt;/p>
+&lt;img class="xf-img-full" src="p4.png">
+&lt;p>We see that the symbol name for our written function is &lt;code>__Z7get_sumii&lt;/code>, so we can call this function using this symbol name.&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;span class="lnt">14
+&lt;/span>&lt;span class="lnt">15
+&lt;/span>&lt;span class="lnt">16
+&lt;/span>&lt;span class="lnt">17
+&lt;/span>&lt;span class="lnt">18
+&lt;/span>&lt;span class="lnt">19
+&lt;/span>&lt;span class="lnt">20
+&lt;/span>&lt;span class="lnt">21
+&lt;/span>&lt;span class="lnt">22
+&lt;/span>&lt;span class="lnt">23
+&lt;/span>&lt;span class="lnt">24
+&lt;/span>&lt;span class="lnt">25
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-html" data-lang="html">&lt;span class="line">&lt;span class="cl">&lt;span class="cp">&amp;lt;!DOCTYPE html&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">html&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">head&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">meta&lt;/span> &lt;span class="na">charset&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">&amp;#34;utf-8&amp;#34;&lt;/span> &lt;span class="p">/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">meta&lt;/span> &lt;span class="na">http-equiv&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">&amp;#34;X-UA-Compatible&amp;#34;&lt;/span> &lt;span class="na">content&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">&amp;#34;IE=edge&amp;#34;&lt;/span> &lt;span class="p">/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">title&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>WebAssembly Example&lt;span class="p">&amp;lt;/&lt;/span>&lt;span class="nt">title&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">meta&lt;/span> &lt;span class="na">name&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">&amp;#34;viewport&amp;#34;&lt;/span> &lt;span class="na">content&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">&amp;#34;width=device-width, initial-scale=1&amp;#34;&lt;/span> &lt;span class="p">/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">&amp;lt;/&lt;/span>&lt;span class="nt">head&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">body&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">button&lt;/span> &lt;span class="na">id&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">&amp;#34;run&amp;#34;&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>Execute!&lt;span class="p">&amp;lt;/&lt;/span>&lt;span class="nt">button&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">div&lt;/span> &lt;span class="na">id&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">&amp;#34;result&amp;#34;&lt;/span>&lt;span class="p">&amp;gt;&amp;lt;/&lt;/span>&lt;span class="nt">div&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">script&lt;/span> &lt;span class="na">src&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">&amp;#34;index.js&amp;#34;&lt;/span>&lt;span class="p">&amp;gt;&amp;lt;/&lt;/span>&lt;span class="nt">script&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">script&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">// When the button is clicked, its value will change
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span> &lt;span class="kd">var&lt;/span> &lt;span class="nx">runButton&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nb">document&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">querySelector&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;#run&amp;#34;&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">runButton&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">addEventListener&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;click&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="kd">function&lt;/span> &lt;span class="p">()&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">// Call the get_sum function in the C++ code
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span> &lt;span class="kd">var&lt;/span> &lt;span class="nx">result&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nx">__Z7get_sumii&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="mi">2&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">4&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nb">document&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">querySelector&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;#result&amp;#34;&lt;/span>&lt;span class="p">).&lt;/span>&lt;span class="nx">innerText&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nx">result&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">});&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">&amp;lt;/&lt;/span>&lt;span class="nt">script&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">&amp;lt;/&lt;/span>&lt;span class="nt">body&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">&amp;lt;/&lt;/span>&lt;span class="nt">html&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>We can also confirm this by looking at the WebAssembly disassembly code through DevTools.&lt;/p>
+&lt;img class="xf-img-full" src="p5.webp"></description></item><item><title>Building a Simple Python Backend for Web-Based Object Recognition</title><link>/en/p/yolo/</link><pubDate>Sun, 08 May 2022 00:00:00 +0000</pubDate><guid>/en/p/yolo/</guid><description>&lt;img src="/en/p/yolo/banner.png" alt="Featured image of post Building a Simple Python Backend for Web-Based Object Recognition" />&lt;h2 id="introduction">Introduction&lt;/h2>
+&lt;p>After completing my postgraduate exams last year, I decided to learn how to use Python to invoke machine learning libraries, having previously only known some basic Flask operations.&lt;/p>
+&lt;p>This is a web-based image object recognition project built on the xyolo library, &lt;del>(just for fun)&lt;/del>. The frontend was developed using pure native techniques (I hadn’t learned Vue back then), and the backend API part is implemented using Flask. The code is extremely simple.&lt;/p>
+&lt;h2 id="preview">Preview&lt;/h2>
+&lt;p>Here are a few images to give you an idea of what the final output looks like. The different colored boxes in the images are drawn by frontend divs, and the recognition result tags are also rendered using HTML. Finally, a table is drawn to display the recognition results and accuracy.&lt;/p>
+&lt;p>&lt;img src="../../../en/p/yolo/0.jpg"
+width="718"
+height="467"
+srcset="../../../en/p/yolo/0_hu64e799feafd7035abede561e44709ee2_58868_480x0_resize_q60_box.jpg 480w, ../../../en/p/yolo/0_hu64e799feafd7035abede561e44709ee2_58868_1536x0_resize_q60_box.jpg 1536w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="153"
+data-flex-basis="368px"
+> &lt;img src="../../../en/p/yolo/1.jpg"
+width="718"
+height="601"
+srcset="../../../en/p/yolo/1_hua0a107464dc3770fe43bf7e29cf61984_88126_480x0_resize_q60_box.jpg 480w, ../../../en/p/yolo/1_hua0a107464dc3770fe43bf7e29cf61984_88126_1536x0_resize_q60_box.jpg 1536w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="119"
+data-flex-basis="286px"
+> &lt;img src="../../../en/p/yolo/2.jpg"
+width="718"
+height="601"
+srcset="../../../en/p/yolo/2_hubd46cd3e987183c6ca51eab1afd3bd48_74402_480x0_resize_q60_box.jpg 480w, ../../../en/p/yolo/2_hubd46cd3e987183c6ca51eab1afd3bd48_74402_1536x0_resize_q60_box.jpg 1536w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="119"
+data-flex-basis="286px"
+>&lt;/p>
+&lt;h2 id="implementation">Implementation&lt;/h2>
+&lt;h3 id="backend-code">Backend Code&lt;/h3>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;span class="lnt">14
+&lt;/span>&lt;span class="lnt">15
+&lt;/span>&lt;span class="lnt">16
+&lt;/span>&lt;span class="lnt">17
+&lt;/span>&lt;span class="lnt">18
+&lt;/span>&lt;span class="lnt">19
+&lt;/span>&lt;span class="lnt">20
+&lt;/span>&lt;span class="lnt">21
+&lt;/span>&lt;span class="lnt">22
+&lt;/span>&lt;span class="lnt">23
+&lt;/span>&lt;span class="lnt">24
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="kn">import&lt;/span> &lt;span class="nn">numpy&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kn">from&lt;/span> &lt;span class="nn">xyolo&lt;/span> &lt;span class="kn">import&lt;/span> &lt;span class="n">YOLO&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">DefaultYolo3Config&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kn">from&lt;/span> &lt;span class="nn">xyolo&lt;/span> &lt;span class="kn">import&lt;/span> &lt;span class="n">init_yolo_v3&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kn">from&lt;/span> &lt;span class="nn">flask&lt;/span> &lt;span class="kn">import&lt;/span> &lt;span class="n">Flask&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">jsonify&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">request&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kn">from&lt;/span> &lt;span class="nn">flask_cors&lt;/span> &lt;span class="kn">import&lt;/span> &lt;span class="n">CORS&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kn">from&lt;/span> &lt;span class="nn">PIL&lt;/span> &lt;span class="kn">import&lt;/span> &lt;span class="n">Image&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">app&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">Flask&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="vm">__name__&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">CORS&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">app&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">resources&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="sa">r&lt;/span>&lt;span class="s1">&amp;#39;/*&amp;#39;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">config&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">DefaultYolo3Config&lt;/span>&lt;span class="p">()&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">init_yolo_v3&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">config&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">yolo&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">YOLO&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">config&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nd">@app.route&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;/postimg&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">methods&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="s1">&amp;#39;POST&amp;#39;&lt;/span>&lt;span class="p">])&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="k">def&lt;/span> &lt;span class="nf">hello_world&lt;/span>&lt;span class="p">():&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">img&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">Image&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">open&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">request&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">files&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="s1">&amp;#39;file&amp;#39;&lt;/span>&lt;span class="p">]&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">stream&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">result&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">yolo&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">detect_image&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">img&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nb">print&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">result&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="n">jsonify&lt;/span>&lt;span class="p">({&lt;/span>&lt;span class="s1">&amp;#39;result&amp;#39;&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="n">numpy&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">array&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">result&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">tolist&lt;/span>&lt;span class="p">()})&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="k">if&lt;/span> &lt;span class="vm">__name__&lt;/span> &lt;span class="o">==&lt;/span> &lt;span class="s1">&amp;#39;__main__&amp;#39;&lt;/span>&lt;span class="p">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">app&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">run&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">host&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s1">&amp;#39;0.0.0.0&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">port&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="mi">8808&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">debug&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="kc">True&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h3 id="frontend-code">Frontend Code&lt;/h3>
+&lt;p>Took a shortcut here, it&amp;rsquo;s all in HTML&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt"> 10
+&lt;/span>&lt;span class="lnt"> 11
+&lt;/span>&lt;span class="lnt"> 12
+&lt;/span>&lt;span class="lnt"> 13
+&lt;/span>&lt;span class="lnt"> 14
+&lt;/span>&lt;span class="lnt"> 15
+&lt;/span>&lt;span class="lnt"> 16
+&lt;/span>&lt;span class="lnt"> 17
+&lt;/span>&lt;span class="lnt"> 18
+&lt;/span>&lt;span class="lnt"> 19
+&lt;/span>&lt;span class="lnt"> 20
+&lt;/span>&lt;span class="lnt"> 21
+&lt;/span>&lt;span class="lnt"> 22
+&lt;/span>&lt;span class="lnt"> 23
+&lt;/span>&lt;span class="lnt"> 24
+&lt;/span>&lt;span class="lnt"> 25
+&lt;/span>&lt;span class="lnt"> 26
+&lt;/span>&lt;span class="lnt"> 27
+&lt;/span>&lt;span class="lnt"> 28
+&lt;/span>&lt;span class="lnt"> 29
+&lt;/span>&lt;span class="lnt"> 30
+&lt;/span>&lt;span class="lnt"> 31
+&lt;/span>&lt;span class="lnt"> 32
+&lt;/span>&lt;span class="lnt"> 33
+&lt;/span>&lt;span class="lnt"> 34
+&lt;/span>&lt;span class="lnt"> 35
+&lt;/span>&lt;span class="lnt"> 36
+&lt;/span>&lt;span class="lnt"> 37
+&lt;/span>&lt;span class="lnt"> 38
+&lt;/span>&lt;span class="lnt"> 39
+&lt;/span>&lt;span class="lnt"> 40
+&lt;/span>&lt;span class="lnt"> 41
+&lt;/span>&lt;span class="lnt"> 42
+&lt;/span>&lt;span class="lnt"> 43
+&lt;/span>&lt;span class="lnt"> 44
+&lt;/span>&lt;span class="lnt"> 45
+&lt;/span>&lt;span class="lnt"> 46
+&lt;/span>&lt;span class="lnt"> 47
+&lt;/span>&lt;span class="lnt"> 48
+&lt;/span>&lt;span class="lnt"> 49
+&lt;/span>&lt;span class="lnt"> 50
+&lt;/span>&lt;span class="lnt"> 51
+&lt;/span>&lt;span class="lnt"> 52
+&lt;/span>&lt;span class="lnt"> 53
+&lt;/span>&lt;span class="lnt"> 54
+&lt;/span>&lt;span class="lnt"> 55
+&lt;/span>&lt;span class="lnt"> 56
+&lt;/span>&lt;span class="lnt"> 57
+&lt;/span>&lt;span class="lnt"> 58
+&lt;/span>&lt;span class="lnt"> 59
+&lt;/span>&lt;span class="lnt"> 60
+&lt;/span>&lt;span class="lnt"> 61
+&lt;/span>&lt;span class="lnt"> 62
+&lt;/span>&lt;span class="lnt"> 63
+&lt;/span>&lt;span class="lnt"> 64
+&lt;/span>&lt;span class="lnt"> 65
+&lt;/span>&lt;span class="lnt"> 66
+&lt;/span>&lt;span class="lnt"> 67
+&lt;/span>&lt;span class="lnt"> 68
+&lt;/span>&lt;span class="lnt"> 69
+&lt;/span>&lt;span class="lnt"> 70
+&lt;/span>&lt;span class="lnt"> 71
+&lt;/span>&lt;span class="lnt"> 72
+&lt;/span>&lt;span class="lnt"> 73
+&lt;/span>&lt;span class="lnt"> 74
+&lt;/span>&lt;span class="lnt"> 75
+&lt;/span>&lt;span class="lnt"> 76
+&lt;/span>&lt;span class="lnt"> 77
+&lt;/span>&lt;span class="lnt"> 78
+&lt;/span>&lt;span class="lnt"> 79
+&lt;/span>&lt;span class="lnt"> 80
+&lt;/span>&lt;span class="lnt"> 81
+&lt;/span>&lt;span class="lnt"> 82
+&lt;/span>&lt;span class="lnt"> 83
+&lt;/span>&lt;span class="lnt"> 84
+&lt;/span>&lt;span class="lnt"> 85
+&lt;/span>&lt;span class="lnt"> 86
+&lt;/span>&lt;span class="lnt"> 87
+&lt;/span>&lt;span class="lnt"> 88
+&lt;/span>&lt;span class="lnt"> 89
+&lt;/span>&lt;span class="lnt"> 90
+&lt;/span>&lt;span class="lnt"> 91
+&lt;/span>&lt;span class="lnt"> 92
+&lt;/span>&lt;span class="lnt"> 93
+&lt;/span>&lt;span class="lnt"> 94
+&lt;/span>&lt;span class="lnt"> 95
+&lt;/span>&lt;span class="lnt"> 96
+&lt;/span>&lt;span class="lnt"> 97
+&lt;/span>&lt;span class="lnt"> 98
+&lt;/span>&lt;span class="lnt"> 99
+&lt;/span>&lt;span class="lnt">100
+&lt;/span>&lt;span class="lnt">101
+&lt;/span>&lt;span class="lnt">102
+&lt;/span>&lt;span class="lnt">103
+&lt;/span>&lt;span class="lnt">104
+&lt;/span>&lt;span class="lnt">105
+&lt;/span>&lt;span class="lnt">106
+&lt;/span>&lt;span class="lnt">107
+&lt;/span>&lt;span class="lnt">108
+&lt;/span>&lt;span class="lnt">109
+&lt;/span>&lt;span class="lnt">110
+&lt;/span>&lt;span class="lnt">111
+&lt;/span>&lt;span class="lnt">112
+&lt;/span>&lt;span class="lnt">113
+&lt;/span>&lt;span class="lnt">114
+&lt;/span>&lt;span class="lnt">115
+&lt;/span>&lt;span class="lnt">116
+&lt;/span>&lt;span class="lnt">117
+&lt;/span>&lt;span class="lnt">118
+&lt;/span>&lt;span class="lnt">119
+&lt;/span>&lt;span class="lnt">120
+&lt;/span>&lt;span class="lnt">121
+&lt;/span>&lt;span class="lnt">122
+&lt;/span>&lt;span class="lnt">123
+&lt;/span>&lt;span class="lnt">124
+&lt;/span>&lt;span class="lnt">125
+&lt;/span>&lt;span class="lnt">126
+&lt;/span>&lt;span class="lnt">127
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-html" data-lang="html">&lt;span class="line">&lt;span class="cl">&lt;span class="cp">&amp;lt;!DOCTYPE html&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">html&lt;/span> &lt;span class="na">lang&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">&amp;#34;en&amp;#34;&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">head&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">meta&lt;/span> &lt;span class="na">charset&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">&amp;#34;UTF-8&amp;#34;&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">meta&lt;/span> &lt;span class="na">http-equiv&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">&amp;#34;X-UA-Compatible&amp;#34;&lt;/span> &lt;span class="na">content&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">&amp;#34;IE=edge&amp;#34;&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">meta&lt;/span> &lt;span class="na">name&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">&amp;#34;viewport&amp;#34;&lt;/span> &lt;span class="na">content&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">&amp;#34;width=device-width, initial-scale=1.0&amp;#34;&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">title&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>Let&amp;#39;s See What&amp;#39;s Here&lt;span class="p">&amp;lt;/&lt;/span>&lt;span class="nt">title&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">script&lt;/span> &lt;span class="na">type&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">&amp;#34;text/javascript&amp;#34;&lt;/span> &lt;span class="na">src&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">&amp;#34;https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js&amp;#34;&lt;/span>&lt;span class="p">&amp;gt;&amp;lt;/&lt;/span>&lt;span class="nt">script&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">style&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">input&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">margin&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="mi">15&lt;/span>&lt;span class="kt">px&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">.&lt;/span>&lt;span class="nc">myimg&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">max-height&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="mi">100&lt;/span>&lt;span class="kt">vh&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">max-width&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="mi">100&lt;/span>&lt;span class="kt">%&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">margin&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="kc">auto&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">.&lt;/span>&lt;span class="nc">target-info&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">color&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="mh">#f00&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">padding&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="mi">10&lt;/span>&lt;span class="kt">px&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">border&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="kc">solid&lt;/span> &lt;span class="mi">3&lt;/span>&lt;span class="kt">px&lt;/span> &lt;span class="mh">#f00&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">table&lt;/span>&lt;span class="o">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">th&lt;/span>&lt;span class="o">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">td&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">border&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="mi">1&lt;/span>&lt;span class="kt">px&lt;/span> &lt;span class="kc">solid&lt;/span> &lt;span class="kc">black&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">&amp;lt;/&lt;/span>&lt;span class="nt">style&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">&amp;lt;/&lt;/span>&lt;span class="nt">head&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">body&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">h2&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>Let&amp;#39;s See What&amp;#39;s In Here!&lt;span class="p">&amp;lt;/&lt;/span>&lt;span class="nt">h2&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">p&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>Supports dragging and dropping images below this line of text&lt;span class="p">&amp;lt;/&lt;/span>&lt;span class="nt">p&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">div&lt;/span> &lt;span class="na">id&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">&amp;#34;dropBox&amp;#34;&lt;/span> &lt;span class="na">style&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">&amp;#34;min-height: 100px; min-height: 100px;&amp;#34;&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">div&lt;/span> &lt;span class="na">id&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">&amp;#34;target&amp;#34;&lt;/span> &lt;span class="na">style&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">&amp;#34;position:absolute&amp;#34;&lt;/span>&lt;span class="p">&amp;gt;&amp;lt;/&lt;/span>&lt;span class="nt">div&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">img&lt;/span> &lt;span class="na">src&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">&amp;#34;&amp;#34;&lt;/span> &lt;span class="na">id&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">&amp;#34;myimg&amp;#34;&lt;/span> &lt;span class="na">class&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">&amp;#34;myimg&amp;#34;&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">&amp;lt;/&lt;/span>&lt;span class="nt">div&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">input&lt;/span> &lt;span class="na">id&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">&amp;#34;fileInput&amp;#34;&lt;/span> &lt;span class="na">type&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">&amp;#34;file&amp;#34;&lt;/span> &lt;span class="na">onchange&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">&amp;#34;processFiles(this.files)&amp;#34;&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">img&lt;/span> &lt;span class="na">id&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">&amp;#34;thumbnail&amp;#34;&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">p&lt;/span> &lt;span class="na">id&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">&amp;#34;stat&amp;#34;&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>Ready&lt;span class="p">&amp;lt;/&lt;/span>&lt;span class="nt">p&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">table&lt;/span> &lt;span class="na">id&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">&amp;#34;restab&amp;#34;&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">tr&lt;/span>&lt;span class="p">&amp;gt;&amp;lt;&lt;/span>&lt;span class="nt">th&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>Object&lt;span class="p">&amp;lt;/&lt;/span>&lt;span class="nt">th&lt;/span>&lt;span class="p">&amp;gt;&amp;lt;&lt;/span>&lt;span class="nt">th&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>Confidence&lt;span class="p">&amp;lt;/&lt;/span>&lt;span class="nt">th&lt;/span>&lt;span class="p">&amp;gt;&amp;lt;/&lt;/span>&lt;span class="nt">tr&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">&amp;lt;/&lt;/span>&lt;span class="nt">table&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">p&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>by xianfei 2021.12&lt;span class="p">&amp;lt;/&lt;/span>&lt;span class="nt">p&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">script&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="kd">var&lt;/span> &lt;span class="nx">dropBox&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nb">window&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">onload&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="kd">function&lt;/span> &lt;span class="p">()&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">dropBox&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nb">document&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">getElementById&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;dropBox&amp;#34;&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">dropBox&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">ondragenter&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nx">ignoreDrag&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">dropBox&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">ondragover&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nx">ignoreDrag&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">dropBox&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">ondrop&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nx">drop&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="kd">function&lt;/span> &lt;span class="nx">ignoreDrag&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">e&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">// We&amp;#39;re handling the drag-and-drop, so make sure no other elements take this event
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span> &lt;span class="nx">e&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">stopPropagation&lt;/span>&lt;span class="p">();&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">e&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">preventDefault&lt;/span>&lt;span class="p">();&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="kd">function&lt;/span> &lt;span class="nx">drop&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">e&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">// Stop propagation and prevent default behavior
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span> &lt;span class="nx">e&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">stopPropagation&lt;/span>&lt;span class="p">();&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">e&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">preventDefault&lt;/span>&lt;span class="p">();&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">// Get the files that were dragged in
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span> &lt;span class="kd">var&lt;/span> &lt;span class="nx">data&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nx">e&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">dataTransfer&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="kd">var&lt;/span> &lt;span class="nx">files&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nx">data&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">files&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">// Pass them to the real file processing function
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span> &lt;span class="nx">processFiles&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">files&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="kd">function&lt;/span> &lt;span class="nx">ran&lt;/span>&lt;span class="p">()&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="nb">Math&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">floor&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nb">Math&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">random&lt;/span>&lt;span class="p">()&lt;/span> &lt;span class="o">*&lt;/span> &lt;span class="mi">256&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="kd">function&lt;/span> &lt;span class="nx">processFiles&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">files&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">$&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;#stat&amp;#39;&lt;/span>&lt;span class="p">).&lt;/span>&lt;span class="nx">html&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;Uploading and processing...&amp;#39;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="kd">var&lt;/span> &lt;span class="nx">file&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nx">files&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="mi">0&lt;/span>&lt;span class="p">];&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="kr">const&lt;/span> &lt;span class="nx">formData&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="k">new&lt;/span> &lt;span class="nx">FormData&lt;/span>&lt;span class="p">();&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">formData&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">append&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;file&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">file&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">fetch&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;/postimg&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">body&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="nx">formData&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">method&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="s2">&amp;#34;post&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}).&lt;/span>&lt;span class="nx">then&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">res&lt;/span> &lt;span class="p">=&amp;gt;&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">res&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">json&lt;/span>&lt;span class="p">().&lt;/span>&lt;span class="nx">then&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">json&lt;/span> &lt;span class="p">=&amp;gt;&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">$&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;#stat&amp;#39;&lt;/span>&lt;span class="p">).&lt;/span>&lt;span class="nx">html&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;Detected &amp;#39;&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="nx">json&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">result&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">length&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="s1">&amp;#39; objects.&amp;#39;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="kd">var&lt;/span> &lt;span class="nx">e&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nx">$&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;#myimg&amp;#39;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="kd">var&lt;/span> &lt;span class="nx">heightRate&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nx">e&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">height&lt;/span>&lt;span class="p">()&lt;/span> &lt;span class="o">/&lt;/span> &lt;span class="nx">e&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="mi">0&lt;/span>&lt;span class="p">].&lt;/span>&lt;span class="nx">naturalHeight&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="kd">var&lt;/span> &lt;span class="nx">widthRate&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nx">e&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">width&lt;/span>&lt;span class="p">()&lt;/span> &lt;span class="o">/&lt;/span> &lt;span class="nx">e&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="mi">0&lt;/span>&lt;span class="p">].&lt;/span>&lt;span class="nx">naturalWidth&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">if&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="nx">json&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">result&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">length&lt;/span> &lt;span class="o">==&lt;/span> &lt;span class="mi">0&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="nx">$&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;#target&amp;#39;&lt;/span>&lt;span class="p">).&lt;/span>&lt;span class="nx">append&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;&amp;lt;div style=&amp;#34;position:absolute;width:100px;&amp;#34;&amp;gt;Detection Failed&amp;lt;/div&amp;gt;&amp;#39;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">for&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="kd">var&lt;/span> &lt;span class="nx">i&lt;/span> &lt;span class="k">of&lt;/span> &lt;span class="nx">json&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">result&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="kd">var&lt;/span> &lt;span class="nx">color&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="s1">&amp;#39;rgb(&amp;#39;&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="nx">ran&lt;/span>&lt;span class="p">()&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="s1">&amp;#39;,&amp;#39;&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="nx">ran&lt;/span>&lt;span class="p">()&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="s1">&amp;#39;,&amp;#39;&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="nx">ran&lt;/span>&lt;span class="p">()&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="s1">&amp;#39;)&amp;#39;&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">$&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;#restab&amp;#39;&lt;/span>&lt;span class="p">).&lt;/span>&lt;span class="nx">append&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;&amp;lt;tr style=&amp;#34;color:&amp;#39;&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="nx">color&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="s1">&amp;#39;;&amp;#34;&amp;gt;&amp;lt;td&amp;gt;&amp;#39;&lt;/span>&lt;span class="o">+&lt;/span>&lt;span class="nx">i&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="mi">0&lt;/span>&lt;span class="p">]&lt;/span>&lt;span class="o">+&lt;/span>&lt;span class="s1">&amp;#39;&amp;lt;/td&amp;gt;&amp;lt;td&amp;gt;&amp;#39;&lt;/span>&lt;span class="o">+&lt;/span>&lt;span class="nx">i&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="mi">2&lt;/span>&lt;span class="p">]&lt;/span>&lt;span class="o">+&lt;/span>&lt;span class="s1">&amp;#39;&amp;lt;/td&amp;gt;&amp;lt;/tr&amp;gt;&amp;#39;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">$&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;#target&amp;#39;&lt;/span>&lt;span class="p">).&lt;/span>&lt;span class="nx">append&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;&amp;lt;div style=&amp;#34;position:absolute;margin-left:&amp;#39;&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="nx">i&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="mi">3&lt;/span>&lt;span class="p">]&lt;/span> &lt;span class="o">*&lt;/span> &lt;span class="nx">widthRate&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="s1">&amp;#39;px;margin-top:&amp;#39;&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="nx">i&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="mi">4&lt;/span>&lt;span class="p">]&lt;/span> &lt;span class="o">*&lt;/span> &lt;span class="nx">heightRate&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="s1">&amp;#39;px;width: &amp;#39;&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="nx">i&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="mi">5&lt;/span>&lt;span class="p">]&lt;/span> &lt;span class="o">-&lt;/span> &lt;span class="nx">i&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="mi">3&lt;/span>&lt;span class="p">])&lt;/span> &lt;span class="o">*&lt;/span> &lt;span class="nx">widthRate&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="s1">&amp;#39;px;height: &amp;#39;&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="nx">i&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="mi">6&lt;/span>&lt;span class="p">]&lt;/span> &lt;span class="o">-&lt;/span> &lt;span class="nx">i&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="mi">4&lt;/span>&lt;span class="p">])&lt;/span> &lt;span class="o">*&lt;/span> &lt;span class="nx">heightRate&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="s1">&amp;#39;px;border-color: &amp;#39;&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="nx">color&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="s1">&amp;#39;;color:&amp;#39;&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="nx">color&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="s1">&amp;#39;;&amp;#34; class=&amp;#34;target-info&amp;#34;&amp;gt;&amp;#39;&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="nx">i&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="mi">0&lt;/span>&lt;span class="p">]&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="s1">&amp;#39;&amp;lt;/div&amp;gt;&amp;#39;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">console&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">log&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">json&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">})&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}).&lt;/span>&lt;span class="k">catch&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">ex&lt;/span> &lt;span class="p">=&amp;gt;&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">consoleLog&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;Submission failed:&amp;#34;&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="nx">ex&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">toString&lt;/span>&lt;span class="p">());&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">});&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="kd">var&lt;/span> &lt;span class="nx">output&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nb">document&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">getElementById&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;fileOutput&amp;#34;&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">// Create a FileReader
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span> &lt;span class="kd">var&lt;/span> &lt;span class="nx">reader&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="k">new&lt;/span> &lt;span class="nx">FileReader&lt;/span>&lt;span class="p">();&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">// Set up what to do when the data is ready
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span> &lt;span class="nx">reader&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">onload&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="kd">function&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="nx">e&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">// Use the image URL to draw the background of the dropBox
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span> &lt;span class="nx">$&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;#myimg&amp;#39;&lt;/span>&lt;span class="p">)[&lt;/span>&lt;span class="mi">0&lt;/span>&lt;span class="p">].&lt;/span>&lt;span class="nx">src&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nx">e&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">target&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">result&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">$&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;#target&amp;#39;&lt;/span>&lt;span class="p">).&lt;/span>&lt;span class="nx">html&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;&amp;#39;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">$&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;#restab&amp;#39;&lt;/span>&lt;span class="p">).&lt;/span>&lt;span class="nx">html&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;&amp;lt;tr&amp;gt;&amp;lt;th&amp;gt;Object&amp;lt;/th&amp;gt;&amp;lt;th&amp;gt;Confidence&amp;lt;/th&amp;gt;&amp;lt;/tr&amp;gt;&amp;#39;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">};&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">// Read the image
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span> &lt;span class="nx">reader&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">readAsDataURL&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">file&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="kd">function&lt;/span> &lt;span class="nx">showFileInput&lt;/span>&lt;span class="p">()&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="kd">var&lt;/span> &lt;span class="nx">fileInput&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nb">document&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">getElementById&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;fileInput&amp;#34;&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">fileInput&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">click&lt;/span>&lt;span class="p">();&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">&amp;lt;/&lt;/span>&lt;span class="nt">script&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">&amp;lt;/&lt;/span>&lt;span class="nt">body&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">&amp;lt;/&lt;/span>&lt;span class="nt">html&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div></description></item><item><title>AR Bing Dwen Dwen and Snow Rong Rong! Now you can take a selfie with Bing Dwen Dwen at home!</title><link>/en/p/ar2022/</link><pubDate>Wed, 09 Feb 2022 00:00:00 +0000</pubDate><guid>/en/p/ar2022/</guid><description>&lt;img src="/en/p/ar2022/ar2022.png" alt="Featured image of post AR Bing Dwen Dwen and Snow Rong Rong! Now you can take a selfie with Bing Dwen Dwen at home!" />&lt;section style="margin: 10px 0%; box-sizing: border-box; line-height: 1.75em; visibility: visible;">&lt;section style="display: inline-block; width: 100%; vertical-align: top; background-color: rgb(240, 249, 255); border-width: 0px; border-style: none; border-color: rgb(62, 62, 62); overflow: hidden; padding: 29px; box-sizing: border-box; visibility: visible;">&lt;section style="box-sizing: border-box; visibility: visible;" powered-by="xiumi.us">&lt;p style="white-space: normal; margin: 0px; padding: 0px; box-sizing: border-box; visibility: visible;">&lt;br style="box-sizing: border-box; visibility: visible;">&lt;/p>&lt;/section>&lt;section style="text-align: center; justify-content: center; box-sizing: border-box; visibility: visible;" powered-by="xiumi.us">&lt;section style="text-align: justify; color: rgb(62, 62, 62); box-sizing: border-box; visibility: visible;">&lt;p style="text-align: center; white-space: normal; margin: 0px; padding: 0px; box-sizing: border-box; visibility: visible;">&lt;span style="color: rgb(122, 175, 231); box-sizing: border-box; visibility: visible;">&lt;strong style="box-sizing: border-box; visibility: visible;">Recently, Bing Dwen Dwen has become a sensation!&lt;/strong>&lt;/span>&lt;/p>&lt;p style="text-align: center; white-space: normal; margin: 0px; padding: 0px; box-sizing: border-box; visibility: visible;">&lt;span style="color: rgb(122, 175, 231); box-sizing: border-box; visibility: visible;">With the opening of the Beijing Winter Olympics,&lt;/span>&lt;/p>&lt;p style="text-align: center; white-space: normal; margin: 0px; padding: 0px; box-sizing: border-box; visibility: visible;">&lt;span style="color: rgb(122, 175, 231); box-sizing: border-box; visibility: visible;">The mascot "Bing Dwen Dwen" has instantly become a top-tier phenomenon.&lt;/span>&lt;/p>&lt;p style="text-align: center; white-space: normal; margin: 0px; padding: 0px; box-sizing: border-box; visibility: visible;">&lt;span style="color: rgb(122, 175, 231); box-sizing: border-box; visibility: visible;">People can't help but exclaim,&lt;/span>&lt;/p>&lt;p style="text-align: center; white-space: normal; margin: 0px; padding: 0px; box-sizing: border-box; visibility: visible;">&lt;span style="color: rgb(122, 175, 231); box-sizing: border-box; visibility: visible;">&lt;strong style="box-sizing: border-box; visibility: visible;">"Who wouldn't want a cute Bing Dwen Dwen!"&lt;/strong>&lt;/span>&lt;/p>&lt;p style="text-align: center; white-space: normal; margin: 0px; padding: 0px; box-sizing: border-box; visibility: visible;">&lt;span style="color: rgb(122, 175, 231); box-sizing: border-box; visibility: visible;">Merchandise featuring Bing Dwen Dwen at the official Olympic flagship store keeps selling out,&lt;br style="box-sizing: border-box; visibility: visible;">&lt;/span>&lt;/p>&lt;p style="text-align: center; white-space: normal; margin: 0px; padding: 0px; box-sizing: border-box; visibility: visible;">&lt;span style="color: rgb(122, 175, 231); box-sizing: border-box; visibility: visible;">Both online and offline,&lt;/span>&lt;/p>&lt;p style="text-align: center; white-space: normal; margin: 0px; padding: 0px; box-sizing: border-box; visibility: visible;">&lt;span style="color: rgb(122, 175, 231); box-sizing: border-box; visibility: visible;">Truly exemplifying the sentiment that "A Dwen is hard to buy."&lt;/span>&lt;/p>&lt;/section>&lt;/section>&lt;section style="transform: perspective(0px); transform-style: flat; box-sizing: border-box; visibility: visible;" powered-by="xiumi.us">&lt;section style="text-align: left; margin: 0px 0% -31px; justify-content: flex-start; transform: translate3d(21px, 0px, 0px) rotateY(180deg); box-sizing: border-box; visibility: visible;">&lt;section style="max-width: 100%; vertical-align: middle; display: inline-block; line-height: 0; width: 130px; height: auto; box-sizing: border-box; visibility: visible;">&lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 494.521 262.87" width="100%" style="box-sizing: border-box; visibility: visible;">&lt;g style="box-sizing: border-box; visibility: visible;">&lt;g style="box-sizing: border-box; visibility: visible;">&lt;polygon points="422.982 212.89 352.913 174.181 336.254 174.181 284.804 139.392 268.145 147.721 260.305 139.392 36.379 262.87 494.521 262.87 422.982 212.89" style="box-sizing: border-box; visibility: visible;" fill="rgb(192, 219, 252)">&lt;/polygon>&lt;g style="opacity: 0.52; box-sizing: border-box; visibility: visible;">&lt;path d="M377.2,206.847s3.43,15.68-20.579,0-60.269-36.259-60.269-36.259l43.609,43.228s-39.69-8.929-49-8.929-18.62,15.68-63.209,16.66c-37.587.826-108.243,34.526-148.589,40.774l150.512-1.932-169.5,2.175a88.087,88.087,0,0,0-19.239-2.208l-.343.189L260.305,139.392l7.84,8.329,16.659-8.329,51.45,34.789h16.659l53.543,29.58C392.891,204.742,377.2,206.847,377.2,206.847Z" style="box-sizing: border-box; visibility: visible;" fill="rgb(255, 255, 255)">&lt;/path>&lt;/g>&lt;polygon points="436.495 221.22 494.521 262.87 494.521 262.87 436.495 221.22" style="box-sizing: border-box; visibility: visible;" fill="rgb(255, 255, 255)">&lt;/polygon>&lt;polygon points="53.869 262.645 36.379 262.87 36.379 262.87 53.869 262.645" style="box-sizing: border-box; visibility: visible;" fill="rgb(255, 255, 255)">&lt;/polygon>&lt;g style="opacity: 0.52; box-sizing: border-box; visibility: visible;">&lt;path d="M286.841,161.768l-21.391-2.09s-5.689,19.456-27.248,13.305c-11.8,5.656-75.051,43.252-114.619,41.8l136.722-75.391,7.84,8.329,16.659-8.329,37.36,25.262Z" style="box-sizing: border-box; visibility: visible;" fill="rgb(255, 255, 255)">&lt;/path>&lt;/g>&lt;polygon points="44.176 212.89 80.548 174.181 89.196 174.181 115.902 139.392 124.55 147.721 128.62 139.392 244.857 262.87 7.041 262.87 44.176 212.89" style="box-sizing: border-box; visibility: visible;" fill="rgb(192, 219, 252)">&lt;/polygon>&lt;g style="opacity: 0.52; box-sizing: border-box; visibility: visible;">&lt;path d="M67.943,206.847s-1.781,15.68,10.682,0,31.285-36.259,31.285-36.259L87.273,213.816s20.6-8.929,25.435-8.929,9.665,15.68,32.811,16.66c19.511.826,56.188,34.526,77.131,40.774l-78.129-1.932,87.983,2.175a25.142,25.142,0,0,1,9.987-2.208l.178.189L128.62,139.392l-4.07,8.329-8.648-8.329L89.2,174.181H80.548l-27.794,29.58C59.8,204.742,67.943,206.847,67.943,206.847Z" style="box-sizing: border-box; visibility: visible;" fill="rgb(255, 255, 255)">&lt;/path>&lt;/g>&lt;polygon points="37.161 221.22 7.041 262.87 7.041 262.87 37.161 221.22" style="box-sizing: border-box; visibility: visible;" fill="rgb(255, 255, 255)">&lt;/polygon>&lt;polygon points="235.778 262.645 244.857 262.87 244.857 262.87 235.778 262.645" style="box-sizing: border-box; visibility: visible;" fill="rgb(255, 255, 255)">&lt;/polygon>&lt;g style="opacity: 0.52; box-sizing: border-box; visibility: visible;">&lt;path d="M114.845,161.768l11.1-2.09s2.953,19.456,14.144,13.305c6.127,5.656,38.958,43.252,59.5,41.8L128.62,139.392l-4.07,8.329-8.648-8.329L96.509,164.654Z" style="box-sizing: border-box; visibility: visible;" fill="rgb(255, 255, 255)">&lt;/path>&lt;/g>&lt;g style="opacity: 0.18; box-sizing: border-box; visibility: visible;">&lt;path d="M53.869,107.739h0a53.871,53.871,0,0,1,53.87-53.87h0A53.87,53.87,0,0,1,53.869,0h0A53.869,53.869,0,0,1,0,53.869H0A53.87,53.87,0,0,1,53.869,107.739Z" style="box-sizing: border-box; visibility: visible;" fill="rgb(61, 147, 227)">&lt;/path>&lt;/g>&lt;g style="opacity: 0.18; box-sizing: border-box; visibility: visible;">&lt;path d="M379.741,132.613h0a32.534,32.534,0,0,1,32.534-32.534h0a32.534,32.534,0,0,1-32.534-32.534h0a32.534,32.534,0,0,1-32.533,32.534h0A32.534,32.534,0,0,1,379.741,132.613Z" style="box-sizing: border-box; visibility: visible;" fill="rgb(61, 147, 227)">&lt;/path>&lt;/g>&lt;/g>&lt;/g>&lt;/svg>&lt;/section>&lt;/section>&lt;/section>&lt;/section>&lt;/section>
+&lt;h2 id="technical-background">Technical Background&lt;/h2>
+&lt;p>Augmented Reality (AR), also referred to as &amp;ldquo;Simulated Reality&amp;rdquo; or &amp;ldquo;Extended Reality&amp;rdquo; in relation to Virtual Reality (VR), involves calculating the position and angle of a camera feed and integrating image analysis technology. This allows the virtual world on the screen to interact with the real-world scene. This technology was proposed in 1990. With the increasing computational power of portable electronic devices, the applications of AR are becoming more extensive.&lt;/p>
+&lt;h2 id="demo-effect">Demo Effect&lt;/h2>
+&lt;p>&lt;img src="../../../en/p/ar2022/1.jpg"
+width="3830"
+height="2305"
+srcset="../../../en/p/ar2022/1_huc6eb2c4186115cc395ee4ef074d2a6c5_690253_480x0_resize_q60_box.jpg 480w, ../../../en/p/ar2022/1_huc6eb2c4186115cc395ee4ef074d2a6c5_690253_1536x0_resize_q60_box.jpg 1536w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="166"
+data-flex-basis="398px"
+>&lt;/p>
+&lt;h2 id="how-to-use">How to Use&lt;/h2>
+&lt;h3 id="android-requires-a-phone-that-supports-arcore-and-has-arcore-installed">Android: Requires a phone that supports ARCore and has ARCore installed&lt;/h3>
+&lt;h4 id="check-arcore-support">Check ARCore Support&lt;/h4>
+&lt;p>For information on ARCore support, you can refer to Google&amp;rsquo;s official documentation on ARCore (&lt;a class="link" href="https://developers.google.com/ar/devices%29" target="_blank" rel="noopener"
+>https://developers.google.com/ar/devices)&lt;/a>. If your device is not supported but has the Magisk framework installed, you can download ARCore/Playground Patcher from Magisk to forcibly support it.&lt;/p>
+&lt;img class="xf-img" src="p1.webp">
+&lt;p>For Chinese phones like MIUI, you need to activate Google services in the settings and update ARCore in the Xiaomi App Store. For phones that come with Google services by default, ARCore should already be installed.&lt;/p>
+&lt;h4 id="use-google-app-or-latest-version-of-chrome-to-open-web-page">Use Google App or Latest Version of Chrome to Open Web Page&lt;/h4>
+&lt;p>Website (Recommended to use VPN):&lt;br>
+&lt;a class="link" href="https://xianfei.github.io/ar2022/" target="_blank" rel="noopener"
+>https://xianfei.github.io/ar2022/&lt;/a>&lt;/p>
+&lt;details>
+&lt;summary>Click to show website QR code&lt;/summary>
+&lt;img class="xf-img" src="qr.png">
+&lt;/details>
+&lt;p>Copy this address into the Google app or Chrome to access. (iOS users can directly visit this link)&lt;br>
+The effect is better when opened in the Google app. The demonstration in the video is done through the default browser (which does not support WebXR) and calls the Google APP for 3D AR interaction. Please download the Google app from the Play Store, otherwise, you will see the following prompt:&lt;/p>
+&lt;img class="xf-img" src="p2.webp">
+&lt;p>Alternatively, you can use Chrome or other browsers that support WebXR technology. However, the effect is not as good as the Google app. WebXR is a very cutting-edge web frontend technology that few browsers support.&lt;/p>
+&lt;p>&lt;img src="../../../en/p/ar2022/xr.webp"
+width="1080"
+height="541"
+srcset="../../../en/p/ar2022/xr_hu7731898789b085148934d100659bfa5b_34206_480x0_resize_q60_h2_box_2.webp 480w, ../../../en/p/ar2022/xr_hu7731898789b085148934d100659bfa5b_34206_1536x0_resize_q60_h2_box_2.webp 1536w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="199"
+data-flex-basis="479px"
+>&lt;/p>
+&lt;h3 id="ios-simply-visit-the-website-in-safari">iOS: Simply visit the website in Safari&lt;/h3>
+&lt;p>&lt;a class="link" href="https://xianfei.github.io/ar2022/" target="_blank" rel="noopener"
+>https://xianfei.github.io/ar2022/&lt;/a>&lt;/p>
+&lt;details>
+&lt;summary>Click to show website QR code&lt;/summary>
+&lt;img class="xf-img" src="qr.png">
+&lt;/details>
+&lt;h3 id="click-the-cube-icon-to-enter-ar-mode">Click the Cube Icon to Enter AR Mode&lt;/h3>
+&lt;p>Click on the icon at the bottom right of the image to enter AR mode.&lt;/p>
+&lt;img class="xf-img" src="p3.webp">
+&lt;p>If all goes well, you should be able to see Bing Dwen Dwen and Snow Rong Rong.&lt;/p>
+&lt;h2 id="coolapk-headlines">Coolapk Headlines&lt;/h2>
+&lt;p>I posted it on Coolapk last night before going to sleep. When I woke up, I found that it had made the headlines, and many netizens said they succeeded. Some also offered solutions. Those who didn’t succeed can look for useful information in the comments section of Coolapk.&lt;/p>
+&lt;img class="xf-img" src="p4.webp">
+&lt;p>Here are some success screenshots shared by Coolapk users in the comments:&lt;/p>
+&lt;img class="xf-img" src="p5.webp">
+&lt;h2 id="technical-solutions">Technical Solutions&lt;/h2>
+&lt;p>Modeling: Blender Display: model-viewer&lt;/p>
+&lt;p>&lt;img src="../../../en/p/ar2022/p6.png"
+width="1080"
+height="661"
+srcset="../../../en/p/ar2022/p6_hu373fbc29c2314c7bc00ecd22ef9f593a_170609_480x0_resize_q60_box_3.png 480w, ../../../en/p/ar2022/p6_hu373fbc29c2314c7bc00ecd22ef9f593a_170609_1536x0_resize_q60_box_3.png 1536w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="163"
+data-flex-basis="392px"
+>&lt;/p>
+&lt;p>For AR display technology, you can refer to Google ARCore WebXR documentation (&lt;a class="link" href="https://developers.google.com/ar/develop/webxr/model-viewer%29" target="_blank" rel="noopener"
+>https://developers.google.com/ar/develop/webxr/model-viewer)&lt;/a>. It is easy to understand, and those with a slight understanding of frontend development will get it instantly.&lt;/p>
+&lt;p>&lt;img src="../../../en/p/ar2022/640.png"
+width="1080"
+height="558"
+srcset="../../../en/p/ar2022/640_huee6eebd51ede7e073361738155c8e35e_113749_480x0_resize_q60_box_3.png 480w, ../../../en/p/ar2022/640_huee6eebd51ede7e073361738155c8e35e_113749_1536x0_resize_q60_box_3.png 1536w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="193"
+data-flex-basis="464px"
+>&lt;/p>
+&lt;p>Here, all we need to do is export the glb file (if you also want to preview it on iOS, you need to export a usdz file). After completing the 3D modeling in Blender, just export the glb and usdz files (if you don&amp;rsquo;t know how to model, you can search on Bilibili where many creators have shared model files). Note that materials involving reflection and refraction like glass may not necessarily be realized in AR. It is recommended to use a semi-transparent solid color material to draw Bing Dwen Dwen&amp;rsquo;s shell.&lt;/p>
+&lt;p>&lt;img src="../../../en/p/ar2022/640-1.png"
+width="1080"
+height="696"
+srcset="../../../en/p/ar2022/640-1_hu93d2f6cd75b9d3d26d3d62dcbfb98dae_401197_480x0_resize_q60_box_3.png 480w, ../../../en/p/ar2022/640-1_hu93d2f6cd75b9d3d26d3d62dcbfb98dae_401197_1536x0_resize_q60_box_3.png 1536w"
+loading="lazy"
+class="gallery-image"
+data-flex-grow="155"
+data-flex-basis="372px"
+>&lt;/p>
+&lt;p>Project source code:&lt;/p>
+&lt;p>&lt;a class="link" href="https://github.com/xianfei/xianfei.github.io/tree/master/static/ar2022" target="_blank" rel="noopener"
+>https://github.com/xianfei/xianfei.github.io/tree/master/static/ar2022&lt;/a>&lt;/p></description></item></channel></rss>

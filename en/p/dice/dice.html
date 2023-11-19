@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.10/dist/vue.js"></script>
+    <style>
+      table,
+      th,
+      td {
+        border: 1px solid black;
+        border-collapse: collapse;
+      }
+
+      #app{
+        margin: 10px;
+        line-height: 26px;
+        font-family: Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      参与的人数：<input type="number" v-model="people" /><br />
+      每个人的骰子数：<input type="number" v-model="n" /><br />
+      需要计算的最小点数：<input type="number" v-model="minN" /><br />
+      需要计算的最大点数：<input type="number" v-model="maxN" /><br />
+      目前已知已有骰子：<br />
+      <div v-for="(i,k) in hasNum">
+        已知有{{i}}个{{k+1}}
+        <input type="range" min="0" v-bind:max="n" v-model="hasNum[k]" />
+      </div>
+      <button
+        v-on:click="result = calc(parseInt(people), parseInt(n), parseInt(minN), parseInt(maxN)+1, hasNum, times)"
+      >
+        计算
+      </button>
+      <div v-if="result.length!==0">
+        <table>
+          <tr>
+            <th></th>
+            <th v-for="(i,k) in result[0]" v-if="k>=minN">&nbsp;{{k}}&nbsp;</th>
+          </tr>
+          <tr v-for="(i,k) in result">
+            <td>&nbsp;{{k+1}}&nbsp;</td>
+            <td v-for="(i,k) in i" v-if="k>=minN">&nbsp;{{i}}&nbsp;</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </body>
+  <script>
+    var app = new Vue({
+      el: "#app",
+      data: {
+        people: 7,
+        n: 4,
+        minN: 3,
+        maxN: 18,
+        hasNum: ["0", "0", "0", "0", "0", "0"],
+        times: 10000,
+        result: [],
+      },
+      methods: {
+        calc: (people, n, minN, maxN, hasNum, times) => {
+          var result = [];
+
+          for (var i = 0; i < 6; i++) {
+            result[i] = [];
+            for (var j = minN; j < maxN; j++) {
+              result[i][j] = [];
+            }
+          }
+
+          for (var k = 0; k < times; k++) {
+            var a = [];
+            for (var i = 1; i < 7; i++)
+              for (var j = 0; j < parseInt(hasNum[i - 1]); j++) a.push(i);
+            var aLen = a.length;
+            for (var i = 0; i < n * people - aLen; i++)
+              a.push(Math.ceil(Math.random() * 6));
+            var b = { 1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0 };
+            for (var c of a) b["" + c]++;
+            for (var i = 0; i < 6; i++) {
+              for (var j = minN; j < maxN; j++) {
+                if (i == 0) result[i][j].push(b["1"] >= j);
+                else result[i][j].push(b["" + (i + 1)] + b["1"] >= j);
+              }
+            }
+          }
+
+          for (var i = 0; i < 6; i++) {
+            for (var j = minN; j < maxN; j++) {
+              result[i][j] = (
+                result[i][j].filter((e) => e).length / parseFloat(times)
+              ).toFixed(2);
+            }
+          }
+          return result;
+        },
+      },
+    });
+  </script>
+</html>
