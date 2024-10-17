@@ -5947,7 +5947,96 @@ wd.style.lineHeight = `${fontSize}px`;
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div></description></item><item><title>Markdown 语法指南</title><link>/p/markdown-%E8%AF%AD%E6%B3%95%E6%8C%87%E5%8D%97/</link><pubDate>Sat, 11 Mar 2000 00:00:00 +0000</pubDate><guid>/p/markdown-%E8%AF%AD%E6%B3%95%E6%8C%87%E5%8D%97/</guid><description>&lt;img src="/p/markdown-%E8%AF%AD%E6%B3%95%E6%8C%87%E5%8D%97/pawel-czerwinski-8uZPynIu-rQ-unsplash.jpg" alt="Featured image of post Markdown 语法指南" />&lt;p>This article offers a sample of basic Markdown syntax that can be used in Hugo content files, also it shows whether basic HTML elements are decorated with CSS in a Hugo theme.&lt;/p>
+&lt;/div></description></item><item><title>Arduino小实验——大一软件工程专业导论实践课</title><link>/p/rgdl/</link><pubDate>Tue, 25 Dec 2018 00:00:00 +0000</pubDate><guid>/p/rgdl/</guid><description>&lt;img src="/p/rgdl/banner.jpg" alt="Featured image of post Arduino小实验——大一软件工程专业导论实践课" />&lt;p>（从老的博客系统迁移而来，&lt;a class="link" href="./index.html" >查看原始文章&lt;/a>）&lt;/p>
+&lt;h2 id="1-个人简介">1. 个人简介&lt;/h2>
+&lt;p>北京邮电大学软件学院软件工程系王衔飞。&lt;/p>
+&lt;p>Arduino开发吧，兴趣还是很重要的，Arduino是个很好玩的东西，不仅能学习编程本领，也可以用于模拟电路实践。大家要利用好手中的Arduino，能实现许许多多的有意思的功能哦。&lt;/p>
+&lt;p>The only limit is your imagination. 要敢想敢做，课上的代码只是用作参考，用Arduino还能实现更多的东西，例如可以用温度计和继电器，让温度过高时自动打开电风扇；将该电子时钟中的闹钟蜂鸣器改成继电器，实现定时开关电器；利用Arduino模拟输入做电压表；利用Arduino的PWM管脚做遥控调光等等……&lt;/p>
+&lt;h2 id="2-实验简介">2. 实验简介&lt;/h2>
+&lt;h3 id="20-实验材料">2.0 实验材料&lt;/h3>
+&lt;p>ArduinoUno开发板及扩展版，屏幕模块，IR接收模块，遥控器，蜂鸣器，（v2新增）温湿度传感器。&lt;/p>
+&lt;h3 id="21-程序功能">2.1 程序功能&lt;/h3>
+&lt;p>一个小小的时钟程序，具有显示及修改时间日期星期、设定闹钟功能。在v2版本中加入了温度显示、切换24小时制等功能。&lt;/p>
+&lt;h3 id="22-程序设计">2.2 程序设计&lt;/h3>
+&lt;p>&lt;img src="./p/rgdl/QQ20181210-211144.png"
+width="1127"
+height="584"
+srcset="./p/rgdl/QQ20181210-211144_hu041d7dd942f4daf8524eb7dd0e795d71_45114_480x0_resize_q60_box_3.png 480w, ./p/rgdl/QQ20181210-211144_hu041d7dd942f4daf8524eb7dd0e795d71_45114_1536x0_resize_q60_box_3.png 1536w"
+loading="lazy"
+alt="程序设计"
+class="gallery-image"
+data-flex-grow="192"
+data-flex-basis="463px"
+>&lt;/p>
+&lt;p>电源键：返回主界面&lt;br>
+1键：修改时间&lt;br>
+2键：设定闹钟&lt;br>
+3键：修改日期&lt;br>
+4键：取消闹钟&lt;br>
+v2版本增加：&lt;br>
+5键：切换24小时制&lt;br>
+6键：显示温度&lt;br>
+7键：切换背光开关&lt;/p>
+&lt;h3 id="23-程序及代码亮点">2.3 程序及代码亮点&lt;/h3>
+&lt;ol>
+&lt;li>美观的UI及更加人性化的提示&lt;/li>
+&lt;li>直接使用遥控器进行输入数字，更加方便快捷&lt;/li>
+&lt;li>可在代码顶部进行自定义设定&lt;/li>
+&lt;/ol>
+&lt;p>&lt;img src="./p/rgdl/QQ20181225-220748.png"
+width="682"
+height="521"
+srcset="./p/rgdl/QQ20181225-220748_hu4de793e7bd0fcf289c315bde72b41c26_100946_480x0_resize_q60_box_3.png 480w, ./p/rgdl/QQ20181225-220748_hu4de793e7bd0fcf289c315bde72b41c26_100946_1536x0_resize_q60_box_3.png 1536w"
+loading="lazy"
+alt="代码亮点"
+class="gallery-image"
+data-flex-grow="130"
+data-flex-basis="314px"
+>&lt;/p>
+&lt;ol start="4">
+&lt;li>模块化代码，使用&lt;code>recv&lt;/code>（接收遥控信号）、&lt;code>remote&lt;/code>（处理遥控信号）、&lt;code>gettime&lt;/code>（获取时间日期及时间流动）、&lt;code>output&lt;/code>（输出主屏幕）、&lt;code>alarmrun&lt;/code>（闹钟响铃）函数组成，提高代码易读性。&lt;/li>
+&lt;/ol>
+&lt;p>&lt;img src="./p/rgdl/QQ20181225-221250.png"
+width="543"
+height="416"
+srcset="./p/rgdl/QQ20181225-221250_hu91625970a6bed55c86d9e03f7e6336b4_55802_480x0_resize_q60_box_3.png 480w, ./p/rgdl/QQ20181225-221250_hu91625970a6bed55c86d9e03f7e6336b4_55802_1536x0_resize_q60_box_3.png 1536w"
+loading="lazy"
+alt="代码模块"
+class="gallery-image"
+data-flex-grow="130"
+data-flex-basis="313px"
+>&lt;/p>
+&lt;h2 id="3-视频介绍">3. 视频介绍&lt;/h2>
+&lt;p>修改时间演示视频&lt;br>
+&lt;video src="11.compressed.mp4" controls loop>&lt;/video>&lt;/p>
+&lt;p>修改日期演示视频&lt;br>
+&lt;video src="22.compressed.mp4" controls loop>&lt;/video>&lt;/p>
+&lt;p>设定闹钟及闹钟响起演示视频&lt;br>
+&lt;video src="33.compressed.mp4" controls loop>&lt;/video>&lt;/p>
+&lt;p>切换24小时制演示视频&lt;br>
+&lt;video src="IMG_6792-2.compressed.mp4" controls loop>&lt;/video>&lt;/p>
+&lt;p>切换是否显示温度演示视频&lt;br>
+&lt;video src="IMG_6794-2.compressed.mp4" controls loop>&lt;/video>&lt;/p>
+&lt;p>切换背光开关演示视频&lt;br>
+&lt;video src="IMG_6799.compressed.mp4" controls loop>&lt;/video>&lt;/p>
+&lt;h2 id="4-附件">4. 附件&lt;/h2>
+&lt;p>&lt;a class="link" href="clock_wxf_v2.zip" >v2 源代码下载：clock_wxf_v2.zip (5.81KB)&lt;/a>&lt;/p>
+&lt;p>&lt;a class="link" href="arduino_clock_by_xianfei.zip" >v1.1 源代码下载：arduino_clock_by_xianfei.zip (5.35KB)&lt;/a>&lt;/p>
+&lt;h4 id="更新日志">更新日志：&lt;/h4>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>V2：2018.12.25&lt;/strong>&lt;br>
+加入温度计、24小时制切换、开关屏幕背光功能，优化代码易读性及使用宏定义更加方便对代码进行个性化调整。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>V1.1：2018.11.23&lt;/strong>&lt;br>
+优化时序逻辑降低接收信号延时，优化算法提高接收信号成功率，优化系统稳定性并降低内存占用提高执行效率。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>V1.0：2018.10.31&lt;/strong>&lt;br>
+完成第一版，具备闹钟、修改时间日期、显示时间日期功能。使用直接输入的方式输入时间日期及设定闹钟。&lt;/p>
+&lt;/li>
+&lt;/ul></description></item><item><title>Markdown 语法指南</title><link>/p/markdown-%E8%AF%AD%E6%B3%95%E6%8C%87%E5%8D%97/</link><pubDate>Sat, 11 Mar 2000 00:00:00 +0000</pubDate><guid>/p/markdown-%E8%AF%AD%E6%B3%95%E6%8C%87%E5%8D%97/</guid><description>&lt;img src="/p/markdown-%E8%AF%AD%E6%B3%95%E6%8C%87%E5%8D%97/pawel-czerwinski-8uZPynIu-rQ-unsplash.jpg" alt="Featured image of post Markdown 语法指南" />&lt;p>This article offers a sample of basic Markdown syntax that can be used in Hugo content files, also it shows whether basic HTML elements are decorated with CSS in a Hugo theme.&lt;/p>
 &lt;h2 id="headings">Headings&lt;/h2>
 &lt;p>The following HTML &lt;code>&amp;lt;h1&amp;gt;&lt;/code>—&lt;code>&amp;lt;h6&amp;gt;&lt;/code> elements represent six levels of section headings. &lt;code>&amp;lt;h1&amp;gt;&lt;/code> is the highest section level while &lt;code>&amp;lt;h6&amp;gt;&lt;/code> is the lowest.&lt;/p>
 &lt;h1 id="h1">H1&lt;/h1>
