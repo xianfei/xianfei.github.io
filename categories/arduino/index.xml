@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Arduino on 衔飞的博客</title><link>/categories/arduino/</link><description>Recent content in Arduino on 衔飞的博客</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Tue, 25 Dec 2018 00:00:00 +0000</lastBuildDate><atom:link href="/categories/arduino/index.xml" rel="self" type="application/rss+xml"/><item><title>Arduino小实验——大一软件工程专业导论实践课</title><link>/p/rgdl/</link><pubDate>Tue, 25 Dec 2018 00:00:00 +0000</pubDate><guid>/p/rgdl/</guid><description>&lt;img src="/p/rgdl/banner.jpg" alt="Featured image of post Arduino小实验——大一软件工程专业导论实践课" />&lt;p>（从老的博客系统迁移而来，&lt;a class="link" href="./index.html" >查看原始文章&lt;/a>）&lt;/p>
-&lt;h2 id="1-个人简介">1. 个人简介&lt;/h2>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Arduino on 衔飞的博客</title><link>/categories/arduino/</link><description>Recent content in Arduino on 衔飞的博客</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Tue, 25 Dec 2018 00:00:00 +0000</lastBuildDate><atom:link href="/categories/arduino/index.xml" rel="self" type="application/rss+xml"/><item><title>Arduino小实验——大一软件工程专业导论实践课</title><link>/p/rgdl/</link><pubDate>Tue, 25 Dec 2018 00:00:00 +0000</pubDate><guid>/p/rgdl/</guid><description>&lt;img src="/p/rgdl/banner.jpg" alt="Featured image of post Arduino小实验——大一软件工程专业导论实践课" />&lt;h2 id="1-个人简介">1. 个人简介&lt;/h2>
 &lt;p>北京邮电大学软件学院软件工程系王衔飞。&lt;/p>
 &lt;p>Arduino开发吧，兴趣还是很重要的，Arduino是个很好玩的东西，不仅能学习编程本领，也可以用于模拟电路实践。大家要利用好手中的Arduino，能实现许许多多的有意思的功能哦。&lt;/p>
 &lt;p>The only limit is your imagination. 要敢想敢做，课上的代码只是用作参考，用Arduino还能实现更多的东西，例如可以用温度计和继电器，让温度过高时自动打开电风扇；将该电子时钟中的闹钟蜂鸣器改成继电器，实现定时开关电器；利用Arduino模拟输入做电压表；利用Arduino的PWM管脚做遥控调光等等……&lt;/p>
@@ -58,18 +57,18 @@ data-flex-grow="130"
 data-flex-basis="313px"
 >&lt;/p>
 &lt;h2 id="3-视频介绍">3. 视频介绍&lt;/h2>
-&lt;p>修改时间演示视频&lt;br>
-&lt;video src="11.compressed.mp4" controls loop>&lt;/video>&lt;/p>
-&lt;p>修改日期演示视频&lt;br>
-&lt;video src="22.compressed.mp4" controls loop>&lt;/video>&lt;/p>
-&lt;p>设定闹钟及闹钟响起演示视频&lt;br>
-&lt;video src="33.compressed.mp4" controls loop>&lt;/video>&lt;/p>
-&lt;p>切换24小时制演示视频&lt;br>
-&lt;video src="IMG_6792-2.compressed.mp4" controls loop>&lt;/video>&lt;/p>
-&lt;p>切换是否显示温度演示视频&lt;br>
-&lt;video src="IMG_6794-2.compressed.mp4" controls loop>&lt;/video>&lt;/p>
-&lt;p>切换背光开关演示视频&lt;br>
-&lt;video src="IMG_6799.compressed.mp4" controls loop>&lt;/video>&lt;/p>
+&lt;p>修改时间演示视频&lt;/p>
+&lt;div class="xf-video">&lt;video src="11.compressed.mp4" controls loop>&lt;/video>&lt;/div>
+&lt;p>修改日期演示视频&lt;/p>
+&lt;div class="xf-video">&lt;video src="22.compressed.mp4" controls loop>&lt;/video>&lt;/div>
+&lt;p>设定闹钟及闹钟响起演示视频&lt;/p>
+&lt;div class="xf-video">&lt;video src="33.compressed.mp4" controls loop>&lt;/video>&lt;/div>
+&lt;p>切换24小时制演示视频&lt;/p>
+&lt;div class="xf-video">&lt;video src="IMG_6792-2.compressed.mp4" controls loop>&lt;/video>&lt;/div>
+&lt;p>切换是否显示温度演示视频&lt;/p>
+&lt;div class="xf-video">&lt;video src="IMG_6794-2.compressed.mp4" controls loop>&lt;/video>&lt;/div>
+&lt;p>切换背光开关演示视频&lt;/p>
+&lt;div class="xf-video">&lt;video src="IMG_6799.compressed.mp4" controls loop>&lt;/video>&lt;/div>
 &lt;h2 id="4-附件">4. 附件&lt;/h2>
 &lt;p>&lt;a class="link" href="clock_wxf_v2.zip" >v2 源代码下载：clock_wxf_v2.zip (5.81KB)&lt;/a>&lt;/p>
 &lt;p>&lt;a class="link" href="arduino_clock_by_xianfei.zip" >v1.1 源代码下载：arduino_clock_by_xianfei.zip (5.35KB)&lt;/a>&lt;/p>
@@ -87,4 +86,5 @@ data-flex-basis="313px"
 &lt;p>&lt;strong>V1.0：2018.10.31&lt;/strong>&lt;br>
 完成第一版，具备闹钟、修改时间日期、显示时间日期功能。使用直接输入的方式输入时间日期及设定闹钟。&lt;/p>
 &lt;/li>
-&lt;/ul></description></item></channel></rss>
+&lt;/ul>
+&lt;p>（该文章从老的博客系统迁移而来，&lt;a class="link" href="./index_old.html" >点击查看原始文章&lt;/a>）&lt;/p></description></item></channel></rss>
