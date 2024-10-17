@@ -10,7 +10,6 @@ categories:
     - 课程作业
 ---
 
-（从老的博客系统迁移而来，[查看原始文章](./index.html)）
 
 ## 1. 个人简介
 
@@ -59,22 +58,28 @@ v2版本增加：
 ## 3. 视频介绍
 
 修改时间演示视频  
-<video src="11.compressed.mp4" controls loop></video>
+
+<div class="xf-video"><video src="11.compressed.mp4" controls loop></video></div>
 
 修改日期演示视频  
-<video src="22.compressed.mp4" controls loop></video>
+
+<div class="xf-video"><video src="22.compressed.mp4" controls loop></video></div>
 
 设定闹钟及闹钟响起演示视频  
-<video src="33.compressed.mp4" controls loop></video>
+
+<div class="xf-video"><video src="33.compressed.mp4" controls loop></video></div>
 
 切换24小时制演示视频  
-<video src="IMG_6792-2.compressed.mp4" controls loop></video>
+
+<div class="xf-video"><video src="IMG_6792-2.compressed.mp4" controls loop></video></div>
 
 切换是否显示温度演示视频  
-<video src="IMG_6794-2.compressed.mp4" controls loop></video>
+
+<div class="xf-video"><video src="IMG_6794-2.compressed.mp4" controls loop></video></div>
 
 切换背光开关演示视频  
-<video src="IMG_6799.compressed.mp4" controls loop></video>
+
+<div class="xf-video"><video src="IMG_6799.compressed.mp4" controls loop></video></div>
 
 ## 4. 附件
 
@@ -93,3 +98,4 @@ v2版本增加：
 完成第一版，具备闹钟、修改时间日期、显示时间日期功能。使用直接输入的方式输入时间日期及设定闹钟。
 
 
+（该文章从老的博客系统迁移而来，[点击查看原始文章](./index_old.html)）
