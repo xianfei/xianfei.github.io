@@ -1,4 +1,1142 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on 衔飞的博客</title><link>/post/</link><description>Recent content in Posts on 衔飞的博客</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Tue, 11 Jul 2023 00:00:00 +0000</lastBuildDate><atom:link href="/post/index.xml" rel="self" type="application/rss+xml"/><item><title>【译】GPT-4详解——架构、基础设施、训练数据集、成本、愿景、MoE（混合专家模型）</title><link>/p/gpt4/</link><pubDate>Tue, 11 Jul 2023 00:00:00 +0000</pubDate><guid>/p/gpt4/</guid><description>&lt;img src="/p/gpt4/banner.webp" alt="Featured image of post 【译】GPT-4详解——架构、基础设施、训练数据集、成本、愿景、MoE（混合专家模型）" />&lt;p>翻译自：https://www.semianalysis.com/p/gpt-4-architecture-infrastructure&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on 衔飞的博客</title><link>/post/</link><description>Recent content in Posts on 衔飞的博客</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Sun, 20 Oct 2024 00:00:00 +0000</lastBuildDate><atom:link href="/post/index.xml" rel="self" type="application/rss+xml"/><item><title>主流大模型&amp;中文大模型API价格汇总！</title><link>/p/llm-price/</link><pubDate>Sun, 20 Oct 2024 00:00:00 +0000</pubDate><guid>/p/llm-price/</guid><description>&lt;img src="/p/llm-price/banner.png" alt="Featured image of post 主流大模型&amp;中文大模型API价格汇总！" />&lt;p>该文章转自：https://blog.chs.pub/p/24-04-llmapiprice/ ，本人稍加修改&lt;/p>
+&lt;h2 id="前言">前言&lt;/h2>
+&lt;p>最近正在尝试使用 API 调用 LLM，发现各个大厂的 API 价格都有差异，所以想整理一下各个大厂的 API 价格对比，方便自己，也方便他人。&lt;/p>
+&lt;p>不包含 Embedding 、图片生成等模型的价格。&lt;/p>
+&lt;blockquote>
+&lt;p>参考： 1M = 1000K = 100 0000 = 1000,000&lt;/p>
+&lt;/blockquote>
+&lt;blockquote>
+&lt;p>纯手动整理，本文会及时更进各厂商对价格的调整，如有疏漏烦请指出，谢谢。&lt;/p>
+&lt;/blockquote>
+&lt;h2 id="openai">OpenAI&lt;/h2>
+&lt;p>这个不用说，先驱者。它将是我们评定其他大厂的参考标准。&lt;/p>
+&lt;p>&lt;a class="link" href="https://openai.com/pricing" target="_blank" rel="noopener"
+>官方的价格页面&lt;/a>&lt;/p>
+&lt;p>Batch API 调用可以立省 50%。&lt;/p>
+&lt;h3 id="gpt-35-turbo">GPT-3.5-Turbo&lt;/h3>
+&lt;p>退役了，现在仅能通过 API 调用。&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Model&lt;/th>
+&lt;th>Input&lt;/th>
+&lt;th>Output&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>gpt-3.5-turbo-0125&lt;/td>
+&lt;td>$0.50 / 1M tokens&lt;/td>
+&lt;td>$1.50 / 1M tokens&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>gpt-3.5-turbo-instruct&lt;/td>
+&lt;td>$1.50 / 1M tokens&lt;/td>
+&lt;td>$2.00 / 1M tokens&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>根据现在的汇率（1USD=7.22CNY），CNY 的表格如下：&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Model&lt;/th>
+&lt;th>Input&lt;/th>
+&lt;th>Output&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>gpt-3.5-turbo-0125&lt;/td>
+&lt;td>￥ 3.61 / 1M tokens&lt;/td>
+&lt;td>￥ 10.83 / 1M tokens&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>gpt-3.5-turbo-instruct&lt;/td>
+&lt;td>￥ 10.83 / 1M tokens&lt;/td>
+&lt;td>￥ 14.44 / 1M tokens&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h3 id="gpt-4o-mini">GPT-4o mini&lt;/h3>
+&lt;p>替代 GPT 3.5 Turbo 的模型，加量不加价。&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Model&lt;/th>
+&lt;th>Input&lt;/th>
+&lt;th>Output&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>gpt-4o-mini&lt;/td>
+&lt;td>$0.15 / 1M tokens&lt;/td>
+&lt;td>$0.60 / 1M tokens&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>gpt-4o-mini-2024-07-18&lt;/td>
+&lt;td>$0.15 / 1M tokens&lt;/td>
+&lt;td>$0.60 / 1M tokens&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>根据现在的汇率（1USD=7.22CNY），CNY 的表格如下：&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Model&lt;/th>
+&lt;th>Input&lt;/th>
+&lt;th>Output&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>gpt-4o-mini&lt;/td>
+&lt;td>￥ 1.083 / 1M tokens&lt;/td>
+&lt;td>￥ 4.332 / 1M tokens&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>gpt-4o-mini-2024-07-18&lt;/td>
+&lt;td>￥ 1.083 / 1M tokens&lt;/td>
+&lt;td>￥ 4.332 / 1M tokens&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h3 id="gpt-4">GPT-4&lt;/h3>
+&lt;p>好贵的&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Model&lt;/th>
+&lt;th>Input&lt;/th>
+&lt;th>Output&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>gpt-4&lt;/td>
+&lt;td>$30.00 / 1M tokens&lt;/td>
+&lt;td>$60.00 / 1M tokens&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>gpt-4-32k&lt;/td>
+&lt;td>$60.00 / 1M tokens&lt;/td>
+&lt;td>$120.00 / 1M tokens&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>根据现在的汇率（1USD=7.22CNY），CNY 的表格如下：&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Model&lt;/th>
+&lt;th>Input&lt;/th>
+&lt;th>Output&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>gpt-4&lt;/td>
+&lt;td>￥ 216.6 / 1M tokens&lt;/td>
+&lt;td>￥ 433.2 / 1M tokens&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>gpt-4-32k&lt;/td>
+&lt;td>￥ 433.2 / 1M tokens&lt;/td>
+&lt;td>￥ 866.4 / 1M tokens&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h3 id="gpt-4-turbo">GPT-4-Turbo&lt;/h3>
+&lt;p>这个价格就合理多了，但是依然较为昂贵。&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Model&lt;/th>
+&lt;th>Input&lt;/th>
+&lt;th>Output&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>gpt-4-0125-preview&lt;/td>
+&lt;td>$10.00 / 1M tokens&lt;/td>
+&lt;td>$30.00 / 1M tokens&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>gpt-4-1106-preview&lt;/td>
+&lt;td>$10.00 / 1M tokens&lt;/td>
+&lt;td>$30.00 / 1M tokens&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>gpt-4-1106-vision-preview&lt;/td>
+&lt;td>$10.00 / 1M tokens&lt;/td>
+&lt;td>$30.00 / 1M tokens&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>根据现在的汇率（1USD=7.22CNY），CNY 的表格如下：&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Model&lt;/th>
+&lt;th>Input&lt;/th>
+&lt;th>Output&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>gpt-4-0125-preview&lt;/td>
+&lt;td>￥ 72.2 / 1M tokens&lt;/td>
+&lt;td>￥ 216.6 / 1M tokens&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>gpt-4-1106-preview&lt;/td>
+&lt;td>￥ 72.2 / 1M tokens&lt;/td>
+&lt;td>￥ 216.6 / 1M tokens&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>gpt-4-1106-vision-preview&lt;/td>
+&lt;td>￥ 72.2 / 1M tokens&lt;/td>
+&lt;td>￥ 216.6 / 1M tokens&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h3 id="gpt-4o">GPT-4o&lt;/h3>
+&lt;p>新出厂的强大模型，具备多模态，上下文 128k，速度更快价格更便宜，离谱。&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Model&lt;/th>
+&lt;th>Input&lt;/th>
+&lt;th>Output&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>gpt-4o&lt;/td>
+&lt;td>$5.00 / 1M tokens&lt;/td>
+&lt;td>$15.00 / 1M tokens&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>gpt-4o-2024-05-13&lt;/td>
+&lt;td>$5.00 / 1M tokens&lt;/td>
+&lt;td>$15.00 / 1M tokens&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>根据现在的汇率（1USD=7.22CNY），CNY 的表格如下：&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Model&lt;/th>
+&lt;th>Input&lt;/th>
+&lt;th>Output&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>gpt-4o&lt;/td>
+&lt;td>￥ 36.10 / 1M tokens&lt;/td>
+&lt;td>￥ 108.30 / 1M tokens&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>gpt-4o-2024-05-13&lt;/td>
+&lt;td>￥ 36.10 / 1M tokens&lt;/td>
+&lt;td>￥ 108.30 / 1M tokens&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h3 id="openai-o1-preview">OpenAI o1-preview&lt;/h3>
+&lt;p>o1-preview is our new reasoning model for complex tasks. This model is designed to handle large-context problems with up to 128K tokens. It has a knowledge cutoff as of October 2023 and is capable of generating complex reasoning solutions across a variety of domains.&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Model&lt;/th>
+&lt;th>Input&lt;/th>
+&lt;th>Cached Input*&lt;/th>
+&lt;th>Output**&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>o1-preview&lt;/td>
+&lt;td>$15.00 / 1M tokens&lt;/td>
+&lt;td>$7.50 / 1M tokens&lt;/td>
+&lt;td>$60.00 / 1M tokens&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>o1-preview-2024-09-12&lt;/td>
+&lt;td>$15.00 / 1M tokens&lt;/td>
+&lt;td>$7.50 / 1M tokens&lt;/td>
+&lt;td>$60.00 / 1M tokens&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>&lt;strong>Note:&lt;/strong> Output tokens include internal reasoning tokens generated by the model that are not visible in API responses.&lt;/p>
+&lt;p>CNY Conversion (1 USD = 7.22 CNY)&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Model&lt;/th>
+&lt;th>Input&lt;/th>
+&lt;th>Cached Input*&lt;/th>
+&lt;th>Output**&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>o1-preview&lt;/td>
+&lt;td>￥108.30 / 1M tokens&lt;/td>
+&lt;td>￥54.15 / 1M tokens&lt;/td>
+&lt;td>￥433.20 / 1M tokens&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>o1-preview-2024-09-12&lt;/td>
+&lt;td>￥108.30 / 1M tokens&lt;/td>
+&lt;td>￥54.15 / 1M tokens&lt;/td>
+&lt;td>￥433.20 / 1M tokens&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;hr>
+&lt;h3 id="openai-o1-mini">OpenAI o1-mini&lt;/h3>
+&lt;p>The o1-mini is a faster, more cost-efficient model optimized for coding, math, and scientific tasks. It shares the 128K context window and has a knowledge cutoff as of October 2023. It provides users with an efficient option for tasks requiring logical reasoning without the need for more advanced reasoning capabilities.&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Model&lt;/th>
+&lt;th>Input&lt;/th>
+&lt;th>Cached Input*&lt;/th>
+&lt;th>Output**&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>o1-mini&lt;/td>
+&lt;td>$3.00 / 1M tokens&lt;/td>
+&lt;td>$1.50 / 1M tokens&lt;/td>
+&lt;td>$12.00 / 1M tokens&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>o1-mini-2024-09-12&lt;/td>
+&lt;td>$3.00 / 1M tokens&lt;/td>
+&lt;td>$1.50 / 1M tokens&lt;/td>
+&lt;td>$12.00 / 1M tokens&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>&lt;strong>Note:&lt;/strong> Output tokens include internal reasoning tokens generated by the model that are not visible in API responses.&lt;/p>
+&lt;p>CNY Conversion (1 USD = 7.22 CNY)&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Model&lt;/th>
+&lt;th>Input&lt;/th>
+&lt;th>Cached Input*&lt;/th>
+&lt;th>Output**&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>o1-mini&lt;/td>
+&lt;td>￥21.66 / 1M tokens&lt;/td>
+&lt;td>￥10.83 / 1M tokens&lt;/td>
+&lt;td>￥86.64 / 1M tokens&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>o1-mini-2024-09-12&lt;/td>
+&lt;td>￥21.66 / 1M tokens&lt;/td>
+&lt;td>￥10.83 / 1M tokens&lt;/td>
+&lt;td>￥86.64 / 1M tokens&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2 id="阿里云-dashscope">阿里云 DashScope&lt;/h2>
+&lt;p>阿里云 DashScope，提供包括通义千问在内的各种 LLM 访问能力。 这是其 &lt;a class="link" href="https://help.aliyun.com/zh/dashscope" target="_blank" rel="noopener"
+>官方文档&lt;/a>&lt;/p>
+&lt;p>24.5.21 降价了。&lt;/p>
+&lt;h3 id="通义千问">通义千问&lt;/h3>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>模型名&lt;/th>
+&lt;th>输入价格&lt;/th>
+&lt;th>输出价格&lt;/th>
+&lt;th>上下文 token 数（可输入 token 数）&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>qwen-turbo&lt;/td>
+&lt;td>￥ 2 / 1M tokens&lt;/td>
+&lt;td>￥ 6 / 1M tokens&lt;/td>
+&lt;td>8k (6k)&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>qwen-plus&lt;/td>
+&lt;td>￥ 4 / 1M tokens&lt;/td>
+&lt;td>￥ 12 / 1M tokens&lt;/td>
+&lt;td>32k (30k)&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>qwen-max&lt;/td>
+&lt;td>￥ 40 / 1M tokens&lt;/td>
+&lt;td>￥ 120 / 1M tokens&lt;/td>
+&lt;td>8k (6k)&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>qwen-max-1201&lt;/td>
+&lt;td>￥ 120 / 1M tokens&lt;/td>
+&lt;td>￥ 120 / 1M tokens&lt;/td>
+&lt;td>8k (6k)&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>qwen-max-longcontext&lt;/td>
+&lt;td>￥ 40 / 1M tokens&lt;/td>
+&lt;td>￥ 120 / 1M tokens&lt;/td>
+&lt;td>32k (30k)&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>qwen-long&lt;/td>
+&lt;td>￥ 0.5/ 1M tokens&lt;/td>
+&lt;td>￥ 2 / 1M tokens&lt;/td>
+&lt;td>目前暂未找到相关说明&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;blockquote>
+&lt;p>免费额度&lt;/p>
+&lt;/blockquote>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>模型名&lt;/th>
+&lt;th>免费额度&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>qwen-turbo&lt;/td>
+&lt;td>开通 DashScope 即获赠总计 2,000,000 tokens 限时免费使用额度，有效期 180 天。&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>qwen-plus&lt;/td>
+&lt;td>开通 DashScope 即获赠总计 1,000,000 tokens 限时免费使用额度，有效期 180 天。&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>qwen-max 系列&lt;/td>
+&lt;td>开通 DashScope 即获赠总计 1,000,000 tokens 限时免费使用额度，有效期 30 天。&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>qwen-long&lt;/td>
+&lt;td>2024年5月21日0点到2024年6月21日24点，开通DashScope即获赠总计4,000,000 tokens限时免费使用额度，有效期30天。&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h3 id="通义千问开源版模型">通义千问【开源版模型】&lt;/h3>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>模型名&lt;/th>
+&lt;th>输入价格&lt;/th>
+&lt;th>输出价格&lt;/th>
+&lt;th>上下文 token 数（可输入 token 数）&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>qwen1.5-110b-chat&lt;/td>
+&lt;td>￥ 7 / 1M tokens&lt;/td>
+&lt;td>￥ 14 / 1M tokens&lt;/td>
+&lt;td>32k (30k)&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>qwen-72b-chat&lt;/td>
+&lt;td>￥ 20 / 1M tokens&lt;/td>
+&lt;td>￥ 20 / 1M tokens&lt;/td>
+&lt;td>32k (30k)&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>qwen1.5-72b-chat&lt;/td>
+&lt;td>￥ 5 / 1M tokens&lt;/td>
+&lt;td>￥ 10 / 1M tokens&lt;/td>
+&lt;td>32k (30k)&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>qwen1.5-32b-chat&lt;/td>
+&lt;td>￥ 3.5 / 1M tokens&lt;/td>
+&lt;td>￥ 7 / 1M tokens&lt;/td>
+&lt;td>32k (30k)&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>qwen-14b-chat&lt;/td>
+&lt;td>￥ 8 / 1M tokens&lt;/td>
+&lt;td>￥ 8 / 1M tokens&lt;/td>
+&lt;td>8k (6k)&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>qwen1.5-14b-chat&lt;/td>
+&lt;td>￥ 2 / 1M tokens&lt;/td>
+&lt;td>￥ 4 / 1M tokens&lt;/td>
+&lt;td>8k (6k)&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>qwen-7b-chat&lt;/td>
+&lt;td>￥ 6 / 1M tokens&lt;/td>
+&lt;td>￥ 6 / 1M tokens&lt;/td>
+&lt;td>8k (6k)&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>qwen1.5-7b-chat&lt;/td>
+&lt;td>￥ 1 / 1M tokens&lt;/td>
+&lt;td>￥ 2 / 1M tokens&lt;/td>
+&lt;td>8k (6k)&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>qwen-1.8b-chat&lt;/td>
+&lt;td>限时免费开放中&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>8k (6k)&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>qwen1.5-0.5b-chat&lt;/td>
+&lt;td>限时免费开放中&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>32k (30k)&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>既然 qwen 1 和 qwen 1.5 价格一样，那肯定是调用 1.5 啦。&lt;/p>
+&lt;blockquote>
+&lt;p>免费额度：除 1.8b 这个限时免费外，其他均有时长 30 天的 100 0000 tokens 的免费额度。&lt;/p>
+&lt;/blockquote>
+&lt;h3 id="其他">其他&lt;/h3>
+&lt;p>&lt;strong>有第三方大模型可用&lt;/strong>&lt;/p>
+&lt;p>例如 LLaMa2，价格目前免费，但需申请。&lt;/p>
+&lt;h2 id="火山云">火山云&lt;/h2>
+&lt;blockquote>
+&lt;p>字节跳动旗下&lt;/p>
+&lt;/blockquote>
+&lt;p>这款也降价了。&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>模型名&lt;/th>
+&lt;th>输入价格&lt;/th>
+&lt;th>输出价格&lt;/th>
+&lt;th>上下文 token 数&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Doubao-lite-4k&lt;/td>
+&lt;td>￥ 0.3 / 1M tokens&lt;/td>
+&lt;td>￥ 0.6 / 1M tokens&lt;/td>
+&lt;td>4k&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Doubao-lite-32k&lt;/td>
+&lt;td>￥ 0.3 / 1M tokens&lt;/td>
+&lt;td>￥ 0.6 / 1M tokens&lt;/td>
+&lt;td>32k&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Doubao-lite-128k&lt;/td>
+&lt;td>￥ 0.8 / 1M tokens&lt;/td>
+&lt;td>￥ 1 / 1M tokens&lt;/td>
+&lt;td>128k&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Doubao-pro-4k&lt;/td>
+&lt;td>￥ 0.8 / 1M tokens&lt;/td>
+&lt;td>￥ 2 / 1M tokens&lt;/td>
+&lt;td>4k&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Doubao-pro-32k&lt;/td>
+&lt;td>￥ 0.8 / 1M tokens&lt;/td>
+&lt;td>￥ 2 / 1M tokens&lt;/td>
+&lt;td>32k&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Doubao-pro-128k&lt;/td>
+&lt;td>￥ 5 / 1M tokens&lt;/td>
+&lt;td>￥ 9 / 1M tokens&lt;/td>
+&lt;td>128k&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;blockquote>
+&lt;p>免费额度均为 50 万 tokens。&lt;/p>
+&lt;/blockquote>
+&lt;h3 id="其他-1">其他&lt;/h3>
+&lt;p>&lt;strong>有第三方大模型可用&lt;/strong>&lt;/p>
+&lt;p>如 智谱AI（限时免费），Moonshot（与上游一致），Llama3, Mistral 等开源模型限时免费使用。&lt;/p>
+&lt;h2 id="百度智能云">百度智能云&lt;/h2>
+&lt;h3 id="文心一言">文心一言&lt;/h3>
+&lt;p>单位已经统一。&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>模型&lt;/th>
+&lt;th>输入&lt;/th>
+&lt;th>输出&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>ERNIE-4.0-8K&lt;/td>
+&lt;td>￥ 120(150) / 1M tokens&lt;/td>
+&lt;td>￥ 120(150) / 1M tokens&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>ERNIE-Bot-8K&lt;/td>
+&lt;td>￥ 24 / 1M tokens&lt;/td>
+&lt;td>￥ 48 / 1M tokens&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>ERNIE-3.5-8K&lt;/td>
+&lt;td>￥ 12 / 1M tokens&lt;/td>
+&lt;td>￥ 12 / 1M tokens&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>ERNIE-Bot-turbo-0922&lt;/td>
+&lt;td>￥ 8(12) / 1M tokens&lt;/td>
+&lt;td>￥ 8(12) / 1M tokens&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>ERNIE-Speed-8K&lt;/td>
+&lt;td>￥ 4 / 1M tokens&lt;/td>
+&lt;td>￥ 8 / 1M tokens&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>ERNIE-3.5-4K-0205&lt;/td>
+&lt;td>￥ 12 / 1M tokens&lt;/td>
+&lt;td>￥ 12 / 1M tokens&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>ERNIE-3.5-8K-0205&lt;/td>
+&lt;td>￥ 24 / 1M tokens&lt;/td>
+&lt;td>￥ 48 / 1M tokens&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>ERNIE-3.5-8K-1222&lt;/td>
+&lt;td>￥ 12 / 1M tokens&lt;/td>
+&lt;td>￥ 12 / 1M tokens&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>ERNIE-Lite-8K&lt;/td>
+&lt;td>￥ 3 / 1M tokens&lt;/td>
+&lt;td>￥ 6 / 1M tokens&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>ERNIE-Speed-128K&lt;/td>
+&lt;td>￥ 4 / 1M tokens&lt;/td>
+&lt;td>￥ 8 / 1M tokens&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;blockquote>
+&lt;p>百度宣布其两款主力模型 ENIRE Speed、ENIRE Lite 全面免费，即刻生效。&lt;/p>
+&lt;/blockquote>
+&lt;h3 id="其他-2">其他&lt;/h3>
+&lt;p>&lt;strong>有第三方大模型可用&lt;/strong>&lt;/p>
+&lt;p>在此仅选取部分模型的价格进行对比。&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>模型&lt;/th>
+&lt;th>单价&lt;/th>
+&lt;th>统一单位后的计费单价&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Llama-2-7B-Chat&lt;/td>
+&lt;td>0.004元/千tokens&lt;/td>
+&lt;td>￥ 4 / 1M tokens&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Llama-2-13B-Chat&lt;/td>
+&lt;td>0.006元/千tokens&lt;/td>
+&lt;td>￥ 6 / 1M tokens&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Llama-2-70B-Chat&lt;/td>
+&lt;td>0.035元/千tokens&lt;/td>
+&lt;td>￥ 35 / 1M tokens&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Mixtral-8x7B-Instruct&lt;/td>
+&lt;td>0.035元/千tokens&lt;/td>
+&lt;td>￥ 35 / 1M tokens&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Gemma-7B-it&lt;/td>
+&lt;td>0.004元/千tokens&lt;/td>
+&lt;td>￥ 4 / 1M tokens&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Yi-34B-Chat&lt;/td>
+&lt;td>限时免费，每个账号每天包含500次调用额度&lt;/td>
+&lt;td>￥0 / 1M tokens&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2 id="零一万物">零一万物&lt;/h2>
+&lt;p>在 lmsys 获得了很不错的成绩。&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>模型&lt;/th>
+&lt;th>单价（元 / 百万 tokens）&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>yi-large&lt;/td>
+&lt;td>¥20&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>yi-large-turbo&lt;/td>
+&lt;td>¥12&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>yi-large-rag&lt;/td>
+&lt;td>¥25&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>yi-medium&lt;/td>
+&lt;td>¥2.5&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>yi-medium-200k&lt;/td>
+&lt;td>¥12&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>yi-spark&lt;/td>
+&lt;td>¥1&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>yi-vision&lt;/td>
+&lt;td>¥6&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;blockquote>
+&lt;p>免费额度：注册送 36 元额度。&lt;/p>
+&lt;/blockquote>
+&lt;h2 id="腾讯混元大模型">腾讯混元大模型&lt;/h2>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>产品名&lt;/th>
+&lt;th>计费单价&lt;/th>
+&lt;th>统一单位后的计费单价&lt;/th>
+&lt;th>上下文 token 数（根据文档推测）&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>腾讯混元大模型标准版&lt;/td>
+&lt;td>0.01元 / 1000 tokens&lt;/td>
+&lt;td>￥ 10 / 1M tokens&lt;/td>
+&lt;td>16k&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>腾讯混元大模型高级版&lt;/td>
+&lt;td>0.10元 / 1000 tokens&lt;/td>
+&lt;td>￥ 10 / 1M tokens&lt;/td>
+&lt;td>16k&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;blockquote>
+&lt;p>免费额度：时长 12 个月的 10 0000 tokens 的免费额度&lt;/p>
+&lt;/blockquote>
+&lt;h2 id="讯飞星火">讯飞星火&lt;/h2>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>模型&lt;/th>
+&lt;th>单价&lt;/th>
+&lt;th>统一单位后的计费单价&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>星火大模型V1.5、V3.0、V3.5&lt;/td>
+&lt;td>0.3~0.24元 / 万 tokens&lt;/td>
+&lt;td>￥ 30~24 / 1M tokens&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;blockquote>
+&lt;p>免费额度：个人拥有时长 12 个月的 200 0000 tokens 的免费额度，企业额度为 500 0000 tokens。&lt;/p>
+&lt;/blockquote>
+&lt;h2 id="kimi">Kimi&lt;/h2>
+&lt;p>月之暗面的模型。超长上下文确实有独到之处。&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>模型&lt;/th>
+&lt;th>计费单价&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>moonshot-v1-8k&lt;/td>
+&lt;td>￥ 12 / 1M tokens&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>moonshot-v1-32k&lt;/td>
+&lt;td>￥ 24 / 1M tokens&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>moonshot-v1-128k&lt;/td>
+&lt;td>￥ 60 / 1M tokens&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;blockquote>
+&lt;p>免费额度：注册送 15 元额度。&lt;/p>
+&lt;/blockquote>
+&lt;h2 id="deepseek">Deepseek&lt;/h2>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>模型&lt;/th>
+&lt;th>输入价格&lt;/th>
+&lt;th>输出价格&lt;/th>
+&lt;th>上下文长度&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>deepseek-chat&lt;/td>
+&lt;td>￥ 1 / 1M tokens&lt;/td>
+&lt;td>￥ 2 / 1M tokens&lt;/td>
+&lt;td>32k tokens&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>deepseek-coder&lt;/td>
+&lt;td>￥ 1 / 1M tokens&lt;/td>
+&lt;td>￥ 2 / 1M tokens&lt;/td>
+&lt;td>16k tokens&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;blockquote>
+&lt;p>免费额度：注册送 20 元额度。&lt;/p>
+&lt;/blockquote>
+&lt;h2 id="minimax">MiniMax&lt;/h2>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>模型名称&lt;/th>
+&lt;th>单价&lt;/th>
+&lt;th>统一单位后的计费单价&lt;/th>
+&lt;th>上下文 token 数&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>abab6-chat&lt;/td>
+&lt;td>0.1元 / 千tokens&lt;/td>
+&lt;td>￥ 100 / 1M tokens&lt;/td>
+&lt;td>32768&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>abab5.5-chat&lt;/td>
+&lt;td>0.015元 / 千tokens&lt;/td>
+&lt;td>￥ 15 / 1M tokens&lt;/td>
+&lt;td>16384&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>abab5.5s-chat&lt;/td>
+&lt;td>0.005元 / 千tokens&lt;/td>
+&lt;td>￥ 5 / 1M tokens&lt;/td>
+&lt;td>8192&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;blockquote>
+&lt;p>免费额度：注册送 75 元额度。&lt;/p>
+&lt;/blockquote>
+&lt;h2 id="智谱">智谱&lt;/h2>
+&lt;p>24.05.11 GLM-3-Turbo 降价。&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>模型&lt;/th>
+&lt;th>单价&lt;/th>
+&lt;th>统一单位后的计费单价&lt;/th>
+&lt;th>上下文 token 数&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>GLM-4&lt;/td>
+&lt;td>0.1元 / 千tokens&lt;/td>
+&lt;td>￥ 100 / 1M tokens&lt;/td>
+&lt;td>128K&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>GLM-3-Turbo&lt;/td>
+&lt;td>0.001元 / 千tokens&lt;/td>
+&lt;td>￥ 1 / 1M tokens&lt;/td>
+&lt;td>128K&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>很明显对标的 OpenAI，定价比 OpenAI 略低。&lt;/p>
+&lt;h2 id="mistral">Mistral&lt;/h2>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Model&lt;/th>
+&lt;th>Input (USD)&lt;/th>
+&lt;th>Output (USD)&lt;/th>
+&lt;th>Input (EUR)&lt;/th>
+&lt;th>Output (EUR)&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Mistral 7B&lt;/td>
+&lt;td>0.25$ / 1M tokens&lt;/td>
+&lt;td>0.25$ / 1M tokens&lt;/td>
+&lt;td>0.2€ / 1M tokens&lt;/td>
+&lt;td>0.2€ / 1M tokens&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Mixtral 8x7B&lt;/td>
+&lt;td>0.7$ / 1M tokens&lt;/td>
+&lt;td>0.7$ / 1M tokens&lt;/td>
+&lt;td>0.65€ / 1M tokens&lt;/td>
+&lt;td>0.65€ / 1M tokens&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Mistral Small&lt;/td>
+&lt;td>2$ / 1M tokens&lt;/td>
+&lt;td>6$ / 1M tokens&lt;/td>
+&lt;td>1.85€ / 1M tokens&lt;/td>
+&lt;td>5.55€ / 1M tokens&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Mistral Medium&lt;/td>
+&lt;td>2.7$ / 1M tokens&lt;/td>
+&lt;td>8.1$ / 1M tokens&lt;/td>
+&lt;td>2.5€ / 1M tokens&lt;/td>
+&lt;td>7.5€ / 1M tokens&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Mistral Large&lt;/td>
+&lt;td>8$ / 1M tokens&lt;/td>
+&lt;td>24$ / 1M tokens&lt;/td>
+&lt;td>7.3€ / 1M tokens&lt;/td>
+&lt;td>22€ / 1M tokens&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>根据现在的汇率（1USD=7.22CNY / 1EUR=7.75），CNY 的表格如下：&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Model&lt;/th>
+&lt;th>Input (USD-CNY)&lt;/th>
+&lt;th>Output (USD-CNY)&lt;/th>
+&lt;th>Input (EUR-CNY)&lt;/th>
+&lt;th>Output (EUR-CNY)&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Mistral 7B&lt;/td>
+&lt;td>￥1.805 / 1M tokens&lt;/td>
+&lt;td>￥1.805 / 1M tokens&lt;/td>
+&lt;td>￥1.55 / 1M tokens&lt;/td>
+&lt;td>￥1.55 / 1M tokens&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Mixtral 8x7B&lt;/td>
+&lt;td>￥5.054 / 1M tokens&lt;/td>
+&lt;td>￥5.054 / 1M tokens&lt;/td>
+&lt;td>￥5.0375 / 1M tokens&lt;/td>
+&lt;td>￥5.0375 / 1M tokens&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Mistral Small&lt;/td>
+&lt;td>￥14.44 / 1M tokens&lt;/td>
+&lt;td>￥43.32 / 1M tokens&lt;/td>
+&lt;td>￥14.3375 / 1M tokens&lt;/td>
+&lt;td>￥43.0125 / 1M tokens&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Mistral Medium&lt;/td>
+&lt;td>￥19.494 / 1M tokens&lt;/td>
+&lt;td>￥58.482 / 1M tokens&lt;/td>
+&lt;td>￥19.375 / 1M tokens&lt;/td>
+&lt;td>￥58.125 / 1M tokens&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Mistral Large&lt;/td>
+&lt;td>￥57.76 / 1M tokens&lt;/td>
+&lt;td>￥173.28 / 1M tokens&lt;/td>
+&lt;td>￥56.575 / 1M tokens&lt;/td>
+&lt;td>￥170.5 / 1M tokens&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2 id="replicate">Replicate&lt;/h2>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Model&lt;/th>
+&lt;th>Input&lt;/th>
+&lt;th>Output&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>meta/llama-2-70b&lt;/td>
+&lt;td>$0.65 / 1M tokens&lt;/td>
+&lt;td>$2.75 / 1M tokens&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>meta/llama-2-13b&lt;/td>
+&lt;td>$0.10 / 1M tokens&lt;/td>
+&lt;td>$0.50 / 1M tokens&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>meta/llama-2-7b&lt;/td>
+&lt;td>$0.05 / 1M tokens&lt;/td>
+&lt;td>$0.25 / 1M tokens&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>meta/llama-2-70b-chat&lt;/td>
+&lt;td>$0.65 / 1M tokens&lt;/td>
+&lt;td>$2.75 / 1M tokens&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>meta/llama-2-713b-chat&lt;/td>
+&lt;td>$0.10 / 1M tokens&lt;/td>
+&lt;td>$0.50 / 1M tokens&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>meta/llama-2-7b-chat&lt;/td>
+&lt;td>$0.05 / 1M tokens&lt;/td>
+&lt;td>$0.25 / 1M tokens&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>mistralai/mistral-7b-v0.1&lt;/td>
+&lt;td>$0.05 / 1M tokens&lt;/td>
+&lt;td>$0.25 / 1M tokens&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>mistralai/mistral-7b-instruct-v0.2&lt;/td>
+&lt;td>$0.05 / 1M tokens&lt;/td>
+&lt;td>$0.25 / 1M tokens&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>mistralai/mixtral-8x7b-instruct-v0.1&lt;/td>
+&lt;td>$0.30 / 1M tokens&lt;/td>
+&lt;td>$1.00 / 1M tokens&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>根据现在的汇率（1USD=7.22CNY），CNY 的表格如下：&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Model&lt;/th>
+&lt;th>Input&lt;/th>
+&lt;th>Output&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>meta/llama-2-70b&lt;/td>
+&lt;td>￥4.693 / 1M tokens&lt;/td>
+&lt;td>￥19.855 / 1M tokens&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>meta/llama-2-13b&lt;/td>
+&lt;td>￥0.722 / 1M tokens&lt;/td>
+&lt;td>￥3.61 / 1M tokens&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>meta/llama-2-7b&lt;/td>
+&lt;td>￥0.361 / 1M tokens&lt;/td>
+&lt;td>￥1.805 / 1M tokens&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>meta/llama-2-70b-chat&lt;/td>
+&lt;td>￥4.693 / 1M tokens&lt;/td>
+&lt;td>￥19.855 / 1M tokens&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>meta/llama-2-713b-chat&lt;/td>
+&lt;td>￥0.722 / 1M tokens&lt;/td>
+&lt;td>￥3.61 / 1M tokens&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>meta/llama-2-7b-chat&lt;/td>
+&lt;td>￥0.361 / 1M tokens&lt;/td>
+&lt;td>￥1.805 / 1M tokens&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>mistralai/mistral-7b-v0.1&lt;/td>
+&lt;td>￥0.361 / 1M tokens&lt;/td>
+&lt;td>￥1.805 / 1M tokens&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>mistralai/mistral-7b-instruct-v0.2&lt;/td>
+&lt;td>￥0.361 / 1M tokens&lt;/td>
+&lt;td>￥1.805 / 1M tokens&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>mistralai/mixtral-8x7b-instruct-v0.1&lt;/td>
+&lt;td>￥2.166 / 1M tokens&lt;/td>
+&lt;td>￥7.22 / 1M tokens&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2 id="cloudflare">Cloudflare&lt;/h2>
+&lt;blockquote>
+&lt;p>免费额度：10,000 Neurons per day&lt;/p>
+&lt;/blockquote>
+&lt;p>具体价格见 &lt;a class="link" href="https://ai.cloudflare.com/#pricing-calculator" target="_blank" rel="noopener"
+>价格计算器&lt;/a>&lt;/p>
+&lt;p>以下是根据计算器大致推断出的免费 Tokens 数量。Beta 时期的模型全部免费。&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Model&lt;/th>
+&lt;th>Input (Cost 10k Neurons)&lt;/th>
+&lt;th>Output (Cost 10k Neurons)&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>@cf/mistral/mistral-7b-instruct-v0.1&lt;/td>
+&lt;td>400000&lt;/td>
+&lt;td>34000&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>@cf/meta/llama2-7b-chat-int8&lt;/td>
+&lt;td>400000&lt;/td>
+&lt;td>64000&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>@cf/meta/llama2-7b-chat-fp16&lt;/td>
+&lt;td>200000&lt;/td>
+&lt;td>17000&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table></description></item><item><title>【译】GPT-4详解——架构、基础设施、训练数据集、成本、愿景、MoE（混合专家模型）</title><link>/p/gpt4/</link><pubDate>Tue, 11 Jul 2023 00:00:00 +0000</pubDate><guid>/p/gpt4/</guid><description>&lt;img src="/p/gpt4/banner.webp" alt="Featured image of post 【译】GPT-4详解——架构、基础设施、训练数据集、成本、愿景、MoE（混合专家模型）" />&lt;p>翻译自：https://www.semianalysis.com/p/gpt-4-architecture-infrastructure&lt;/p>
 &lt;p>原文标题：GPT-4 Architecture, Infrastructure, Training Dataset, Costs,Vision, MoE&lt;/p>
 &lt;p>原文副标题：Demystifying GPT-4: The engineering tradeoffs that led OpenAI to their architecture.&lt;/p>
 &lt;h2 id="前言--综述">前言 &amp;amp; 综述&lt;/h2>
