@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Python on 衔飞的博客</title><link>/categories/python/</link><description>Recent content in Python on 衔飞的博客</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Thu, 26 Dec 2024 00:00:00 +0000</lastBuildDate><atom:link href="/categories/python/index.xml" rel="self" type="application/rss+xml"/><item><title>如何用Python实现原生的Windows错误弹窗</title><link>/p/pymsgbox/</link><pubDate>Thu, 26 Dec 2024 00:00:00 +0000</pubDate><guid>/p/pymsgbox/</guid><description>&lt;img src="/p/pymsgbox/image.png" alt="Featured image of post 如何用Python实现原生的Windows错误弹窗" />&lt;h2 id="前言">前言&lt;/h2>
+&lt;p>好久没写博客了，随便水一期。在Python GUI开发中，希望调用系统预设的报错弹窗而不是手动实现，对于现成的解决方案我们可以使用&lt;code>tkinter.messagebox&lt;/code>实现。但是在Python Embeddable版本中并没有预置thinker也不太容易安装，那我们要如何使用系统自带的弹窗呢？&lt;/p>
+&lt;h2 id="代码">代码&lt;/h2>
+&lt;p>话不多说，直接上代码：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;span class="lnt">6
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="kn">import&lt;/span> &lt;span class="nn">ctypes&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="k">if&lt;/span> &lt;span class="n">ctypes&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">windll&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">user32&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">MessageBoxW&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="kc">None&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;是否继续?&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;提示&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mh">0x01&lt;/span> &lt;span class="o">|&lt;/span> &lt;span class="mh">0x40&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="o">==&lt;/span> &lt;span class="mi">1&lt;/span>&lt;span class="p">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">ctypes&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">windll&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">user32&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">MessageBoxW&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="kc">None&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;点击了是&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;标题&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mh">0x40&lt;/span> &lt;span class="o">|&lt;/span> &lt;span class="mh">0x1&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="k">else&lt;/span>&lt;span class="p">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">ctypes&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">windll&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">user32&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">MessageBoxW&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="kc">None&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;点击了否&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;标题&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mh">0x40&lt;/span> &lt;span class="o">|&lt;/span> &lt;span class="mh">0x1&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h2 id="参数说明">参数说明&lt;/h2>
+&lt;p>&lt;code>MessageBoxW&lt;/code>函数的参数说明如下：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;span class="lnt">6
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-c" data-lang="c">&lt;span class="line">&lt;span class="cl">&lt;span class="kt">int&lt;/span> &lt;span class="nf">MessageBoxW&lt;/span>&lt;span class="p">(&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">HWND&lt;/span> &lt;span class="n">hWnd&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">LPCWSTR&lt;/span> &lt;span class="n">lpText&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">LPCWSTR&lt;/span> &lt;span class="n">lpCaption&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">UINT&lt;/span> &lt;span class="n">uType&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;ul>
+&lt;li>&lt;code>hWnd&lt;/code>: 父窗口句柄，一般传入&lt;code>None&lt;/code>即可&lt;/li>
+&lt;li>&lt;code>lpText&lt;/code>: 弹窗内容&lt;/li>
+&lt;li>&lt;code>lpCaption&lt;/code>: 弹窗标题&lt;/li>
+&lt;li>&lt;code>uType&lt;/code>: 弹窗类型，可以通过&lt;code>|&lt;/code>运算符组合多个参数，常用参数如下：
+&lt;ul>
+&lt;li>&lt;code>0x00&lt;/code>: 确定按钮&lt;/li>
+&lt;li>&lt;code>0x01&lt;/code>: 取消按钮&lt;/li>
+&lt;li>&lt;code>0x02&lt;/code>: 重试按钮&lt;/li>
+&lt;li>&lt;code>0x03&lt;/code>: 是、否、取消按钮&lt;/li>
+&lt;li>&lt;code>0x04&lt;/code>: 是、否按钮&lt;/li>
+&lt;li>&lt;code>0x10&lt;/code>: 信息图标&lt;/li>
+&lt;li>&lt;code>0x20&lt;/code>: 警告图标&lt;/li>
+&lt;li>&lt;code>0x30&lt;/code>: 询问图标&lt;/li>
+&lt;li>&lt;code>0x40&lt;/code>: 错误图标&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;p>详情参考：https://learn.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-messageboxw&lt;/p>
+&lt;h2 id="运行效果">运行效果&lt;/h2>
+&lt;p>这种方法会调用系统原生的弹窗，并且造成阻塞，直到用户点击确定或取消。&lt;/p>
+&lt;p>&lt;img src="../../p/pymsgbox/image.png"
+width="978"
+height="175"
+srcset="../../p/pymsgbox/image_hu64623d6d0264f704b80f52ee001ed8ce_22314_480x0_resize_q60_box_3.png 480w, ../../p/pymsgbox/image_hu64623d6d0264f704b80f52ee001ed8ce_22314_1536x0_resize_q60_box_3.png 1536w"
+loading="lazy"
+alt="alt text"
+class="gallery-image"
+data-flex-grow="558"
+data-flex-basis="1341px"
+>&lt;/p>
+&lt;h2 id="结语">结语&lt;/h2>
+&lt;p>以上就是如何使用Python调用Windows原生的弹窗，希望对你有所帮助。&lt;/p></description></item></channel></rss>
