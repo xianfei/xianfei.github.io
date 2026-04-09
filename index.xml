@@ -1,4 +1,7 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>衔飞的博客</title><link>/</link><description>Recent content on 衔飞的博客</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Thu, 26 Dec 2024 00:00:00 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml"/><item><title>如何用Python实现原生的Windows错误弹窗</title><link>/p/pymsgbox/</link><pubDate>Thu, 26 Dec 2024 00:00:00 +0000</pubDate><guid>/p/pymsgbox/</guid><description>&lt;img src="/p/pymsgbox/image.png" alt="Featured image of post 如何用Python实现原生的Windows错误弹窗" />&lt;h2 id="前言">前言&lt;/h2>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>衔飞的博客</title><link>/</link><description>Recent content on 衔飞的博客</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Thu, 09 Apr 2026 00:00:00 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml"/><item><title>SBTI 人格测试 27种人格全解析</title><link>/p/sbti-personality-test/</link><pubDate>Thu, 09 Apr 2026 00:00:00 +0000</pubDate><guid>/p/sbti-personality-test/</guid><description>&lt;img src="/p/sbti-personality-test/test.png" alt="Featured image of post SBTI 人格测试 27种人格全解析" />&lt;p>&lt;a class="link" href="./article.html" >点击查看文章&lt;/a>&lt;/p>
+&lt;script>
+window.location.href = "./article.html";
+&lt;/script></description></item><item><title>如何用Python实现原生的Windows错误弹窗</title><link>/p/pymsgbox/</link><pubDate>Thu, 26 Dec 2024 00:00:00 +0000</pubDate><guid>/p/pymsgbox/</guid><description>&lt;img src="/p/pymsgbox/image.png" alt="Featured image of post 如何用Python实现原生的Windows错误弹窗" />&lt;h2 id="前言">前言&lt;/h2>
 &lt;p>好久没写博客了，随便水一期。在Python GUI开发中，希望调用系统预设的报错弹窗而不是手动实现，对于现成的解决方案我们可以使用&lt;code>tkinter.messagebox&lt;/code>实现。但是在Python Embeddable版本中并没有预置thinker也不太容易安装，那我们要如何使用系统自带的弹窗呢？&lt;/p>
 &lt;h2 id="代码">代码&lt;/h2>
 &lt;p>话不多说，直接上代码：&lt;/p>
@@ -4688,8 +4691,7 @@ data-flex-basis="426px"
 &lt;/blockquote>
 &lt;img align="right" width="450" src="https://github-readme-stats.vercel.app/api?username=xianfei&amp;show_icons=true&amp;icon_color=0078e7&amp;title_color=0078e7&amp;include_all_commits=true"/>
 &lt;ul>
-&lt;li>🔭 I&amp;rsquo;m an undergraduate student of software engineering from China now. 就读于北京信息科技大学&amp;amp;北京邮电大学双培计划，现在大四。&lt;/li>
-&lt;li>🏡 I&amp;rsquo;m living in Beijing and looking for a job in Beijing.&lt;/li>
+&lt;li>🔭 I&amp;rsquo;m an MPhill student of Computer Science and Engineering at HKUST.&lt;/li>
 &lt;li>🌱 I&amp;rsquo;m currently learning Computer Graphics &amp;amp; Machine Learning &amp;amp; Web Technologies.&lt;/li>
 &lt;li>😍 I like eating delicious foods 🍔, traveling 🏝, photography 📸, coding 🧑‍💻 and sleeping 🛌.&lt;/li>
 &lt;li>😡 I hate working overtime.&lt;/li>
